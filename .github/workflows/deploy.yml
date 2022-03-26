@@ -1,4 +1,4 @@
-name: push to delta-hw
+name: push to KJS-Web
 on:  
   push:
     branches:
@@ -18,5 +18,5 @@ jobs:
          name: id_rsa # optional
          known_hosts: ${{ secrets.KNOWN_HOSTS }}
     - run: |
-        git remote add main ssh://root@c1rrzs003p.schniebs.com:69/root/git/kjs-main.git
-        git push main main
+        git remote add mainp ssh://root@c1rrzs003p.schniebs.com:69/root/git/kjs-main.git
+        git push mainp main
