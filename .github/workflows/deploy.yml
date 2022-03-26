@@ -19,4 +19,4 @@ jobs:
          known_hosts: ${{ secrets.KNOWN_HOSTS }}
     - run: |
         git remote add prod ssh://root@c1rrzs003p.schniebs.com:69/root/git/kjs-main.git
-        git push prod main
+        git push master main
