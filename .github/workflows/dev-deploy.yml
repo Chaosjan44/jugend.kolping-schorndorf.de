@@ -1,4 +1,4 @@
-name: push to KJS-Web
+name: push dev brach to https://dev.kj.schniebs.com/
 on:  
   push:
     branches:

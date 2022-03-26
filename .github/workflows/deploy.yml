@@ -1,4 +1,4 @@
-name: push to KJS-Web
+name: push main brach to https://kj.schniebs.com/
 on:  
   push:
     branches:
