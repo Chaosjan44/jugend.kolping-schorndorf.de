@@ -19,33 +19,30 @@ $verdate ="24.03.2022";
                         <a href="/index.php" class="text-black" style="text-decoration:none">> Start</a>
                     </li>
                     <li>
-                        <a>> Termine</a>
+                        <a href="/termine.php" class="text-black" style="text-decoration:none">> Termine</a>
                     </li>
                     <li>
-                        <a>> Angebote</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-2">
-                <ul>
-                    <li>
-                        <a></a>
-                    </li>
-                    <li>
-                        <a>> Über uns</a>
+                        <a href="/angebote.php" class="text-black" style="text-decoration:none">> Angebote</a>
                     </li>
                 </ul>
             </div>
             <div class="col-2">
                 <ul>
                     <li>
-                        <a>> Datenschutz</a>
+                        <a href="/about_us.php" class="text-black" style="text-decoration:none">> Über uns</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-2">
+                <ul>
+                    <li>
+                        <a href="/datenschutz.php" class="text-black" style="text-decoration:none">> Datenschutz</a>
                     </li>
                     <li>
-                        <a>> Impressum</a>
+                        <a href="/impressum.php" class="text-black" style="text-decoration:none">> Impressum</a>
                     </li>
                     <li>
-                        <a>> Kontakt</a>
+                        <a href="/kontakt.php" class="text-black" style="text-decoration:none">> Kontakt</a>
                     </li>
                 </ul>
             </div>
