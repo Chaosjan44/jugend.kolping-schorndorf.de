@@ -31,7 +31,7 @@
             </button>
         </div>
     </div>
-    <div class="container-xxl">
+    <div class="container-xxl px-5">
         <div class="row justify-content-evenly">
             <div class="col-5">
             One of two columns
