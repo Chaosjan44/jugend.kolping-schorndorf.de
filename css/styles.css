@@ -31,39 +31,39 @@ ul {
 }
 
 .text-size-xx-small {
-    font-size: xx-small;
+    font-size: xx-small !important;
 }
 
 .text-size-x-small {
-    font-size: x-small;
+    font-size: x-small !important;
 }
 
 .text-size-smaller {
-    font-size: smaller;
+    font-size: smaller !important;
 }
 
 .text-size-small {
-    font-size: small;
+    font-size: small !important;
 }
 
 .text-size-medium {
-    font-size: medium;
+    font-size: medium !important;
 }
 
 .text-size-large {
-    font-size: large;
+    font-size: large !important;
 }
 
 .text-size-larger {
-    font-size: larger;
+    font-size: larger !important;
 }
 
 .text-size-x-larger {
-    font-size: x-large;
+    font-size: x-large !important;
 }
 
 .text-size-xx-larger {
-    font-size: xx-large;
+    font-size: xx-large !important;
 }
 
 
