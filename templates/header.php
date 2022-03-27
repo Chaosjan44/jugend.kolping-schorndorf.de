@@ -18,7 +18,7 @@ require_once("php/functions.php");
     <link rel="stylesheet"  href="/css/dark.css" disabled>
     <link rel="stylesheet"  href="/css/light.css" disabled>
     <script src="/js/custom.js"></script>
-    <link rel="icon" type="image/svg" href="/images/blank.svg" sizes="1024x1024" />
+    <link rel="icon" type="image/svg" href="favicon.svg" sizes="1024x1024" />
     <!-- <link rel="stylesheet" href="/css/cookiebanner.css"> -->
     <title>Kolping Jugend Schorndorf</title>
 </head>
@@ -26,11 +26,11 @@ require_once("php/functions.php");
 
 <nav class="navbar header-header navbar-expand-lg cbg ctext sticky-top">
     <div class="container-fluid">
-        <a class="navbar-brand" href="/"><img src="/favicon<?php if (check_style() == "dark") {print("_dark");}?>.svg" class="navbar-icon"></a>
+        <a class="navbar-brand" href="/"><img src="/images/blank.svg" class="navbar-icon"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         
     </div>
 </nav>
-<div class="kolping-orange" style="height: 10px; "></div>
+<div class="kolping-orange" style="height: 10px;"></div>
