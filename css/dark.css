@@ -1,6 +1,7 @@
 .navbar-icon {
     height: 50px;
     width: 50px;
+    background-image: "/favicon.svg";
     display: block;
 }
 
