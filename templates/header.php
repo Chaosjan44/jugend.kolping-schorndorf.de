@@ -31,6 +31,7 @@ require_once("php/functions.php");
         <a class="navbar-brand" href="/">
             <img src="/favicon.svg" class="navbar-icon-light">
             <img src="/favicon_dark.svg" class="navbar-icon-dark">
+            <span>Kolpingjugend Schorndorf</span>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
             <span class="navbar-toggler-icon"></span>
