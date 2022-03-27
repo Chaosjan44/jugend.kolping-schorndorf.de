@@ -29,6 +29,44 @@ ul {
     font-size: small;
 }
 
+.text-size-xx-small {
+    font-size: xx-small;
+}
+
+.text-size-x-small {
+    font-size: x-small;
+}
+
+.text-size-smaller {
+    font-size: smaller;
+}
+
+.text-size-small {
+    font-size: small;
+}
+
+.text-size-medium {
+    font-size: medium;
+}
+
+.text-size-large {
+    font-size: large;
+}
+
+.text-size-larger {
+    font-size: larger;
+}
+
+.text-size-x-larger {
+    font-size: x-large;
+}
+
+.text-size-xx-larger {
+    font-size: xx-large;
+}
+
+
+
 .white {
     background-color: #ffffff;
 }
