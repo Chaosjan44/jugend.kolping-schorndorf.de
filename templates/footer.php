@@ -18,13 +18,13 @@
                 <div class="col-2 text-center">
                     <ul class="px-0">
                         <li>
-                            <a href="/datenschutz.php" class="hoverlink ctext text-center" style="text-decoration:none">Datenschutz</a>
+                            <a href="/kontakt.php" class="hoverlink ctext text-center" style="text-decoration:none">Kontakt</a>
                         </li>
                         <li>
                             <a href="/impressum.php" class="hoverlink ctext" style="text-decoration:none">Impressum</a>
                         </li>
                         <li>
-                            <a href="/kontakt.php" class="hoverlink ctext" style="text-decoration:none">Kontakt</a>
+                            <a href="/datenschutz.php" class="hoverlink ctext" style="text-decoration:none">Datenschutz</a>
                         </li>
                     </ul>
                 </div>
