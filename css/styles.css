@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 * {
     box-sizing: border-box;
@@ -6,4 +7,137 @@
     padding: 0;
     scroll-behavior: smooth;
     font-family: "Ubuntu", sans-serif;
+}
+
+/* Kolping (Jugend) Farben */
+.kolping-orange {
+    background-color: #FF8C00;
+}
+.text-kolping-orange {
+    color: #FF8C00;
+}
+
+.kolping-schwarz {
+    background-color: #000000;
+}
+.text-kolping-schwarz {
+    color: #000000;
+}
+
+.hellblau {
+    background-color: #449cdb;
+}
+.text-hellblau {
+    color: #449cdb;
+}
+
+.hellgruen {
+    background-color: #b2ce36 ;
+}
+.text-hellgruen {
+    color: #b2ce36 ;
+}
+
+.purpur {
+    background-color: #9b0687 ;
+}
+.text-purpur {
+    color: #9b0687 ;
+}
+
+.gelb {
+    background-color: #e8c424 ;
+}
+.text-gelb {
+    color: #e8c424 ;
+}
+
+.petrol {
+    background-color: #41a0a0 ;
+}
+.text-petrol {
+    color: #41a0a0 ;
+}
+
+.dunkelblau {
+    background-color: #285da6 ;
+}
+.text-dunkelblau {
+    color: #285da6 ;
+}
+
+.smaragd {
+    background-color: #1d728a ;
+}
+.text-smaragd {
+    color: #1d728a ;
+}
+
+.violett {
+    background-color: #74056f ;
+}
+.text-violett {
+    color: #74056f ;
+}
+
+.terra {
+    background-color: #aa9c7c ;
+}
+.text-terra {
+    color: #aa9c7c ;
+}
+
+/* Light/Dark mode Switch */
+.styleswitcher {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+.styleswitcherlabel {
+    display: block;
+    width: 70px;
+    height: 30px;
+    background-color: #dee2e6;
+    border-radius: 15px;
+    position: relative;
+    cursor: pointer;
+    transition: 0.5s;
+    box-shadow: 0 0 2px #212529;
+}
+
+.styleswitcherlabel::after {
+    content: "";
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    border-radius: 5px;
+    top: 3px;
+    left: 5px;
+    transition: 0.5s;
+    /* background-color: #000000; */
+    background-image: url("/images/light.png");
+    background-size: 24px;
+}
+
+.styleswitcher:checked + .styleswitcherlabel:after {
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+    /* background-color: #ffffff; */
+    background-image: url("/images/dark.png");
+    background-size: 24px;
+}
+
+.styleswitcher:checked + .styleswitcherlabel {
+    background-color: #212529;
+    box-shadow: 0 0 2px #dee2e6;
+}
+
+
+
+
+
+
+ul {
+    list-style-type: disc;
 }
