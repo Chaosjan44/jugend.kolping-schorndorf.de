@@ -12,14 +12,8 @@ html, body {
     background-color: #EDEDED;
 }
 
-.navbar-icon-light {
+.navbar-icon {
     display: block;
-    height: 50px;
-    width: 50px;
-}
-
-.navbar-icon-dark {
-    display: none;
     height: 50px;
     width: 50px;
 }

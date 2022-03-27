@@ -29,8 +29,7 @@ require_once("php/functions.php");
 <nav class="navbar header-header navbar-expand-lg navbar-<?php print(check_style());?> cbg ctext sticky-top">
     <div class="container-fluid">
         <a class="navbar-brand" href="/">
-            <img src="/favicon.svg" class="navbar-icon-light d-inline-block align-text-top">
-            <img src="/favicon_dark.svg" class="navbar-icon-dark d-inline-block align-text-top">
+            <img src="/favicon<?php if (check_style() == "dark") { print("_dark"); }?>.svg" class="navbar-icon d-inline-block align-text-center">
             Kolpingjugend Schorndorf
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">

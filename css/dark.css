@@ -12,13 +12,7 @@ html, body {
     background-color: #212529;
 }
 
-.navbar-icon-light {
-    display: none;
-    height: 50px;
-    width: 50px;
-}
-
-.navbar-icon-dark {
+.navbar-icon {
     display: block;
     height: 50px;
     width: 50px;
