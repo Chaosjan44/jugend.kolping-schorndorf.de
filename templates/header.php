@@ -30,7 +30,7 @@ require_once("php/functions.php");
     <div class="container-fluid">
         <a class="navbar-brand" href="/">
             <img src="/favicon<?php if (check_style() == "dark") { print("_dark"); }?>.svg" class="navbar-icon d-inline-block align-text-center pe-2">
-            KJ Schorndorf
+            <?php if (!isMobile()) {print("Kolpingjugend Schorndorf");} else {print("KJ Schorndorf");}?>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
             <span class="navbar-toggler-icon"></span>
