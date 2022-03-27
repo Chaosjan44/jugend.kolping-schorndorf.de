@@ -1,5 +1,10 @@
-.navbar-icon {
-    filter: url("/favicon_dark.svg");
+.navbar-icon-light {
+    display: none;
+    height: 50px;
+    width: 50px;
+}
+
+.navbar-icon-dark {
     display: block;
     height: 50px;
     width: 50px;

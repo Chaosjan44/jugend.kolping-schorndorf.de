@@ -1,5 +1,11 @@
-.navbar-icon {
+.navbar-icon-light {
     display: block;
+    height: 50px;
+    width: 50px;
+}
+
+.navbar-icon-dark {
+    display: none;
     height: 50px;
     width: 50px;
 }
