@@ -22,7 +22,7 @@ require_once("php/functions.php");
     <link rel="icon" type="image/svg" href="favicon.svg" sizes="1024x1024" />
     <link rel="stylesheet" href="/css/bootstrap-icons.css">
     <!-- <link rel="stylesheet" href="/css/cookiebanner.css"> -->
-    <title>Kolping Jugend Schorndorf</title>
+    <title>Kolpingjugend Schorndorf</title>
 </head>
 <body>
 
@@ -30,7 +30,7 @@ require_once("php/functions.php");
     <div class="container-fluid">
         <a class="navbar-brand" href="/">
             <img src="/favicon<?php if (check_style() == "dark") { print("_dark"); }?>.svg" class="navbar-icon d-inline-block align-text-center pe-2">
-            Kolpingjugend Schorndorf
+            KJ Schorndorf
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
             <span class="navbar-toggler-icon"></span>
