@@ -158,6 +158,12 @@
     font-size: 1.3rem;
 }
 
+.navbar-icon {
+    display: block;
+    height: 50px;
+    width: 50px;
+}
+
 .hoverlink:hover {
     color: #FF8C00;
 }

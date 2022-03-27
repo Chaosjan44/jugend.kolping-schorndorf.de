@@ -5,17 +5,12 @@
 html, body {
     background-color: #2d3238 !important;
     height: 100%;
+    width: 100%;
     margin: 0;
 }
 
 .footer {
     background-color: #212529;
-}
-
-.navbar-icon {
-    display: block;
-    height: 50px;
-    width: 50px;
 }
 
 .cbg {
