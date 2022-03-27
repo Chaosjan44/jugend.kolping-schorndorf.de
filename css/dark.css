@@ -1,5 +1,5 @@
 .navbar-icon {
-    background-image: "/favicon.svg";
+    filter: invert(100%);
     display: block;
     height: 50px;
     width: 50px;
