@@ -26,7 +26,7 @@ require_once("php/functions.php");
 </head>
 <body>
 
-<nav class="navbar header-header navbar-expand-lg navbar-dark bg-dark text-white sticky-top">
+<nav class="navbar header-header navbar-expand-lg navbar-<?php print(check_style());?> cbg ctext sticky-top">
     <div class="container-fluid">
         <a class="navbar-brand" href="/">
             <img src="/favicon.svg" class="navbar-icon-light">
