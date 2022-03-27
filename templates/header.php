@@ -24,7 +24,7 @@ require_once("php/functions.php");
 </head>
 <body>
 
-<nav class="navbar header-header navbar-expand-lg sticky-top">
+<nav class="navbar header-header navbar-expand-lg cbg ctext sticky-top">
     <div class="container-fluid">
         <a class="navbar-brand" href="/"><img src="/favicon<?php if (check_style() == "dark") {print("_dark");}?>.svg" class="navbar-icon"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

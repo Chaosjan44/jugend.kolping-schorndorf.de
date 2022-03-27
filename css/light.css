@@ -3,3 +3,11 @@
     width: 50px;
     display: block;
 }
+
+.cbg {
+    background-color: #ffffff;
+}
+
+.ctext {
+    color: #000000;
+}
