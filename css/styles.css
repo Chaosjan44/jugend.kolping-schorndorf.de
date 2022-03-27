@@ -9,6 +9,10 @@
     font-family: "Ubuntu", sans-serif;
 }
 
+.light {
+    font-weight: 200 !important;
+}
+
 /* Kolping (Jugend) Farben */
 .kolping-orange {
     background-color: #FF8C00;
