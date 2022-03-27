@@ -16,7 +16,7 @@ $verdate ="24.03.2022";
             <div class="col-2">
                 <ul>
                     <li>
-                        <a>> Start</a>
+                        <a href="/index.php">> Start</a>
                     </li>
                     <li>
                         <a>> Termine</a>
