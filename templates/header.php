@@ -52,6 +52,6 @@ require_once("php/functions.php");
                 </li>
             </ul>
         </div>
-        <div class="kolping-orange" style="height: 10px;"></div>
+        <div class="kolping-orange" style="height: 10px; z-index: 2;"></div>
     </div>
 </nav>
