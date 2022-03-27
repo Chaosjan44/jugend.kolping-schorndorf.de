@@ -32,12 +32,19 @@
         </div>
     </div>
     <div class="container-xxl">
+        <div class="row ctext">
+            <h1 class="display-5 text-center">Kolpingjugend Schorndorf</h1>
+            <span>Die Kolpingjugend Schorndorf ist eine Gruppierung der <a href="https://kolping-schorndorf.de/" class="hoverlink ctext">Kolpingsfamilie Schorndorf</a>,<br>wir treffen uns jeden 2. Samstag zu Gruppenstunden</span>
+        </div>
         <div class="row gx-5">
             <div class="col d-flex justify-content-center">
-            One of two columns
+                <h2 class="ctext"></h2>
             </div>
             <div class="col d-flex justify-content-center">
-            One of two columns
+                <h2 class="ctext text-center">Nachrichten</h2>
+                <div>
+
+                </div>
             </div>
         </div>
     </div>
