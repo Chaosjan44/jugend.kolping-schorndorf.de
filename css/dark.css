@@ -1,5 +1,5 @@
 .navbar-icon {
-    filter: invert(100%);
+    filter: url("/favicon_dark.svg");
     display: block;
     height: 50px;
     width: 50px;
