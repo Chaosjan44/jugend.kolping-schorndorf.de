@@ -18,28 +18,10 @@ function setStyle() {
     setCookie("style", "dark", 365);
     document.querySelectorAll("link[href='/css/dark.css']")[0].disabled = false;
     document.querySelectorAll("link[href='/css/light.css']")[0].disabled = true;
-    //document.getElementById("theme_css").remove()
-    /*
-    var fileref = document.createElement("link");
-    fileref.setAttribute("rel", "stylesheet");
-    fileref.setAttribute("type", "text/css");
-    fileref.setAttribute("href", "/css/dark.css");
-    //fileref.setAttribute("id", "theme_css");
-    document.getElementsByTagName("head")[0].appendChild(fileref);
-    */
   } else {
     setCookie("style", "light", 365);
     document.querySelectorAll("link[href='/css/dark.css']")[0].disabled = true;
     document.querySelectorAll("link[href='/css/light.css']")[0].disabled = false;
-    //document.getElementById("theme_css").remove()
-    /*
-    var fileref = document.createElement("link");
-    fileref.setAttribute("rel", "stylesheet");
-    fileref.setAttribute("type", "text/css");
-    fileref.setAttribute("href", "/css/light.css");
-    //fileref.setAttribute("id", "theme_css");
-    document.getElementsByTagName("head")[0].appendChild(fileref);
-    */
   }
 }
 

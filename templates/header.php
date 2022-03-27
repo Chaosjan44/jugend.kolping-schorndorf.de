@@ -37,29 +37,26 @@ require_once("php/functions.php");
         </button>
         <div class="offcanvas offcanvas-end cbg" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
             <div class="offcanvas-header">
-                <h5 class="offcanvas-title ctext" id="offcanvasNavbarLabel">Offcanvas</h5>
+                <h5 class="offcanvas-title ctext" id="offcanvasNavbarLabel">Menü</h5>
                 <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
                 <ul class="navbar-nav justify-content-start flex-grow-1 pe-3">
                 <li class="nav-item">
-                    <a class="nav-link active ctext" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link ctext" href="#">Link</a>
+                    <a class="nav-link hoverlink ctext" aria-current="page" href="/termine.php">Termine</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle ctext" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Dropdown
+                    <a class="nav-link dropdown-toggle ctext" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Über uns
                     </a>
                     <ul class="dropdown-menu cbg2" aria-labelledby="offcanvasNavbarDropdown">
-                    <li><a class="dropdown-item ctext" href="#">Action</a></li>
-                    <li><a class="dropdown-item ctext" href="#">Another action</a></li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
+                    <li><a class="dropdown-item ctext" href="/about_us/wir.php">Wir</a></li>
+                    <li><a class="dropdown-item ctext" href="/about_us/aktionen.php">Aktionen</a></li>
                     <li><a class="dropdown-item ctext" href="#">Something else here</a></li>
                     </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link hoverlink ctext" href="#">Angebote</a>
                 </li>
                 </ul>
             </div>

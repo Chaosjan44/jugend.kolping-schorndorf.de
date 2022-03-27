@@ -154,11 +154,13 @@
     box-shadow: 0 0 2px #ffffff;
 }
 
-
 .nav-link {
     font-size: 1.3rem;
 }
 
+.hoverlink:hover {
+    color: #FF8C00;
+}
 
 ul {
     list-style-type: none;
