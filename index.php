@@ -1,7 +1,7 @@
 <?php require_once("templates/header.php"); ?>
 <script src="/js/slider.js"></script>
 
-<div class="container-fluid pt-0 pb-3">
+<div class="container-fluid px-0 pt-0 pb-3">
     <div class="mb-3">
         <div id="carouselExampleFade" class="carousel <?php if (check_style() == "dark") { print("carousel-dark "); }?>slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner">
