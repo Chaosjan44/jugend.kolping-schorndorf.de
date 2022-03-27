@@ -121,7 +121,7 @@
     display: block;
     width: 70px;
     height: 30px;
-    background-color: #ffffff;
+    background-color: #EDEDED;
     border-radius: 15px;
     position: relative;
     cursor: pointer;
@@ -150,7 +150,7 @@
 }
 
 .styleswitcher:checked + .styleswitcherlabel {
-    background-color: #000000;
+    background-color: #212529;
     box-shadow: 0 0 2px #ffffff;
 }
 
