@@ -1,7 +1,5 @@
 setStyle();
 
-//document.querySelectorAll("link[href='/css/dark.css']")[0].disabled = false;
-
 function toggleStyle() {
   if (getCookie("style") == "dark") {
     setCookie("style", "light", 365);
@@ -9,8 +7,8 @@ function toggleStyle() {
     setCookie("style", "dark", 365);
   }
   setStyle();
-  setTimeout(1000);
-  location.reload();
+  setTimeout(location.reload(), 1000);
+  
 }
 
 function setStyle() {
