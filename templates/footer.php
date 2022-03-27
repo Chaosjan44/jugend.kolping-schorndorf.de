@@ -10,7 +10,7 @@ $verdate ="24.03.2022";
 
 
 
-<footer class="container-fluid sticky-bottom footer py-3 kolping-orange text-white">
+<footer class="container sticky-bottom footer py-3 kolping-orange text-white">
     <div class="row">
         <div class="col">
 
