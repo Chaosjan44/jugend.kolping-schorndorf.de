@@ -41,7 +41,7 @@
                 <h2 class="ctext"></h2>
             </div>
             <div class="col d-flex justify-content-center">
-                <h2 class="display-4 ctext text-center">Nachrichten</h2>
+                <h2 class="display-6 ctext text-center">Nachrichten</h2>
                 <div>
 
                 </div>
