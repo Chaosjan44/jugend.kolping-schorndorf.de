@@ -43,7 +43,7 @@ require_once("php/functions.php");
             <div class="offcanvas-body">
                 <ul class="navbar-nav justify-content-start flex-grow-1 pe-3">
                 <li class="nav-item">
-                    <a class="nav-link hoverlink ctext" aria-current="page" href="/termine.php">Termine</a>
+                    <a class="nav-link ctext" aria-current="page" href="/termine.php">Termine</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle ctext" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -52,11 +52,10 @@ require_once("php/functions.php");
                     <ul class="dropdown-menu cbg2" aria-labelledby="offcanvasNavbarDropdown">
                     <li><a class="dropdown-item ctext" href="/about_us/wir.php">Wir</a></li>
                     <li><a class="dropdown-item ctext" href="/about_us/aktionen.php">Aktionen</a></li>
-                    <li><a class="dropdown-item ctext" href="#">Something else here</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link hoverlink ctext" href="#">Angebote</a>
+                    <a class="nav-link ctext" href="#">Angebote</a>
                 </li>
                 </ul>
             </div>
