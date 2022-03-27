@@ -28,6 +28,10 @@ html, body {
     background-color: #ffffff;
 }
 
+.cbg2 {
+    background-color: #EDEDED !important;
+}
+
 .ctext {
     color: #000000;
 }
