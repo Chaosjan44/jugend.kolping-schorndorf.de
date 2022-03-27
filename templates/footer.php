@@ -20,7 +20,7 @@
             <div class="col-2">
                 <ul>
                     <li>
-                        <a href="/about_us.php" class="hoverlink ctext" style="text-decoration:none">> Über uns</a>
+                        <a href="/about_us.php" class="hoverlink ctext text-center" style="text-decoration:none">> Über uns</a>
                     </li>
                 </ul>
             </div>
