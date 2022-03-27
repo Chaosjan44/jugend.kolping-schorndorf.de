@@ -2,7 +2,7 @@
 <script src="/js/slider.js"></script>
 
 <div class="container-fluid px-0">
-    <div>
+    <div class="mb-3">
         <div id="carouselExampleFade" class="carousel <?php if (check_style() == "dark") { print("carousel-dark "); }?>slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -31,7 +31,7 @@
             </button>
         </div>
     </div>
-    <div class="container-xxl px-5">
+    <div class="container-xxl">
         <div class="row gx-5">
             <div class="col d-flex justify-content-center">
             One of two columns
