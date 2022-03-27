@@ -25,10 +25,10 @@ require_once("php/functions.php");
 <body>
 
 <header class="container-fluid sticky-bottom footer px-0 text-black">
-    <div class="white" style="height: 70px;">
+    <div class="white align-items-center" style="height: 70px;">
         <a class="navbar-brand" href="/">
-            <img src="/favicon.svg" width="60" height="60" ><
-                /a>
+            <img src="/favicon.svg" width="60" height="60" >
+            </a>
         <div class="container">
             <div>
 
