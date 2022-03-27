@@ -10,33 +10,35 @@ $verdate ="24.03.2022";
 
 
 
-<footer class="container sticky-bottom footer py-3 kolping-orange text-white">
-    <div class="row">
-        <div class="col">
+<footer class="container-fluid sticky-bottom footer py-3 kolping-orange text-white">
+    <div class="container">
+        <div class="row">
+            <div class="col">
 
-        </div>
-        <div class="col">
+            </div>
+            <div class="col">
 
+            </div>
+            <div class="col">
+                <ul>
+                    <li>
+                        <a>> Datenschutz</a>
+                    </li>
+                    <li>
+                        <a>> Impressum</a>
+                    </li>
+                    <li>
+                        <a>> Kontakt</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div class="col">
-            <ul>
-                <li>
-                    <a>> Datenschutz</a>
-                </li>
-                <li>
-                    <a>> Impressum</a>
-                </li>
-                <li>
-                    <a>> Kontakt</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <div class="row">
-        <span class="text-center">&copy; 2020 Kolpingfamilie Schorndorf e.V.</span>
-        <div class="">
-            <input onchange="toggleStyle()" class="styleswitcher" type="checkbox" name="switch" id="style_switch" <?php if (check_style() == "dark") {print("checked");}?>>
-            <label class="styleswitcherlabel" for="style_switch"></label>
+        <div class="row">
+            <span class="text-center">&copy; 2020 Kolpingfamilie Schorndorf e.V.</span>
+            <div class="">
+                <input onchange="toggleStyle()" class="styleswitcher" type="checkbox" name="switch" id="style_switch" <?php if (check_style() == "dark") {print("checked");}?>>
+                <label class="styleswitcherlabel" for="style_switch"></label>
+            </div>
         </div>
     </div>
 </footer>
