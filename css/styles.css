@@ -17,6 +17,13 @@
     color: #FF8C00;
 }
 
+.grau {
+    background-color: #EDEDED;
+}
+.text-grau {
+    background-color: #EDEDED;
+}
+
 .kolping-schwarz {
     background-color: #000000;
 }
@@ -98,7 +105,7 @@
     display: block;
     width: 70px;
     height: 30px;
-    background-color: #FF8C00;
+    background-color: #ffffff;
     border-radius: 15px;
     position: relative;
     cursor: pointer;
@@ -127,8 +134,8 @@
 }
 
 .styleswitcher:checked + .styleswitcherlabel {
-    background-color: #FF8C00;
-    box-shadow: 0 0 2px #000000;
+    background-color: #000000;
+    box-shadow: 0 0 2px #ffffff;
 }
 
 
