@@ -16,6 +16,14 @@
     font-weight: 300;
 }
 
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
 .light {
     font-weight: 100;
     font-size: small;
@@ -167,8 +175,4 @@
 .hoverlink:hover {
     transition: 0.7s;
     color: #FF8C00;
-}
-
-ul {
-    list-style-type: none;
 }
