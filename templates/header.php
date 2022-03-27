@@ -26,7 +26,7 @@ require_once("php/functions.php");
 
 <header class="container-fluid sticky-bottom footer px-0 text-black">
     <div class="white" style="height: 70px;">
-        <a class="navbar-brand" href="/"><img src="/favicon.svg"></a>
+        <a class="navbar-brand" href="/"><img src="/favicon.svg" style="height: fit-content;" ></a>
         <div class="container">
             <div>
 
