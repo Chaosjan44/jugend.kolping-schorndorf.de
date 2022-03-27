@@ -1,8 +1,8 @@
 .navbar-icon {
+    background-image: "/favicon.svg";
+    display: block;
     height: 50px;
     width: 50px;
-    src: "/favicon.svg";
-    display: block;
 }
 
 .cbg {

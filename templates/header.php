@@ -26,7 +26,7 @@ require_once("php/functions.php");
 
 <nav class="navbar header-header navbar-expand-lg cbg ctext sticky-top">
     <div class="container-fluid">
-        <a class="navbar-brand" href="/"><img src="/images/blank.svg" class="navbar-icon"></a>
+        <a class="navbar-brand navbar-icon" href="/"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
