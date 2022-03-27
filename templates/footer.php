@@ -12,8 +12,8 @@ $verdate ="24.03.2022";
 
 <footer class="container-fluid sticky-bottom footer py-3 kolping-orange text-white">
     <div class="container">
-        <div class="row">
-            <div class="col">
+        <div class="row justify-content-center">
+            <div class="col-2">
                 <ul>
                     <li>
                         <a>> Start</a>
@@ -26,14 +26,17 @@ $verdate ="24.03.2022";
                     </li>
                 </ul>
             </div>
-            <div class="col">
+            <div class="col-2">
                 <ul>
+                    <li>
+                        <a></a>
+                    </li>
                     <li>
                         <a>> Über uns</a>
                     </li>
                 </ul>
             </div>
-            <div class="col">
+            <div class="col-2">
                 <ul>
                     <li>
                         <a>> Datenschutz</a>
