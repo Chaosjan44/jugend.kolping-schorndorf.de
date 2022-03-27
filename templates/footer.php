@@ -1,15 +1,6 @@
 
 
 
-<?php
-$vernum = "0.0.1";
-# Like this, cause we want the Date the current Version was developed, not the current dates
-$verdate ="24.03.2022";
-#$verdate = date("d.m.Y");
-?>
-
-
-
 <footer class="container-fluid sticky-bottom footer py-3 grau text-black">
     <div class="container">
         <div class="row justify-content-center">
