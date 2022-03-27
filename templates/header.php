@@ -18,15 +18,19 @@ require_once("php/functions.php");
     <link rel="stylesheet"  href="/css/dark.css" disabled>
     <link rel="stylesheet"  href="/css/light.css" disabled>
     <script src="/js/custom.js"></script>
-    <!-- <link rel="icon" type="image/png" href="favicon.png" sizes="1024x1024" /> -->
+    <link rel="icon" type="image/svg" href="favicon.svg" sizes="1024x1024" />
     <!-- <link rel="stylesheet" href="/css/cookiebanner.css"> -->
     <title>Kolping Jugend Schorndorf</title>
 </head>
 <body>
 
-<header class="container-fluid sticky-bottom footer py-3 text-black">
+<header class="container-fluid sticky-bottom footer px-0 text-black">
     <div class="white" style="height: 60px;">
+        <div class="container">
+            <div>
 
+            </div>
+        </div>
     </div>
     <div class="kolping-orange" style="height: 10px;">
 
