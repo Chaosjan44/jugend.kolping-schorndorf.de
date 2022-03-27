@@ -7,7 +7,7 @@ function toggleStyle() {
     setCookie("style", "dark", 365);
   }
   setStyle();
-  setTimeout(() => {  location.reload(); }, 2000);  
+  setTimeout(() => {  location.reload(); }, 800);  
 }
 
 function setStyle() {
