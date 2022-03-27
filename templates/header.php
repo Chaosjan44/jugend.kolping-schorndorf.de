@@ -22,5 +22,14 @@ require_once("php/functions.php");
     <!-- <link rel="stylesheet" href="/css/cookiebanner.css"> -->
     <title>Kolping Jugend Schorndorf</title>
 </head>
-
 <body>
+
+<header class="container-fluid sticky-bottom footer py-3 text-black">
+    <div class="white" style="height: 60px;">
+
+    </div>
+    <div class="kolping-orange" style="height: 10px;">
+
+    </div>
+
+</header>

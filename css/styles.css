@@ -21,6 +21,10 @@
     font-size: small;
 }
 
+.white {
+    background-color: #ffffff;
+}
+
 /* Kolping (Jugend) Farben */
 .kolping-orange {
     background-color: #FF8C00;
