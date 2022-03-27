@@ -21,6 +21,13 @@ $verdate ="24.03.2022";
         <div class="col">
             <ul>
                 <li>
+                    <a>> Datenschutz</a>
+                </li>
+                <li>
+                    <a>> Impressum</a>
+                </li>
+                <li>
+                    <a>> Kontakt</a>
                 </li>
             </ul>
         </div>
