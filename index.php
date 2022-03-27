@@ -15,7 +15,7 @@
                     <img src="/media/jummysoup.jpg" class="d-block w-100" style="height: 450px; object-fit: cover; object-position: 50% 48%;" data-bs-interval="5000">
                 </div>
                 <div class="carousel-item">
-                    <img src="/media/karten1.jpg" class="d-block w-100" style="height: 450px; object-fit: cover; object-position: 50% 44%;" data-bs-interval="5000">
+                    <img src="/media/karten1.jpg" class="d-block w-100" style="height: 450px; object-fit: cover; object-position: 50% 30%;" data-bs-interval="5000">
                 </div>
                 <div class="carousel-item">
                     <img src="/media/karten2.jpg" class="d-block w-100" style="height: 450px; object-fit: cover; object-position: 50% 55%;" data-bs-interval="5000">
