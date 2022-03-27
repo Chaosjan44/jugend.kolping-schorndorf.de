@@ -4,8 +4,8 @@
 <footer class="container-fluid sticky-bottom footer py-3">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-2">
-                <ul>
+            <div class="col-2 text-center">
+                <ul class="px-0">
                     <li>
                         <a href="/" class="hoverlink ctext" style="text-decoration:none">> Start</a>
                     </li>
@@ -17,10 +17,10 @@
                     </li>
                 </ul>
             </div>
-            <div class="col-2">
-                <ul>
+            <div class="col-2 text-center">
+                <ul class="px-0">
                     <li>
-                        <a href="/datenschutz.php" class="hoverlink ctext" style="text-decoration:none">> Datenschutz</a>
+                        <a href="/datenschutz.php" class="hoverlink ctext text-center" style="text-decoration:none">> Datenschutz</a>
                     </li>
                     <li>
                         <a href="/impressum.php" class="hoverlink ctext" style="text-decoration:none">> Impressum</a>
