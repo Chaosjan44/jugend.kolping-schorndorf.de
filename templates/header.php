@@ -32,33 +32,25 @@ require_once("php/functions.php");
             <img src="/favicon<?php if (check_style() == "dark") { print("_dark"); }?>.svg" class="navbar-icon d-inline-block align-text-center pe-2">
             <?php if (!isMobile()) {print("Kolpingjugend Schorndorf");} else {print("KJ Schorndorf");}?>
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="offcanvas offcanvas-end cbg" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-            <div class="offcanvas-header">
-                <h5 class="offcanvas-title ctext" id="offcanvasNavbarLabel">Menü</h5>
-                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-                <ul class="navbar-nav justify-content-start flex-grow-1 pe-3">
+        <div class="collapse navbar-collapse cbg" tabindex="-1" id="navbarSupportedContent">
+            <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link ctext" aria-current="page" href="/termine.php">Termine</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle ctext" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Über uns
-                    </a>
+                    <a class="nav-link dropdown-toggle ctext" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Über uns</a>
                     <ul class="dropdown-menu cbg2" aria-labelledby="offcanvasNavbarDropdown">
-                    <li><a class="dropdown-item ctext" href="/about_us/wir.php">Wir</a></li>
-                    <li><a class="dropdown-item ctext" href="/about_us/aktionen.php">Aktionen</a></li>
+                        <li><a class="dropdown-item ctext" href="/about_us/wir.php">Wir</a></li>
+                        <li><a class="dropdown-item ctext" href="/about_us/aktionen.php">Aktionen</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link ctext" href="#">Angebote</a>
                 </li>
-                </ul>
-            </div>
+            </ul>
         </div>
     </div>
 </nav>
