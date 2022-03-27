@@ -31,7 +31,7 @@
             </div>
         </div>
         <div class="row justify-content-end">
-            <div class="col-4 text-center ctext light">&copy; 2020<br>Kolpingfamilie<br>Schorndorf e.V.</div>
+            <div class="col-4 text-center ctext light">&copy; 2020 Kolpingfamilie Schorndorf e.V.</div>
             <div class="col-4 d-flex justify-content-end">
                 <input onchange="toggleStyle()" class="styleswitcher" type="checkbox" name="switch" id="style_switch">
                 <label class="styleswitcherlabel" for="style_switch"></label>
@@ -67,7 +67,7 @@
             </div>
         </div>
         <div class="row justify-content-end">
-            <div class="col-8 text-center ctext light">&copy; 2020 Kolpingfamilie Schorndorf e.V.</div>
+            <div class="col-8 text-center ctext light">&copy; 2020<br>Kolpingfamilie<br>Schorndorf e.V.</div>
             <div class="col-4 d-flex justify-content-end">
                 <input onchange="toggleStyle()" class="styleswitcher" type="checkbox" name="switch" id="style_switch">
                 <label class="styleswitcherlabel" for="style_switch"></label>
