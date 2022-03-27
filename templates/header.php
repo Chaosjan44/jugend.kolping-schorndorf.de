@@ -21,9 +21,6 @@ require_once("php/functions.php");
     <!-- <link rel="stylesheet" href="/css/cookiebanner.css"> -->
     <title>Kolping Jugend Schorndorf</title>
 </head>
-<?php
-require_once("/js/custom.js");
-?>
 <body>
 
 <nav class="navbar header-header navbar-expand-lg cbg ctext sticky-top">
