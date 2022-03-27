@@ -7,7 +7,7 @@
             <div class="col-2">
                 <ul>
                     <li>
-                        <a href="/index.php" class="text-black" style="text-decoration:none">> Start</a>
+                        <a href="/" class="text-black" style="text-decoration:none">> Start</a>
                     </li>
                     <li>
                         <a href="/termine.php" class="text-black" style="text-decoration:none">> Termine</a>
