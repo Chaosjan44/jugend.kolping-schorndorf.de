@@ -42,26 +42,28 @@
     <footer class="container-fluid sticky-bottom footer py-3">
         <div class="container">
             <div class="row justify-content-center">
-                <ul class="px-0">
-                    <li>
-                        <a href="/" class="hoverlink ctext" style="text-decoration:none">Start</a>
-                    </li>
-                    <li>
-                        <a href="/termine.php" class="hoverlink ctext" style="text-decoration:none">Termine</a>
-                    </li>
-                    <li>
-                        <a href="/angebote.php" class="hoverlink ctext" style="text-decoration:none">Angebote</a>
-                    </li>
-                    <li>
-                        <a href="/datenschutz.php" class="hoverlink ctext text-center" style="text-decoration:none">Datenschutz</a>
-                    </li>
-                    <li>
-                        <a href="/impressum.php" class="hoverlink ctext" style="text-decoration:none">Impressum</a>
-                    </li>
-                    <li>
-                        <a href="/kontakt.php" class="hoverlink ctext" style="text-decoration:none">Kontakt</a>
-                    </li>
-                </ul>
+                <div class="col text-center px-0">
+                    <ul class="px-0">
+                        <li>
+                            <a href="/" class="hoverlink ctext" style="text-decoration:none">Start</a>
+                        </li>
+                        <li>
+                            <a href="/termine.php" class="hoverlink ctext" style="text-decoration:none">Termine</a>
+                        </li>
+                        <li>
+                            <a href="/angebote.php" class="hoverlink ctext" style="text-decoration:none">Angebote</a>
+                        </li>
+                        <li>
+                            <a href="/datenschutz.php" class="hoverlink ctext" style="text-decoration:none">Datenschutz</a>
+                        </li>
+                        <li>
+                            <a href="/impressum.php" class="hoverlink ctext" style="text-decoration:none">Impressum</a>
+                        </li>
+                        <li>
+                            <a href="/kontakt.php" class="hoverlink ctext" style="text-decoration:none">Kontakt</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div class="row justify-content-end">
