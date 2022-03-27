@@ -13,11 +13,12 @@
     scroll-behavior: smooth;
     font-family: "Ubuntu", sans-serif;
     font-size: medium;
-    font-weight: 250;
+    font-weight: 300;
 }
 
 .light {
-    font-weight: 100 !important;
+    font-weight: 100;
+    font-size: small;
 }
 
 /* Kolping (Jugend) Farben */
