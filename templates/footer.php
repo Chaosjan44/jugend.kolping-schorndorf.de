@@ -14,10 +14,24 @@ $verdate ="24.03.2022";
     <div class="container">
         <div class="row">
             <div class="col">
-
+                <ul>
+                    <li>
+                        <a>> Start</a>
+                    </li>
+                    <li>
+                        <a>> Termine</a>
+                    </li>
+                    <li>
+                        <a>> Angebote</a>
+                    </li>
+                </ul>
             </div>
             <div class="col">
-
+                <ul>
+                    <li>
+                        <a>> Über uns</a>
+                    </li>
+                </ul>
             </div>
             <div class="col">
                 <ul>
