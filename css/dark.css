@@ -3,13 +3,13 @@
 }
 
 html, body {
-    background-color: #212529 !important;
+    background-color: #2d3238 !important;
     height: 100%;
     margin: 0;
 }
 
 .footer {
-    background-color: #000000;
+    background-color: #212529;
 }
 
 
@@ -29,7 +29,7 @@ html, body {
 }
 
 .cbg {
-    background-color: #212529 !important;
+    background-color: #2d3238 !important;
 }
 
 .ctext {
