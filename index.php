@@ -32,11 +32,11 @@
         </div>
     </div>
     <div class="container-xxl px-5">
-        <div class="row justify-content-evenly">
-            <div class="col-5">
+        <div class="row gx-5">
+            <div class="col d-flex justify-content-center">
             One of two columns
             </div>
-            <div class="col-5">
+            <div class="col d-flex justify-content-center">
             One of two columns
             </div>
         </div>
