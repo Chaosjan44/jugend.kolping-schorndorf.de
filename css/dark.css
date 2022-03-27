@@ -1,3 +1,21 @@
+* {
+    color: #ffffff;
+}
+
+html, body {
+    background-color: #212529 !important;
+    height: 100%;
+    margin: 0;
+}
+
+.footer {
+    background-color: #000000;
+}
+
+
+
+
+
 .navbar-icon-light {
     display: none;
     height: 50px;
