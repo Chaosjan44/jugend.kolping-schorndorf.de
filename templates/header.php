@@ -53,5 +53,5 @@ require_once("php/functions.php");
             </ul>
         </div>
     </div>
+    <div class="kolping-orange" style="height: 10px;"></div>
 </nav>
-<div class="kolping-orange sticky-top" style="height: 10px;"></div>
