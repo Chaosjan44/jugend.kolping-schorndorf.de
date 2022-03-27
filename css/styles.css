@@ -91,7 +91,7 @@
 .styleswitcher {
     width: 0;
     height: 0;
-    visibility: hidden;
+    /*visibility: hidden;*/
 }
 
 .styleswitcherlabel {

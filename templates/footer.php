@@ -35,7 +35,7 @@ $verdate ="24.03.2022";
         </div>
         <div class="row">
             <span class="text-center">&copy; 2020 Kolpingfamilie Schorndorf e.V.</span>
-            <div class="">
+            <div class="d-flex justify-content-end align-items-center text-end ctext">
                 <input onchange="toggleStyle()" class="styleswitcher" type="checkbox" name="switch" id="style_switch" <?php if (check_style() == "dark") {print("checked");}?>>
                 <label class="styleswitcherlabel" for="style_switch"></label>
             </div>
