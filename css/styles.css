@@ -165,6 +165,7 @@
 }
 
 .hoverlink:hover {
+    transition: 0.5s;
     color: #FF8C00;
 }
 
