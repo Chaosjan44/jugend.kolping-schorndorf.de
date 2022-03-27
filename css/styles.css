@@ -98,12 +98,12 @@
     display: block;
     width: 70px;
     height: 30px;
-    background-color: #dee2e6;
+    background-color: #ffffff;
     border-radius: 15px;
     position: relative;
     cursor: pointer;
     transition: 0.5s;
-    box-shadow: 0 0 2px #212529;
+    box-shadow: 0 0 2px #000000;
 }
 
 .styleswitcherlabel::after {
@@ -115,7 +115,6 @@
     top: 3px;
     left: 5px;
     transition: 0.5s;
-    /* background-color: #000000; */
     background-image: url("/images/light.png");
     background-size: 24px;
 }
@@ -123,14 +122,13 @@
 .styleswitcher:checked + .styleswitcherlabel:after {
     left: calc(100% - 5px);
     transform: translateX(-100%);
-    /* background-color: #ffffff; */
     background-image: url("/images/dark.png");
     background-size: 24px;
 }
 
 .styleswitcher:checked + .styleswitcherlabel {
-    background-color: #212529;
-    box-shadow: 0 0 2px #dee2e6;
+    background-color: #000000;
+    box-shadow: 0 0 2px #ffffff;
 }
 
 
