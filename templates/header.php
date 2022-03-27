@@ -24,7 +24,7 @@ require_once("php/functions.php");
     <!-- <link rel="stylesheet" href="/css/cookiebanner.css"> -->
     <title>Kolpingjugend Schorndorf</title>
 </head>
-<body>
+<body style="padding-right: 0px !important;">
 
 <nav class="navbar header-header navbar-expand-lg navbar-<?php print(check_style());?> cbg ctext sticky-top">
     <div class="container-fluid">
