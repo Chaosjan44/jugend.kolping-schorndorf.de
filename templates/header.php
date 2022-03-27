@@ -24,19 +24,12 @@ require_once("php/functions.php");
 </head>
 <body>
 
-<header class="container-fluid sticky-bottom footer px-0 text-black">
-    <div class="white align-items-center" style="height: 70px;">
-        <a class="navbar-brand align-items-center py-2" href="/">
-            <img src="/favicon.svg" width="60" height="60" >
-        </a>
-        <div class="container">
-            <div>
-
-            </div>
-        </div>
+<nav class="navbar header-header navbar-expand-lg sticky-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/"><img src="/favicon<?php if (check_style() == "dark") {print("_dark");}?>.svg" class="navbar-icon"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
     </div>
-    <div class="kolping-orange" style="height: 10px;">
-
-    </div>
-
-</header>
+    <div class="container-fluid kolping-orange" style="height: 10px;"></div>
+</nav>
