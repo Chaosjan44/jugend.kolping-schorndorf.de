@@ -9,6 +9,7 @@ function toggleStyle() {
     setCookie("style", "dark", 365);
   }
   setStyle();
+  location.reload();
 }
 
 function setStyle() {
