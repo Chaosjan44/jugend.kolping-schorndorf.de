@@ -47,12 +47,12 @@
         <p class="mb-3">
             Die verantwortliche Stelle für die Datenverarbeilung auf dieser Website ist:
         </p>
-        <span class="placeholder col-3"></span>
-        <span class="placeholder col-2"></span>
-        <span class="placeholder col-2"></span>
+        <span class="placeholder col-3"></span><span class="col-9"></span>
+        <span class="placeholder col-2"></span><span class="col-10"></span>
+        <span class="placeholder col-2"></span><span class="col-10"></span>
         <br>
-        <span class="placeholder col-2"></span>
-        <span class="placeholder col-3"></span>
+        <span class="placeholder col-2"></span><span class="col-10"></span>
+        <span class="placeholder col-3"></span><span class="col-9"></span>
     </div>
 </div>
 <?php require_once("templates/footer.php"); ?>
