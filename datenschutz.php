@@ -46,13 +46,58 @@
         <h5 class="mb-1">Hinweis zur verantwortlichen Stelle</h5>
         <p class="mb-3">
             Die verantwortliche Stelle für die Datenverarbeilung auf dieser Website ist:
+            <span class="placeholder col-3"><br>
+            <span class="placeholder col-2"><br>
+            <span class="placeholder col-2"><br>
+            <br>
+            <span class="placeholder col-2"><br>
+            <span class="placeholder col-3"><br>
+            <br>
+            Verantwortliche Stelle ist die natürliche oder juristische Person, 
+            die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z.B.Namen, E-Mail-Adressen o. Ä.) entscheidet.
         </p>
-        <span class="placeholder col-3"></span><span class="col-9"></span>
-        <span class="placeholder col-2"></span><span class="col-10"></span>
-        <span class="placeholder col-2"></span><span class="col-10"></span>
-        <br>
-        <span class="placeholder col-2"></span><span class="col-10"></span>
-        <span class="placeholder col-3"></span><span class="col-9"></span>
+        <h5 class="mb-1">Widerruf lhrer Einwilligung zur Datenverarbeitung</h5>
+        <p class="mb-3">
+            Viele Datenverarbeitungsvorgänge sind nur mit lhrer ausdrücklichen Einwilligung möglich. 
+            Sie können eine bereits erteilte Einwilligung jedezeit widerrufen. Dazu reicht eine formlose Mitteilung per E-Mail an uns. 
+            Die Rechtmäßigkeit der bis zum Widerruf erfolgten Datenverarbeitung bleibt vom Widerruf unberührt.
+        </p>
+        <h5 class="mb-1">Beschwerderecht bei der zuständigen Aufsichtsbehörde</h5>
+        <p class="mb-3">
+            lm Falle datenschutzrechtlicher Verstöße steht dem Betroffenen ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu. 
+            Zuständige Aufsichtsbehörde in datenschutzrechtlichen Fragen ist der Landesdatenschutzbeauftragte des Bundeslandes, in dem unser Unternehmen seinen Sitz hat. 
+            Eine Liste der Datenschutzbeauftragten sowie deren Kontaktdaten können folgendem Link entnommen werden:<br>
+            <a href="https://www.bfdi.bund.de/DE/Infothek/Anschriften_Links/anschriften_links-node.html" class="text-kolping-orange">https://www.bfdi.bund.de/DE/Infothek/Anschriften_Links/anschriften_links-node.html</a>.
+        </p>
+        <h5 class="mb-1">Recht auf Datenübertragbarkeit</h5>
+        <p class="mb-3">
+            Sie haben das Recht, Daten, die wir auf Grundlage lhrer Einwilligung oder in Erfüllung eines Vertrags automatisiert verarbeiten, 
+            an sich oder an einen Dritten in einem gängigen, maschinenlesbaren Format aushändigen zu lassen, 
+            Sofern Sie die direkte Übertragung der Daten an einen anderen Verantwortlichen verlangen, erfolgt dies nur, soweit es technisch machbar ist.
+        </p>
+        <h5 class="mb-1">Auskunft , Sperrung, Löschung</h5>
+        <p class="mb-3">
+            Sie haben im Rahmen der geltenden gesetzlichen Bestimmungen jedezeit das Becht auf unentgeltliche Auskunft über lhre gespeicherten personenbezogenen Daten, 
+            deren Herkunft und Empfänger und den Zweck der Datenverarbeitung und ggf. ein Recht auf Berichtigung, Sperrung oder Löschung dieser Daten. 
+            Hierzu sowie zu weiteren Fragen zum Thema personenbezogene Daten können Sie sich jederzeit unter der im <a href="/impressum.php" class="text-kolping-orange">lmpressum</a> angegebenen Adresse an uns wenden.
+        </p>
+
+        <h3>3. Datenerfassung auf unserer Website</h3>
+        <h5 class="mb-1">Server-Log-Dateien</h5>
+        <p class="mb-3">
+            Der Provider der Seiten erhebt und speichert automatisch Informationen in so genannten Server-Log-Dateien, die lhr Browser automatisch an uns übermittelt. Dies sind:<br>
+            <br>
+            <li>Browsertyp und Browserversion</li>
+            <li>Verwendetes Betriebssystem</li>
+            <li>Referrer URL</li>
+            <li>Hostname des zugreifenden Rechners</li>
+            <li>Uhzeit der Serveranfrage</li>
+            <li>lP-Adresse</li>
+            <br>
+            <br>
+            Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen.
+        </p>
+        Grundlage für die Datenverarbeitung ist Art. 6 Abs. 1 lit, f DSGVO, der die Verarbeitung von Daten zur Erfüllung eines Vertrags oder vorvertraglicher Maßnahmen gestattet.
     </div>
 </div>
 <?php require_once("templates/footer.php"); ?>
