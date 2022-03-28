@@ -4,6 +4,7 @@ $stmt = $pdo->prepare('SELECT * ,(SELECT source From product_images WHERE blog_i
 $stmt->execute();
 
 $blogentrys = $stmt->fetchAll(PDO::FETCH_ASSOC);
+print_r($blogentrys);
 ?>
 <script src="/js/slider.js"></script>
 
