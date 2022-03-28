@@ -53,7 +53,6 @@
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body ctext">
-                                        <img src="..." class="card-img-top" alt="...">
                                         <h3 class="card-title text-center">Verbandsspiel 2021/2022</h3>
                                         <p>
                                             Wir machen beim Verbandsspiel 2021/2022 mit.<br>
