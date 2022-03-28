@@ -1,6 +1,6 @@
 <?php require_once("templates/header.php"); ?>
 <div class="container py-3">
-    <div>
+    <div style="min-height: 80vh;">
         <h1 class="display-3 text-center text-kolping-orange">Impressum</h1>
         <h5 class="mb-1">Angaben gemäß § 5 Telemediengesetz (TMG):</h5>
         <p class="mb-3">
