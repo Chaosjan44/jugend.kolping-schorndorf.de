@@ -42,7 +42,7 @@
             </div>
             <div class="col d-flex justify-content-center">
                 <h2 class="row display-6 ctext text-center">Nachrichten</h2>
-                <div class="row">
+                <div class="row d-flex justify-content-center">
                     <?php ?>
                     <div class="card cbg2">
                         <div class="card-body ctext">
