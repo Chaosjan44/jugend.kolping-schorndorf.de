@@ -1,0 +1,28 @@
+* {
+    color: #000000;
+}
+
+html, body {
+    background-color: #ffffff !important;
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+}
+
+.footer {
+    background-color: #EDEDED;
+}
+
+.cbg {
+    background-color: #ffffff;
+}
+
+.cbg2 {
+    background-color: #EDEDED !important;
+}
+
+.ctext {
+    color: #000000;
+}
