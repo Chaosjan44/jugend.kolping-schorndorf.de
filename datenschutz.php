@@ -46,12 +46,8 @@
         <h5 class="mb-1">Hinweis zur verantwortlichen Stelle</h5>
         <p class="mb-3">
             Die verantwortliche Stelle für die Datenverarbeilung auf dieser Website ist:
-            <span class="placeholder col-3"><br>
-            <span class="placeholder col-2"><br>
-            <span class="placeholder col-2"><br>
             <br>
-            <span class="placeholder col-2"><br>
-            <span class="placeholder col-3"><br>
+            <p class="placeholder-glow"><span class="placeholder col-7"></span></p>
             <br>
             Verantwortliche Stelle ist die natürliche oder juristische Person, 
             die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z.B.Namen, E-Mail-Adressen o. Ä.) entscheidet.
