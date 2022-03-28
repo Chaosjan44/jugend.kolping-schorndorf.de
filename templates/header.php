@@ -16,8 +16,8 @@ require_once("php/functions.php");
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <script src="/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="/css/dark.css?v=<?php print(date("Y.m.d.H.i.s")); ?>" disabled>
-    <link rel="stylesheet" href="/css/light.css?v=<?php print(date("Y.m.d.H.i.s")); ?>" disabled>
+    <link rel="stylesheet" href="/css/dark.css" disabled>
+    <link rel="stylesheet" href="/css/light.css" disabled>
     <script src="/js/custom.js"></script>
     <link rel="icon" type="image/svg" href="favicon.svg" sizes="1024x1024" />
     <link rel="stylesheet" href="/css/bootstrap-icons.css">
