@@ -61,7 +61,7 @@ $blogentrys = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                     <div class="col-md-8">
                                         <div class="card-body ctext">
                                             <h3 class="card-title"><?=$blogentry['name']?></h3>
-                                            <p><?=$blogentry['prev_text']?></p>
+                                            <?=$blogentry['prev_text']?>
                                         </div>
                                     </div>
                                 </div>
