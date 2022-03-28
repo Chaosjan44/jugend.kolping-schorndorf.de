@@ -36,7 +36,7 @@
             <h1 class="display-4 text-center">Kolpingjugend Schorndorf</h1>
             <span class="text-center text-size-larger">Die Kolpingjugend Schorndorf ist eine Gruppierung der <a href="https://kolping-schorndorf.de/" class="hoverlink text-size-larger ctext">Kolpingsfamilie Schorndorf</a>,<br>wir treffen uns jeden 2. Samstag zu Gruppenstunden</span>
         </div>
-        <div class="row gx-5">
+        <div class="row gx-5 pt-3">
             <div class="col d-flex justify-content-center">
                 <h2 class="ctext"></h2>
             </div>
