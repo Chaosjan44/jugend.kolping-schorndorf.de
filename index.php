@@ -41,8 +41,8 @@
                 <h2 class="display-6 ctext text-center">Termine</h2>
             </div>
             <div class="col d-flex justify-content-center">
-                <h2 class="display-6 ctext text-center">Nachrichten</h2>
-                <div>
+                <h2 class="row display-6 ctext text-center">Nachrichten</h2>
+                <div class="row">
                     <?php ?>
                     <div class="card cbg2">
                         <div class="card-body ctext">
