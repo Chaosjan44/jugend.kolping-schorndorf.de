@@ -1,4 +1,10 @@
-<?php require_once("templates/header.php"); ?>
+<?php require_once("templates/header.php"); 
+
+$stmt = $pdo->prepare('SELECT * ,(SELECT source From product_images WHERE blog_images_id=blog_entys_id AND prev_img=1) AS image FROM blog_entrys where visible = 1 ORDER BY created_at desc');
+$stmt->execute();
+
+$blogentrys = $stmt->fetchAll(PDO::FETCH_ASSOC);
+?>
 <script src="/js/slider.js"></script>
 
 <div class="container-fluid px-0 pt-0 pb-3">
@@ -44,24 +50,21 @@
                 <div class="row row-cols-1">
                     <h2 class="col display-6 ctext text-center">Nachrichten</h2>
                     <div class="d-flex justify-content-center">
-                        <?php ?>
-                        <div class="col card cbg2">
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    <img src="/media/Verbandsspiellogo_mit_KJunterbunt_2021_transparent.png" class="img-fluid rounded-start">
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body ctext">
-                                        <h3 class="card-title">Verbandsspiel 2021/2022</h3>
-                                        <p>
-                                            Wir machen beim Verbandsspiel 2021/2022 mit.<br>
-                                            Aktuell sind wir Platz 2. das Ziel ist natürlich der 1. Platz
-                                        </p>
+                        <?php foreach ($blogentrys as $blogentry): ?>
+                            <div class="col card cbg2">
+                                <div class="row g-0">
+                                    <div class="col-md-4">
+                                        <img src="<?=$blogentry['source']?>" class="img-fluid rounded-start" alt="<?=$blogentry['alt']?>">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body ctext">
+                                            <h3 class="card-title"><?=$blogentry['name']?></h3>
+                                            <p><?=$blogentry['prev_text']?></p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <?php ?>
+                        <?php endforeach; ?>
                     </div>
                 </div>
             </div>
