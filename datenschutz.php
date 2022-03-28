@@ -92,8 +92,9 @@
             <br>
             <br>
             Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen.
+            <br>
+            Grundlage für die Datenverarbeitung ist Art. 6 Abs. 1 lit, f DSGVO, der die Verarbeitung von Daten zur Erfüllung eines Vertrags oder vorvertraglicher Maßnahmen gestattet.
         </p>
-        Grundlage für die Datenverarbeitung ist Art. 6 Abs. 1 lit, f DSGVO, der die Verarbeitung von Daten zur Erfüllung eines Vertrags oder vorvertraglicher Maßnahmen gestattet.
     </div>
 </div>
 <?php require_once("templates/footer.php"); ?>
