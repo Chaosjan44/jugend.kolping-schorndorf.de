@@ -38,7 +38,7 @@
         </div>
         <div class="row gx-5 pt-3">
             <div class="col d-flex justify-content-center">
-                <h2 class="ctext"></h2>
+                <h2 class="display-6 ctext text-center">Termine</h2>
             </div>
             <div class="col d-flex justify-content-center">
                 <h2 class="display-6 ctext text-center">Nachrichten</h2>
