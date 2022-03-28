@@ -52,7 +52,7 @@
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body ctext">
-                                        <h3 class="card-title text-center">Verbandsspiel 2021/2022</h3>
+                                        <h3 class="card-title">Verbandsspiel 2021/2022</h3>
                                         <p>
                                             Wir machen beim Verbandsspiel 2021/2022 mit.<br>
                                             Aktuell sind wir Platz 2. das Ziel ist natürlich der 1. Platz
@@ -61,6 +61,7 @@
                                 </div>
                             </div>
                         </div>
+                        <?php ?>
                     </div>
                 </div>
             </div>
