@@ -43,7 +43,16 @@
             <div class="col d-flex justify-content-center">
                 <h2 class="display-6 ctext text-center">Nachrichten</h2>
                 <div>
-
+                    <?php ?>
+                    <div class="card cbg2">
+                        <div class="card-body ctext">
+                            <h2 class="card-title">Verbandsspiel 2021/2022</h2>
+                            <p>
+                                Wir machen beim Verbandsspiel 2021/2022 mit.<br>
+                                Aktuell sind wir Platz 2. das Ziel ist natürlich der 1. Platz
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
