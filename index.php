@@ -46,12 +46,20 @@
                     <div class="d-flex justify-content-center">
                         <?php ?>
                         <div class="col card cbg2">
-                            <div class="card-body ctext">
-                                <h2 class="card-title">Verbandsspiel 2021/2022</h2>
-                                <p>
-                                    Wir machen beim Verbandsspiel 2021/2022 mit.<br>
-                                    Aktuell sind wir Platz 2. das Ziel ist natürlich der 1. Platz
-                                </p>
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="..." class="img-fluid rounded-start" alt="...">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body ctext">
+                                        <img src="..." class="card-img-top" alt="...">
+                                        <h3 class="card-title text-center">Verbandsspiel 2021/2022</h3>
+                                        <p>
+                                            Wir machen beim Verbandsspiel 2021/2022 mit.<br>
+                                            Aktuell sind wir Platz 2. das Ziel ist natürlich der 1. Platz
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
