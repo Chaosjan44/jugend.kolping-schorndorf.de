@@ -48,7 +48,8 @@
                         <div class="col card cbg2">
                             <div class="row g-0">
                                 <div class="col-md-4">
-                                    <img src="..." class="img-fluid rounded-start" alt="...">
+                                    <rect width="100%" height="100%" fill="#868e96"></rect>
+                                    <!-- <img src="..." class="img-fluid rounded-start" alt="..."> -->
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body ctext">
