@@ -203,7 +203,7 @@ ul {
 
 .header-header {
     /* height: 6vh; */
-    border-bottom: 10px #FF8C00;
+    border-bottom: 10px solid #FF8C00;
     display: block;
 }
 
