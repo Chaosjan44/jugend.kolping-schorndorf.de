@@ -1,6 +1,6 @@
 <?php require_once("templates/header.php"); 
 
-$stmt = $pdo->prepare('SELECT * ,(SELECT source From blog_images WHERE blog_images_id=blog_entrys_id AND prev_img=1) AS image FROM blog_entrys where visible = 1 ORDER BY created_at desc');
+$stmt = $pdo->prepare('SELECT * ,(SELECT source From blog_images WHERE blog_images_id=blog_entrys_id AND prev_img=1) AS source FROM blog_entrys where visible = 1 ORDER BY created_at desc');
 $stmt->execute();
 
 $blogentrys = $stmt->fetchAll(PDO::FETCH_ASSOC);
