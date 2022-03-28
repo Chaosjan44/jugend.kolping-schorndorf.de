@@ -201,7 +201,7 @@ ul {
     box-shadow: 0 0 2px #ffffff;
 }
 
-nav {
+.header-header {
     /* height: 6vh; */
     border-bottom: 10px #FF8C00;
     display: block;
