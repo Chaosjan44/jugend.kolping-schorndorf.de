@@ -54,4 +54,4 @@ require_once("php/functions.php");
         </div>
     </div>
 </nav>
-<div class="kolping-orange" style="height: 10px; position: sticky;"></div>
+<!-- <div class="kolping-orange" style="height: 10px; position: sticky;"></div> -->

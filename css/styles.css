@@ -201,6 +201,12 @@ ul {
     box-shadow: 0 0 2px #ffffff;
 }
 
+nav {
+    /* height: 6vh; */
+    border-bottom: 10px #FF8C00;
+    display: block;
+}
+
 .nav-link {
     font-size: 1.3rem;
 }
