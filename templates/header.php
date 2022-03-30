@@ -1,6 +1,5 @@
 <?php
 require_once("php/functions.php");
-
 ?>
 
 
@@ -30,7 +29,7 @@ require_once("php/functions.php");
     <div class="container-fluid">
         <a class="navbar-brand" href="/">
             <img src="/favicon<?php if (check_style() == "dark") { print("_dark"); }?>.svg" class="navbar-icon d-inline-block align-text-center pe-2">
-            <?php if (!isMobile()) {print("Kolpingjugend Schorndorf");} else {print("KJ Schorndorf");}?>
+            <?php if (!isMobile()) {print("Kolpingjugend<br>Schorndorf");} else {print("KJ Schorndorf");}?>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -48,10 +47,12 @@ require_once("php/functions.php");
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link ctext" href="#">Angebote</a>
+                    <a class="nav-link ctext" href="/angebote.php">Angebote</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link ctext" href="/blog.php">Nachrichten/Blog</a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
-<!-- <div class="kolping-orange" style="height: 10px; position: sticky;"></div> -->
