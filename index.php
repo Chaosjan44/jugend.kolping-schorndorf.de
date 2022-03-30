@@ -13,19 +13,19 @@ $blogentrys = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <div id="carouselExampleFade" class="carousel <?php if (check_style() == "dark") { print("carousel-dark "); }?>slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="/media/wirn.jpg" class="d-block w-100" style="height: 450px; object-fit: cover; object-position: 50% 40%;" data-bs-interval="5000">
+                    <img src="/media/wirn.jpg" class="d-block w-100" style="height: 40vh; object-fit: cover; object-position: 50% 40%;" data-bs-interval="5000">
                 </div>
                 <div class="carousel-item">
-                    <img src="/media/Vorgarten.jpg" class="d-block w-100" style="height: 450px; object-fit: cover; object-position: 50% 38%;" data-bs-interval="5000">
+                    <img src="/media/Vorgarten.jpg" class="d-block w-100" style="height: 40vh; object-fit: cover; object-position: 50% 38%;" data-bs-interval="5000">
                 </div>
                 <div class="carousel-item">
-                    <img src="/media/jummysoup.jpg" class="d-block w-100" style="height: 450px; object-fit: cover; object-position: 50% 48%;" data-bs-interval="5000">
+                    <img src="/media/jummysoup.jpg" class="d-block w-100" style="height: 40vh; object-fit: cover; object-position: 50% 48%;" data-bs-interval="5000">
                 </div>
                 <div class="carousel-item">
-                    <img src="/media/karten1.jpg" class="d-block w-100" style="height: 450px; object-fit: cover; object-position: 50% 22%;" data-bs-interval="5000">
+                    <img src="/media/karten1.jpg" class="d-block w-100" style="height: 40vh; object-fit: cover; object-position: 50% 22%;" data-bs-interval="5000">
                 </div>
                 <div class="carousel-item">
-                    <img src="/media/karten2.jpg" class="d-block w-100" style="height: 450px; object-fit: cover; object-position: 50% 65%;" data-bs-interval="5000">
+                    <img src="/media/karten2.jpg" class="d-block w-100" style="height: 40vh; object-fit: cover; object-position: 50% 65%;" data-bs-interval="5000">
                 </div>
             </div>
             <button class="carousel-control-prev justify-content-start px-3" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
