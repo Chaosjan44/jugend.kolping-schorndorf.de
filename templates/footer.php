@@ -18,10 +18,10 @@
                 <div class="col-2 text-center">
                     <ul class="px-0">
                         <li>
-                            <a href="/impressum.php" class="hoverlink ctext">Impressum</a>
+                            <a href="/disclaimer.php" class="hoverlink ctext">Disclaimer</a>
                         </li>
                         <li>
-                            <a href="/disclaimer.php" class="hoverlink ctext">Disclaimer</a>
+                            <a href="/impressum.php" class="hoverlink ctext">Impressum</a> 
                         </li>
                         <li>
                             <a href="/datenschutz.php" class="hoverlink ctext">Datenschutz</a>
@@ -60,7 +60,7 @@
                             <a href="/disclaimer.php" class="hoverlink ctext">Disclaimer</a>
                         </li>
                         <li>
-                            <a href="/impressum.php" class="hoverlink ctext">Impressum</a>
+                            <a href="/impressum.php" class="hoverlink ctext">Impressum</a> 
                         </li>
                     </ul>
                 </div>
