@@ -38,3 +38,12 @@ html, body {
 .ctext {
     color: #000000 !important;
 }
+
+.hctext {
+    color: #000000 !important;
+}
+
+.hctext:hover {
+    transition: 0.7s;
+    color: #FF8C00;
+}
