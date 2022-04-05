@@ -11,6 +11,12 @@ html, body {
     overflow-x: hidden; 
 }
 
+.navbar-icon_light {
+    display: none;
+    height: 50px;
+    width: 50px;
+}
+
 .navbar-icon_dark {
     display: block;
     height: 50px;
