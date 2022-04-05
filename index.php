@@ -6,8 +6,6 @@ $stmt->execute();
 $blogentrys = $stmt->fetchAll(PDO::FETCH_ASSOC);
 #print_r($blogentrys);
 ?>
-<script src="/js/slider.js"></script>
-
 <div class="container-fluid px-0 pt-0 pb-3">
     <div class="mb-3">
         <div id="carouselExampleFade" class="carousel <?php if (check_style() == "dark") { print("carousel-dark "); }?>slide carousel-fade" data-bs-ride="carousel">
