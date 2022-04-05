@@ -28,7 +28,7 @@ html, body {
 }
 
 .cbg {
-    background-color: #ffffff;
+    background-color: #ffffff !important;
 }
 
 .cbg2 {
@@ -36,5 +36,5 @@ html, body {
 }
 
 .ctext {
-    color: #000000;
+    color: #000000 !important;
 }
