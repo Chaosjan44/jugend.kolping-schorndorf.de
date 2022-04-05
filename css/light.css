@@ -17,12 +17,6 @@ html, body {
     width: 50px;
 }
 
-.navbar-icon_dark {
-    display: none;
-    height: 50px;
-    width: 50px;
-}
-
 .footer {
     background-color: #EDEDED;
 }
