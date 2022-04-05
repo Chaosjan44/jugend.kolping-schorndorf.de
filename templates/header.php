@@ -31,7 +31,7 @@ require_once("php/functions.php");
             <img src="/favicon.svg" class="navbar-icon_light <?php if (!isMobile()): print("align-text-bottom"); else: print("align-text-center"); endif;?> pe-2">
             <img src="/favicon_dark.svg" class="navbar-icon_dark <?php if (!isMobile()): print("align-text-bottom"); else: print("align-text-center"); endif;?> pe-2">
             <?php if (isMobile()): ?>
-                "<span class="d-inline-block">KJ Schorndorf"</span> 
+                <span class="d-inline-block">KJ Schorndorf</span> 
             <?php else:?>
                 <span class="d-inline-block">Kolpingjugend<br>Schorndorf</span>
             <?php endif; ?>
