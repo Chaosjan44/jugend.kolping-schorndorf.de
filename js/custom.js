@@ -17,6 +17,7 @@ function setStyle() {
     document.querySelectorAll("link[href='/css/light.css']")[0].disabled = true;
   } else {
     setCookie("style", "light", 365);
+    document.getElementById('style_switch').checked = false;
     document.querySelectorAll("link[href='/css/dark.css']")[0].disabled = true;
     document.querySelectorAll("link[href='/css/light.css']")[0].disabled = false;
   }
