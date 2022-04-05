@@ -12,7 +12,7 @@ html, body {
 }
 
 .navbar-icon_light {
-    display: block;
+    display: inline-block;
     height: 50px;
     width: 50px;
 }

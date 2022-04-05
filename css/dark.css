@@ -18,7 +18,7 @@ html, body {
 }
 
 .navbar-icon_dark {
-    display: block;
+    display: inline-block;
     height: 50px;
     width: 50px;
 }
