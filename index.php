@@ -51,19 +51,20 @@ $blogentrys = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <div class="col d-flex justify-content-center">
                         <div class="row row-cols-1">
                         <?php foreach ($blogentrys as $blogentry): ?>
-                            <div class="col card cbg2 mb-3">
-                                <div class="row g-0">
-                                    <div class="col-md-4">
-                                        <img src="<?=$blogentry['source']?>" class="img-fluid rounded-start" alt="<?=$blogentry['alt']?>">
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="card-body ctext">
-                                            <h3 class="card-title"><?=$blogentry['name']?></h3>
-                                            <?=$blogentry['prev_text']?>
+                                <div class="col card cbg2 mb-3">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img src="<?=$blogentry['source']?>" class="img-fluid rounded-start" alt="<?=$blogentry['alt']?>">
                                         </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body ctext">
+                                                <h3 class="card-title"><?=$blogentry['name']?></h3>
+                                                <?=$blogentry['prev_text']?>
+                                            </div>
+                                        </div>
+                                        <a href="/blog.php?id=<?=$blogentry['blog_entrys_id']?>" class="stretched-link"></a>
                                     </div>
                                 </div>
-                            </div>
                         <?php endforeach; ?>
                         </div>
                     </div>
