@@ -4,6 +4,7 @@ require_once("php/functions.php");
 if (!isset($_GET["id"])) {
     header("location: blogs.php");
 }
+error_log($_GET["id"]);
 
 $stmt = $pdo->prepare('SELECT * FROM blog_entrys where id = ?');
 // bindValue will allow us to use integer in the SQL statement, we need to use for LIMIT
