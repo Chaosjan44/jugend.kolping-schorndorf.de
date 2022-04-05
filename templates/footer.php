@@ -86,9 +86,6 @@ $crdate = "2020";
     </footer>
 <?php endif; ?>
 
-
-
-<!-- Bootstrap JS Script -->
 <script src="/js/custom.js"></script>
 </body>
 </html>
