@@ -11,13 +11,14 @@ $stmt = $pdo->prepare('SELECT * FROM blog_entrys where id = ?');
 $stmt->bindValue(1, $_GET["id"], PDO::PARAM_INT);
 $stmt->execute();
 if ($stmt->rowCount() != 1) {
+    error_log($stmt->rowCount());
     header("location: 404.php");
 }
 
-$product = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$entry = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-$stmt = $pdo->prepare('SELECT * FROM blog_entrys where blog_entrys_id = ?');
-$stmt->bindValue(1, $product[0]['id'], PDO::PARAM_INT);
+$stmt = $pdo->prepare('SELECT * FROM blog_images where blog_entrys_id = ?');
+$stmt->bindValue(1, $entry[0]['id'], PDO::PARAM_INT);
 $stmt->execute();
 $images = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
