@@ -12,7 +12,7 @@ $stmt->bindValue(1, $_GET["id"], PDO::PARAM_INT);
 $stmt->execute();
 if ($stmt->rowCount() != 1) {
     error_log($stmt->rowCount());
-    header("location: 404.php");
+    header("location: blogs.php");
 }
 
 $entry = $stmt->fetchAll(PDO::FETCH_ASSOC);
