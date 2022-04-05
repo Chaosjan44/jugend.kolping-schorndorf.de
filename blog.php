@@ -3,6 +3,7 @@ require_once("php/functions.php");
 
 if (!isset($_GET["id"])) {
     header("location: blogs.php");
+    exit;
 }
 error_log($_GET["id"]);
 
@@ -13,6 +14,7 @@ $stmt->execute();
 if ($stmt->rowCount() != 1) {
     error_log($stmt->rowCount());
     header("location: blogs.php");
+    exit;
 }
 
 $entry = $stmt->fetchAll(PDO::FETCH_ASSOC);
