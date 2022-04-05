@@ -44,6 +44,6 @@ html, body {
 }
 
 .hctext:hover {
-    transition: 0.7s;
-    color: #FF8C00;
+    transition: 0.7s !important;
+    color: #FF8C00 !important;
 }
