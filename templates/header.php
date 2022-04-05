@@ -32,9 +32,9 @@ require_once("php/functions.php");
             <img src="/favicon_dark.svg" class="navbar-icon_dark <?php if (!isMobile()): print("align-text-bottom"); else: print("align-text-center"); endif;?> pe-2">
             <?php if (isMobile()): ?>
                 "<span class="d-inline-block">KJ Schorndorf"</span> 
-                <?php else:?>
+            <?php else:?>
                 <span class="d-inline-block">Kolpingjugend<br>Schorndorf</span>
-                <?php endif; ?>
+            <?php endif; ?>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
