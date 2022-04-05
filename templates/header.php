@@ -28,7 +28,8 @@ require_once("php/functions.php");
 <nav class="navbar header-header navbar-expand-lg navbar-<?php print(check_style());?> cbg ctext sticky-top">
     <div class="container-fluid">
         <a class="navbar-brand" href="/">
-            <img src="/favicon<?php if (check_style() == "dark") { print("_dark"); }?>.svg" class="navbar-icon d-inline-block align-text-bottom pe-2">
+            <img src="/favicon.svg" class="navbar-icon_light d-inline-block align-text-bottom pe-2" style="display: none;">
+            <img src="/favicon_dark.svg" class="navbar-icon_dark d-inline-block align-text-bottom pe-2" style="display: none;">
             <?php if (isMobile()): print("KJ Schorndorf"); else:?>
                 <span class="d-inline-block">Kolpingjugend<br>Schorndorf</span>
                 <?php endif; ?>
