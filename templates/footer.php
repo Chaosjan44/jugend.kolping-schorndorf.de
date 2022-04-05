@@ -1,3 +1,13 @@
+<?php 
+$crdate = "2020";
+
+
+
+
+?>
+
+
+
 <?php if (!isMobile()): ?>
     <footer class="container-fluid sticky-bottom footer py-3">
         <div class="container">
@@ -31,7 +41,7 @@
             </div>
         </div>
         <div class="row justify-content-end align-items-center">
-            <div class="col-4 text-center ctext light">&copy; 2020 Kolpingfamilie Schorndorf e.V.</div>
+            <div class="col-4 text-center ctext light">&copy; <?=$crdate?> Kolpingfamilie Schorndorf e.V.</div>
             <div class="col-4 d-flex justify-content-end">
                 <input onchange="toggleStyle()" class="styleswitcher" type="checkbox" name="switch" id="style_switch" <?php if (check_style() == "dark"): print("checked"); endif; ?> >
                 <label class="styleswitcherlabel" for="style_switch"></label>
@@ -67,9 +77,9 @@
             </div>
         </div>
         <div class="row justify-content-end align-items-center">
-            <div class="col-4 text-center ctext light">&copy; 2020<br>Kolpingfamilie<br>Schorndorf e.V.</div>
+            <div class="col-4 text-center ctext light">&copy; <?=$crdate?><br>Kolpingfamilie<br>Schorndorf e.V.</div>
             <div class="col-4 d-flex justify-content-end">
-                <input onchange="toggleStyle()" class="styleswitcher" type="checkbox" name="switch" id="style_switch">
+            <input onchange="toggleStyle()" class="styleswitcher" type="checkbox" name="switch" id="style_switch" <?php if (check_style() == "dark"): print("checked"); endif; ?> >
                 <label class="styleswitcherlabel" for="style_switch"></label>
             </div>
         </div>
