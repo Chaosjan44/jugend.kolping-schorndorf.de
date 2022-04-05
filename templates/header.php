@@ -45,7 +45,6 @@ require_once("php/functions.php");
                     <a class="nav-link dropdown-toggle ctext" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Über uns</a>
                     <ul class="dropdown-menu cbg2" aria-labelledby="offcanvasNavbarDropdown">
                         <li><a class="dropdown-item ctext" href="/about_us/wir.php">Wir</a></li>
-                        <li><a class="dropdown-item ctext" href="/about_us/aktionen.php">Aktionen</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
