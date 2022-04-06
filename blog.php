@@ -41,7 +41,7 @@ require("templates/header.php");
                         <?php if($images == null):?>
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src="images/404_<?=check_style();?>.gif" class="img-fluid rounded" alt="<?=$entry[0]['name']?>">
+                                    <img src="images/404_<?=check_style();?>.gif" class="img-fluid rounded" alt="No IMG Found">
                                 </div>
                             </div>
                         <?php elseif (count($images) == 1):?>
