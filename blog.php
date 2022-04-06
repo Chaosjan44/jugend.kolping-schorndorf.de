@@ -17,17 +17,16 @@ if ($stmt->rowCount() != 1) {
 }
 
 $entry = $stmt->fetchAll(PDO::FETCH_ASSOC);
-error_log(print_r($entry,true));
 
 $stmt = $pdo->prepare('SELECT * FROM blog_images where blog_entrys_id = ?');
-$stmt->bindValue(1, $entry[0]['id'], PDO::PARAM_INT);
+$stmt->bindValue(1, $entry[0]['blog_entrys_id'], PDO::PARAM_INT);
 $stmt->execute();
 $images = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
 require("templates/header.php");
 ?>
-<div class="container-xxl" style="min-height: 80vh;">
+<div class="container-xxl py-3" style="min-height: 80vh;">
     <div class="row ctext">
         <h1 class="display-4 text-center mb-3 text-kolping-orange"><?=$entry[0]["name"]?></h1>
     </div>
