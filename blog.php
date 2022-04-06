@@ -17,7 +17,7 @@ if ($stmt->rowCount() != 1) {
 }
 
 $entry = $stmt->fetchAll(PDO::FETCH_ASSOC);
-error_log($entry);
+error_log(print_r($entry,true));
 
 $stmt = $pdo->prepare('SELECT * FROM blog_images where blog_entrys_id = ?');
 $stmt->bindValue(1, $entry['id'], PDO::PARAM_INT);
