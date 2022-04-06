@@ -20,7 +20,7 @@ $entry = $stmt->fetchAll(PDO::FETCH_ASSOC);
 error_log(print_r($entry,true));
 
 $stmt = $pdo->prepare('SELECT * FROM blog_images where blog_entrys_id = ?');
-$stmt->bindValue(1, $entry['id'], PDO::PARAM_INT);
+$stmt->bindValue(1, $entry[0]['id'], PDO::PARAM_INT);
 $stmt->execute();
 $images = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -29,7 +29,7 @@ require("templates/header.php");
 ?>
 <div class="container-xxl" style="min-height: 80vh;">
     <div class="row ctext">
-        <h1 class="display-4 text-center mb-3 text-kolping-orange"><?=$entry["name"]?></h1>
+        <h1 class="display-4 text-center mb-3 text-kolping-orange"><?=$entry[0]["name"]?></h1>
     </div>
     <div class="row gx-5 pt-3">
         <div class="card cbg py-2 px-2 mx-2">
@@ -45,11 +45,11 @@ require("templates/header.php");
                         <div class="carousel-inner">
                             <?php foreach ($images as $image): { ?>
                                 <div class="carousel-item active">
-                                    <img src="<?=$image['source']?>" class="img-fluid rounded" alt="<?=$entry['name']?>">
+                                    <img src="<?=$image['source']?>" class="img-fluid rounded" alt="<?=$image['alt']?>">
                                 </div>
                             <?php } endforeach; ?>
                         </div>
-                    <?php elseif (count($images) != 1):?>
+                    <?php elseif (count($images) > 1):?>
                         <div class="carousel-indicators">
                             <?php $i = 0; foreach ($images as $image) {
                                 if ($i == 0) {
@@ -63,18 +63,16 @@ require("templates/header.php");
                         </div>
                         <div class="carousel-inner">
                             <?php $i = 1; foreach ($images as $image) {
-                                if ($i == 1) {
-                                    print('<div class="carousel-item active" data-bs-interval="10000">');
-                                        print('<img src="product_img/'.$image['img'].'" class="img-fluid rounded" alt="'.$entry[0]['name'].'">');
-                                    print('</div>');
-                                }
-                                else {
-                                    print('<div class="carousel-item" data-bs-interval="10000">');
-                                        print('<img src="product_img/'.$image['img'].'" class="img-fluid rounded" alt="'.$entry[0]['name'].'">');
-                                    print('</div>');
-                                }
-                                $i++;
-                            } ?>
+                                if ($i == 1):?>
+                                    <div class="carousel-item active">
+                                        <img src="<?=$image['source']?>" class="img-fluid rounded" alt="<?=$image['alt']?>">
+                                    </div>
+                                <?php else:?>
+                                    <div class="carousel-item">
+                                        <img src="<?=$image['source']?>" class="img-fluid rounded" alt="<?=$image['alt']?>">
+                                    </div>
+                                <?php endif;?>
+                            <?php $i++; }?>
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -84,7 +82,7 @@ require("templates/header.php");
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Next</span>
                         </button>
-                    <?php endif;?>              
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
