@@ -20,31 +20,33 @@ if ($stmt->rowCount() != 1) {
 $entry = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 $stmt = $pdo->prepare('SELECT * FROM blog_images where blog_entrys_id = ?');
-$stmt->bindValue(1, $entry[0]['id'], PDO::PARAM_INT);
+$stmt->bindValue(1, $entry['id'], PDO::PARAM_INT);
 $stmt->execute();
 $images = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
 require("templates/header.php");
 ?>
-<div class="container py-3 row row-cols-1 row-cols-md-2 gx-0" style="min-height: 80vh;">
-    <div class="col">
+<div class="container-xxl" style="min-height: 80vh;">
+    <div class="row ctext">
+        <h1 class="display-4 text-center mb-3 text-kolping-orange"><?=$entry["name"]?></h1>
+    <div class="row gx-5 pt-3">
         <div class="card cbg py-2 px-2 mx-2">
             <div class="card-body px-3 py-3">
                 <div id="carouselExampleDark" class="carousel <?php if (check_style() == "dark") { print("carousel-dark "); }?>slide" data-bs-ride="carousel">
                     <?php if($images == null):?>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="images/404_<?=check_style();?>.gif" class="img-fluid rounded" alt="<?=$product[0]['name']?>">
+                                <img src="images/404_<?=check_style();?>.gif" class="img-fluid rounded" alt="<?=$entry[0]['name']?>">
                             </div>
                         </div>
                     <?php elseif (count($images) == 1):?>
                         <div class="carousel-inner">
-                            <?php foreach ($images as $image) {
-                                print('<div class="carousel-item active">');
-                                    print('<img src="product_img/'.$image['img'].'" class="img-fluid rounded" alt="'.$product[0]['name'].'">');
-                                print('</div>');
-                            } ?>
+                            <?php foreach ($images as $image): { ?>
+                                <div class="carousel-item active">
+                                    <img src="<?=$image['source']?>" class="img-fluid rounded" alt="<?=$entry['name']?>">
+                                </div>
+                            <?php } endforeach; ?>
                         </div>
                     <?php elseif (count($images) != 1):?>
                         <div class="carousel-indicators">
@@ -62,12 +64,12 @@ require("templates/header.php");
                             <?php $i = 1; foreach ($images as $image) {
                                 if ($i == 1) {
                                     print('<div class="carousel-item active" data-bs-interval="10000">');
-                                        print('<img src="product_img/'.$image['img'].'" class="img-fluid rounded" alt="'.$product[0]['name'].'">');
+                                        print('<img src="product_img/'.$image['img'].'" class="img-fluid rounded" alt="'.$entry[0]['name'].'">');
                                     print('</div>');
                                 }
                                 else {
                                     print('<div class="carousel-item" data-bs-interval="10000">');
-                                        print('<img src="product_img/'.$image['img'].'" class="img-fluid rounded" alt="'.$product[0]['name'].'">');
+                                        print('<img src="product_img/'.$image['img'].'" class="img-fluid rounded" alt="'.$entry[0]['name'].'">');
                                     print('</div>');
                                 }
                                 $i++;
