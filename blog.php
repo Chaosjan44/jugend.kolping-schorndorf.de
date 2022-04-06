@@ -31,12 +31,12 @@ require("templates/header.php");
         <h1 class="display-4 text-center mb-3 text-kolping-orange"><?=$entry[0]["name"]?></h1>
     </div>
     <div class="row gx-5 pt-3">
-        <div class="col d-flex justify-content-center">
+        <div class="col-6 d-flex justify-content-center">
 
         </div>
         <div class="col-5 d-flex justify-content-center">
-            <div class="card cbg py-2 px-2 mx-2">
-                <div class="card-body px-3 py-3">
+            <div class="py-2 px-2 mx-2">
+                <div class="px-3 py-3">
                     <div id="carouselExampleDark" class="carousel <?php if (check_style() == "dark") { print("carousel-dark "); }?>slide" data-bs-ride="carousel">
                         <?php if($images == null):?>
                             <div class="carousel-inner">
@@ -65,8 +65,8 @@ require("templates/header.php");
                                 } ?>
                             </div>
                             <div class="carousel-inner">
-                                <?php $i = 1; foreach ($images as $image) {
-                                    if ($i == 1):?>
+                                <?php foreach ($images as $image) {
+                                    if ($image['prev_img'] = 1):?>
                                         <div class="carousel-item active">
                                             <img src="<?=$image['source']?>" class="img-fluid rounded" alt="<?=$image['alt']?>">
                                         </div>
@@ -75,7 +75,7 @@ require("templates/header.php");
                                             <img src="<?=$image['source']?>" class="img-fluid rounded" alt="<?=$image['alt']?>">
                                         </div>
                                     <?php endif;?>
-                                <?php $i++; }?>
+                                <?php }?>
                             </div>
                             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
