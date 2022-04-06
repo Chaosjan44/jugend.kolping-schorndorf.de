@@ -32,7 +32,7 @@ require("templates/header.php");
     </div>
     <div class="row gx-5 pt-3">
         <div class="col-6 d-flex justify-content-center">
-            
+            <?=$entry[0]["text"]?>
         </div>
         <div class="col-5 d-flex justify-content-center">
             <div class="py-2 px-2 mx-2">
