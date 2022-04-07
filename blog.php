@@ -33,7 +33,7 @@ require("templates/header.php");
     <div class="clearfix py-3">
         <div class="col-md-6 float-md-end mb-3 ms-md-3">
             <div class="card py-2 px-2 cbg2 d-flex justify-content-center">
-                <div id="carouselExampleDark" class="carousel <?php if (check_style() == "dark") { print("carousel-dark "); }?>slide" data-bs-ride="carousel">
+                <div id="carouselExampleDark" class="d-flex justify-content-center carousel <?php if (check_style() == "dark") { print("carousel-dark "); }?>slide" data-bs-ride="carousel">
                     <?php if($images == null):?>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
