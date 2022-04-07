@@ -30,7 +30,7 @@ require("templates/header.php");
     <div class="row ctext">
         <h1 class="display-4 text-center mb-3 text-kolping-orange"><?=$entry[0]["name"]?></h1>
     </div>
-    <div class="row gx-5 pt-3">
+    <div class="clearfix">
         <div class="col-md-6 float-md-end mb-3 ms-md-3">
             <div class="py-2 px-2 mx-2">
                 <div class="px-3 py-3">
@@ -88,11 +88,7 @@ require("templates/header.php");
             </div>
         </div>
     </div>
-    <div class="col-6 d-flex justify-content-center">
-            <div class="row">
-                <?=$entry[0]["text"]?>
-            </div>
-        </div>
+    <?=$entry[0]["text"]?>
 </div>
 
 <?php
