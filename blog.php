@@ -30,7 +30,7 @@ require("templates/header.php");
     <div class="row ctext">
         <h1 class="display-4 text-center mb-3 text-kolping-orange"><?=$entry[0]["name"]?></h1>
     </div>
-    <div class="clearfix">
+    <div class="clearfix py-3">
         <div class="col-md-6 float-md-end mb-3 ms-md-3">
             <div class="py-2 px-2 mx-2">
                 <div class="px-3 py-3">
