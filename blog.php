@@ -87,8 +87,8 @@ require("templates/header.php");
                 </div>
             </div>
         </div>
+        <?=$entry[0]["text"]?>
     </div>
-    <?=$entry[0]["text"]?>
 </div>
 
 <?php
