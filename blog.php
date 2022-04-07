@@ -32,60 +32,56 @@ require("templates/header.php");
     </div>
     <div class="clearfix py-3">
         <div class="col-md-6 float-md-end mb-3 ms-md-3">
-            <div class="card cbg2">
-                <div class="py-2 px-2 mx-2">
-                    <div class="px-3 py-3">
-                        <div id="carouselExampleDark" class="carousel <?php if (check_style() == "dark") { print("carousel-dark "); }?>slide" data-bs-ride="carousel">
-                            <?php if($images == null):?>
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                        <img src="images/404_<?=check_style();?>.gif" class="img-fluid rounded" alt="No IMG Found">
-                                    </div>
-                                </div>
-                            <?php elseif (count($images) == 1):?>
-                                <div class="carousel-inner">
-                                    <?php foreach ($images as $image): { ?>
-                                        <div class="carousel-item active">
-                                            <img src="<?=$image['source']?>" class="img-fluid rounded" alt="<?=$image['alt']?>">
-                                        </div>
-                                    <?php } endforeach; ?>
-                                </div>
-                            <?php elseif (count($images) > 1):?>
-                                <div class="carousel-indicators">
-                                    <?php $i = 0; foreach ($images as $image) {
-                                        if ($i == 0) {
-                                            print('<button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Img 1"></button>');
-                                        }
-                                        else {
-                                            print('<button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="'.$i.'" aria-label="Img'.$i.'"></button>');
-                                        }
-                                        $i++;
-                                    } ?>
-                                </div>
-                                <div class="carousel-inner">
-                                    <?php foreach ($images as $image) {
-                                        if ($image['prev_img'] = 1):?>
-                                            <div class="carousel-item active">
-                                                <img src="<?=$image['source']?>" class="img-fluid rounded" alt="<?=$image['alt']?>">
-                                            </div>
-                                        <?php else:?>
-                                            <div class="carousel-item">
-                                                <img src="<?=$image['source']?>" class="img-fluid rounded" alt="<?=$image['alt']?>">
-                                            </div>
-                                        <?php endif;?>
-                                    <?php }?>
-                                </div>
-                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Previous</span>
-                                </button>
-                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Next</span>
-                                </button>
-                            <?php endif; ?>
+            <div class="card py-2 px-2 cbg2">
+                <div id="carouselExampleDark" class="carousel <?php if (check_style() == "dark") { print("carousel-dark "); }?>slide" data-bs-ride="carousel">
+                    <?php if($images == null):?>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="images/404_<?=check_style();?>.gif" class="img-fluid rounded" alt="No IMG Found">
+                            </div>
                         </div>
-                    </div>
+                    <?php elseif (count($images) == 1):?>
+                        <div class="carousel-inner">
+                            <?php foreach ($images as $image): { ?>
+                                <div class="carousel-item active">
+                                    <img src="<?=$image['source']?>" class="img-fluid rounded" alt="<?=$image['alt']?>">
+                                </div>
+                            <?php } endforeach; ?>
+                        </div>
+                    <?php elseif (count($images) > 1):?>
+                        <div class="carousel-indicators">
+                            <?php $i = 0; foreach ($images as $image) {
+                                if ($i == 0) {
+                                    print('<button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Img 1"></button>');
+                                }
+                                else {
+                                    print('<button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="'.$i.'" aria-label="Img'.$i.'"></button>');
+                                }
+                                $i++;
+                            } ?>
+                        </div>
+                        <div class="carousel-inner">
+                            <?php foreach ($images as $image) {
+                                if ($image['prev_img'] = 1):?>
+                                    <div class="carousel-item active">
+                                        <img src="<?=$image['source']?>" class="img-fluid rounded" alt="<?=$image['alt']?>">
+                                    </div>
+                                <?php else:?>
+                                    <div class="carousel-item">
+                                        <img src="<?=$image['source']?>" class="img-fluid rounded" alt="<?=$image['alt']?>">
+                                    </div>
+                                <?php endif;?>
+                            <?php }?>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
