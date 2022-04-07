@@ -36,7 +36,7 @@ require("templates/header.php");
                 <div id="carouselExampleDark" class="d-flex justify-content-center carousel <?php if (check_style() == "dark") { print("carousel-dark "); }?>slide" data-bs-ride="carousel">
                     <?php if($images == null):?>
                         <div class="carousel-inner">
-                            <div class="carousel-item active">
+                            <div class="carousel-item d-flex justify-content-center active">
                                 <img src="images/404_<?=check_style();?>.gif" class="img-fluid rounded" alt="No IMG Found">
                             </div>
                         </div>
