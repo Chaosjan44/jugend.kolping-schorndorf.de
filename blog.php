@@ -37,7 +37,7 @@ require("templates/header.php");
                     <?php if($images == null):?>
                         <div class="carousel-inner">
                             <div class="carousel-item d-flex justify-content-center active">
-                                <img src="images/404_<?=check_style();?>.gif" class="img-fluid rounded" alt="No IMG Found">
+                                <img src="images/404_light.gif" class="img-fluid rounded" alt="No IMG Found">
                             </div>
                         </div>
                     <?php elseif (count($images) == 1):?>
