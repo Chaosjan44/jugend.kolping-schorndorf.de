@@ -1,3 +1,9 @@
 {
-    "git.ignoreLimitWarning": true
+    "git.ignoreLimitWarning": true,
+    "cSpell.language": "en,de-DE",
+    "cSpell.words": [
+        "Kolpingjugend",
+        "Kolpingsfamilie",
+        "Schorndorf"
+    ]
 }

@@ -50,7 +50,7 @@ $blogentrys = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <h2 class="col display-6 ctext text-center">Nachrichten</h2>
                     <div class="col d-flex justify-content-center">
                         <div class="row row-cols-1">
-                            <?php foreach ($blogentrys as $blogentry): ?>
+                            <?php foreach ($blogentrys as $blogentry): ?> 
                                 <div class="col card cbg2 mb-3">
                                     <div class="row g-0">
                                         <div class="col-md-4">
