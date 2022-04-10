@@ -42,10 +42,10 @@ $blogentrys = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <span class="text-center text-size-larger">Die Kolpingjugend Schorndorf ist eine Jugendgruppe der <a href="https://kolping-schorndorf.de/" class="text-size-larger hctext">Kolpingsfamilie Schorndorf</a>,<br>wir treffen uns jeden 2. Samstag zu Gruppenstunden.</span>
         </div>
         <div class="row <?php if (isMobile()) {print("row-cols-1");}?> gx-5 pt-3">
-            <div class="col d-flex justify-content-center">
+            <div class="col d-flex justify-content-center mx-2">
                 <h2 class="display-6 ctext text-center">Termine</h2>
             </div>
-            <div class="col d-flex justify-content-center">
+            <div class="col d-flex justify-content-center mx-2">
                 <div class="row row-cols-1">
                     <h2 class="col display-6 ctext text-center">Nachrichten</h2>
                     <div class="col d-flex justify-content-center">
