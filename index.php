@@ -36,16 +36,17 @@ $blogentrys = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </button>
         </div>
     </div>
+    <?php if (!isMobile()): ?>
     <div class="container-xxl">
         <div class="row ctext">
             <h1 class="display-4 text-center">Kolpingjugend Schorndorf</h1>
             <span class="text-center text-size-larger">Die Kolpingjugend Schorndorf ist eine Jugendgruppe der <a href="https://kolping-schorndorf.de/" class="text-size-larger hctext">Kolpingsfamilie Schorndorf</a>,<br>wir treffen uns jeden 2. Samstag zu Gruppenstunden.</span>
         </div>
-        <div class="row <?php if (isMobile()) {print("row-cols-1");}?> gx-5 pt-3">
-            <div class="col d-flex justify-content-center mx-2">
+        <div class="row gx-5 pt-3">
+            <div class="col d-flex justify-content-center">
                 <h2 class="display-6 ctext text-center">Termine</h2>
             </div>
-            <div class="col d-flex justify-content-center mx-2">
+            <div class="col d-flex justify-content-center">
                 <div class="row row-cols-1">
                     <h2 class="col display-6 ctext text-center">Nachrichten</h2>
                     <div class="col d-flex justify-content-center">
@@ -72,6 +73,48 @@ $blogentrys = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </div>
         </div>
     </div>
+    <?php else: ?>
+    <div class="container">
+        <div class="row ctext">
+            <h1 class="display-4 text-center">Kolpingjugend Schorndorf</h1>
+            <span class="text-center text-size-larger">Die Kolpingjugend Schorndorf ist eine Jugendgruppe der <a href="https://kolping-schorndorf.de/" class="text-size-larger hctext">Kolpingsfamilie Schorndorf</a>,<br>wir treffen uns jeden 2. Samstag zu Gruppenstunden.</span>
+        </div>
+        <div class="row gx-5 pt-3">
+            <div class="col d-flex justify-content-center">
+                <h2 class="display-6 ctext text-center">Termine</h2>
+            </div>
+            <div class="col d-flex justify-content-center">
+                <div class="row row-cols-1">
+                    <h2 class="col display-6 ctext text-center">Nachrichten</h2>
+                    <div class="col d-flex justify-content-center">
+                        <div class="row row-cols-1">
+                            <?php foreach ($blogentrys as $blogentry): ?> 
+                                <div class="col card cbg2 mb-3">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img src="<?=$blogentry['source']?>" class="img-fluid rounded-start" alt="<?=$blogentry['alt']?>">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body ctext">
+                                                <h3 class="card-title"><?=$blogentry['name']?></h3>
+                                                <?=$blogentry['prev_text']?>
+                                            </div>
+                                        </div>
+                                        <a href="/blog.php?id=<?=$blogentry['blog_entrys_id']?>" class="stretched-link"></a>
+                                    </div>
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <?php endif; ?>
 </div>
 
 
