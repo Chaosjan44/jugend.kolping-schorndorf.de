@@ -84,7 +84,7 @@ $blogentrys = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <div class="col d-flex justify-content-center my-2">
                     <h2 class="display-6 ctext text-center">Termine</h2>
                 </div>
-                <div class="col d-flex justify-content-center my-2">
+                <div class="col d-flex justify-content-center mt-2">
                     <div class="row row-cols-1">
                         <h2 class="col display-6 ctext text-center">Nachrichten</h2>
                         <div class="col d-flex justify-content-center">
