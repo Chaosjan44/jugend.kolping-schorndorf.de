@@ -2,9 +2,12 @@
 
 $stmt = $pdo->prepare('SELECT * ,(SELECT source From blog_images WHERE blog_images.blog_entrys_id=blog_entrys.blog_entrys_id AND prev_img=1) AS source,(SELECT alt From blog_images WHERE blog_images.blog_entrys_id=blog_entrys.blog_entrys_id AND prev_img=1) AS alt FROM blog_entrys where visible = 1 ORDER BY created_at desc');
 $stmt->execute();
-
 $blogentrys = $stmt->fetchAll(PDO::FETCH_ASSOC);
 #print_r($blogentrys);
+
+$stmt = $pdo->prepare('SELECT * FROM events where visible = 1 ORDER BY date desc');
+$stmt->execute();
+$events = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <div class="container-fluid px-0 pt-0 pb-3">
     <div class="mb-3">
@@ -83,6 +86,29 @@ $blogentrys = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <div class="col-11">
                 <div class="col d-flex justify-content-center my-2">
                     <h2 class="display-6 ctext text-center">Termine</h2>
+                    <div class="col d-flex justify-content-center">
+                        <div class="row row-cols-1">
+                        <?php foreach ($events as $event): ?> 
+                            <div class="col card cbg2 mb-3">
+                                <div class="row g-0">
+                                    <div class="col-md-4">
+                                        <div class="card cbg">
+                                            <?=date('d', strtotime($event['date']))?>
+                                            <br>
+                                            <?=date('M', strtotime($event['date']))?>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body ctext">
+                                            <h3 class="card-title"><?=$event['title']?></h3>
+                                        </div>
+                                    </div>
+                                    <a href="/termin.php?id=<?=$event['events_id']?>" class="stretched-link"></a>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                        </div>
+                    </div>
                 </div>
                 <div class="col d-flex justify-content-center mt-2">
                     <div class="row row-cols-1">
