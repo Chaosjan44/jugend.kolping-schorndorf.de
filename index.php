@@ -47,28 +47,30 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </div>
         <div class="row gx-5 pt-3">
             <div class="col d-flex justify-content-center">
-                <h2 class="display-6 ctext text-center">Termine</h2>
-                <div class="col d-flex justify-content-center">
-                    <div class="row row-cols-1">
-                        <?php foreach ($events as $event): ?> 
-                            <div class="col card cbg2 mb-3">
-                                <div class="row g-0">
-                                    <div class="col-md-4 d-flex justify-content-center">
-                                        <div class="card cbg alight-middle">
-                                            <?=date('d', strtotime($event['date']))?>
-                                            <br>
-                                            <?=date('M', strtotime($event['date']))?>
+                <div class="row row-cols-1">
+                    <h2 class="display-6 ctext text-center">Termine</h2>
+                    <div class="col d-flex justify-content-center">
+                        <div class="row row-cols-1">
+                            <?php foreach ($events as $event): ?> 
+                                <div class="col card cbg2 mb-3">
+                                    <div class="row g-0">
+                                        <div class="col-md-4 justify-content-center">
+                                            <div class="card cbg alight-middle">
+                                                <?=date('d', strtotime($event['date']))?>
+                                                <br>
+                                                <?=date('M', strtotime($event['date']))?>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="card-body ctext">
-                                            <h3 class="card-title"><?=$event['title']?></h3>
+                                        <div class="col-md-8">
+                                            <div class="card-body ctext">
+                                                <h3 class="card-title"><?=$event['title']?></h3>
+                                            </div>
                                         </div>
+                                        <a href="/termin.php?id=<?=$event['events_id']?>" class="stretched-link"></a>
                                     </div>
-                                    <a href="/termin.php?id=<?=$event['events_id']?>" class="stretched-link"></a>
                                 </div>
-                            </div>
-                        <?php endforeach; ?>
+                            <?php endforeach; ?>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -108,28 +110,30 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <div class="row gx-5 pt-3 justify-content-center">
             <div class="col-11">
                 <div class="col d-flex justify-content-center my-2">
-                    <h2 class="display-6 ctext text-center">Termine</h2>
-                    <div class="col d-flex justify-content-center">
-                        <div class="row row-cols-1">
-                        <?php foreach ($events as $event): ?> 
-                            <div class="col card cbg2 mb-3">
-                                <div class="row g-0">
-                                    <div class="col-md-4">
-                                        <div class="card cbg">
-                                            <?=date('d', strtotime($event['date']))?>
-                                            <br>
-                                            <?=date('M', strtotime($event['date']))?>
+                    <div class="row row-cols-1">
+                        <h2 class="display-6 ctext text-center">Termine</h2>
+                        <div class="col d-flex justify-content-center">
+                            <div class="row row-cols-1">
+                            <?php foreach ($events as $event): ?> 
+                                <div class="col card cbg2 mb-3">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <div class="card cbg">
+                                                <?=date('d', strtotime($event['date']))?>
+                                                <br>
+                                                <?=date('M', strtotime($event['date']))?>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="card-body ctext">
-                                            <h3 class="card-title"><?=$event['title']?></h3>
+                                        <div class="col-md-8">
+                                            <div class="card-body ctext">
+                                                <h3 class="card-title"><?=$event['title']?></h3>
+                                            </div>
                                         </div>
+                                        <a href="/termin.php?id=<?=$event['events_id']?>" class="stretched-link"></a>
                                     </div>
-                                    <a href="/termin.php?id=<?=$event['events_id']?>" class="stretched-link"></a>
                                 </div>
+                            <?php endforeach; ?>
                             </div>
-                        <?php endforeach; ?>
                         </div>
                     </div>
                 </div>
