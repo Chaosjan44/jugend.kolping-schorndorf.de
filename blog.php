@@ -16,6 +16,7 @@ if ($stmt->rowCount() != 1) {
     exit;
 }
 
+
 $entry = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 $stmt = $pdo->prepare('SELECT * FROM blog_images where blog_entrys_id = ?');
