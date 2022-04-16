@@ -128,7 +128,7 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                         </div>
                                         <div class="col-md-10 justify-content-start align-items-center">
                                             <div class="card-body ctext align-items-center">
-                                                <h4 class="card-title align-center text-wrap"><?=$event['title']?></h3>
+                                                <h4 class="card-title align-center text-break"><?=$event['title']?></h3>
                                             </div>
                                         </div>
                                         <a href="/termin.php?id=<?=$event['events_id']?>" class="stretched-link"></a>
