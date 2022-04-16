@@ -95,7 +95,7 @@ require("templates/header.php");
             <?=$creator[0]['vorname']?> <?=$creator[0]['nachname']?>
         </div>
         <div class="col d-flex justify-content-end text-end ctext text-size-large">
-            <?php echo(date('d.m.Y H:i', strtotime($entry[0]['created_at'])))?>
+            <?=date('d.m.Y H:i', strtotime($entry[0]['created_at']))?>
         </div>
     </div>
 </div>
