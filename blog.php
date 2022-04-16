@@ -15,8 +15,6 @@ if ($stmt->rowCount() != 1) {
     header("location: blogs.php");
     exit;
 }
-
-
 $entry = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 $stmt = $pdo->prepare('SELECT * FROM blog_images where blog_entrys_id = ?');
@@ -87,6 +85,14 @@ require("templates/header.php");
             </div>
         </div>
         <?=$entry[0]["text"]?>
+    </div>
+    <div class="row justify-content-between py-3">
+        <div class="col d-flex justify-content-start text-start ctext">
+            <?=$entry[0]['created_by']?>
+        </div>
+        <div class="col d-flex justify-content-end text-end ctext">
+            <?=$entry[0]['created_at']?>
+        </div>
     </div>
 </div>
 
