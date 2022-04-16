@@ -54,7 +54,7 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             <div class="col card cbg2 mb-3">
                                 <div class="row g-0">
                                     <div class="col-md-4 d-flex justify-content-center">
-                                        <div class="card cbg alight-self-center">
+                                        <div class="card cbg alight-middle">
                                             <?=date('d', strtotime($event['date']))?>
                                             <br>
                                             <?=date('M', strtotime($event['date']))?>
