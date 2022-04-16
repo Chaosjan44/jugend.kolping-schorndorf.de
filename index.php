@@ -52,8 +52,8 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <div class="col d-flex justify-content-center">
                         <div class="row row-cols-1">
                             <?php foreach ($events as $event): ?> 
-                                <div class="col mb-3">
-                                    <div class="card cbg2 py-3 px-3">
+                                <div class="col mb-3 py-3 px-3">
+                                    <div class="card cbg2">
                                         <div class="row g-0">
                                             <div class="col-md-2 d-flex justify-content-start align-items-center">
                                                 <div class="card cbg text-size-larger py-3 px-3 align-items-center text-center">
@@ -117,16 +117,16 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <div class="col d-flex justify-content-center">
                             <div class="row row-cols-1">
                             <?php foreach ($events as $event): ?> 
-                                <div class="col card cbg2 mb-3">
-                                    <div class="row g-0">
-                                        <div class="col-md-2 d-flex justify-content-start align-items-center">
+                                <div class="col card cbg2 mb-3 py-3 px-3">
+                                    <div class="row g-0 row-cols-2">
+                                        <div class="col-3 d-flex justify-content-start align-items-center">
                                             <div class="card cbg text-size-larger py-3 px-3 align-items-center text-center">
                                                 <?=date('d', strtotime($event['date']))?>
                                                 <br>
                                                 <?=date('M', strtotime($event['date']))?>
                                             </div>
                                         </div>
-                                        <div class="col-md-10 justify-content-start align-items-center">
+                                        <div class="col-9 justify-content-start align-items-center">
                                             <div class="card-body ctext align-items-center">
                                                 <h5 class="card-title align-center text-break"><?=$event['title']?></h5>
                                             </div>
