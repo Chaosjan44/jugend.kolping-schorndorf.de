@@ -63,7 +63,7 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                                 </div>
                                             </div>
                                             <div class="col-md-10">
-                                                <div class="card-body ctext d-flex justify-content-center align-items-center">
+                                                <div class="card-body ctext d-flex justify-content-start align-items-center">
                                                     <h3 class="card-title align-center"><?=$event['title']?></h3>
                                                 </div>
                                             </div>
@@ -127,7 +127,7 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                             </div>
                                         </div>
                                         <div class="col-md-10">
-                                            <div class="card-body d-flex justify-content-center align-items-center ctext">
+                                            <div class="card-body d-flex justify-content-start align-items-center ctext">
                                                 <h3 class="card-title align-center"><?=$event['title']?></h3>
                                             </div>
                                         </div>
