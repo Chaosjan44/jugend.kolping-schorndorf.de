@@ -62,8 +62,8 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                                     <?=date('M', strtotime($event['date']))?>
                                                 </div>
                                             </div>
-                                            <div class="col-md-10">
-                                                <div class="card-body ctext d-flex justify-content-start align-items-center">
+                                            <div class="col-md-10 d-flex justify-content-start align-items-center">
+                                                <div class="card-body ctext">
                                                     <h3 class="card-title align-center"><?=$event['title']?></h3>
                                                 </div>
                                             </div>
@@ -126,8 +126,8 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                                 <?=date('M', strtotime($event['date']))?>
                                             </div>
                                         </div>
-                                        <div class="col-md-10">
-                                            <div class="card-body d-flex justify-content-start align-items-center ctext">
+                                        <div class="col-md-10 justify-content-start align-items-center">
+                                            <div class="card-body ctext">
                                                 <h3 class="card-title align-center"><?=$event['title']?></h3>
                                             </div>
                                         </div>
