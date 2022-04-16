@@ -53,7 +53,7 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <div class="row row-cols-1">
                             <?php foreach ($events as $event): ?> 
                                 <div class="col mb-3">
-                                    <div class="card cbg2">
+                                    <div class="card cbg2 py-3 px-3">
                                         <div class="row g-0">
                                             <div class="col-md-4 d-flex justify-content-center align-items-center">
                                                 <div class="card cbg text-size-larger py-3 px-3 align-items-center text-center">
