@@ -126,7 +126,7 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                                 <?=date('M', strtotime($event['date']))?>
                                             </div>
                                         </div>
-                                        <div class="col-9d-flex  justify-content-start align-items-center">
+                                        <div class="col-9 d-flex justify-content-start align-items-center">
                                             <div class="card-body ctext align-items-center">
                                                 <h5 class="card-title align-center text-break"><?=$event['title']?></h5>
                                             </div>
