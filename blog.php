@@ -22,7 +22,7 @@ $stmt->bindValue(1, $entry[0]['blog_entrys_id'], PDO::PARAM_INT);
 $stmt->execute();
 $images = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-$stmt = $pdo->prepare('SELECT * FROM users where user_id = ?');
+$stmt = $pdo->prepare('SELECT vorname, nachname FROM users where user_id = ?');
 $stmt->bindValue(1, $entry[0]['created_by'], PDO::PARAM_INT);
 $stmt->execute();
 $creator = $stmt->fetchAll(PDO::FETCH_ASSOC);
