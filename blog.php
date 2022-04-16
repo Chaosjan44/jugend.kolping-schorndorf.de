@@ -91,10 +91,10 @@ require("templates/header.php");
         <?=$entry[0]["text"]?>
     </div>
     <div class="row justify-content-between py-3">
-        <div class="col d-flex justify-content-start text-start ctext">
+        <div class="col d-flex justify-content-start text-start ctext text-size-large">
             <?=$creator[0]['vorname']?> <?=$creator[0]['nachname']?>
         </div>
-        <div class="col d-flex justify-content-end text-end ctext">
+        <div class="col d-flex justify-content-end text-end ctext text-size-large">
             <?=$entry[0]['created_at']?>
         </div>
     </div>
