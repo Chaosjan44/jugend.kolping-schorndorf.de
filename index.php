@@ -55,16 +55,16 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 <div class="col mb-3">
                                     <div class="card cbg2 py-3 px-3">
                                         <div class="row g-0">
-                                            <div class="col-md-4 d-flex justify-content-start align-items-center">
+                                            <div class="col-md-2 d-flex justify-content-start align-items-center">
                                                 <div class="card cbg text-size-larger py-3 px-3 align-items-center text-center">
                                                     <?=date('d', strtotime($event['date']))?>
                                                     <br>
                                                     <?=date('M', strtotime($event['date']))?>
                                                 </div>
                                             </div>
-                                            <div class="col-md-8">
+                                            <div class="col-md-10">
                                                 <div class="card-body ctext d-flex justify-content-center align-items-center">
-                                                    <h3 class="card-title"><?=$event['title']?></h3>
+                                                    <h3 class="card-title align-center"><?=$event['title']?></h3>
                                                 </div>
                                             </div>
                                             <a href="/termin.php?id=<?=$event['events_id']?>" class="stretched-link"></a>
@@ -119,16 +119,16 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             <?php foreach ($events as $event): ?> 
                                 <div class="col card cbg2 mb-3">
                                     <div class="row g-0">
-                                        <div class="col-md-4 d-flex justify-content-start align-items-center">
+                                        <div class="col-md-2 d-flex justify-content-start align-items-center">
                                             <div class="card cbg text-size-larger py-3 px-3 align-items-center text-center">
                                                 <?=date('d', strtotime($event['date']))?>
                                                 <br>
                                                 <?=date('M', strtotime($event['date']))?>
                                             </div>
                                         </div>
-                                        <div class="col-md-8">
+                                        <div class="col-md-10">
                                             <div class="card-body d-flex justify-content-center align-items-center ctext">
-                                                <h3 class="card-title"><?=$event['title']?></h3>
+                                                <h3 class="card-title align-center"><?=$event['title']?></h3>
                                             </div>
                                         </div>
                                         <a href="/termin.php?id=<?=$event['events_id']?>" class="stretched-link"></a>
