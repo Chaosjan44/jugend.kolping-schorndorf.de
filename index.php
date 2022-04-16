@@ -54,8 +54,8 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             <?php foreach ($events as $event): ?> 
                                 <div class="col card cbg2 mb-3">
                                     <div class="row g-0">
-                                        <div class="col-md-4 justify-content-center">
-                                            <div class="card cbg text-size-larger py-3 px-3 d-flex justify-content-center align-items-center">
+                                        <div class="col-md-4 d-flex justify-content-center align-items-center">
+                                            <div class="card cbg text-size-larger py-3 px-3 align-items-center text-center">
                                                 <?=date('d', strtotime($event['date']))?>
                                                 <br>
                                                 <?=date('M', strtotime($event['date']))?>
@@ -117,8 +117,8 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             <?php foreach ($events as $event): ?> 
                                 <div class="col card cbg2 mb-3">
                                     <div class="row g-0">
-                                        <div class="col-md-4">
-                                            <div class="card cbg d-flex justify-content-center align-items-center text-size-larger py-3 px-3">
+                                        <div class="col-md-4 d-flex justify-content-center align-items-center">
+                                            <div class="card cbg text-size-larger py-3 px-3 align-items-center text-center">
                                                 <?=date('d', strtotime($event['date']))?>
                                                 <br>
                                                 <?=date('M', strtotime($event['date']))?>
