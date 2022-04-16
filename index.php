@@ -46,7 +46,7 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <span class="text-center text-size-larger">Die Kolpingjugend Schorndorf ist eine Jugendgruppe der <a href="https://kolping-schorndorf.de/" class="text-size-larger hctext">Kolpingsfamilie Schorndorf</a>,<br>wir treffen uns jeden 2. Samstag zu Gruppenstunden.</span>
         </div>
         <div class="row gx-5 pt-3">
-            <div class="col d-flex justify-content-center">
+            <div class="col justify-content-center">
                 <div class="row row-cols-1">
                     <h2 class="col display-6 ctext text-center">Termine</h2>
                     <div class="col d-flex justify-content-center">
@@ -55,7 +55,7 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 <div class="col mb-3">
                                     <div class="card cbg2 py-3 px-3">
                                         <div class="row g-0">
-                                            <div class="col-md-4 d-flex justify-content-center align-items-center">
+                                            <div class="col-md-4 d-flex justify-content-start align-items-center">
                                                 <div class="card cbg text-size-larger py-3 px-3 align-items-center text-center">
                                                     <?=date('d', strtotime($event['date']))?>
                                                     <br>
@@ -76,7 +76,7 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     </div>
                 </div>
             </div>
-            <div class="col d-flex justify-content-center">
+            <div class="col justify-content-center">
                 <div class="row row-cols-1">
                     <h2 class="col display-6 ctext text-center">Nachrichten</h2>
                     <div class="col d-flex justify-content-center">
@@ -111,7 +111,7 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </div>
         <div class="row gx-5 pt-3 justify-content-center">
             <div class="col-11">
-                <div class="col d-flex justify-content-center my-2">
+                <div class="col justify-content-center my-2">
                     <div class="row row-cols-1">
                         <h2 class="col display-6 ctext text-center">Termine</h2>
                         <div class="col d-flex justify-content-center">
@@ -119,7 +119,7 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             <?php foreach ($events as $event): ?> 
                                 <div class="col card cbg2 mb-3">
                                     <div class="row g-0">
-                                        <div class="col-md-4 d-flex justify-content-center align-items-center">
+                                        <div class="col-md-4 d-flex justify-content-start align-items-center">
                                             <div class="card cbg text-size-larger py-3 px-3 align-items-center text-center">
                                                 <?=date('d', strtotime($event['date']))?>
                                                 <br>
@@ -139,7 +139,7 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         </div>
                     </div>
                 </div>
-                <div class="col d-flex justify-content-center mt-2">
+                <div class="col justify-content-center mt-2">
                     <div class="row row-cols-1">
                         <h2 class="col display-6 ctext text-center">Nachrichten</h2>
                         <div class="col d-flex justify-content-center">
