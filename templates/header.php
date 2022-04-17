@@ -14,6 +14,7 @@ require_once("php/functions.php");
     <link rel="stylesheet" href="/css/styles.css?v=<?php print(date("Y.m.d.H.i.s")); ?>">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="/css/dark.css" disabled>
     <link rel="stylesheet" href="/css/light.css" disabled>
     <script src="/js/custom.js"></script>
