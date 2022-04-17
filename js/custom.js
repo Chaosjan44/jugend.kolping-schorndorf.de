@@ -1,7 +1,7 @@
 setStyle();
 
 function toggleStyle() {
-  if (check_cookie == "true") {
+  if (getCookie("acceptCookies") == "true") {
     if (getCookie("style") == "dark") {
       setCookie("style", "light", 365);
     } else {
@@ -13,13 +13,13 @@ function toggleStyle() {
 
 function setStyle() {
   if (getCookie("style") == "dark") {
-    if (check_cookie  == "true") {
+    if (getCookie("acceptCookies") == "true") {
       setCookie("style", "dark", 365);
     }
     document.querySelectorAll("link[href='/css/dark.css']")[0].disabled = false;
     document.querySelectorAll("link[href='/css/light.css']")[0].disabled = true;
   } else {
-    if (check_cookie  == "true") {
+    if (getCookie("acceptCookies") == "true") {
       setCookie("style", "light", 365);
     }
     document.querySelectorAll("link[href='/css/dark.css']")[0].disabled = true;
@@ -48,12 +48,4 @@ function getCookie(cname) {
     }
   }
   return "";
-}
-
-function check_cookie() {
-	if(getCookie("acceptCookies") == "true") {
-		return "true";
-	} else {
-		return "false";
-	}
 }
