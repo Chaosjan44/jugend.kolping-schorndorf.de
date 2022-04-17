@@ -67,10 +67,7 @@ require_once("php/functions.php");
             <div class="modal-body ctext cbg fw-normal">
                 <div class="px-2">
                     <p>Wir nutzen Cookies auf unserer Website.<br>
-                    Einige von ihnen sind essenziell für den Betrieb der Seite,<br>
-                    während andere uns helfen, diese Website und die Nutzererfahrung zu verbessern (Tracking Cookies).<br>
-                    Sie können selbst entscheiden, ob Sie die Cookies zulassen möchten.<br>
-                    Bitte beachten Sie, dass bei einer Ablehnung womöglich nicht mehr alle Funktionalitäten der Seite zur Verfügung stehen.</p>
+                    Einige von ihnen sind essenziell für den Betrieb der Seite, während andere uns helfen, diese Website und die Nutzererfahrung zu verbessern (Tracking Cookies). Sie können selbst entscheiden, ob Sie die Cookies zulassen möchten. Bitte beachten Sie, dass bei einer Ablehnung womöglich nicht mehr alle Funktionalitäten der Seite zur Verfügung stehen.</p>
                 </div>
             </div>
             <div class="modal-footer ctext cbg fw-bold">
