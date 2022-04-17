@@ -25,16 +25,12 @@ require_once("php/functions.php");
 </head>
 <body>
 
-<nav class="navbar header-header navbar-expand-lg navbar-<?php print(check_style());?> cbg ctext sticky-top">
+<nav class="navbar header-header navbar-expand-lg navbar cbg ctext sticky-top">
     <div class="container-fluid">
         <a class="navbar-brand" href="/">
             <img src="/favicon.svg" class="navbar-icon_light <?php if (!isMobile()): print("align-text-bottom"); else: print("align-text-center"); endif;?> pe-2">
             <img src="/favicon_dark.svg" class="navbar-icon_dark <?php if (!isMobile()): print("align-text-bottom"); else: print("align-text-center"); endif;?> pe-2">
-            <?php if (isMobile()): ?>
-                <span class="d-inline-block">KJ Schorndorf</span> 
-            <?php else:?>
                 <span class="d-inline-block">Kolpingjugend<br>Schorndorf</span>
-            <?php endif; ?>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
