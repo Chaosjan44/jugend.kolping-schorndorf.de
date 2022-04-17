@@ -47,3 +47,7 @@ html, body {
     transition: 0.7s !important;
     color: #FF8C00 !important;
 }
+
+.navbar-toggler {
+    border-color: rgb(255,102,203) !important;
+  } 
