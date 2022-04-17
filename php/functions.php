@@ -39,4 +39,12 @@ function check_style() {
 	}
 }
 
+function check_cookie() {
+	if(isset($_COOKIE['acceptCookies'])) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
 ?>
