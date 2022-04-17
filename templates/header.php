@@ -25,7 +25,7 @@ require_once("php/functions.php");
 </head>
 <body>
 
-<nav class="navbar header-header navbar-expand-lg navbar cbg ctext sticky-top">
+<nav class="navbar header-header navbar-expand-lg cbg ctext sticky-top">
     <div class="container-fluid">
         <a class="navbar-brand" href="/">
             <img src="/favicon.svg" class="navbar-icon_light <?php if (!isMobile()): print("align-text-bottom"); else: print("align-text-center"); endif;?> pe-2">
