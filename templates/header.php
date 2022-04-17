@@ -74,8 +74,8 @@ require_once("php/functions.php");
                 </div>
             </div>
             <div class="modal-footer ctext cbg fw-bold">
-                <button type="button" class="btn btn-kolping" data-bs-dismiss="modal">Ablehnen</button>
-                <button type="button" class="btn btn-kolping-outline" data-bs-dismiss="modal" onclick="allow_cookie()">Akzeptieren</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Ablehnen</button>
+                <button type="button" class="btn btn-success" data-bs-dismiss="modal" onclick="allow_cookie()">Akzeptieren</button>
             </div>
         </div>
     </div>
