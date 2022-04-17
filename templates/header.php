@@ -75,7 +75,7 @@ require_once("php/functions.php");
                 <button type="button" class="btn btn-success" data-bs-dismiss="modal" onclick="allow_cookie()">Akzeptieren</button>
                 <script> 
                     function allow_cookie() {
-                        setcookie('acceptCookies',true,time()+60*60*24*365);
+                        setCookie("acceptCookies", true, 365);
                     }
                 </script>
             </div>

@@ -46,9 +46,4 @@ function check_cookie() {
 		return false;
 	}
 }
-
-function allow_cookie() {
-	setcookie('acceptCookies',true,time()+60*60*24*365);
-}
-
 ?>
