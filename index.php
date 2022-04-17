@@ -93,7 +93,7 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                                 <?=$blogentry['prev_text']?>
                                             </div>
                                         </div>
-                                        <a href="/blog.phpä?id=<?=$blogentry['blog_entrys_id']?>" class="stretched-link"></a>
+                                        <a href="/blog.php?id=<?=$blogentry['blog_entrys_id']?>" class="stretched-link"></a>
                                     </div>
                                 </div>
                             <?php endforeach; ?>
