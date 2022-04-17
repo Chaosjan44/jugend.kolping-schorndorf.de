@@ -86,7 +86,9 @@ require_once("php/functions.php");
 <?php 
 if (!check_cookie()):
 ?>
-<script>
-    $("#cookieModal").modal('show');
+<script type="text/javascript">
+    $(window).on('load', function() {
+        $('#cookieModal').modal('show');
+    });
 </script>
 <?php endif; ?>
