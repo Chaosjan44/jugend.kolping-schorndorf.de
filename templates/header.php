@@ -64,21 +64,18 @@ require_once("php/functions.php");
                 <h4 class="modal-title ctext fw-bold" id="cookieModalLabel">Mhhh Lecker &#x1F36A;!</h4>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <hr>
             <div class="modal-body ctext cbg fw-normal">
                 <div class="px-2">
-                    <h4 class="fw-bold ctext">Wir verwenden nur notwendige Cookies aus lokalem Anbau um folgende Funktion bereitzustellen:</h4>
-                    <br>
-                    <p class="fs-5 ctext cookie-p-text">- Speichern der PHP-Session</p>
-                    <p class="fs-5 ctext cookie-p-text">- Angemeldet bleiben</p>
-                    <p class="fs-5 ctext cookie-p-text">- Speichern der Style-Einstellung</p>
-                    <p class="fs-5 ctext cookie-p-text mb-1">- Speichern der Cookie-Einstellung</p>
-                    <br>
-                    <p class="fw-light fs-6 cookie-p-text ctext">Ihre Cookie-Einstellung wird gespeichert.</p>
+                    <p>Wir nutzen Cookies auf unserer Website.<br>
+                    Einige von ihnen sind essenziell für den Betrieb der Seite,<br>
+                    während andere uns helfen, diese Website und die Nutzererfahrung zu verbessern (Tracking Cookies).<br>
+                    Sie können selbst entscheiden, ob Sie die Cookies zulassen möchten.<br>
+                    Bitte beachten Sie, dass bei einer Ablehnung womöglich nicht mehr alle Funktionalitäten der Seite zur Verfügung stehen.</p>
                 </div>
             </div>
             <div class="modal-footer ctext cbg fw-bold">
-                <a href="/"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zurück zur Startseite</button></a>
+                <button type="button" class="btn btn-kolping" data-bs-dismiss="modal">Ablehnen</button>
+                <button type="button" class="btn btn-kolping-outline" data-bs-dismiss="modal" onclick="allow_cookie()">Akzeptieren</button>
             </div>
         </div>
     </div>
