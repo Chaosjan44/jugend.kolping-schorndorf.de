@@ -1,7 +1,7 @@
 setStyle();
 
 function toggleStyle() {
-  if (check_cookie) {
+  if (check_cookie == "true") {
     if (getCookie("style") == "dark") {
       setCookie("style", "light", 365);
     } else {
@@ -12,7 +12,7 @@ function toggleStyle() {
 }
 
 function setStyle() {
-  if (check_cookie) {
+  if (check_cookie  == "true") {
     if (getCookie("style") == "dark") {
       setCookie("style", "dark", 365);
       document.querySelectorAll("link[href='/css/dark.css']")[0].disabled = false;
@@ -50,8 +50,8 @@ function getCookie(cname) {
 
 function check_cookie() {
 	if(getCookie("acceptCookies" == "true")) {
-		return true;
+		return "true";
 	} else {
-		return false;
+		return "false";
 	}
 }
