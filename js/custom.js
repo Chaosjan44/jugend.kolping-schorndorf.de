@@ -12,16 +12,18 @@ function toggleStyle() {
 }
 
 function setStyle() {
-  if (check_cookie  == "true") {
-    if (getCookie("style") == "dark") {
+  if (getCookie("style") == "dark") {
+    if (check_cookie  == "true") {
       setCookie("style", "dark", 365);
-      document.querySelectorAll("link[href='/css/dark.css']")[0].disabled = false;
-      document.querySelectorAll("link[href='/css/light.css']")[0].disabled = true;
-    } else {
-      setCookie("style", "light", 365);
-      document.querySelectorAll("link[href='/css/dark.css']")[0].disabled = true;
-      document.querySelectorAll("link[href='/css/light.css']")[0].disabled = false;
     }
+    document.querySelectorAll("link[href='/css/dark.css']")[0].disabled = false;
+    document.querySelectorAll("link[href='/css/light.css']")[0].disabled = true;
+  } else {
+    if (check_cookie  == "true") {
+      setCookie("style", "light", 365);
+    }
+    document.querySelectorAll("link[href='/css/dark.css']")[0].disabled = true;
+    document.querySelectorAll("link[href='/css/light.css']")[0].disabled = false;
   }
 }
 
