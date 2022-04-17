@@ -72,12 +72,7 @@ require_once("php/functions.php");
             </div>
             <div class="modal-footer ctext cbg fw-bold">
                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Ablehnen</button>
-                <button type="button" class="btn btn-success" data-bs-dismiss="modal" onclick="allow_cookie()">Akzeptieren</button>
-                <script> 
-                    function allow_cookie() {
-                        setCookie("acceptCookies", true, 365);
-                    }
-                </script>
+                <button type="button" class="btn btn-success" data-bs-dismiss="modal" onclick='setCookie("acceptCookies", "true", 365)'>Akzeptieren</button>
             </div>
         </div>
     </div>

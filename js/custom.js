@@ -1,23 +1,27 @@
 setStyle();
 
 function toggleStyle() {
-  if (getCookie("style") == "dark") {
-    setCookie("style", "light", 365);
-  } else {
-    setCookie("style", "dark", 365);
+  if (check_cookie) {
+    if (getCookie("style") == "dark") {
+      setCookie("style", "light", 365);
+    } else {
+      setCookie("style", "dark", 365);
+    }
   }
   setStyle();
 }
 
 function setStyle() {
-  if (getCookie("style") == "dark") {
-    setCookie("style", "dark", 365);
-    document.querySelectorAll("link[href='/css/dark.css']")[0].disabled = false;
-    document.querySelectorAll("link[href='/css/light.css']")[0].disabled = true;
-  } else {
-    setCookie("style", "light", 365);
-    document.querySelectorAll("link[href='/css/dark.css']")[0].disabled = true;
-    document.querySelectorAll("link[href='/css/light.css']")[0].disabled = false;
+  if (check_cookie) {
+    if (getCookie("style") == "dark") {
+      setCookie("style", "dark", 365);
+      document.querySelectorAll("link[href='/css/dark.css']")[0].disabled = false;
+      document.querySelectorAll("link[href='/css/light.css']")[0].disabled = true;
+    } else {
+      setCookie("style", "light", 365);
+      document.querySelectorAll("link[href='/css/dark.css']")[0].disabled = true;
+      document.querySelectorAll("link[href='/css/light.css']")[0].disabled = false;
+    }
   }
 }
 
@@ -42,4 +46,12 @@ function getCookie(cname) {
     }
   }
   return "";
+}
+
+function check_cookie() {
+	if(getCookie("acceptCookies" == "true")) {
+		return true;
+	} else {
+		return false;
+	}
 }
