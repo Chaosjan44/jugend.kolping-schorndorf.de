@@ -76,6 +76,11 @@ require_once("php/functions.php");
             <div class="modal-footer ctext cbg fw-bold">
                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Ablehnen</button>
                 <button type="button" class="btn btn-success" data-bs-dismiss="modal" onclick="allow_cookie()">Akzeptieren</button>
+                <script> 
+                    function allow_cookie() {
+                        setcookie('acceptCookies',true,time()+60*60*24*365);
+                    }
+                </script>
             </div>
         </div>
     </div>
