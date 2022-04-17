@@ -60,7 +60,7 @@ require_once("php/functions.php");
 <?php 
 if (!check_cookie()):
 ?>
-<div class="modal fade" id="cookieModal" tabindex="-1" aria-labelledby="cookieModalLabel" aria-hidden="false">
+<div class="modal fade" id="cookieModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="cookieModalLabel" aria-hidden="false">
     <div class="modal-dialog cbg">
         <div class="modal-content cbg">
             <div class="modal-header cbg">
