@@ -51,7 +51,7 @@ function getCookie(cname) {
 }
 
 function check_cookie() {
-	if(getCookie("acceptCookies" == "true")) {
+	if(getCookie("acceptCookies" == 'true')) {
 		return "true";
 	} else {
 		return "false";
