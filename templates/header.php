@@ -28,8 +28,8 @@ require_once("php/functions.php");
 <nav class="navbar header-header navbar-expand-lg cbg ctext sticky-top">
     <div class="container-fluid">
         <a class="navbar-brand" href="/">
-            <img src="/favicon.svg" class="navbar-icon_light <?php if (!isMobile()): print("align-text-bottom"); else: print("align-text-center"); endif;?> pe-2">
-            <img src="/favicon_dark.svg" class="navbar-icon_dark <?php if (!isMobile()): print("align-text-bottom"); else: print("align-text-center"); endif;?> pe-2">
+            <img src="/favicon.svg" class="navbar-icon_light align-text-bottom pe-2">
+            <img src="/favicon_dark.svg" class="navbar-icon_dark align-text-bottom pe-2">
                 <span class="d-inline-block">Kolpingjugend<br>Schorndorf</span>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
