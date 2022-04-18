@@ -81,7 +81,7 @@ require_once("templates/header.php"); ?>
 									<label for="customCheck1" class="custom-control-label">Angemeldet bleiben</label>
 								</div>
 								
-								<button type="submit" name="action" value="login" class="btn btn-primary btn-block text-uppercase mb-2 shadow-sm">Anmelden</button>
+								<button type="submit" name="action" value="login" class="btn btn-kolping btn-block text-uppercase mb-2 shadow-sm">Anmelden</button>
 							</form>
 
 						</div>
