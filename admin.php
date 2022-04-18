@@ -5,7 +5,7 @@ if ($user == false) {
     print("<script>location.href='login.php'</script>");
 }
 else if ($user['admin'] !== "1") {
-    print("<script>location.href='login.php'</script>");
+    print("<script>location.href='index.php'</script>");
 }
 // error_log(print_r($user,true));
 
