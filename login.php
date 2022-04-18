@@ -59,7 +59,7 @@ require_once("templates/header.php"); ?>
 			<div class="d-flex align-items-center py-5" style="min-height: 80vh;">
 				<div class="container">
 					<div class="row">
-						<div class="col-lg-10 col-xl-7 mx-auto cbg rounded">
+						<div class="col-lg-10 col-xl-7 mx-auto cbg2 rounded">
 							<h3 class="display-4 text-kolping-orange">Anmelden</h3>
                             <?php 
 							if(isset($error_msg) && !empty($error_msg)) {
