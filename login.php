@@ -1,5 +1,4 @@
 <?php 
-chdir ($_SERVER['DOCUMENT_ROOT']);
 require_once("php/functions.php");
 
 $error_msg = "";
@@ -36,7 +35,7 @@ if (isset($_POST['action'])) {
                     setcookie("securitytoken",$securitytoken,time()+(3600*24*365)); //Valid for 1 year
                 }
 
-                echo("<script>location.href='/admin.php'</script>");
+                echo("<script>location.href='admin.php'</script>");
                 exit;
             } else {
                 $error_msg =  "User oder Passwort war ungültig<br><br>";
@@ -44,12 +43,6 @@ if (isset($_POST['action'])) {
         }
     }
 }
-
-$username = "";
-if(isset($_POST['user'])) {
-	$username = htmlentities($_POST['user']); 
-}
-
 require_once("templates/header.php"); ?>
 
 
@@ -71,7 +64,7 @@ require_once("templates/header.php"); ?>
 							?>
 							<form action="login.php" method="post">
 								<div class="form-floating mb-3">
-									<input id="inputUser" type="text" name="user" placeholder="User" value="<?php echo $username; ?>" autofocus class="form-control border-0 ps-4 text-dark fw-bold" required>
+									<input id="inputUser" type="text" name="user" placeholder="User" autofocus class="form-control border-0 ps-4 text-dark fw-bold" required>
 									<label for="inputUser" class="text-dark fw-bold">Username</label>
 								</div>
 								<div class="form-floating mb-3">
