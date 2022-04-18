@@ -221,7 +221,7 @@ ul {
     background-color: #FF8C00 !important;
 } */
 
-.btn-kolping {
+.btn-kolping, .btn-kolping:active, .btn-kolping:visited {
     color: #fff;
     background-color: #FF8C00;
     border-color: #ef8400;
