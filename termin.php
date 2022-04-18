@@ -44,7 +44,6 @@ require("templates/header.php");
                             <h3 class="card-title align-center"><?=$event[0]['title']?></h3>
                         </div>
                     </div>
-                    <a href="/termin.php?id=<?=$event[0]['events_id']?>" class="stretched-link"></a>
                 </div>
             </div>
         </div>
