@@ -11,14 +11,14 @@ require_once("templates/header.php"); ?>
     <div style="min-height: 80vh;">
         <div class="card cbg2 my-3 py-3 px-3">
             <div class="card-body text-center">
-                <h1 class="card-title display-3 text-center mb-0 text-kolping-orange">Admin Bereich</h1>
+                <h1 class="card-title display-3 text-center mb-0 my-2 text-kolping-orange">Admin Bereich</h1>
                 <div class="card-text">
-                    <button class="btn btn-kolping mx-3" type="button" onclick="window.location.href = 'admin/blog.php';">Blogs</button>
-                    <button class="btn btn-kolping mx-3" type="button" onclick="window.location.href = 'admin/termine.php';">Termine</button>
+                    <button class="btn btn-kolping mx-1" type="button" onclick="window.location.href = 'admin/blog.php';">Blogs</button>
+                    <button class="btn btn-kolping mx-1" type="button" onclick="window.location.href = 'admin/termine.php';">Termine</button>
                     <?php if ($user['admin'] == "1"): ?>
-                        <button class="btn btn-kolping mx-3" type="button" onclick="window.location.href = 'admin/user.php';">User</button>
-                        <button class="btn btn-primary mx-3" style="background-color: #FF8C00;" type="button" onclick="window.location.href = 'admin/wir.php';">Wir</button>
-                        <button class="btn btn-primary mx-3" type="button" onclick="window.location.href = 'admin/angebote.php';">Angebote</button>
+                        <button class="btn btn-kolping mx-1" type="button" onclick="window.location.href = 'admin/user.php';">User</button>
+                        <button class="btn btn-primary mx-1" style="background-color: #FF8C00;" type="button" onclick="window.location.href = 'admin/wir.php';">Wir</button>
+                        <button class="btn btn-primary mx-1" type="button" onclick="window.location.href = 'admin/angebote.php';">Angebote</button>
                     <?php endif; ?>
                 </div>
             </div>
