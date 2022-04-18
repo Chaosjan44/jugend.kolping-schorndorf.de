@@ -21,21 +21,23 @@ if (isset($_POST['action'])) {
                 if ($user !== false && password_verify($passwort, $user['password'])) {
                     $_SESSION['userid'] = $user['user_id'];
                     //Möchte der Nutzer angemeldet beleiben?
-                    if(isset($_POST['angemeldet_bleiben'])) {
-                        $identifier = md5(uniqid());
-                        $securitytoken = md5(uniqid());
-                        
-                        $stmt = $pdo->prepare("INSERT INTO securitytokens (user_id, identifier, securitytoken) VALUES (?, ?, ?)");
-                        $stmt->bindValue(1, $user['user_id'], PDO::PARAM_INT);
-                        $stmt->bindValue(2, $identifier);
-                        $stmt->bindValue(3, sha1($securitytoken));
-                        $result = $stmt->execute();
-                        if (!$result) {
-                            error_log("Error #2 while user login");
-                            exit;
+                    if (check_cookie()) {
+                        if(isset($_POST['angemeldet_bleiben'])) {
+                            $identifier = md5(uniqid());
+                            $securitytoken = md5(uniqid());
+                            
+                            $stmt = $pdo->prepare("INSERT INTO securitytokens (user_id, identifier, securitytoken) VALUES (?, ?, ?)");
+                            $stmt->bindValue(1, $user['user_id'], PDO::PARAM_INT);
+                            $stmt->bindValue(2, $identifier);
+                            $stmt->bindValue(3, sha1($securitytoken));
+                            $result = $stmt->execute();
+                            if (!$result) {
+                                error_log("Error #2 while user login");
+                                exit;
+                            }
+                            setcookie("identifier",$identifier,time()+(3600*24*365)); //Valid for 1 year
+                            setcookie("securitytoken",$securitytoken,time()+(3600*24*365)); //Valid for 1 year
                         }
-                        setcookie("identifier",$identifier,time()+(3600*24*365)); //Valid for 1 year
-                        setcookie("securitytoken",$securitytoken,time()+(3600*24*365)); //Valid for 1 year
                     }
 
                     echo("<script>location.href='admin.php'</script>");
