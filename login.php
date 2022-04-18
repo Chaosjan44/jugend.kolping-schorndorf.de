@@ -38,10 +38,13 @@ if (isset($_POST['action'])) {
                             setcookie("identifier",$identifier,time()+(3600*24*365)); //Valid for 1 year
                             setcookie("securitytoken",$securitytoken,time()+(3600*24*365)); //Valid for 1 year
                         }
+                        $error_msg = "<span class='text-success'>Login Erfolgreich!<br><br></span>";
+                        echo("<script>location.href='admin.php'</script>");
+                        exit;
+                    } else {
+                        $error_msg = "<span class='text-danger'>für den Login müssen Cookies aktiv sein!<br><br></span>";
+                        exit;
                     }
-                    $error_msg = "<span class='text-success'>Login Erfolgreich!<br><br></span>";
-                    echo("<script>location.href='admin.php'</script>");
-                    exit;
                 } else {
                     $error_msg = "<span class='text-danger'>User oder Passwort war ungültig!<br><br></span>";
                 }
