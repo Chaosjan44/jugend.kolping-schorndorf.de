@@ -11,6 +11,10 @@ html, body {
     overflow-x: hidden; 
 }
 
+button {
+    color: #2d3238 !important;
+}
+
 .navbar-icon_light {
     display: none;
     height: 50px;
