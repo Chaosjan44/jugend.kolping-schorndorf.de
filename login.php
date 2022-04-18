@@ -70,7 +70,7 @@ require_once("templates/header.php"); ?>
                             </div>
                             <div class="<?php if (!isMobile()) {print('row row-cols-2 justify-content-between');} ?>">
                                 <div class="col">
-                                    <div class="input-group mb-3 <?php if (isMobile()) {print('justify-content-center');} ?>">
+                                    <div class="input-group <?php if (isMobile()) {print('mb-3 justify-content-center');} ?>">
                                         <label for="customCheck1" class="input-group-text">Angemeldet bleiben</label>
                                         <div class="input-group-text">
                                             <input value="remember-me" id="customCheck1" type="checkbox" name="angemeldet_bleiben" value="1" class="form-check-input" checked>
