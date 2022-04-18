@@ -17,7 +17,7 @@ require_once("templates/header.php"); ?>
                     <button class="btn btn-kolping mx-3" type="button" onclick="window.location.href = 'admin/termine.php';">Termine</button>
                     <?php if ($user['admin'] == "1"): ?>
                         <button class="btn btn-kolping mx-3" type="button" onclick="window.location.href = 'admin/user.php';">User</button>
-                        <button class="btn btn-kolping mx-3" type="button" onclick="window.location.href = 'admin/wir.php';">Wir</button>
+                        <button class="btn btn-primary mx-3" style="background-color: #FF8C00;" type="button" onclick="window.location.href = 'admin/wir.php';">Wir</button>
                         <button class="btn btn-primary mx-3" type="button" onclick="window.location.href = 'admin/angebote.php';">Angebote</button>
                     <?php endif; ?>
                 </div>
