@@ -69,10 +69,11 @@ require_once("templates/header.php"); ?>
                                 <label for="inputPassword" class="text-dark fw-bold">Passwort</label>
                             </div>
 
-                            <div class="input-group mb-3">
+                            
+                            <div class="input-group-text">
                                 <input value="remember-me" id="customCheck1" type="checkbox" name="angemeldet_bleiben" value="1" class="form-select" checked>
-                                <label for="customCheck1" class="input-group-text">Angemeldet bleiben</label>
                             </div>
+                            <label for="customCheck1" class="input-group-text mb-3">Angemeldet bleiben</label>
                             <button type="submit" name="action" value="login" class="btn btn-kolping btn-floating">Anmelden</button>
                         </form>
                     </div>
