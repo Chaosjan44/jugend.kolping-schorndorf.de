@@ -1,5 +1,5 @@
 <?php 
-error_log($user);
+error_log(print_r($user,true));
 
 
 
