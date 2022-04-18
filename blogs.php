@@ -8,12 +8,12 @@ $blogentrys = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <div class="container py-3">
     <div style="min-height: 80vh;">
         <h1 class="display-3 text-center mb-3 text-kolping-orange">Blogs</h1>
-        <div class="row row-cols-2">
+        <div class="row row-cols-2 justify-content-between">
             <?php foreach ($blogentrys as $blogentry): ?>
-                <div class="col card cbg2 my-2 mx-2">
+                <div class="col-5 card cbg2">
                     <img src="<?=$blogentry['source']?>" class="card-img-top img-fluid rounded-start" alt="<?=$blogentry['alt']?>">
                     <div class="card-body ctext">
-                        <h3 class="card-title"><?=$blogentry['name']?></h3>
+                        <h3 class="card-title text-center"><?=$blogentry['name']?></h3>
                         <?=$blogentry['prev_text']?>
                     </div>
                     <a href="/blog.php?id=<?=$blogentry['blog_entrys_id']?>" class="stretched-link"></a>
