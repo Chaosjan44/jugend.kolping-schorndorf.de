@@ -77,7 +77,7 @@ require_once("templates/header.php"); ?>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col">
+                                <div class="col text-end">
                                     <button type="submit" name="action" value="login" class="btn btn-kolping btn-floating">Anmelden</button>
                                 </div>
                             </div>
