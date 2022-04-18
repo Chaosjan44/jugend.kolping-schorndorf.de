@@ -1,5 +1,5 @@
 <?php
-require_once("php/mysql.php");
+require_once("/php/mysql.php");
 
 function check_user() {
 	global $pdo;
@@ -51,8 +51,9 @@ function check_user() {
 
 function error($error_msg) {
 	global $pdo;
-	include_once("templates/header.php");
-	include_once("templates/footer.php");
+	include_once("/templates/header.php");
+	include_once("/templates/error.php");
+	include_once("/templates/footer.php");
 	exit();
 }
 
