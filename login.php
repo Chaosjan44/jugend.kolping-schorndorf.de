@@ -16,7 +16,7 @@ if (isset($_POST['action'])) {
             }
             $user = $stmt->fetch();
             //Überprüfung des Passworts
-            if ($user != false && password_verify($passwort, $user['password'])) {
+            if ($user !== false && password_verify($passwort, $user['password'])) {
                 $_SESSION['userid'] = $user['user_id'];
                 //Möchte der Nutzer angemeldet beleiben?
                 if(isset($_POST['angemeldet_bleiben'])) {
