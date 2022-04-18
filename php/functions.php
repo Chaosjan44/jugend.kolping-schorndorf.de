@@ -38,7 +38,7 @@ function check_user($redirect = FALSE) {
 				return FALSE;
 			}
 		} else {
-			$stmt = $pdo->prepare("SELECT * FROM users WHERE users.id = ?");
+			$stmt = $pdo->prepare("SELECT * FROM users WHERE user_id = ?");
 			$stmt->bindValue(1, $_SESSION['userid'], PDO::PARAM_INT);
 			$result = $stmt->execute();
 			if (!$result) {
