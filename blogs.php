@@ -8,9 +8,9 @@ $blogentrys = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <div class="container py-3">
     <div style="min-height: 80vh;">
         <h1 class="display-3 text-center mb-3 text-kolping-orange">Blogs</h1>
-        <div class="row row-cols-2 justify-content-between">
+        <div class="row row-cols-2 gx-3 justify-content-between">
             <?php foreach ($blogentrys as $blogentry): ?>
-                <div class="col-5 card cbg2">
+                <div class="col card cbg2">
                     <img src="<?=$blogentry['source']?>" class="card-img-top img-fluid rounded-start" alt="<?=$blogentry['alt']?>">
                     <div class="card-body ctext">
                         <h3 class="card-title text-center"><?=$blogentry['name']?></h3>
