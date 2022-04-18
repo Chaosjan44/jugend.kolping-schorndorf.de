@@ -15,6 +15,7 @@ if (isset($_POST['action'])) {
                 print("error while getting user"); // To be removed
             }
             $user = $stmt->fetch();
+            
             //Überprüfung des Passworts
             if ($user !== false && password_verify($passwort, $user['password'])) {
                 $_SESSION['userid'] = $user['user_id'];

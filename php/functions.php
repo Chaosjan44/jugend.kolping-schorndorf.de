@@ -1,37 +1,37 @@
 <?php
 require_once("php/mysql.php");
 
-// function check_user() {
-// 	global $pdo;
-// 	if(!isset($_SESSION['userid']) && isset($_COOKIE['identifier']) && isset($_COOKIE['securitytoken'])) {
-// 		$identifier = $_COOKIE['identifier'];
-// 		$securitytoken = $_COOKIE['securitytoken'];
-// 		$stmt = $pdo->prepare("SELECT * FROM securitytokens WHERE identifier = ?");
-// 		$stmt->bindValue(1, $identifier);
-// 		$result = $stmt->execute();
-// 		if (!$result) {
-// 			exit;
-// 		}
-// 		$securitytoken_row = $stmt->fetch();
-// 		if(sha1($securitytoken) !== $securitytoken_row['securitytoken']) {
-// 			exit;
-// 		} else { //Token war korrekt
-// 			//Setze neuen Token
-// 			$neuer_securitytoken = md5(uniqid());
-// 			$stmt = $pdo->prepare("UPDATE securitytokens SET securitytoken = ? WHERE identifier = ?");
-// 			$stmt->bindValue(1, sha1($neuer_securitytoken));
-// 			$stmt->bindValue(2, $identifier);
-// 			$result = $stmt->execute();
-// 			if (!$result) {
-// 				exit;
-// 			}
-// 			setcookie("identifier",$identifier,time()+(3600*24*90)); //90 Tage Gültigkeit
-// 			setcookie("securitytoken",$neuer_securitytoken,time()+(3600*24*90)); //90 Tage Gültigkeit
-// 			//Logge den Benutzer ein
-// 			$_SESSION['userid'] = $securitytoken_row['user_id'];
-// 		}
-// 	}
-// }
+function check_user() {
+	global $pdo;
+	if(!isset($_SESSION['userid']) && isset($_COOKIE['identifier']) && isset($_COOKIE['securitytoken'])) {
+		$identifier = $_COOKIE['identifier'];
+		$securitytoken = $_COOKIE['securitytoken'];
+		$stmt = $pdo->prepare("SELECT * FROM securitytokens WHERE identifier = ?");
+		$stmt->bindValue(1, $identifier);
+		$result = $stmt->execute();
+		if (!$result) {
+			exit;
+		}
+		$securitytoken_row = $stmt->fetch();
+		if(sha1($securitytoken) !== $securitytoken_row['securitytoken']) {
+			exit;
+		} else { //Token war korrekt
+			//Setze neuen Token
+			$neuer_securitytoken = md5(uniqid());
+			$stmt = $pdo->prepare("UPDATE securitytokens SET securitytoken = ? WHERE identifier = ?");
+			$stmt->bindValue(1, sha1($neuer_securitytoken));
+			$stmt->bindValue(2, $identifier);
+			$result = $stmt->execute();
+			if (!$result) {
+				exit;
+			}
+			setcookie("identifier",$identifier,time()+(3600*24*90)); //90 Tage Gültigkeit
+			setcookie("securitytoken",$neuer_securitytoken,time()+(3600*24*90)); //90 Tage Gültigkeit
+			//Logge den Benutzer ein
+			$_SESSION['userid'] = $securitytoken_row['user_id'];
+		}
+	}
+}
 
 
 
