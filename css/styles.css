@@ -217,3 +217,18 @@ ul {
 }
 
 /* Bootstrap customs */
+
+.btn-kolping {
+    background-color: #FFF;
+    color: #FF8C00;
+    border-color: #d27300;
+    border-radius: 25px;
+}
+.btn-kolping:hover,
+.btn-kolping:focus,
+.btn-kolping:active    {
+    background-color: #FF8C00;
+    color: #FFF;
+    border-color: #d27300;
+}
+
