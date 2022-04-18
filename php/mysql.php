@@ -1,5 +1,5 @@
 <?php
-require_once "/config.php";
+require_once "config.php";
 
 try {
   $pdo = new PDO('mysql:host=' . $ini_array["mysql"]["host"] . ';dbname=' . $ini_array["mysql"]["database"] . ';charset=utf8', $ini_array["mysql"]["user"], $ini_array["mysql"]["passwd"]);

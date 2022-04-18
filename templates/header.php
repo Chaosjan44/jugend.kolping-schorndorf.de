@@ -1,5 +1,5 @@
 <?php
-require_once("/php/functions.php");
+require_once("php/functions.php");
 if (check_cookie()) {
     session_start();
 }
