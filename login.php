@@ -68,7 +68,7 @@ require_once("templates/header.php"); ?>
                                 <input id="inputPassword" type="password" name="passwort" placeholder="Passwort" class="form-control border-0 ps-4 text-dark fw-bold" required>
                                 <label for="inputPassword" class="text-dark fw-bold">Passwort</label>
                             </div>
-                            <div class="row row-cols-2 justify-content-between">
+                            <div class="<?php if (!isMobile()) {print('row row-cols-2 justify-content-between');} ?>">
                                 <div class="col">
                                     <div class="input-group mb-3">
                                         <label for="customCheck1" class="input-group-text">Angemeldet bleiben</label>
@@ -77,7 +77,7 @@ require_once("templates/header.php"); ?>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col text-end">
+                                <div class="col <?php if (!isMobile()) {print('text-end');} else {print('text-center');} ?>">
                                     <button type="submit" name="action" value="login" class="btn btn-kolping btn-floating">Anmelden</button>
                                 </div>
                             </div>
