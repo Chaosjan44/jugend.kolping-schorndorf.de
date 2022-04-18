@@ -11,12 +11,14 @@ $blogentrys = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <div class="row row-cols-2 gx-3 justify-content-between">
             <?php foreach ($blogentrys as $blogentry): ?>
                 <div class="col card cbg2">
-                    <img src="<?=$blogentry['source']?>" class="card-img-top img-fluid rounded-start" alt="<?=$blogentry['alt']?>">
-                    <div class="card-body ctext">
-                        <h3 class="card-title text-center"><?=$blogentry['name']?></h3>
-                        <?=$blogentry['prev_text']?>
+                    <div class="p-3">
+                        <img src="<?=$blogentry['source']?>" class="card-img-top img-fluid rounded-start" alt="<?=$blogentry['alt']?>">
+                        <div class="card-body ctext">
+                            <h3 class="card-title text-center"><?=$blogentry['name']?></h3>
+                            <?=$blogentry['prev_text']?>
+                        </div>
+                        <a href="/blog.php?id=<?=$blogentry['blog_entrys_id']?>" class="stretched-link"></a>
                     </div>
-                    <a href="/blog.php?id=<?=$blogentry['blog_entrys_id']?>" class="stretched-link"></a>
                 </div>
             <?php endforeach; ?>
         </div>
