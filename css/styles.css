@@ -217,18 +217,34 @@ ul {
 }
 
 /* Bootstrap customs */
-
-.btn-kolping {
-    background-color: #FFF;
-    color: #FF8C00;
-    border-color: #d27300;
-    border-radius: 25px;
-}
-.btn-kolping:hover,
-.btn-kolping:focus,
-.btn-kolping:active    {
-    background-color: #FF8C00;
-    color: #FFF;
-    border-color: #d27300;
+.btn-kolping,
+.btn-kolping:focus {
+    color:#fff;
+    background-color:#FF8C00;
+    border-color:#d27300;
+    box-shadow:0 0 0 .25rem rgba(255,140,0,.5)
 }
 
+.btn-check:active+.btn-kolping,
+.btn-check:checked+.btn-kolping,
+.btn-kolping.active,
+.btn-kolping:active,
+.show>.btn-kolping.dropdown-toggle {
+    color:#fff;
+    background-color:#d27300;
+    border-color:#FF8C00
+}
+.btn-check:active+.btn-kolping:focus,
+.btn-check:checked+.btn-kolping:focus,
+.btn-kolping.active:focus,
+.btn-kolping:active:focus,
+.show>.btn-kolping.dropdown-toggle:focus {
+    box-shadow:0 0 0 .25rem rgba(255,140,0,.5)
+}
+
+.btn-kolping.disabled,
+.btn-kolping:disabled {
+    color:#fff;
+    background-color:#ffb458;
+    border-color:#ffb458
+}
