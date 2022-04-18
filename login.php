@@ -1,7 +1,7 @@
 <?php 
 require_once("php/functions.php");
 
-$error_msg = "<span class='text-success'>Anmeldung war Erfolgreich!<br><br></span>";
+$error_msg = "";
 if (isset($_POST['action'])) {
     if ($_POST['action'] == 'login') {
         if(isset($_POST['user']) && isset($_POST['passwort'])) {
@@ -53,8 +53,8 @@ require_once("templates/header.php"); ?>
 
 <div class="container py-3" style="min-height: 80vh;">
 	<div class="row justify-content-center">
-		<div class="col align-items-center">
-			<div class="card cbg2 align-items-center">
+		<div class="col">
+			<div class="card cbg2">
                 <div class="card-body">
                     <h3 class="card-title display-3 text-center mb-4 text-kolping-orange">Anmelden</h3>
                     <div class="card-text">
@@ -69,11 +69,12 @@ require_once("templates/header.php"); ?>
                                 <label for="inputPassword" class="text-dark fw-bold">Passwort</label>
                             </div>
 
-                            
-                            <div class="input-group-text">
-                                <input value="remember-me" id="customCheck1" type="checkbox" name="angemeldet_bleiben" value="1" class="form-select" checked>
+                            <div class="input-group mb-3">
+                                <div class="input-group-text">
+                                    <input value="remember-me" id="customCheck1" type="checkbox" name="angemeldet_bleiben" value="1" class="form-check-input" checked>
+                                </div>
+                                <label for="customCheck1" class="input-group-text">Angemeldet bleiben</label>
                             </div>
-                            <label for="customCheck1" class="input-group-text mb-3">Angemeldet bleiben</label>
                             <button type="submit" name="action" value="login" class="btn btn-kolping btn-floating">Anmelden</button>
                         </form>
                     </div>
