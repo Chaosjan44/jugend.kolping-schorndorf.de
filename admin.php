@@ -4,19 +4,25 @@ $user = check_user();
 if ($user == false) {
     print("<script>location.href='login.php'</script>");
 }
-else if ($user['admin'] !== "1") {
-    print("<script>location.href='index.php'</script>");
-}
 // error_log(print_r($user,true));
-
-
-
-
-
-
 require_once("templates/header.php"); ?>
 
-
+<div class="container py-3">
+    <div style="min-height: 80vh;">
+        <div class="card cbg2 my-3 py-3 px-3">
+            <h1 class="display-3 text-center mb-3 text-kolping-orange">Admin Bereich</h1>
+        </div>
+        <div class="card cbg2 my-3 py-3 px-3">
+            <button class="btn btn-primary" type="button" onclick="window.location.href = 'admin/blog.php';">Blogs</button>
+            <button class="btn btn-primary" type="button" onclick="window.location.href = 'admin/termine.php';">Termine</button>
+            <?php if ($user['admin'] == "1"): ?>
+                <button class="btn btn-primary" type="button" onclick="window.location.href = 'admin/user.php';">User</button>
+                <button class="btn btn-primary" type="button" onclick="window.location.href = 'admin/wir.php';">Wir</button>
+                <button class="btn btn-primary" type="button" onclick="window.location.href = 'admin/angebote.php';">Angebote</button>
+            <?php endif; ?>
+        </div>
+    </div>
+</div>
 
 
 
