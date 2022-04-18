@@ -221,7 +221,7 @@ ul {
     background-color: #FF8C00 !important;
 } */
 
-.btn-kolping, .btn-kolping:active, .btn-kolping:visited {
+.btn-kolping {
     color: #fff;
     background-color: #FF8C00 !important;
     border-color: #ef8400 !important;
@@ -235,24 +235,25 @@ ul {
 
 .btn-check:focus+.btn-kolping,.btn-kolping:focus {
     color: #fff;
-    background-color: #FF8C00;
-    border-color: #ef8400;
-    box-shadow: 0 0 0 .5rem rgba(255, 140, 0, .75);}
+    background-color: #FF8C00 !important;
+    border-color: #ef8400 !important;
+    box-shadow: 0 0 0 .5rem rgba(255, 140, 0, .75) !important;
+}
 
 .btn-check:active+.btn-kolping,.btn-check:checked+.btn-kolping,.btn-kolping.active,.btn-kolping:active,.show>.btn-kolping.dropdown-toggle {
     color: #fff;
-    background-color: #FF8C00;
-    border-color: #ef8400;
+    background-color: #FF8C00 !important;
+    border-color: #ef8400 !important;
 }
 
 .btn-check:active+.btn-kolping:focus,.btn-check:checked+.btn-kolping:focus,.btn-kolping.active:focus,.btn-kolping:active:focus,.show>.btn-kolping.dropdown-toggle:focus {
-    box-shadow: 0 0 0 .5rem rgba(255, 140, 0, .75);
+    box-shadow: 0 0 0 .5rem rgba(255, 140, 0, .75) !important;
 }
 
 .btn-kolping.disabled,.btn-kolping:disabled {
     color: #fff;
-    background-color: #ffa83ebb;
-    border-color: #ca8531bb;
+    background-color: #ffa83ebb !important;
+    border-color: #ca8531bb !important;
 }
 
 /* .btn-kolping {
