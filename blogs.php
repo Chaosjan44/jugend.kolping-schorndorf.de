@@ -10,7 +10,7 @@ $blogentrys = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <h1 class="display-3 text-center mb-3 text-kolping-orange">Blogs</h1>
         <div class="row row-cols-2">
             <?php foreach ($blogentrys as $blogentry): ?>
-                <div class="col card cbg2 mb-3">
+                <div class="col card cbg2 my-2 mx-2">
                     <img src="<?=$blogentry['source']?>" class="card-img-top img-fluid rounded-start" alt="<?=$blogentry['alt']?>">
                     <div class="card-body ctext">
                         <h3 class="card-title"><?=$blogentry['name']?></h3>
