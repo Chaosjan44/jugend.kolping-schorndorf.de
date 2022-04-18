@@ -46,7 +46,7 @@ if (check_cookie()) {
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle hctext" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Über uns</a>
                     <ul class="dropdown-menu cbg2" aria-labelledby="offcanvasNavbarDropdown">
-                        <li><a class="dropdown-item hctext" href="/about_us/wir.php">Wir</a></li>
+                        <li><a class="dropdown-item hctext" href="/wir.php">Wir</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
