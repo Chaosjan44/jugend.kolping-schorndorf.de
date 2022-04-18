@@ -1,6 +1,8 @@
 <?php
 require_once("php/functions.php");
-session_start();
+if (check_cookie()) {
+    session_start();
+}
 ?>
 
 
