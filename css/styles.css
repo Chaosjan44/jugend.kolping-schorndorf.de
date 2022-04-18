@@ -223,14 +223,14 @@ ul {
 
 .btn-kolping, .btn-kolping:active, .btn-kolping:visited {
     color: #fff;
-    background-color: #FF8C00;
-    border-color: #ef8400;
+    background-color: #FF8C00 !important;
+    border-color: #ef8400 !important;
 }
 
 .btn-kolping:hover {
     color: #fff;
-    background-color: #da7800;
-    border-color: #bd6901;
+    background-color: #da7800 !important;
+    border-color: #bd6901 !important;
 }
 
 .btn-check:focus+.btn-kolping,.btn-kolping:focus {
