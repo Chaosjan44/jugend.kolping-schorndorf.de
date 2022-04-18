@@ -69,7 +69,7 @@ require_once("templates/header.php"); ?>
                                 <label for="inputPassword" class="text-dark fw-bold">Passwort</label>
                             </div>
                             <div class="<?php if (!isMobile()) {print('row row-cols-2 justify-content-between');} ?>">
-                                <div class="col">
+                                <div class="col <?php if (isMobile()) {print('text-center');} ?>">
                                     <div class="input-group mb-3">
                                         <label for="customCheck1" class="input-group-text">Angemeldet bleiben</label>
                                         <div class="input-group-text">
