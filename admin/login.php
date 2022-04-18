@@ -16,14 +16,14 @@ if(isset($_POST['user']) && isset($_POST['passwort'])) {
 	$user = $stmt->fetch();
 	//Überprüfung des Passworts
 	if ($user !== false && password_verify($passwort, $user['password'])) {
-		$_SESSION['userid'] = $user['id'];
+		$_SESSION['userid'] = $user['user_id'];
 		//Möchte der Nutzer angemeldet beleiben?
 		if(isset($_POST['angemeldet_bleiben'])) {
 			$identifier = md5(uniqid());
 			$securitytoken = md5(uniqid());
 			
 			$stmt = $pdo->prepare("INSERT INTO securitytokens (user_id, identifier, securitytoken) VALUES (?, ?, ?)");
-			$stmt->bindValue(1, $user['id'], PDO::PARAM_INT);
+			$stmt->bindValue(1, $user['user_id'], PDO::PARAM_INT);
 			$stmt->bindValue(2, $identifier);
 			$stmt->bindValue(3, sha1($securitytoken));
 			$result = $stmt->execute();
@@ -34,7 +34,7 @@ if(isset($_POST['user']) && isset($_POST['passwort'])) {
 			setcookie("securitytoken",$securitytoken,time()+(3600*24*365)); //Valid for 1 year
 		}
 
-		echo("<script>location.href='admin.php'</script>");
+		echo("<script>location.href='/admin.php'</script>");
 		exit;
 	} else {
 		$error_msg =  "User oder Passwort war ungültig<br><br>";
