@@ -34,17 +34,17 @@ require("templates/header.php");
                 <div class="row g-0">
                     <div class="col-md-2 d-flex justify-content-start align-items-center">
                         <div class="card cbg text-size-larger py-3 px-3 align-items-center text-center">
-                            <?=date('d', strtotime($event['date']))?>
+                            <?=date('d', strtotime($event[0]['date']))?>
                             <br>
-                            <?=date('M', strtotime($event['date']))?>
+                            <?=date('M', strtotime($event[0]['date']))?>
                         </div>
                     </div>
                     <div class="col-md-10 d-flex justify-content-start align-items-center">
                         <div class="card-body ctext align-items-center">
-                            <h3 class="card-title align-center"><?=$event['title']?></h3>
+                            <h3 class="card-title align-center"><?=$event[0]['title']?></h3>
                         </div>
                     </div>
-                    <a href="/termin.php?id=<?=$event['events_id']?>" class="stretched-link"></a>
+                    <a href="/termin.php?id=<?=$event[0]['events_id']?>" class="stretched-link"></a>
                 </div>
             </div>
         </div>
