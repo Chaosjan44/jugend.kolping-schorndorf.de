@@ -256,6 +256,20 @@ ul {
     border-color: #ca8531bb !important;
 }
 
+.checkbox-kolping:checked {
+    background-color: #FF8C00 !important;
+}
+
+.checkbox-kolping:focus+.checkbox-kolping,.checkbox-kolping:focus {
+    background-color: #FF8C00 !important;
+    box-shadow: 0 0 0 .25rem rgba(255, 140, 0, .75) !important;
+}
+
+.checkbox-kolping:active+.checkbox-kolping:focus,.checkbox-kolping:checked+.checkbox-kolping:focus,.checkbox-kolping.active:focus,.checkbox-kolping:active:focus,.show>.checkbox-kolping.dropdown-toggle:focus {
+    box-shadow: 0 0 0 .25rem rgba(255, 140, 0, .75) !important;
+}
+
+
 /* .btn-kolping {
     color: #fff;
     background-color: #FF8C00;
