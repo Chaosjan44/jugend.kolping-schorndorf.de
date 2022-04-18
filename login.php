@@ -49,44 +49,36 @@ if (isset($_POST['action'])) {
 }
 require_once("templates/header.php"); ?>
 
+<div class="container py-3" style="min-height: 80vh;">
+	<div class="row justify-content-center">
+		<div class="col align-items-center">
+			<div class="card cbg2 align-items-center">
+                <div class="card-body">
+                    <h3 class="card-title display-3 text-center mb-4 text-kolping-orange">Anmelden</h3>
+                    <div class="card-text">
+                        <?php 
+                        if(isset($error_msg) && !empty($error_msg)) {
+                            echo $error_msg;
+                        }
+                        ?>
+                        <form action="login.php" method="post">
+                            <div class="form-floating mb-3">
+                                <input id="inputUser" type="text" name="user" placeholder="User" autofocus class="form-control border-0 ps-4 text-dark fw-bold" required>
+                                <label for="inputUser" class="text-dark fw-bold">Username</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input id="inputPassword" type="password" name="passwort" placeholder="Passwort" class="form-control border-0 ps-4 text-dark fw-bold" required>
+                                <label for="inputPassword" class="text-dark fw-bold">Passwort</label>
+                            </div>
 
-
-
-
-<div class="container-fluid">
-	<div class="row no-gutter">
-		<div class="ctext">
-			<div class="d-flex align-items-center py-5" style="min-height: 80vh;">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-10 col-xl-7 mx-auto cbg2 rounded">
-							<h3 class="display-4 text-kolping-orange">Anmelden</h3>
-                            <?php 
-							if(isset($error_msg) && !empty($error_msg)) {
-								echo $error_msg;
-							}
-							?>
-							<form action="login.php" method="post">
-								<div class="form-floating mb-3">
-									<input id="inputUser" type="text" name="user" placeholder="User" autofocus class="form-control border-0 ps-4 text-dark fw-bold" required>
-									<label for="inputUser" class="text-dark fw-bold">Username</label>
-								</div>
-								<div class="form-floating mb-3">
-                                    <input id="inputPassword" type="password" name="passwort" placeholder="Passwort" class="form-control border-0 ps-4 text-dark fw-bold" required>
-									<label for="inputPassword" class="text-dark fw-bold">Passwort</label>
-								</div>
-
-								<div class="custom-control custom-checkbox mb-3">
-									<input value="remember-me" id="customCheck1" type="checkbox" name="angemeldet_bleiben" value="1" checked class="custom-control-input">
-									<label for="customCheck1" class="custom-control-label">Angemeldet bleiben</label>
-								</div>
-								
-								<button type="submit" name="action" value="login" class="btn btn-kolping btn-block text-uppercase mb-2 shadow-sm">Anmelden</button>
-							</form>
-
-						</div>
-					</div>
-				</div>
+                            <div class="input-group mb-3">
+                                <input value="remember-me" id="customCheck1" type="checkbox" name="angemeldet_bleiben" value="1" class="form-select" checked>
+                                <label for="customCheck1" class="input-group-text">Angemeldet bleiben</label>
+                            </div>
+                            <button type="submit" name="action" value="login" class="btn btn-kolping btn-floating">Anmelden</button>
+                        </form>
+                    </div>
+                </div>
 			</div>
 		</div>
 	</div>
