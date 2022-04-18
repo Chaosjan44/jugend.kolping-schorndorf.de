@@ -68,14 +68,16 @@ require_once("templates/header.php"); ?>
                                 <input id="inputPassword" type="password" name="passwort" placeholder="Passwort" class="form-control border-0 ps-4 text-dark fw-bold" required>
                                 <label for="inputPassword" class="text-dark fw-bold">Passwort</label>
                             </div>
-                            <div class="row row-cols-2 justify-content-around">
-                                <div class="col-6 input-group mb-3">
+                            <div class="row row-cols-2 justify-content-between">
+                                <div class="col input-group mb-3">
                                     <label for="customCheck1" class="input-group-text">Angemeldet bleiben</label>
                                     <div class="input-group-text">
                                         <input value="remember-me" id="customCheck1" type="checkbox" name="angemeldet_bleiben" value="1" class="form-check-input" checked>
                                     </div>
                                 </div>
-                                <button type="submit" name="action" value="login" class="col-6 btn btn-kolping btn-floating">Anmelden</button>
+                                <div class="col">
+                                    <button type="submit" name="action" value="login" class="btn btn-kolping btn-floating">Anmelden</button>
+                                </div>
                             </div>
                         </form>
                     </div>
