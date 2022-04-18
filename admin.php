@@ -1,5 +1,5 @@
 <?php 
-check_user();
+$user = check_user();
 error_log(print_r($user,true));
 
 
