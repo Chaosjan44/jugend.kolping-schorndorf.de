@@ -69,10 +69,12 @@ require_once("templates/header.php"); ?>
                                 <label for="inputPassword" class="text-dark fw-bold">Passwort</label>
                             </div>
                             <div class="row row-cols-2 justify-content-between">
-                                <div class="col input-group mb-3">
-                                    <label for="customCheck1" class="input-group-text">Angemeldet bleiben</label>
-                                    <div class="input-group-text">
-                                        <input value="remember-me" id="customCheck1" type="checkbox" name="angemeldet_bleiben" value="1" class="form-check-input" checked>
+                                <div class="col">
+                                    <div class="input-group mb-3">
+                                        <label for="customCheck1" class="input-group-text">Angemeldet bleiben</label>
+                                        <div class="input-group-text">
+                                            <input value="remember-me" id="customCheck1" type="checkbox" name="angemeldet_bleiben" value="1" class="form-check-input" checked>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col">
