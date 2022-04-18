@@ -1,7 +1,7 @@
 <?php 
 require_once("php/functions.php");
 
-$error_msg = "";
+$error_msg = "<span class='text-success'>Anmeldung war Erfolgreich!<br><br></span>";
 if (isset($_POST['action'])) {
     if ($_POST['action'] == 'login') {
         if(isset($_POST['user']) && isset($_POST['passwort'])) {
@@ -12,7 +12,8 @@ if (isset($_POST['action'])) {
             $stmt->bindValue(1, $username);
             $result = $stmt->execute();
             if (!$result) {
-                print("error while getting user"); // To be removed
+                error_log("Error #1 while user login");
+                exit;
             }
             $user = $stmt->fetch();
             if ($user['loginperms'] == "1") {
@@ -30,7 +31,8 @@ if (isset($_POST['action'])) {
                         $stmt->bindValue(3, sha1($securitytoken));
                         $result = $stmt->execute();
                         if (!$result) {
-                            print("error while creating cookies"); // To be removed
+                            error_log("Error #2 while user login");
+                            exit;
                         }
                         setcookie("identifier",$identifier,time()+(3600*24*365)); //Valid for 1 year
                         setcookie("securitytoken",$securitytoken,time()+(3600*24*365)); //Valid for 1 year
@@ -39,10 +41,10 @@ if (isset($_POST['action'])) {
                     echo("<script>location.href='admin.php'</script>");
                     exit;
                 } else {
-                    $error_msg = "User oder Passwort war ungültig!<br><br>";
+                    $error_msg = "<span class='text-danger'>User oder Passwort war ungültig!<br><br></span>";
                 }
             } else {
-                $error_msg = "Dieser User darf dich nicht einloggen!<br><br>";
+                $error_msg = "<span class='text-danger'>Dieser User darf dich nicht einloggen!<br><br></span>";
             }
         }
     }
@@ -56,11 +58,7 @@ require_once("templates/header.php"); ?>
                 <div class="card-body">
                     <h3 class="card-title display-3 text-center mb-4 text-kolping-orange">Anmelden</h3>
                     <div class="card-text">
-                        <?php 
-                        if(isset($error_msg) && !empty($error_msg)) {
-                            echo $error_msg;
-                        }
-                        ?>
+                        <?=$error_msg?>
                         <form action="login.php" method="post">
                             <div class="form-floating mb-3">
                                 <input id="inputUser" type="text" name="user" placeholder="User" autofocus class="form-control border-0 ps-4 text-dark fw-bold" required>
