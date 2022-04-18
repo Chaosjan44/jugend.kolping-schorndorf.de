@@ -1,7 +1,7 @@
 <?php
 require_once("php/mysql.php");
 
-function check_user($redirect) {
+function check_user() {
 	global $pdo;
 	if(!isset($_SESSION['userid']) && isset($_COOKIE['identifier']) && isset($_COOKIE['securitytoken'])) {
 		$identifier = $_COOKIE['identifier'];
@@ -31,12 +31,7 @@ function check_user($redirect) {
 			$_SESSION['userid'] = $securitytoken_row['user_id'];
 		}
 		if(!isset($_SESSION['userid'])) {
-			if($redirect) {
-				header("location: login.php");
-				exit();
-			} else {
-				return FALSE;
-			}
+			return FALSE;
 		} else {
 			$stmt = $pdo->prepare("SELECT * FROM users WHERE user_id = ?");
 			$stmt->bindValue(1, $_SESSION['userid'], PDO::PARAM_INT);
