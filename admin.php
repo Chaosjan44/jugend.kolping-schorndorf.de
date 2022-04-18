@@ -18,7 +18,6 @@ require_once("templates/header.php"); ?>
                     <?php if ($user['admin'] == "1"): ?>
                         <button class="btn btn-kolping mx-1" type="button" onclick="window.location.href = 'admin/user.php';">User</button>
                         <button class="btn btn-kolping mx-1" type="button" onclick="window.location.href = 'admin/wir.php';">Wir</button>
-                        <button class="btn btn-kolping mx-1" type="button" onclick="window.location.href = 'admin/angebote.php';">Angebote</button>
                     <?php endif; ?>
                 </div>
             </div>
