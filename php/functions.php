@@ -1,7 +1,7 @@
 <?php
 require_once("php/mysql.php");
 
-function check_user() {
+function check_user($redirect = FALSE) {
 	global $pdo;
 	if(!isset($_SESSION['userid']) && isset($_COOKIE['identifier']) && isset($_COOKIE['securitytoken'])) {
 		$identifier = $_COOKIE['identifier'];
@@ -29,6 +29,23 @@ function check_user() {
 			setcookie("securitytoken",$neuer_securitytoken,time()+(3600*24*90)); //90 Tage Gültigkeit
 			//Logge den Benutzer ein
 			$_SESSION['userid'] = $securitytoken_row['user_id'];
+		}
+		if(!isset($_SESSION['userid'])) {
+			if($redirect) {
+				header("location: login.php");
+				exit();
+			} else {
+				return FALSE;
+			}
+		} else {
+			$stmt = $pdo->prepare("SELECT * FROM users WHERE users.id = ?");
+			$stmt->bindValue(1, $_SESSION['userid'], PDO::PARAM_INT);
+			$result = $stmt->execute();
+			if (!$result) {
+				error_log("Error while pulling user with id: " + $_SESSION['userid'] + " from Database");
+			}
+			$user = $stmt->fetch();
+			return $user;
 		}
 	}
 }
