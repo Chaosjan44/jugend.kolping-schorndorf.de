@@ -11,7 +11,7 @@ require_once("templates/header.php"); ?>
     <div style="min-height: 80vh;">
         <div class="card cbg2 my-3 py-3 px-3">
             <div class="card-body text-center">
-                <h1 class="card-title display-3 text-center mb-0 my-2 text-kolping-orange">Admin Bereich</h1>
+                <h1 class="card-title display-3 text-center mb-4 text-kolping-orange">Admin Bereich</h1>
                 <div class="card-text">
                     <button class="btn btn-kolping mx-1" type="button" onclick="window.location.href = 'admin/blog.php';">Blogs</button>
                     <button class="btn btn-kolping mx-1" type="button" onclick="window.location.href = 'admin/termine.php';">Termine</button>
