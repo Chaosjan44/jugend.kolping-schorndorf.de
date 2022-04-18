@@ -73,7 +73,7 @@ require_once("templates/header.php"); ?>
                                     <div class="input-group <?php if (isMobile()) {print('mb-3 justify-content-center');} ?>">
                                         <label for="customCheck1" class="input-group-text">Angemeldet bleiben</label>
                                         <div class="input-group-text">
-                                            <input value="remember-me" id="customCheck1" type="checkbox" name="angemeldet_bleiben" value="1" class="form-check-input" checked>
+                                            <input value="remember-me" id="customCheck1" type="checkbox" name="angemeldet_bleiben" value="1" class="form-check-input checkbox-kolping" checked>
                                         </div>
                                     </div>
                                 </div>
