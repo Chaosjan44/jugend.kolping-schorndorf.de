@@ -1,12 +1,6 @@
 <?php 
 $crdate = "2020";
-
-
-
-
 ?>
-
-
 
 <?php if (!isMobile()): ?>
     <footer class="container-fluid sticky-bottom footer py-3">
