@@ -27,7 +27,8 @@ if (check_cookie()) {
     <title>Kolpingjugend Schorndorf</title>
 </head>
 <body>
-<nav class="navbar header-header navbar-expand-lg cbg ctext sticky-top" style="min-height: 8vh; max-height: 8vh;">
+<div style="min-height: 8vh;">
+<nav class="navbar header-header navbar-expand-lg cbg ctext sticky-top">
     <div class="container-fluid">
         <a class="navbar-brand" href="/">
             <img src="/favicon.svg" class="navbar-icon_light align-text-bottom pe-2">
@@ -78,6 +79,9 @@ if (check_cookie()) {
     </div>
 </div>
 </nav>
+
+
+</div>
 <?php 
 if (!check_cookie()):
 ?>
