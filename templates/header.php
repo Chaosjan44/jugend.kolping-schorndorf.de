@@ -58,9 +58,7 @@ if (check_cookie()) {
             </ul>
         </div>
     </div>
-</nav>
-
-<div class="modal fade" id="cookieModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="cookieModalLabel" aria-hidden="true">
+    <div class="modal fade" id="cookieModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="cookieModalLabel" aria-hidden="true">
     <div class="modal-dialog cbg">
         <div class="modal-content cbg">
             <div class="modal-header cbg">
@@ -80,6 +78,9 @@ if (check_cookie()) {
         </div>
     </div>
 </div>
+</nav>
+
+
 </div>
 <?php 
 if (!check_cookie()):
