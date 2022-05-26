@@ -3,7 +3,7 @@ $crdate = "2020";
 ?>
 
 <?php if (!isMobile()): ?>
-    <footer class="container-fluid sticky-bottom footer py-3">
+    <footer class="container-fluid cbg2 footer py-3">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-2 text-center">
@@ -43,7 +43,7 @@ $crdate = "2020";
         </div>
     </footer>
 <?php else: ?>
-    <footer class="container-fluid sticky-bottom footer py-3">
+    <footer class="container-fluid cbg2 footer py-3">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col text-center px-0">
