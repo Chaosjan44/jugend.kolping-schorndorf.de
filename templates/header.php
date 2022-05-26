@@ -58,9 +58,6 @@ if (check_cookie()) {
     </div>
 </nav>
 
-<div class="">
-
-</div>
 <div class="modal fade" id="cookieModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="cookieModalLabel" aria-hidden="true">
     <div class="modal-dialog cbg">
         <div class="modal-content cbg">
