@@ -22,7 +22,6 @@ if (check_cookie()) {
     <link rel="stylesheet" href="/css/light.css" disabled>
     <script src="/js/custom.js"></script>
     <link rel="icon" type="image/svg" href="/favicon.svg" sizes="1024x1024" />
-    <link rel="stylesheet" href="/css/bootstrap-icons.css">
     <!-- <link rel="stylesheet" href="/css/cookiebanner.css"> -->
     <title>Kolpingjugend Schorndorf</title>
 </head>
