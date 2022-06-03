@@ -83,6 +83,6 @@ if (check_cookie()) {
 if (!check_cookie()):
 ?>
 <script type="text/javascript">
-    const modalToggle = document.getElementById('cookieModal'); cookieModal.show(modalToggle)
+    const modalToggle = document.getElementById('cookieModal'); modalToggle.show(modalToggle)
 </script>
 <?php endif; ?>
