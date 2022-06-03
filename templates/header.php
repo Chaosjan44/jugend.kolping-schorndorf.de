@@ -58,8 +58,7 @@ if (check_cookie()) {
     </div>
 </nav>
 <script>
-    const myModal = new bootstrap.Modal('#cookieModal');
-    const modalToggle = document.getElementById('cookieModal');
+
 </script>
 <div class="modal fade" id="cookieModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="cookieModalLabel" aria-hidden="true">
     <div class="modal-dialog cbg">
@@ -86,6 +85,8 @@ if (check_cookie()) {
 if (!check_cookie()):
 ?>
 <script type="text/javascript">
+    const myModal = new bootstrap.Modal('#cookieModal');
+    const modalToggle = document.getElementById('cookieModal');
     myModal.show(modalToggle);
 </script>
 <?php endif; ?>
