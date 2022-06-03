@@ -61,7 +61,6 @@ if (check_cookie()) {
     const myModal = new bootstrap.Modal('#cookieModal', options)
     const modalToggle = document.getElementById('cookieModal'); myModal.show(modalToggle)
 </script>
-<button type="button" data-bs-toggle="modal" data-bs-target="#cookieModal">Cookies</button>
 <div class="modal fade" id="cookieModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="cookieModalLabel" aria-hidden="true">
     <div class="modal-dialog cbg">
         <div class="modal-content cbg">
