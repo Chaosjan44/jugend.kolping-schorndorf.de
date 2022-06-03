@@ -57,9 +57,7 @@ if (check_cookie()) {
         </div>
     </div>
 </nav>
-<script>
 
-</script>
 <div class="modal fade" id="cookieModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="cookieModalLabel" aria-hidden="true">
     <div class="modal-dialog cbg">
         <div class="modal-content cbg">
@@ -70,7 +68,9 @@ if (check_cookie()) {
             <div class="modal-body ctext cbg fw-normal">
                 <div class="px-2">
                     <p>Wir nutzen Cookies auf unserer Website.<br>
-                    Einige von ihnen sind essenziell für den Betrieb der Seite, während andere uns helfen, diese Website und die Nutzererfahrung zu verbessern (Tracking Cookies). Sie können selbst entscheiden, ob Sie die Cookies zulassen möchten. Bitte beachten Sie, dass bei einer Ablehnung womöglich nicht mehr alle Funktionalitäten der Seite zur Verfügung stehen.</p>
+                    Alle Cookies welche auf dieser Webseite verwendet werden sind für die Funktion der Webseite nötig. <br>
+                    Die Cookies werden nicht ausgewertet.
+                    </p>
                 </div>
             </div>
             <div class="modal-footer ctext cbg fw-bold">
