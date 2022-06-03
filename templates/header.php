@@ -85,8 +85,9 @@ if (check_cookie()) {
 if (!check_cookie()):
 ?>
 <script type="text/javascript">
-    myModal.addEventListener('shown.bs.modal', () => {
-        myInput.focus()
+    $(window).on('load', function() {
+        $('#cookieModal').modal('show');
     });
+    cookieModal.show();
 </script>
 <?php endif; ?>
