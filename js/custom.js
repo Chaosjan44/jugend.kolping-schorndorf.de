@@ -49,3 +49,8 @@ function getCookie(cname) {
   }
   return "";
 }
+
+function saveFrom(textarea) {
+  save = textarea.value;
+  // PushtoSQL save
+}
