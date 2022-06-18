@@ -10,7 +10,7 @@ require_once("templates/header.php");
     <script src="https://kit.fontawesome.com/0ba9bd5158.js" crossorigin="anonymous"></script> <!-- Needed -->
 
 
-    <div class="container d-flex">
+    <div class="container-xxl py-3" style="min-height: 80vh;">
         <script src="/js/markdown_mark.js"></script>
         <script src="/js/markdown_unmark.js"></script>
         <div class="row row-cols-1 m-4 p-2 cbg2 rounded">
