@@ -31,12 +31,12 @@ require_once("templates/header.php");
                 </div>
             </div>
             <div class="col p-2 mb-2 cbg2 rounded">
-                <textarea class="form-control" name="textinput" id="textinput" rows="10"></textarea>
+                <textarea class="form-control cbg ctext" name="textinput" id="textinput" rows="10"></textarea>
             </div>
             <div class="col p-2 cbg2 rounded">
-                <div class="input-group">
-                    <input type="file" class="form-control" id="PicUpload">
-                    <label class="input-group-text" for="PicUpload">Bilder Hochladen</label>
+                <div class="input-group cbg ctext">
+                    <input type="file" class="form-control cbg ctext" id="PicUpload">
+                    <label class="input-group-text cbg ctext" for="PicUpload">Bilder Hochladen</label>
                 </div>
             </div>
         </div>
