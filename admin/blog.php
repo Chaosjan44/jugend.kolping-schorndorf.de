@@ -14,7 +14,7 @@ require_once("templates/header.php");
         <script src="/js/markdown_mark.js"></script>
         <script src="/js/markdown_unmark.js"></script>
         <div class="row row-cols-1 m-4 p-2 cbg2 rounded">
-            <div class="col p-2 mb-2 cbg rounded d-flex">
+            <div class="col p-2 rounded d-flex">
                 <div class="input-group justify-content-start">
                     <button class="btn btn-kolping ctext px-3" onclick="makeBold(textinput)"><b>B</b></button>
                     <button class="btn btn-kolping ctext px-3" onclick="makeItalic(textinput)"><i>I</i></button>
@@ -30,13 +30,13 @@ require_once("templates/header.php");
                     <button class="btn btn-kolping ctext px-3" onclick="saveFrom(textinput)"><span>Speichern</span></button>
                 </div>
             </div>
-            <div class="col p-2 mb-2 cbg2 rounded">
+            <div class="col p-2 rounded">
                 <textarea class="form-control cbg ctext" name="textinput" id="textinput" rows="10"></textarea>
             </div>
-            <div class="col p-2 cbg2 rounded">
+            <div class="col p-2 rounded">
                 <div class="input-group cbg ctext">
                     <input type="file" class="form-control" id="PicUpload">
-                    <label class="input-group-text" for="PicUpload">Bilder Hochladen</label>
+                    <label class="input-group-text " for="PicUpload">Bilder Hochladen</label>
                 </div>
             </div>
         </div>
