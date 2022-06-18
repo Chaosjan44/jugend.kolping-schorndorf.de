@@ -7,6 +7,7 @@ if ($user == false) {
 }
 require_once("templates/header.php"); 
 ?>
+    <script src="https://kit.fontawesome.com/0ba9bd5158.js" crossorigin="anonymous"></script> <!-- Needed -->
 
 
     <div class="container d-flex" style="height: 100vh;">
