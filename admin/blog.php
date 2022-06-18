@@ -35,8 +35,8 @@ require_once("templates/header.php");
             </div>
             <div class="col p-2 cbg2 rounded">
                 <div class="input-group cbg ctext">
-                    <input type="file" class="form-control cbg ctext" id="PicUpload">
-                    <label class="input-group-text cbg ctext" for="PicUpload">Bilder Hochladen</label>
+                    <input type="file" class="form-control" id="PicUpload">
+                    <label class="input-group-text" for="PicUpload">Bilder Hochladen</label>
                 </div>
             </div>
         </div>
