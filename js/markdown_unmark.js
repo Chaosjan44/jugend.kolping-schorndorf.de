@@ -37,7 +37,6 @@ function unMarkPrev(textarea) {
             inputArray[i] = inputArray[i].replace('- ', '<li>');
             inputArray[i] = inputArray[i].replace('<br>', '</li>');
         }
-        console.log(inputArray[i]);
         input += inputArray[i]
     }
    
