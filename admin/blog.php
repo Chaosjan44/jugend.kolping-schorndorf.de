@@ -149,14 +149,14 @@ require_once("templates/header.php");
         
         <div class="row row-cols-5 gx-3">
             <?php foreach ($blogentrys as $blogentry): ?>
-                <div class="col">
+                <div class="col p2">
                     <div class="card cbg2" style="height: 100% !important;">
                         <img src="<?=$blogentry['source']?>" class="card-img-top img-fluid rounded-start" alt="<?=$blogentry['alt']?>">
                         <div class="card-body ctext">
                             <h3 class="card-title text-center"><?=$blogentry['name']?></h3>
                             <?=$blogentry['prev_text']?>
                         </div>
-                        <form action="blog.php" method="post" enctype="multipart/form-data" class="pb-2 d-flex justify-content-between">
+                        <form action="blog.php" method="post" enctype="multipart/form-data" class="p-2 d-flex justify-content-between">
                             <input type="number" value="<?=$blogentry['blog_entrys_id']?>" name="blog_entrys_id" style="display: none;" required>
                             <button type="submit" name="action" class="btn btn-kolping" value="mod">Editieren</button>
                             <button type="submit" name="action" class="btn btn-danger" value="del">Löschen</button>
