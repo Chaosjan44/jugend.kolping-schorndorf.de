@@ -51,6 +51,28 @@ if (isset($_POST['action'])) {
                 error('Datenbank Fehler!', pdo_debugStrParams($stmt));
             }
         }
+        $stmt = $pdo->prepare('SELECT * FROM blog_images where blog_images_id = ?');
+        $stmt->bindValue(1, $blog_entrys_id, PDO::PARAM_INT);
+        $result = $stmt->execute();
+        if (!$result) {
+            error('Datenbank Fehler!', pdo_debugStrParams($stmt));
+        }
+        $imgs = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        // DelImgs
+        for ($x = 0; $x < count($imgs); $x++) {
+            $var = 'delImage-'.$x;
+            if (isset($_POST[$var])) {
+                #del
+                $stmt = $pdo->prepare('DELETE FROM blog_images where blog_images_id = ? and blog_entrys_id = ?');
+                $stmt->bindValue(1, $_POST[$var], PDO::PARAM_INT);
+                $stmt->bindValue(2, $_POST[$blog_entrys_id], PDO::PARAM_INT);
+                $result = $stmt->execute();
+                if (!$result) {
+                    error('Datenbank Fehler!', pdo_debugStrParams($stmt));
+                }                
+            }
+        }
+
         if (!empty($_FILES["file"]["name"][0])){
             $allowTypes = array('jpg','png','jpeg','gif');
             $fileCount = count($_FILES['file']['name']);
@@ -81,20 +103,6 @@ if (isset($_POST['action'])) {
                 } else {
                     error('Wir unterstützen nur JPG, JPEG, PNG & GIF Dateien.');
                 }
-            }
-        }
-        // DelImgs
-        for ($x = 0; $x < count($imgs); $x++) {
-            $var = 'delImage-'.$x;
-            if (isset($_POST[$var])) {
-                #del
-                $stmt = $pdo->prepare('DELETE FROM blog_images where blog_images_id = ? and blog_entrys_id = ?');
-                $stmt->bindValue(1, $_POST[$var], PDO::PARAM_INT);
-                $stmt->bindValue(2, $_POST[$blog_entrys_id], PDO::PARAM_INT);
-                $result = $stmt->execute();
-                if (!$result) {
-                    error('Datenbank Fehler!', pdo_debugStrParams($stmt));
-                }                
             }
         }
         exit;
