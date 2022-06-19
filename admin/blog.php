@@ -143,7 +143,11 @@ require_once("templates/header.php");
 <div class="container py-3">
     <div style="min-height: 80vh;">
         <h1 class="display-3 text-center mb-3 text-kolping-orange">Blogs Editieren</h1>
-        <div class="row row-cols-2 gx-3">
+        <form action="blog.php" method="post" enctype="multipart/form-data" class="d-flex justify-content-end">
+            <button type="submit" name="action" class="btn btn-kolping" value="add">Blog Hinzufügen</button>
+        </form>
+        
+        <div class="row row-cols-5 gx-3">
             <?php foreach ($blogentrys as $blogentry): ?>
                 <div class="col">
                     <div class="card cbg2" style="height: 100% !important;">
@@ -152,10 +156,10 @@ require_once("templates/header.php");
                             <h3 class="card-title text-center"><?=$blogentry['name']?></h3>
                             <?=$blogentry['prev_text']?>
                         </div>
-                        <form action="blog.php" method="post" enctype="multipart/form-data">
+                        <form action="blog.php" method="post" enctype="multipart/form-data" class="pb-2 d-flex justify-content-between">
                             <input type="number" value="<?=$blogentry['blog_entrys_id']?>" name="blog_entrys_id" style="display: none;" required>
-                            <button type="submit" name="action" class="btn btn-kolping justify-content-start" value="mod">Editieren</button>
-                            <button type="submit" name="action" class="btn btn-danger justify-content-end" value="del">Löschen</button>
+                            <button type="submit" name="action" class="btn btn-kolping" value="mod">Editieren</button>
+                            <button type="submit" name="action" class="btn btn-danger" value="del">Löschen</button>
                         </form>
                     </div>
                 </div>
