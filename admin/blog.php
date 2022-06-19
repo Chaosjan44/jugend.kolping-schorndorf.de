@@ -71,12 +71,14 @@ if (isset($_POST['action'])) {
                         <button class="btn btn-kolping ctext px-3" data-bs-toggle="modal" data-bs-target="#explainModal"><i class="fa-solid fa-circle-question"></i></button>
                     </div>
                     <div class="justify-content-end d-flex">
-                        <button class="btn btn-success ctext mx-2" onclick="saveFrom(textinput)"><span>Speichern</span></button>
-                        <button class="btn btn-danger ctext mx-2" onclick="window.location.href = '/admin/blog.php';">Abbrechen</button>
+                        <form action="blog.php" method="post" enctype="multipart/form-data">
+                            <button type="submit" class="btn btn-success ctext mx-2" name="action" value="save"><span>Speichern</span></button>
+                            <button type="button" class="btn btn-danger ctext mx-2" onclick="window.location.href = '/admin/blog.php';">Abbrechen</button>
+                        </form>
                     </div>
                 </div>
                 <div class="col p-2 rounded">
-                    <textarea class="form-control cbg ctext" name="textinput" id="textinput" rows="3"><?=$entry[0]["prev_text"]?></textarea>
+                    <textarea class="form-control cbg ctext" name="previnput" id="precinput" rows="3"><?=$entry[0]["prev_text"]?></textarea>
                 </div>
                 <div class="col p-2 rounded">
                     <textarea class="form-control cbg ctext" name="textinput" id="textinput" rows="10"><?=$entry[0]["text"]?></textarea>
