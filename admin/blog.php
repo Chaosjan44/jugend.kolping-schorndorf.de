@@ -131,69 +131,70 @@ if (isset($_POST['action'])) {
             <script src="/js/markdown_mark.js"></script>
             <script src="/js/markdown_unmark.js"></script>
             <div class="row row-cols-1 m-4 p-2 cbg2 rounded">
-                <div class="col p-2 rounded">
-                    <textarea class="form-control cbg ctext" name="titleinput" id="titleinput" style="max-height: 20px;"><?=$entry[0]["name"]?></textarea>
-                </div>
-                <div class="col p-2 rounded d-flex">
-                    <div class="input-group justify-content-start">
-                        <button class="btn btn-kolping ctext px-3" onclick="makeBold(textinput)"><b>B</b></button>
-                        <button class="btn btn-kolping ctext px-3" onclick="makeItalic(textinput)"><i>I</i></button>
-                        <button class="btn btn-kolping ctext px-3" onclick="makeStrikethrough(textinput)"><del>Text</del></button>
-                        <button class="btn btn-kolping ctext px-3" onclick="makeUnderline(textinput)"><ins>Text</ins></button>
-                        <button class="btn btn-kolping ctext px-3" onclick="makeHeading(textinput)"><span>Überschrift</span></button>
-                        <button class="btn btn-kolping ctext px-3" onclick="makeLink(textinput)"><a><i class="fa-solid fa-link"></i></a></button>
-                        <button class="btn btn-kolping ctext px-3" onclick="makeList(textinput)"><a><i class="fa-solid fa-list"></i></a></button>
-                        <button class="btn btn-kolping ctext px-3" onclick="unMarkPrev(textinput)"><i class="fa-solid fa-magnifying-glass"></i><span class="ms-2">Vorschau</span></button>
-                        <button class="btn btn-kolping ctext px-3" data-bs-toggle="modal" data-bs-target="#explainModal"><i class="fa-solid fa-circle-question"></i></button>
+                <form action="blog.php" method="post" enctype="multipart/form-data">
+                    <div class="col p-2 rounded">
+                        <textarea class="form-control cbg ctext" name="titleinput" id="titleinput" style="max-height: 20px;"><?=$entry[0]["name"]?></textarea>
                     </div>
-                    <div>
-                        <form action="blog.php" method="post" enctype="multipart/form-data" class="justify-content-end d-flex">
+                    <div class="col p-2 rounded d-flex">
+                        <div class="input-group justify-content-start">
+                            <button class="btn btn-kolping ctext px-3" onclick="makeBold(textinput)"><b>B</b></button>
+                            <button class="btn btn-kolping ctext px-3" onclick="makeItalic(textinput)"><i>I</i></button>
+                            <button class="btn btn-kolping ctext px-3" onclick="makeStrikethrough(textinput)"><del>Text</del></button>
+                            <button class="btn btn-kolping ctext px-3" onclick="makeUnderline(textinput)"><ins>Text</ins></button>
+                            <button class="btn btn-kolping ctext px-3" onclick="makeHeading(textinput)"><span>Überschrift</span></button>
+                            <button class="btn btn-kolping ctext px-3" onclick="makeLink(textinput)"><a><i class="fa-solid fa-link"></i></a></button>
+                            <button class="btn btn-kolping ctext px-3" onclick="makeList(textinput)"><a><i class="fa-solid fa-list"></i></a></button>
+                            <button class="btn btn-kolping ctext px-3" onclick="unMarkPrev(textinput)"><i class="fa-solid fa-magnifying-glass"></i><span class="ms-2">Vorschau</span></button>
+                            <button class="btn btn-kolping ctext px-3" data-bs-toggle="modal" data-bs-target="#explainModal"><i class="fa-solid fa-circle-question"></i></button>
+                        </div>
+                        <div class="justify-content-end d-flex">
+                            <input type="number" value="<?=$blog_entrys_id?>" name="blog_entrys_id" style="display: none;" required>
                             <button type="submit" class="btn btn-success ctext mx-2" name="action" value="save"><span>Speichern</span></button>
                             <button type="button" class="btn btn-danger ctext mx-2" onclick="window.location.href = '/admin/blog.php';">Abbrechen</button>
-                        </form>
-                    </div>
-                </div>
-                <div class="col p-2 rounded">
-                    <textarea class="form-control cbg ctext" name="previnput" id="precinput" rows="3"><?=$entry[0]["prev_text"]?></textarea>
-                </div>
-                <div class="col p-2 rounded">
-                    <textarea class="form-control cbg ctext" name="textinput" id="textinput" rows="10"><?=$entry[0]["text"]?></textarea>
-                </div>
-                <div class="col p-2 rounded">
-                    <div class="input-group cbg ctext">
-                        <input type="file" class="form-control" id="PicUpload" name="file[]" accept="image/png, image/gif, image/jpeg" multiple onchange="showPreview(event);">
-                        <label class="input-group-text " for="PicUpload">Bilder Hochladen</label>
-                    </div>
-                    <div class="input-group cbg ctext">
-                        <span class="input-group-text" for="inputVisible">Visible</span>
-                        <div class="input-group-text">
-                            <input class="form-check-input mt-0" type="checkbox" id="inputVisible" name="visible" <?=($entry[0]['visible']==1 ? 'checked':'')?>>
                         </div>
                     </div>
-                </div>
-                <div class="col p-2 rounded">
-                    <h2>Diese Bilder werden Hinzugefügt:</h2>
-                    <div class="row row-cols-4 row-cols-md-4 g-4 py-2" id="preview">
+                    <div class="col p-2 rounded">
+                        <textarea class="form-control cbg ctext" name="previnput" id="precinput" rows="3"><?=$entry[0]["prev_text"]?></textarea>
                     </div>
-                    <h2>Diese Bilder sind aktuell vorhanden:</h2>
-                    <div class="row row-cols-4 row-cols-md-4 g-4 py-2">
-                        <?php for ($x = 0; $x < count($images); $x++) :?>
-                            <div class="col">
-                                <div class="card prodcard cbg">
-                                    <img src="<?=$images[$x]['source']?>" class="card-img-top img-fluid rounded" alt="<?=$images[$x]['alt']?>">
-                                    <div class="card-body">
-                                        <div class="input-group py-2 d-flex justify-content-center">
-                                            <span class="input-group-text" for="inputVisible">Löschen?</span>
-                                            <div class="input-group-text">
-                                                <input type="checkbox" class="form-check-input" value="<?=$images[$x]['blog_images_id']?>" name="<?='delImage-'.$x?>">
+                    <div class="col p-2 rounded">
+                        <textarea class="form-control cbg ctext" name="textinput" id="textinput" rows="10"><?=$entry[0]["text"]?></textarea>
+                    </div>
+                    <div class="col p-2 rounded">
+                        <div class="input-group cbg ctext">
+                            <input type="file" class="form-control" id="PicUpload" name="file[]" accept="image/png, image/gif, image/jpeg" multiple onchange="showPreview(event);">
+                            <label class="input-group-text " for="PicUpload">Bilder Hochladen</label>
+                        </div>
+                        <div class="input-group cbg ctext">
+                            <span class="input-group-text" for="inputVisible">Visible</span>
+                            <div class="input-group-text">
+                                <input class="form-check-input mt-0" type="checkbox" id="inputVisible" name="visible" <?=($entry[0]['visible']==1 ? 'checked':'')?>>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col p-2 rounded">
+                        <h2>Diese Bilder werden Hinzugefügt:</h2>
+                        <div class="row row-cols-4 row-cols-md-4 g-4 py-2" id="preview">
+                        </div>
+                        <h2>Diese Bilder sind aktuell vorhanden:</h2>
+                        <div class="row row-cols-4 row-cols-md-4 g-4 py-2">
+                            <?php for ($x = 0; $x < count($images); $x++) :?>
+                                <div class="col">
+                                    <div class="card prodcard cbg">
+                                        <img src="<?=$images[$x]['source']?>" class="card-img-top img-fluid rounded" alt="<?=$images[$x]['alt']?>">
+                                        <div class="card-body">
+                                            <div class="input-group py-2 d-flex justify-content-center">
+                                                <span class="input-group-text" for="inputVisible">Löschen?</span>
+                                                <div class="input-group-text">
+                                                    <input type="checkbox" class="form-check-input" value="<?=$images[$x]['blog_images_id']?>" name="<?='delImage-'.$x?>">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        <?php endfor;?>
+                            <?php endfor;?>
+                        </div>
                     </div>
-                </div>
+                </form>
             </div>
 
             <!-- explanation modal -->
