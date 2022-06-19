@@ -19,7 +19,7 @@ if (isset($_POST['action'])) {
         if ($user['admin'] != 1) {
             error('Unzureichende Berechtigungen!');
         }
-        if (!isset($blog_entrys_id)) {
+        if (!isset($_POST['blog_entrys_id'])) {
             $stmt = $pdo->prepare('INSERT INTO blog_entrys (name, prev_text, text, visible, created_by, created_at, updated_at) VALUE (?, ?, ?, ?, ?, now(), now())');
             $stmt->bindValue(1, $_POST['titleinput']);
             $stmt->bindValue(2, $_POST['previnput']);
@@ -41,11 +41,13 @@ if (isset($_POST['action'])) {
             $blog_id = $stmt->fetchAll(PDO::FETCH_ASSOC); 
             $blog_entrys_id = $blog_id[0]['blog_entrys_id'];
         } else {
-            $stmt = $pdo->prepare('UPDATE blog_entrys SET name = ?, prev_text = ?, text = ?, visible = ?, updated_at = now()');
+            $blog_entrys_id = $_POST['blog_entrys_id'];
+            $stmt = $pdo->prepare('UPDATE blog_entrys SET name = ?, prev_text = ?, text = ?, visible = ?, updated_at = now() WHERE blog_entrys_id = ?');
             $stmt->bindValue(1, $_POST['titleinput']);
             $stmt->bindValue(2, $_POST['previnput']);
             $stmt->bindValue(3, $_POST['textinput']);
             $stmt->bindValue(4, (isset($_POST['visible']) ? "1" : "0"), PDO::PARAM_INT);
+            $stmt->bindValue(3, $blog_entrys_id, PDO::PARAM_INT);
             $result = $stmt->execute();
             if (!$result) {
                 error('Datenbank Fehler!', pdo_debugStrParams($stmt));
