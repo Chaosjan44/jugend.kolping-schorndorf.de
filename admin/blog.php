@@ -108,7 +108,9 @@ if (isset($_POST['action'])) {
 require_once("templates/header.php"); 
 ?>
     <div class="container-xxl py-3" style="min-height: 80vh;">
-        <button type="button" class="btn btn-kolping" value="mod" formaction="action">Mod</button>
+        <form action="action">
+            <button type="button" class="btn btn-kolping" value="mod">Mod</button>
+        </form>
     </div>
 <?php
 include_once("templates/footer.php")
