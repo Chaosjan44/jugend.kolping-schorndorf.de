@@ -108,7 +108,7 @@ if (isset($_POST['action'])) {
 require_once("templates/header.php"); 
 ?>
     <div class="container-xxl py-3" style="min-height: 80vh;">
-        <form action="blog.php" method="post">
+        <form action="blog.php" method="post" enctype="multipart/form-data">
             <button type="button" name="action" class="btn btn-kolping" value="add">Mod</button>
         </form>
     </div>
