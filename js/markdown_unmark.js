@@ -1,5 +1,13 @@
 function unMarkPrev(textarea) {
     input = textarea.value;
+    output = unMark(input);
+    input = "";
+    document.getElementById("prevModalText").innerHTML = output;
+    const myModal = new bootstrap.Modal('#prevModal');
+    const modalToggle = document.getElementById('prevModal');
+    myModal.show(modalToggle);
+}
+function unMark(input) {
     input = input.replace(/(?:\r\n|\r|\n)/g, '<br><split>');
     input = input.replace('**', '<b>');
     input = input.replace('/**', '</b>');
@@ -40,14 +48,8 @@ function unMarkPrev(textarea) {
         input += inputArray[i]
     }
    
-    output = input;
-    input = "";
-    document.getElementById("prevModalText").innerHTML = output;
-    const myModal = new bootstrap.Modal('#prevModal');
-    const modalToggle = document.getElementById('prevModal');
-    myModal.show(modalToggle);
+    return input;
 }
-
 
 
 function replaceSelectedText(textarea, text) {
