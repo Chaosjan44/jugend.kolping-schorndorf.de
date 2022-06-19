@@ -7,6 +7,12 @@ if (!isset($user)) {
     exit;
 }
 
+$stmt = $pdo->prepare('SELECT * ,(SELECT source From blog_images WHERE blog_images.blog_entrys_id=blog_entrys.blog_entrys_id AND prev_img=1) AS source,(SELECT alt From blog_images WHERE blog_images.blog_entrys_id=blog_entrys.blog_entrys_id AND prev_img=1) AS alt FROM blog_entrys where visible = 1 ORDER BY created_at desc');
+$stmt->execute();
+$blogentrys = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
+
 
 if (isset($_POST['action'])) {
     error_log("action");
@@ -15,12 +21,34 @@ if (isset($_POST['action'])) {
             error('Unzureichende Berechtigungen!');
         }
 
+
+
+
+        exit;
     }
+
+    $blog_entrys_id = $_POST['blog_entrys_id'];
+    $stmt = $pdo->prepare('SELECT * FROM blog_entrys where blog_entrys_id  = ?');
+    // bindValue will allow us to use integer in the SQL statement, we need to use for LIMIT
+    $stmt->bindValue(1, $blog_entrys_id, PDO::PARAM_INT);
+    $stmt->execute();
+    if ($stmt->rowCount() != 1) {
+        error_log($stmt->rowCount());
+        header("location: blogs.php");
+        exit;
+    }
+    $entry = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    $stmt = $pdo->prepare('SELECT * FROM blog_images where blog_entrys_id = ?');
+    $stmt->bindValue(1, $entry[0]['blog_entrys_id'], PDO::PARAM_INT);
+    $stmt->execute();
+    $images = $stmt->fetchAll(PDO::FETCH_ASSOC);
     if ($_POST['action'] == 'add' || $_POST['action'] == 'mod') {
         error_log("action add/mod");
         if ($user['admin'] != 1) {
             error('Unzureichende Berechtigungen!');
         }
+        
         require_once("templates/header.php"); ?>
         <script src="https://kit.fontawesome.com/0ba9bd5158.js" crossorigin="anonymous"></script> <!-- Needed -->
         <div class="container-xxl py-3" style="min-height: 80vh;">
@@ -28,7 +56,7 @@ if (isset($_POST['action'])) {
             <script src="/js/markdown_unmark.js"></script>
             <div class="row row-cols-1 m-4 p-2 cbg2 rounded">
                 <div class="col p-2 rounded">
-                    <textarea class="form-control cbg ctext" name="titleimput" id="titleimput" style="max-height: 20px;">wewew</textarea>
+                    <textarea class="form-control cbg ctext" name="titleinput" id="titleinput" style="max-height: 20px;"><?=$entry[0]["name"]?></textarea>
                 </div>
                 <div class="col p-2 rounded d-flex">
                     <div class="input-group justify-content-start">
@@ -47,7 +75,10 @@ if (isset($_POST['action'])) {
                     </div>
                 </div>
                 <div class="col p-2 rounded">
-                    <textarea class="form-control cbg ctext" name="textinput" id="textinput" rows="10"></textarea>
+                    <textarea class="form-control cbg ctext" name="textinput" id="textinput" rows="3"><?=$entry[0]["prev_text"]?></textarea>
+                </div>
+                <div class="col p-2 rounded">
+                    <textarea class="form-control cbg ctext" name="textinput" id="textinput" rows="10"><?=$entry[0]["text"]?></textarea>
                 </div>
                 <div class="col p-2 rounded">
                     <div class="input-group cbg ctext">
@@ -109,11 +140,29 @@ if (isset($_POST['action'])) {
 
 require_once("templates/header.php"); 
 ?>
-    <div class="container-xxl py-3" style="min-height: 80vh;">
-        <form action="blog.php" method="post" enctype="multipart/form-data">
-            <button type="submit" name="action" class="btn btn-kolping" value="add">Mod</button>
-        </form>
+<div class="container py-3">
+    <div style="min-height: 80vh;">
+        <h1 class="display-3 text-center mb-3 text-kolping-orange">Blogs Editieren</h1>
+        <div class="row row-cols-2 gx-3">
+            <?php foreach ($blogentrys as $blogentry): ?>
+                <div class="col">
+                    <div class="card cbg2" style="height: 100% !important;">
+                        <img src="<?=$blogentry['source']?>" class="card-img-top img-fluid rounded-start" alt="<?=$blogentry['alt']?>">
+                        <div class="card-body ctext">
+                            <h3 class="card-title text-center"><?=$blogentry['name']?></h3>
+                            <?=$blogentry['prev_text']?>
+                        </div>
+                        <form action="blog.php" method="post" enctype="multipart/form-data">
+                            <input type="number" value="<?=$blogentry['blog_entrys_id']?>" name="blog_entrys_id" style="display: none;" required>
+                            <button type="submit" name="action" class="btn btn-kolping justify-content-start" value="mod">Editieren</button>
+                            <button type="submit" name="action" class="btn btn-danger justify-content-end" value="del">Löschen</button>
+                        </form>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
     </div>
+</div>
 <?php
 include_once("templates/footer.php")
 ?>
