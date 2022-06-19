@@ -24,8 +24,8 @@ if (isset($_POST['action'])) {
             $stmt->bindValue(1, $_POST['titleinput']);
             $stmt->bindValue(2, $_POST['previnput']);
             $stmt->bindValue(3, $_POST['textinput']);
-            $stmt->bindValue(4, $_POST['visible']);
-            $stmt->bindValue(5, $user['user_id']);
+            $stmt->bindValue(4, (isset($_POST['visible']) ? "1" : "0"), PDO::PARAM_INT);
+            $stmt->bindValue(5, $user['user_id'],PDO::PARAM_INT);
             $result = $stmt->execute();
             if (!$result) {
                 error('Datenbank Fehler!', pdo_debugStrParams($stmt));
@@ -45,7 +45,7 @@ if (isset($_POST['action'])) {
             $stmt->bindValue(1, $_POST['titleinput']);
             $stmt->bindValue(2, $_POST['previnput']);
             $stmt->bindValue(3, $_POST['textinput']);
-            $stmt->bindValue(4, $_POST['visible']);
+            $stmt->bindValue(4, (isset($_POST['visible']) ? "1" : "0"), PDO::PARAM_INT);
             $result = $stmt->execute();
             if (!$result) {
                 error('Datenbank Fehler!', pdo_debugStrParams($stmt));
@@ -148,6 +148,12 @@ if (isset($_POST['action'])) {
                             <button class="btn btn-kolping ctext px-3" data-bs-toggle="modal" data-bs-target="#explainModal"><i class="fa-solid fa-circle-question"></i></button>
                         </div>
                         <div class="justify-content-end d-flex">
+                            <div class="input-group cbg ctext">
+                                <span class="input-group-text" for="inputVisible">Visible</span>
+                                <div class="input-group-text">
+                                    <input class="form-check-input mt-0" type="checkbox" id="inputVisible" name="visible" <?=($entry[0]['visible']==1 ? 'checked':'')?>>
+                                </div>
+                            </div>
                             <input type="number" value="<?=$blog_entrys_id?>" name="blog_entrys_id" style="display: none;" required>
                             <button type="submit" class="btn btn-success ctext mx-2" name="action" value="save"><span>Speichern</span></button>
                             <button type="button" class="btn btn-danger ctext mx-2" onclick="window.location.href = '/admin/blog.php';">Abbrechen</button>
@@ -159,16 +165,10 @@ if (isset($_POST['action'])) {
                     <div class="col p-2 rounded">
                         <textarea class="form-control cbg ctext" name="textinput" id="textinput" rows="10"><?=$entry[0]["text"]?></textarea>
                     </div>
-                    <div class="col p-2 rounded">
+                    <div class="col p-2 rounded d-flex">
                         <div class="input-group cbg ctext">
                             <input type="file" class="form-control" id="PicUpload" name="file[]" accept="image/png, image/gif, image/jpeg" multiple onchange="showPreview(event);">
                             <label class="input-group-text " for="PicUpload">Bilder Hochladen</label>
-                        </div>
-                        <div class="input-group cbg ctext">
-                            <span class="input-group-text" for="inputVisible">Visible</span>
-                            <div class="input-group-text">
-                                <input class="form-check-input mt-0" type="checkbox" id="inputVisible" name="visible" <?=($entry[0]['visible']==1 ? 'checked':'')?>>
-                            </div>
                         </div>
                     </div>
                     <div class="col p-2 rounded">
