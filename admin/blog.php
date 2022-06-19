@@ -15,7 +15,6 @@ $blogentrys = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
 if (isset($_POST['action'])) {
-    error_log("action");
     if ($_POST['action'] == 'save') {
         if ($user['admin'] != 1) {
             error('Unzureichende Berechtigungen!');
@@ -45,7 +44,6 @@ if (isset($_POST['action'])) {
     $images = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     if ($_POST['action'] == 'mod') {
-        error_log("action add/mod");
         if ($user['admin'] != 1) {
             error('Unzureichende Berechtigungen!');
         }
@@ -95,7 +93,7 @@ if (isset($_POST['action'])) {
                         <?php for ($x = 0; $x < count($images); $x++) :?>
                             <div class="col">
                                 <div class="card prodcard cbg2">
-                                    <img src="/blog_imgs/<?=$images[$x]['img']?>" class="card-img-top img-fluid rounded" alt="<?=$images[$x]['id']?>">
+                                    <img src="<?=$images[$x]['source']?>" class="card-img-top img-fluid rounded" alt="<?=$images[$x]['alt']?>">
                                     <div class="card-body">
                                         <div class="input-group py-2 d-flex justify-content-center">
                                             <span class="input-group-text" for="inputVisible">Löschen?</span>
