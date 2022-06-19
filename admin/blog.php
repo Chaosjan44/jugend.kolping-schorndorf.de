@@ -70,8 +70,8 @@ if (isset($_POST['action'])) {
                         <button class="btn btn-kolping ctext px-3" onclick="unMarkPrev(textinput)"><i class="fa-solid fa-magnifying-glass"></i><span class="ms-2">Vorschau</span></button>
                         <button class="btn btn-kolping ctext px-3" data-bs-toggle="modal" data-bs-target="#explainModal"><i class="fa-solid fa-circle-question"></i></button>
                     </div>
-                    <div class="justify-content-end d-flex">
-                        <form action="blog.php" method="post" enctype="multipart/form-data">
+                    <div>
+                        <form action="blog.php" method="post" enctype="multipart/form-data" class="justify-content-end d-flex">
                             <button type="submit" class="btn btn-success ctext mx-2" name="action" value="save"><span>Speichern</span></button>
                             <button type="button" class="btn btn-danger ctext mx-2" onclick="window.location.href = '/admin/blog.php';">Abbrechen</button>
                         </form>
@@ -85,7 +85,7 @@ if (isset($_POST['action'])) {
                 </div>
                 <div class="col p-2 rounded">
                     <div class="input-group cbg ctext">
-                        <input type="file" class="form-control" id="PicUpload">
+                        <input type="file" class="form-control" id="PicUpload" name="file[]" accept="image/png, image/gif, image/jpeg" multiple onchange="showPreview(event);">
                         <label class="input-group-text " for="PicUpload">Bilder Hochladen</label>
                     </div>
                 </div>
