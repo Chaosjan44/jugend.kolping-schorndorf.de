@@ -43,6 +43,7 @@ if (isset($_POST['action'])) {
     $stmt->bindValue(1, $entry[0]['blog_entrys_id'], PDO::PARAM_INT);
     $stmt->execute();
     $images = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
     if ($_POST['action'] == 'mod') {
         error_log("action add/mod");
         if ($user['admin'] != 1) {
@@ -87,6 +88,25 @@ if (isset($_POST['action'])) {
                     <div class="input-group cbg ctext">
                         <input type="file" class="form-control" id="PicUpload" name="file[]" accept="image/png, image/gif, image/jpeg" multiple onchange="showPreview(event);">
                         <label class="input-group-text " for="PicUpload">Bilder Hochladen</label>
+                    </div>
+                </div>
+                <div class="col p-2 rounded">
+                    <div class="row row-cols-1 row-cols-md-3 g-4 py-2">
+                        <?php for ($x = 0; $x < count($images); $x++) :?>
+                            <div class="col">
+                                <div class="card prodcard cbg2">
+                                    <img src="/blog_imgs/<?=$images[$x]['img']?>" class="card-img-top img-fluid rounded" alt="<?=$images[$x]['id']?>">
+                                    <div class="card-body">
+                                        <div class="input-group py-2 d-flex justify-content-center">
+                                            <span class="input-group-text" for="inputVisible">Löschen?</span>
+                                            <div class="input-group-text">
+                                                <input type="checkbox" class="form-check-input" value="<?=$images[$x]['id']?>" name="<?='delImage-'.$x?>">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endfor;?>
                     </div>
                 </div>
             </div>
