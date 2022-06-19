@@ -89,7 +89,10 @@ if (isset($_POST['action'])) {
                     </div>
                 </div>
                 <div class="col p-2 rounded">
-                    <div class="row row-cols-1 row-cols-md-3 g-4 py-2">
+                    <h2>Diese Bilder werden Hinzugefügt:</h2>
+                    <div class="row row-cols-4 row-cols-md-3 g-4 py-2" id="preview">
+                    </div>
+                    <div class="row row-cols-4 row-cols-md-3 g-4 py-2">
                         <?php for ($x = 0; $x < count($images); $x++) :?>
                             <div class="col">
                                 <div class="card prodcard cbg2">
@@ -98,7 +101,7 @@ if (isset($_POST['action'])) {
                                         <div class="input-group py-2 d-flex justify-content-center">
                                             <span class="input-group-text" for="inputVisible">Löschen?</span>
                                             <div class="input-group-text">
-                                                <input type="checkbox" class="form-check-input" value="<?=$images[$x]['id']?>" name="<?='delImage-'.$x?>">
+                                                <input type="checkbox" class="form-check-input" value="<?=$images[$x]['blog_images_id']?>" name="<?='delImage-'.$x?>">
                                             </div>
                                         </div>
                                     </div>
