@@ -19,27 +19,38 @@ if (isset($_POST['action'])) {
         if ($user['admin'] != 1) {
             error('Unzureichende Berechtigungen!');
         }
-        $stmt = $pdo->prepare('INSERT INTO blog_entrys (name, prev_text, text, visible, created_by, created_at, updated_at) VALUE (?, ?, ?, ?, ?, now(), now())');
-        $stmt->bindValue(1, $_POST['titleinput']);
-        $stmt->bindValue(2, $_POST['previnput']);
-        $stmt->bindValue(3, $_POST['textinput']);
-        $stmt->bindValue(4, $_POST['visible']);
-        $stmt->bindValue(5, $user['user_id']);
-        $result = $stmt->execute();
-        if (!$result) {
-            error('Datenbank Fehler!', pdo_debugStrParams($stmt));
+        if (!isset($blog_entrys_id)) {
+            $stmt = $pdo->prepare('INSERT INTO blog_entrys (name, prev_text, text, visible, created_by, created_at, updated_at) VALUE (?, ?, ?, ?, ?, now(), now())');
+            $stmt->bindValue(1, $_POST['titleinput']);
+            $stmt->bindValue(2, $_POST['previnput']);
+            $stmt->bindValue(3, $_POST['textinput']);
+            $stmt->bindValue(4, $_POST['visible']);
+            $stmt->bindValue(5, $user['user_id']);
+            $result = $stmt->execute();
+            if (!$result) {
+                error('Datenbank Fehler!', pdo_debugStrParams($stmt));
+            }
+            // Abfrage des Produkts für aufgrund der Bilder
+            $stmt = $pdo->prepare('SELECT * FROM blog_entrys where name = ? and `text` = ? order by blog_entrys_id desc');
+            $stmt->bindValue(1, $_POST['titleinput']);
+            $stmt->bindValue(2, $_POST['textinput']);
+            $result = $stmt->execute();
+            if (!$result) {
+                error('Datenbank Fehler!', pdo_debugStrParams($stmt));
+            }            
+            $blog_id = $stmt->fetchAll(PDO::FETCH_ASSOC); 
+            $blog_entrys_id = $blog_id[0]['blog_entrys_id'];
+        } else {
+            $stmt = $pdo->prepare('UPDATE blog_entrys SET name = ?, prev_text = ?, text = ?, visible = ?, updated_at = now()');
+            $stmt->bindValue(1, $_POST['titleinput']);
+            $stmt->bindValue(2, $_POST['previnput']);
+            $stmt->bindValue(3, $_POST['textinput']);
+            $stmt->bindValue(4, $_POST['visible']);
+            $result = $stmt->execute();
+            if (!$result) {
+                error('Datenbank Fehler!', pdo_debugStrParams($stmt));
+            }
         }
-
-        // Abfrage des Produkts für aufgrund der Bilder
-        $stmt = $pdo->prepare('SELECT * FROM blog_entrys where name = ? and `text` = ? order by blog_entrys_id desc');
-        $stmt->bindValue(1, $_POST['titleinput']);
-        $stmt->bindValue(2, $_POST['textinput']);
-        $result = $stmt->execute();
-        if (!$result) {
-            error('Datenbank Fehler!', pdo_debugStrParams($stmt));
-        }            
-        $blog_id = $stmt->fetchAll(PDO::FETCH_ASSOC); 
-        $blog_entrys_id = $blog_id[0]['blog_entrys_id'];
         if (!empty($_FILES["file"]["name"][0])){
             $allowTypes = array('jpg','png','jpeg','gif');
             $fileCount = count($_FILES['file']['name']);
