@@ -55,6 +55,6 @@ function showPreview(event){
 	var preview = document.getElementById('preview');
 	preview.innerHTML = '';
 	for (var i = 0, f; f = files[i]; i++) { 
-		preview.innerHTML += ['<div class="col"><div class="card prodcard bg-dark"><img src="', URL.createObjectURL(f), '" class="card-img-top img-fluid rounded" title="', escape(f.name), '" alt="', escape(f.name), '"></div></div>'].join('');
+		preview.innerHTML += ['<div class="col"><div class="card prodcard cbg"><img src="', URL.createObjectURL(f), '" class="card-img-top img-fluid rounded" title="', escape(f.name), '" alt="', escape(f.name), '"></div></div>'].join('');
 	}
 }

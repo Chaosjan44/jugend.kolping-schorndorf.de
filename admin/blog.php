@@ -19,36 +19,102 @@ if (isset($_POST['action'])) {
         if ($user['admin'] != 1) {
             error('Unzureichende Berechtigungen!');
         }
+        $stmt = $pdo->prepare('INSERT INTO blog_entrys (name, prev_text, text, visible, created_by, created_at, updated_at) VALUE (?, ?, ?, ?, ?, now(), now())');
+        $stmt->bindValue(1, $_POST['titleinput']);
+        $stmt->bindValue(2, $_POST['previnput']);
+        $stmt->bindValue(3, $_POST['textinput']);
+        $stmt->bindValue(4, $_POST['visible']);
+        $stmt->bindValue(5, $user['user_id']);
+        $result = $stmt->execute();
+        if (!$result) {
+            error('Datenbank Fehler!', pdo_debugStrParams($stmt));
+        }
 
-
-
-
+        // Abfrage des Produkts für aufgrund der Bilder
+        $stmt = $pdo->prepare('SELECT * FROM blog_entrys where name = ? and `text` = ? order by blog_entrys_id desc');
+        $stmt->bindValue(1, $_POST['titleinput']);
+        $stmt->bindValue(2, $_POST['textinput']);
+        $result = $stmt->execute();
+        if (!$result) {
+            error('Datenbank Fehler!', pdo_debugStrParams($stmt));
+        }            
+        $blog_id = $stmt->fetchAll(PDO::FETCH_ASSOC); 
+        $blog_entrys_id = $blog_id[0]['blog_entrys_id'];
+        if (!empty($_FILES["file"]["name"][0])){
+            $allowTypes = array('jpg','png','jpeg','gif');
+            $fileCount = count($_FILES['file']['name']);
+            // für jedes Bild
+            for($i = 0; $i < $fileCount; $i++){
+                // Bild wird zum Abspeichern mit einer Einmaligen ID + Uhrsprungsame versehen
+                $fileName = uniqid('image_') . '_' . basename($_FILES["file"]["name"][$i]);
+                $targetFilePath = "/blog_imgs/" . $fileName;
+                if(in_array(pathinfo($targetFilePath,PATHINFO_EXTENSION), $allowTypes)){
+                    // Hochladen der Bilder
+                    if(move_uploaded_file($_FILES["file"]["tmp_name"][$i], $targetFilePath)){
+                        // Einpflegen der Bilder in die Datenbank
+                        $stmt = $pdo->prepare("INSERT into blog_images (blog_entrys_id, source, alt, prev_img) VALUES ( ? , ? , ? , ? )");
+                        $stmt->bindValue(1, $blog_entrys_id);
+                        $stmt->bindValue(2, $targetFilePath);
+                        $stmt->bindValue(3, $blog_entrys_id);
+                        $stmt->bindValue(4, 0);
+                        $result = $stmt->execute();
+                        if (!$result) {
+                            error('Datenbank Fehler!', pdo_debugStrParams($stmt));
+                        }                            
+                        if (!$stmt) {
+                            error("Hochladen Fehlgeschlagen");
+                        } 
+                    } else {
+                        error("Hochladen Fehlgeschlagen");
+                    }
+                } else {
+                    error('Wir unterstützen nur JPG, JPEG, PNG & GIF Dateien.');
+                }
+            }
+        }
+        // DelImgs
+        for ($x = 0; $x < count($imgs); $x++) {
+            $var = 'delImage-'.$x;
+            if (isset($_POST[$var])) {
+                #del
+                $stmt = $pdo->prepare('DELETE FROM blog_images where blog_images_id = ? and blog_entrys_id = ?');
+                $stmt->bindValue(1, $_POST[$var], PDO::PARAM_INT);
+                $stmt->bindValue(2, $_POST[$blog_entrys_id], PDO::PARAM_INT);
+                $result = $stmt->execute();
+                if (!$result) {
+                    error('Datenbank Fehler!', pdo_debugStrParams($stmt));
+                }                
+            }
+        }
         exit;
     }
 
-    $blog_entrys_id = $_POST['blog_entrys_id'];
-    $stmt = $pdo->prepare('SELECT * FROM blog_entrys where blog_entrys_id  = ?');
-    // bindValue will allow us to use integer in the SQL statement, we need to use for LIMIT
-    $stmt->bindValue(1, $blog_entrys_id, PDO::PARAM_INT);
-    $stmt->execute();
-    if ($stmt->rowCount() != 1) {
-        error_log($stmt->rowCount());
-        header("location: blogs.php");
-        exit;
-    }
-    $entry = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-    $stmt = $pdo->prepare('SELECT * FROM blog_images where blog_entrys_id = ?');
-    $stmt->bindValue(1, $entry[0]['blog_entrys_id'], PDO::PARAM_INT);
-    $stmt->execute();
-    $images = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     if ($_POST['action'] == 'mod') {
         if ($user['admin'] != 1) {
             error('Unzureichende Berechtigungen!');
         }
         
-        require_once("templates/header.php"); ?>
+
+        $blog_entrys_id = $_POST['blog_entrys_id'];
+        $stmt = $pdo->prepare('SELECT * FROM blog_entrys where blog_entrys_id  = ?');
+        // bindValue will allow us to use integer in the SQL statement, we need to use for LIMIT
+        $stmt->bindValue(1, $blog_entrys_id, PDO::PARAM_INT);
+        $stmt->execute();
+        if ($stmt->rowCount() != 1) {
+            error_log($stmt->rowCount());
+            header("location: blogs.php");
+            exit;
+        }
+        $entry = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    
+        $stmt = $pdo->prepare('SELECT * FROM blog_images where blog_entrys_id = ?');
+        $stmt->bindValue(1, $entry[0]['blog_entrys_id'], PDO::PARAM_INT);
+        $stmt->execute();
+        $images = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        require_once("templates/header.php"); 
+        ?>
+        
         <script src="https://kit.fontawesome.com/0ba9bd5158.js" crossorigin="anonymous"></script>
         <div class="container-xxl py-3" style="min-height: 80vh;">
             <script src="/js/markdown_mark.js"></script>
@@ -87,15 +153,22 @@ if (isset($_POST['action'])) {
                         <input type="file" class="form-control" id="PicUpload" name="file[]" accept="image/png, image/gif, image/jpeg" multiple onchange="showPreview(event);">
                         <label class="input-group-text " for="PicUpload">Bilder Hochladen</label>
                     </div>
+                    <div class="input-group cbg ctext">
+                        <span class="input-group-text" for="inputVisible">Visible</span>
+                        <div class="input-group-text">
+                            <input class="form-check-input mt-0" type="checkbox" id="inputVisible" name="visible" <?=($entry[0]['visible']==1 ? 'checked':'')?>>
+                        </div>
+                    </div>
                 </div>
                 <div class="col p-2 rounded">
                     <h2>Diese Bilder werden Hinzugefügt:</h2>
-                    <div class="row row-cols-4 row-cols-md-3 g-4 py-2" id="preview">
+                    <div class="row row-cols-4 row-cols-md-4 g-4 py-2" id="preview">
                     </div>
-                    <div class="row row-cols-4 row-cols-md-3 g-4 py-2">
+                    <h2>Diese Bilder sind aktuell vorhanden:</h2>
+                    <div class="row row-cols-4 row-cols-md-4 g-4 py-2">
                         <?php for ($x = 0; $x < count($images); $x++) :?>
                             <div class="col">
-                                <div class="card prodcard cbg2">
+                                <div class="card prodcard cbg">
                                     <img src="<?=$images[$x]['source']?>" class="card-img-top img-fluid rounded" alt="<?=$images[$x]['alt']?>">
                                     <div class="card-body">
                                         <div class="input-group py-2 d-flex justify-content-center">
