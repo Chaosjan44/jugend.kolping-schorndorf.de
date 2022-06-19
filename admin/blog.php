@@ -47,7 +47,7 @@ if (isset($_POST['action'])) {
             $stmt->bindValue(2, $_POST['previnput']);
             $stmt->bindValue(3, $_POST['textinput']);
             $stmt->bindValue(4, (isset($_POST['visible']) ? "1" : "0"), PDO::PARAM_INT);
-            $stmt->bindValue(3, $blog_entrys_id, PDO::PARAM_INT);
+            $stmt->bindValue(5, $blog_entrys_id, PDO::PARAM_INT);
             $result = $stmt->execute();
             if (!$result) {
                 error('Datenbank Fehler!', pdo_debugStrParams($stmt));
