@@ -9,6 +9,7 @@ if (!isset($user)) {
 
 
 if (isset($_POST['action'])) {
+    error_log("action");
     if ($_POST['action'] == 'save') {
         if ($user['admin'] != 1) {
             error('Unzureichende Berechtigungen!');
@@ -16,6 +17,7 @@ if (isset($_POST['action'])) {
 
     }
     if ($_POST['action'] == 'add' || $_POST['action'] == 'mod') {
+        error_log("action add/mod");
         if ($user['admin'] != 1) {
             error('Unzureichende Berechtigungen!');
         }
@@ -109,7 +111,7 @@ require_once("templates/header.php");
 ?>
     <div class="container-xxl py-3" style="min-height: 80vh;">
         <form action="blog.php" method="post" enctype="multipart/form-data">
-            <button type="button" name="action" class="btn btn-kolping" value="add">Mod</button>
+            <button type="submit" name="action" class="btn btn-kolping" value="add">Mod</button>
         </form>
     </div>
 <?php
