@@ -43,7 +43,7 @@ if (isset($_POST['action'])) {
     $stmt->bindValue(1, $entry[0]['blog_entrys_id'], PDO::PARAM_INT);
     $stmt->execute();
     $images = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    if ($_POST['action'] == 'add' || $_POST['action'] == 'mod') {
+    if ($_POST['action'] == 'mod') {
         error_log("action add/mod");
         if ($user['admin'] != 1) {
             error('Unzureichende Berechtigungen!');
@@ -72,6 +72,7 @@ if (isset($_POST['action'])) {
                     </div>
                     <div class="justify-content-end">
                         <button class="btn btn-kolping ctext px-3" onclick="saveFrom(textinput)"><span>Speichern</span></button>
+                        <button class="btn btn-danger ctext px-3" onclick="window.location.href = '/admin/blog.php';">Abbrechen</button>
                     </div>
                 </div>
                 <div class="col p-2 rounded">
@@ -133,6 +134,14 @@ if (isset($_POST['action'])) {
                 </div>
             </div>
         </div>
+        <?php include_once("templates/footer.php");
+        exit;
+    }
+    if ($_POST['action'] == 'add') {
+
+        ?>
+
+
         <?php include_once("templates/footer.php");
         exit;
     }
