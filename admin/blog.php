@@ -50,7 +50,6 @@ if (isset($_POST['action'])) {
         
         require_once("templates/header.php"); ?>
         <script src="https://kit.fontawesome.com/0ba9bd5158.js" crossorigin="anonymous"></script>
-        <script src="/js/custom.js"></script>
         <div class="container-xxl py-3" style="min-height: 80vh;">
             <script src="/js/markdown_mark.js"></script>
             <script src="/js/markdown_unmark.js"></script>
@@ -85,6 +84,7 @@ if (isset($_POST['action'])) {
                 </div>
                 <div class="col p-2 rounded">
                     <div class="input-group cbg ctext">
+                        <script src="/js/custom.js"></script>
                         <input type="file" class="form-control" id="PicUpload" name="file[]" accept="image/png, image/gif, image/jpeg" multiple onchange="showPreview(event);">
                         <label class="input-group-text " for="PicUpload">Bilder Hochladen</label>
                     </div>
