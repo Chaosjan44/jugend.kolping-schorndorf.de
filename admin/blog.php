@@ -320,7 +320,7 @@ require_once("templates/header.php");
                                     <h5 class="offcanvas-title ctext" id="deleteCanvasLable">Wirklich Löschen?</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                                 </div>
-                                <div class="offcanvas-body cbg ctext">´
+                                <div class="offcanvas-body cbg ctext">
                                     <input type="number" value="<?=$blogentry['blog_entrys_id']?>" name="blog_entrys_id" style="display: none;" required>
                                     <button type="submit" name="action" class="btn btn-danger" value="del">Löschen</button>
                                     <button type="button" class="btn btn-kolping" data-bs-dismiss="offcanvas" aria-label="Close">Abbrechen</button>
