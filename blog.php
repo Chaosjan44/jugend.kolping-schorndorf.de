@@ -39,7 +39,6 @@ require("templates/header.php");
                 <div class="">
                     <?php $i = 0; foreach ($images as $image):?>
                         <div>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#picModal-<?=$i?>">Full screen</button>
                             <a data-bs-toggle="modal" data-bs-target="#picModal-<?=$i?>">
                                 <img src="<?=$image['source']?>" alt="<?=$image['alt']?>" class="img-fluid rounded">
                             </a>
