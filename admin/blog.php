@@ -109,9 +109,9 @@ if (isset($_POST['action'])) {
                     if(move_uploaded_file($_FILES["file"]["tmp_name"][$i], $targetFilePath)){
                         // Einpflegen der Bilder in die Datenbank
                         $stmt = $pdo->prepare("INSERT into blog_images (blog_entrys_id, source, alt, prev_img) VALUES ( ? , ? , ? , ? )");
-                        $stmt->bindValue(1, $blog_entrys_id);
+                        $stmt->bindValue(1, $blog_entrys_id, PDO::PARAM_INT);
                         $stmt->bindValue(2, "/blog_imgs/" . $fileName);
-                        $stmt->bindValue(3, $blog_entrys_id);
+                        $stmt->bindValue(3, $blog_entrys_id, PDO::PARAM_INT);
                         $stmt->bindValue(4, 0);
                         $result = $stmt->execute();
                         if (!$result) {
@@ -128,6 +128,24 @@ if (isset($_POST['action'])) {
                 }
             }
         }
+
+        for ($x = 0; $x < count($imgs); $x++) {
+            $imgOwner = 'imgOwner-'.$x;
+            $imgAlt = 'imgAlt-'.$x;
+            $stmt = $pdo->prepare('UPDATE blog_images SET `owner` = ?, alt = ? where blog_images_id = ? and blog_entrys_id = ?');
+            $stmt->bindValue(3, $_POST[$imgOwner]);
+            $stmt->bindValue(3, $_POST[$imgAlt]);
+            $stmt->bindValue(3, $_POST[$var], PDO::PARAM_INT);
+            $stmt->bindValue(4, $blog_entrys_id, PDO::PARAM_INT);
+            $result = $stmt->execute();
+            if (!$result) {
+                error('Datenbank Fehler!', pdo_debugStrParams($stmt));
+            }            
+        }
+
+
+
+
         print("<script>location.href='blog.php'</script>");
         exit;
     }
@@ -214,7 +232,15 @@ if (isset($_POST['action'])) {
                                     <div class="card prodcard cbg">
                                         <img src="<?=$images[$x]['source']?>" class="card-img-top img-fluid rounded" alt="<?=$images[$x]['alt']?>">
                                         <div class="card-body">
-                                            <div class="input-group pb-2 d-flex justify-content-center">
+                                            <div class="input-group pb-2">
+                                                <span class="input-group-text ctext" id="basic-addon1">Quelle</span>
+                                                <input type="text" class="form-control" placeholder="Quelle" value="<?=$images[$x]['blog_images_id']?>" name="<?='imgOwner-'.$x?>">
+                                            </div>
+                                            <div class="input-group py-2">
+                                                <span class="input-group-text ctext" id="basic-addon1">Text</span>
+                                                <input type="text" class="form-control" placeholder="Text" value="<?=$images[$x]['blog_images_id']?>" name="<?='imgAlt-'.$x?>">
+                                            </div>
+                                            <div class="input-group py-2 d-flex justify-content-center">
                                                 <span class="input-group-text" for="inputVisible">Löschen?</span>
                                                 <div class="input-group-text">
                                                     <input type="checkbox" class="form-check-input checkbox-kolping" value="<?=$images[$x]['blog_images_id']?>" name="<?='delImage-'.$x?>">
