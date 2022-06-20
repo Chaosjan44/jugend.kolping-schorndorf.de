@@ -45,7 +45,7 @@ function unMark(input) {
         }
         if (inputArray[i].startsWith('##')) {
             inputArray[i] = inputArray[i].replace('##', '<h2>');
-            inputArray[i] = inputArray[i].replace('<br>', '</h2><br>');
+            inputArray[i] = inputArray[i].replace('<br>', '</h2>');
         }
         // List
         if (inputArray[i].startsWith('- ')) {
