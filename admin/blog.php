@@ -180,7 +180,7 @@ if (isset($_POST['action'])) {
                             <button type="button" class="btn btn-kolping ctext px-3" data-bs-toggle="modal" data-bs-target="#explainModal"><i class="fa-solid fa-circle-question"></i></button>
                         </div>
                         <div class="justify-content-end d-flex">
-                            <div class="input-group flex-nowrap ctext">
+                            <div class="input-group flex-nowrap ctext me-2">
                                 <span class="input-group-text" for="inputVisible">Visible</span>
                                 <div class="input-group-text">
                                     <input class="form-check-input mt-0 checkbox-kolping" type="checkbox" id="inputVisible" name="visible" <?=($entry[0]['visible']==1 ? 'checked':'')?>>
@@ -188,7 +188,7 @@ if (isset($_POST['action'])) {
                             </div>
                             <input type="number" value="<?=$blog_entrys_id?>" name="blog_entrys_id" style="display: none;" required>
                             <button type="submit" class="btn btn-success ctext mx-2" name="action" value="save"><span>Speichern</span></button>
-                            <button type="button" class="btn btn-danger ctext mx-2" onclick="window.location.href = '/admin/blog.php';">Abbrechen</button>
+                            <button type="button" class="btn btn-danger ctext ms-2" onclick="window.location.href = '/admin/blog.php';">Abbrechen</button>
                         </div>
                     </div>
                     <div class="col p-2 rounded">
