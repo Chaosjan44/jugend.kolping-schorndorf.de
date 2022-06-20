@@ -234,11 +234,11 @@ if (isset($_POST['action'])) {
                                         <div class="card-body">
                                             <div class="input-group pb-2">
                                                 <span class="input-group-text ctext" id="basic-addon1">Quelle</span>
-                                                <input type="text" class="form-control" placeholder="Quelle" value="<?=$images[$x]['blog_images_id']?>" name="<?='imgOwner-'.$x?>">
+                                                <input type="text" class="form-control" placeholder="Quelle" value="<?=$images[$x]['owner']?>" name="<?='imgOwner-'.$x?>">
                                             </div>
                                             <div class="input-group py-2">
                                                 <span class="input-group-text ctext" id="basic-addon1">Text</span>
-                                                <input type="text" class="form-control" placeholder="Text" value="<?=$images[$x]['blog_images_id']?>" name="<?='imgAlt-'.$x?>">
+                                                <input type="text" class="form-control" placeholder="Text" value="<?=$images[$x]['alt']?>" name="<?='imgAlt-'.$x?>">
                                             </div>
                                             <div class="input-group py-2 d-flex justify-content-center">
                                                 <span class="input-group-text" for="inputVisible">Löschen?</span>
