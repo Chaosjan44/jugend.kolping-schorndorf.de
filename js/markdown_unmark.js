@@ -24,7 +24,7 @@ function unMark(input) {
         // Heading
         if (inputArray[i].startsWith('##')) {
             inputArray[i] = inputArray[i].replace('##', '<h2>');
-            inputArray[i] = inputArray[i].replace('<br>', '</h2>');
+            inputArray[i] = inputArray[i].replace('<br>', '</h2><br>');
         }
         // Link
         if (inputArray[i].includes('(http')) {
