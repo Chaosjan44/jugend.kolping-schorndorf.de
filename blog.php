@@ -39,9 +39,9 @@ require("templates/header.php");
                 <div class="">
                     <?php $i = 0; foreach ($images as $image):?>
                         <div>
-                            <a data-bs-toggle="modal" data-bs-target="picModal-<?=$i?>">
+                            <button type="button" style="display: none;" data-bs-toggle="modal" data-bs-target="#picModal-<?=$i?>">
                                 <img src="<?=$image['source']?>" alt="<?=$image['alt']?>" class="img-fluid rounded">
-                            </a>
+                            </button>
                             <span class="ctext"><?=$image['alt']?> Quelle: <?=$image['owner']?></span>
                         </div>
                         <div class="modal fade" id="picModal-<?=$i?>" data-bs-backdrop="static" tabindex="-1" aria-labelledby="picModal-<?=$i?>-Label" aria-hidden="true">
