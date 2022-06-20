@@ -133,8 +133,8 @@ if (isset($_POST['action'])) {
             $imgOwner = 'imgOwner-'.$x;
             $imgAlt = 'imgAlt-'.$x;
             $stmt = $pdo->prepare('UPDATE blog_images SET `owner` = ?, alt = ? where blog_images_id = ? and blog_entrys_id = ?');
-            $stmt->bindValue(3, $_POST[$imgOwner]);
-            $stmt->bindValue(3, $_POST[$imgAlt]);
+            $stmt->bindValue(1, $_POST[$imgOwner]);
+            $stmt->bindValue(2, $_POST[$imgAlt]);
             $stmt->bindValue(3, $_POST[$var], PDO::PARAM_INT);
             $stmt->bindValue(4, $blog_entrys_id, PDO::PARAM_INT);
             $result = $stmt->execute();
