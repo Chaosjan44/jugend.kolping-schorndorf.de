@@ -36,55 +36,18 @@ require("templates/header.php");
     <div class="clearfix">
         <div class="col-md-6 float-md-end mb-3 ms-md-3">
             <div class="card py-3 px-3 cbg2 d-flex justify-content-center">
-                <div id="carouselExampleDark" class="d-flex justify-content-center carousel <?php if (check_style() == "dark") { print("carousel-dark "); }?>slide" data-bs-ride="carousel">
-                    <?php if($images == null):?>
-                        <div class="carousel-inner">
-                            <div class="carousel-item d-flex justify-content-center active">
-                                <img src="images/404_light.gif" class="img-fluid rounded" alt="No IMG Found">
+                <div class="">
+                    <?php $i = 0; foreach ($images as $image):?>
+                        <div>
+                            <a data-bs-toggle="modal" data-bs-target="picModal-<?=$i?>"><img src="<?=$image['source']?>" alt="<?=$image['alt']?>" class="img-fluid rounded"></a>
+                        </div>
+                        <div class="modal fade" id="picModal-<?=$i?>" tabindex="-1" aria-hidden="true">
+                            <div class="modal-dialog modal-fullscreen-sm-down">
+                                <img src="<?=$image['source']?>" class="img-fluid rounded" alt="<?=$image['alt']?>">
+                                <span class="ctext"><?=$image['alt']?> Quelle: <?=$image['owner']?></span>
                             </div>
                         </div>
-                    <?php elseif (count($images) == 1):?>
-                        <div class="carousel-inner">
-                            <?php foreach ($images as $image): { ?>
-                                <div class="carousel-item active">
-                                    <img src="<?=$image['source']?>" class="img-fluid rounded" alt="<?=$image['alt']?>">
-                                </div>
-                            <?php } endforeach; ?>
-                        </div>
-                    <?php elseif (count($images) > 1):?>
-                        <div class="carousel-indicators">
-                            <?php $i = 0; foreach ($images as $image) {
-                                if ($i == 0) {
-                                    print('<button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Img 1"></button>');
-                                }
-                                else {
-                                    print('<button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="'.$i.'" aria-label="Img'.$i.'"></button>');
-                                }
-                                $i++;
-                            } ?>
-                        </div>
-                        <div class="carousel-inner">
-                            <?php foreach ($images as $image) {
-                                if ($image['prev_img'] = 1):?>
-                                    <div class="carousel-item active">
-                                        <img src="<?=$image['source']?>" class="img-fluid rounded" alt="<?=$image['alt']?>">
-                                    </div>
-                                <?php else:?>
-                                    <div class="carousel-item">
-                                        <img src="<?=$image['source']?>" class="img-fluid rounded" alt="<?=$image['alt']?>">
-                                    </div>
-                                <?php endif;?>
-                            <?php }?>
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    <?php endif; ?>
+                    <?php $i++; endforeach;?>
                 </div>
             </div>
         </div>
