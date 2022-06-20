@@ -105,6 +105,7 @@ if (isset($_POST['action'])) {
             $stmt->bindValue(4, $blog_entrys_id, PDO::PARAM_INT);
             $result = $stmt->execute();
             if (!$result) {
+                error_log(print_r($stmt, true));
                 error('Datenbank Fehler!', pdo_debugStrParams($stmt));
             }            
         }
