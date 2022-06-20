@@ -26,7 +26,7 @@ function unMark(input) {
         if (inputArray[i].includes('(http')) {
             string = inputArray[i]
             before = string.substring(
-                string.indexOf('[')
+                string.indexOf(0, '[')
             );
             title = string.substring(
                 string.lastIndexOf('[') + 1, 
