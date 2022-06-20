@@ -284,11 +284,37 @@ if (isset($_POST['action'])) {
         exit;
     }
     if ($_POST['action'] == 'add') {
-
+        require_once("templates/header.php"); 
+        if ($user['loginperms'] != 1) {
+            error('Unzureichende Berechtigungen!');
+        }
         ?>
 
 
-        <?php include_once("templates/footer.php");
+        <?php 
+        include_once("templates/footer.php");
+        exit;
+    }
+
+    if ($_POST['action'] == 'del') {
+        require_once("templates/header.php"); 
+        if ($user['loginperms'] != 1) {
+            error('Unzureichende Berechtigungen!');
+        }
+        $blog_entrys_id = $_POST['blog_entrys_id'];
+        $stmt = $pdo->prepare('DELETE FROM blog_images where blog_entrys_id = ?');
+        $stmt->bindValue(1, $blog_entrys_id, PDO::PARAM_INT);
+        $result = $stmt->execute();
+        if (!$result) {
+            error('Datenbank Fehler!', pdo_debugStrParams($stmt));
+        }
+        $stmt = $pdo->prepare('DELETE FROM blog_entrys where blog_entrys_id = ?');
+        $stmt->bindValue(1, $blog_entrys_id, PDO::PARAM_INT);
+        $result = $stmt->execute();
+        if (!$result) {
+            error('Datenbank Fehler!', pdo_debugStrParams($stmt));
+        }   
+        include_once("templates/footer.php");
         exit;
     }
 }
