@@ -82,14 +82,14 @@ if (isset($_POST['action'])) {
             for($i = 0; $i < $fileCount; $i++){
                 // Bild wird zum Abspeichern mit einer Einmaligen ID + Uhrsprungsame versehen
                 $fileName = uniqid('image_') . '_' . basename($_FILES["file"]["name"][$i]);
-                $targetFilePath = "/blog_imgs/" . $fileName;
+                $targetFilePath = "blog_imgs/" . $fileName;
                 if(in_array(pathinfo($targetFilePath,PATHINFO_EXTENSION), $allowTypes)){
                     // Hochladen der Bilder
                     if(move_uploaded_file($_FILES["file"]["tmp_name"][$i], $targetFilePath)){
                         // Einpflegen der Bilder in die Datenbank
                         $stmt = $pdo->prepare("INSERT into blog_images (blog_entrys_id, source, alt, prev_img) VALUES ( ? , ? , ? , ? )");
                         $stmt->bindValue(1, $blog_entrys_id);
-                        $stmt->bindValue(2, $targetFilePath);
+                        $stmt->bindValue(2, "/blog_imgs/" . $fileName);
                         $stmt->bindValue(3, $blog_entrys_id);
                         $stmt->bindValue(4, 0);
                         $result = $stmt->execute();
@@ -97,10 +97,10 @@ if (isset($_POST['action'])) {
                             error('Datenbank Fehler!', pdo_debugStrParams($stmt));
                         }                            
                         if (!$stmt) {
-                            error("Hochladen Fehlgeschlagen");
+                            error("Hochladen Fehlgeschlagen1");
                         } 
                     } else {
-                        error("Hochladen Fehlgeschlagen");
+                        error("Hochladen Fehlgeschlagen2");
                     }
                 } else {
                     error('Wir unterstützen nur JPG, JPEG, PNG & GIF Dateien.');
