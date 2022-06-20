@@ -221,7 +221,7 @@ if (isset($_POST['action'])) {
                                                 </div>
                                             </div>
                                             <div class="input-group pt-2 d-flex justify-content-center">
-                                                <span class="input-group-text" for="inputVisible">Preview Bild</span>
+                                                <span class="input-group-text" for="inputVisible">Vorschau Bild</span>
                                                 <div class="input-group-text">
                                                     <input type="checkbox" class="form-check-input checkbox-kolping" value="<?=$images[$x]['blog_images_id']?>" name="<?='prevImg-'.$x?>" <?=($images[$x]['prev_img']==1 ? 'checked':'')?>>
                                                 </div>
@@ -320,10 +320,10 @@ require_once("templates/header.php");
                                     <h5 class="offcanvas-title ctext" id="deleteCanvasLable">Wirklich Löschen?</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                                 </div>
-                                <div class="offcanvas-body cbg ctext">
+                                <div class="offcanvas-body cbg ctext d-flex justify-content-center">
                                     <input type="number" value="<?=$blogentry['blog_entrys_id']?>" name="blog_entrys_id" style="display: none;" required>
-                                    <button type="submit" name="action" class="btn btn-danger" value="del">Löschen</button>
-                                    <button type="button" class="btn btn-kolping" data-bs-dismiss="offcanvas" aria-label="Close">Abbrechen</button>
+                                    <button type="submit" name="action" class="btn btn-danger mx-2" value="del">Löschen</button>
+                                    <button type="button" class="btn btn-kolping mx-2" data-bs-dismiss="offcanvas" aria-label="Close">Abbrechen</button>
                                 </div>
                             </div>
                         </form>
