@@ -66,7 +66,7 @@ if (isset($_POST['action'])) {
             if (isset($_POST[$var])) {
                 #del
                 $stmt = $pdo->prepare('DELETE FROM blog_images where blog_images_id = ? and blog_entrys_id = ?');
-                $stmt->bindValue(1, $_POST[$var], PDO::PARAM_INT);
+                $stmt->bindValue(1, $x, PDO::PARAM_INT);
                 $stmt->bindValue(2, $blog_entrys_id, PDO::PARAM_INT);
                 $result = $stmt->execute();
                 if (!$result) {
@@ -116,10 +116,10 @@ if (isset($_POST['action'])) {
                             error('Datenbank Fehler!', pdo_debugStrParams($stmt));
                         }                            
                         if (!$stmt) {
-                            error("Hochladen Fehlgeschlagen1");
+                            error("Hochladen Fehlgeschlagen");
                         } 
                     } else {
-                        error("Hochladen Fehlgeschlagen2");
+                        error("Hochladen Fehlgeschlagen (2)");
                     }
                 } else {
                     error('Wir unterstützen nur JPG, JPEG, PNG & GIF Dateien.');
