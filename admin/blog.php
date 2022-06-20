@@ -212,16 +212,16 @@ if (isset($_POST['action'])) {
                                     <div class="card prodcard cbg">
                                         <img src="<?=$images[$x]['source']?>" class="card-img-top img-fluid rounded" alt="<?=$images[$x]['alt']?>">
                                         <div class="card-body">
-                                            <div class="input-group py-2 d-flex justify-content-center">
+                                            <div class="input-group pb-2 d-flex justify-content-center">
                                                 <span class="input-group-text" for="inputVisible">Löschen?</span>
                                                 <div class="input-group-text">
-                                                    <input type="checkbox" class="form-check-input" value="<?=$images[$x]['blog_images_id']?>" name="<?='delImage-'.$x?>">
+                                                    <input type="checkbox" class="form-check-input checkbox-kolping" value="<?=$images[$x]['blog_images_id']?>" name="<?='delImage-'.$x?>">
                                                 </div>
                                             </div>
-                                            <div class="input-group py-2 d-flex justify-content-center">
-                                                <span class="input-group-text" for="inputVisible">Preview Bild?</span>
+                                            <div class="input-group pt-2 d-flex justify-content-center">
+                                                <span class="input-group-text" for="inputVisible">Preview Bild</span>
                                                 <div class="input-group-text">
-                                                    <input type="checkbox" class="form-check-input" value="<?=$images[$x]['blog_images_id']?>" name="<?='prevImg-'.$x?>" <?=($images[$x]['prev_img']==1 ? 'checked':'')?>>
+                                                    <input type="checkbox" class="form-check-input checkbox-kolping" value="<?=$images[$x]['blog_images_id']?>" name="<?='prevImg-'.$x?>" <?=($images[$x]['prev_img']==1 ? 'checked':'')?>>
                                                 </div>
                                             </div>
                                         </div>
