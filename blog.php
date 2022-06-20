@@ -48,8 +48,7 @@ require("templates/header.php");
                             <div class="modal-dialog modal-fullscreen-sm-down">
                                 <div class="modal-content">
                                     <h5 class="modal-title" id="picModal-<?=$i?>-Label"></h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     <div class="modal-body">
                                         <img src="<?=$image['source']?>" class="img-fluid rounded" alt="<?=$image['alt']?>">
                                     </div>
