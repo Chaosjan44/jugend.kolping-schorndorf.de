@@ -44,7 +44,7 @@ require("templates/header.php");
                             </a>
                             <span class="ctext"><?=$image['alt']?> Quelle: <?=$image['owner']?></span>
                         </div>
-                        <div class="modal fade" id="picModal-<?=$i?>" tabindex="-1" aria-labelledby="picModal-<?=$i?>-Label" aria-hidden="true">
+                        <div class="modal fade" id="picModal-<?=$i?>" data-bs-backdrop="static" tabindex="-1" aria-labelledby="picModal-<?=$i?>-Label" aria-hidden="true">
                             <div class="modal-dialog modal-fullscreen-sm-down">
                                 <div class="modal-content">
                                     <h5 class="modal-title" id="picModal-<?=$i?>-Label"></h5>
