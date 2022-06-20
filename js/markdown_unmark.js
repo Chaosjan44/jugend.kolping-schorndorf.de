@@ -37,7 +37,7 @@ function unMark(input) {
                 string.lastIndexOf("(") + 1, 
                 string.lastIndexOf(")")
             );
-            string = '<a class="hoverlink" href="' + link + '">' + title + "</a>"
+            string = '<a class="link" href="' + link + '">' + title + "</a>"
             inputArray[i] = string;
         }
         // List

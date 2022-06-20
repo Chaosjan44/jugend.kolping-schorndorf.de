@@ -211,9 +211,8 @@ ul {
     font-size: 1.3rem;
 }
 
-.hoverlink:hover {
-    transition: 0.7s;
-    color: #FF8C00;
+.link {
+    color: #FF8C00 !important;
 }
 
 /* Bootstrap stuff but with custom colors :0 */
