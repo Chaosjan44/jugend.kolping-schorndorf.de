@@ -124,7 +124,7 @@ if (isset($_POST['action'])) {
         $stmt->execute();
         if ($stmt->rowCount() != 1) {
             error_log($stmt->rowCount());
-            header("location: blogs.php");
+            header("location: blog.php");
             exit;
         }
         $entry = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -147,22 +147,20 @@ if (isset($_POST['action'])) {
                     </div>
                     <div class="col p-2 rounded d-flex">
                         <div class="input-group justify-content-start">
-                            <button class="btn btn-kolping ctext px-3" onclick="makeBold(textinput)"><b>B</b></button>
-                            <button class="btn btn-kolping ctext px-3" onclick="makeItalic(textinput)"><i>I</i></button>
-                            <button class="btn btn-kolping ctext px-3" onclick="makeStrikethrough(textinput)"><del>Text</del></button>
-                            <button class="btn btn-kolping ctext px-3" onclick="makeUnderline(textinput)"><ins>Text</ins></button>
-                            <button class="btn btn-kolping ctext px-3" onclick="makeHeading(textinput)"><span>Überschrift</span></button>
-                            <button class="btn btn-kolping ctext px-3" onclick="makeLink(textinput)"><a><i class="fa-solid fa-link"></i></a></button>
-                            <button class="btn btn-kolping ctext px-3" onclick="makeList(textinput)"><a><i class="fa-solid fa-list"></i></a></button>
-                            <button class="btn btn-kolping ctext px-3" onclick="unMarkPrev(textinput)"><i class="fa-solid fa-magnifying-glass"></i><span class="ms-2">Vorschau</span></button>
-                            <button class="btn btn-kolping ctext px-3" data-bs-toggle="modal" data-bs-target="#explainModal"><i class="fa-solid fa-circle-question"></i></button>
+                            <button type="button" class="btn btn-kolping ctext px-3" onclick="makeBold(textinput)"><b>B</b></button>
+                            <button type="button" class="btn btn-kolping ctext px-3" onclick="makeItalic(textinput)"><i>I</i></button>
+                            <button type="button" class="btn btn-kolping ctext px-3" onclick="makeStrikethrough(textinput)"><del>Text</del></button>
+                            <button type="button" class="btn btn-kolping ctext px-3" onclick="makeUnderline(textinput)"><ins>Text</ins></button>
+                            <button type="button" class="btn btn-kolping ctext px-3" onclick="makeHeading(textinput)"><span>Überschrift</span></button>
+                            <button type="button" class="btn btn-kolping ctext px-3" onclick="makeLink(textinput)"><a><i class="fa-solid fa-link"></i></a></button>
+                            <button type="button" class="btn btn-kolping ctext px-3" onclick="makeList(textinput)"><a><i class="fa-solid fa-list"></i></a></button>
+                            <button type="button" class="btn btn-kolping ctext px-3" onclick="unMarkPrev(textinput)"><i class="fa-solid fa-magnifying-glass"></i><span class="ms-2">Vorschau</span></button>
+                            <button type="button" class="btn btn-kolping ctext px-3" data-bs-toggle="modal" data-bs-target="#explainModal"><i class="fa-solid fa-circle-question"></i></button>
                         </div>
                         <div class="justify-content-end d-flex">
                             <div class="input-group cbg ctext">
                                 <span class="input-group-text" for="inputVisible">Visible</span>
-                                <div class="input-group-text">
-                                    <input class="form-check-input mt-0" type="checkbox" id="inputVisible" name="visible" <?=($entry[0]['visible']==1 ? 'checked':'')?>>
-                                </div>
+                                <input class="form-check-input mt-0 checkbox-kolping" type="checkbox" id="inputVisible" name="visible" <?=($entry[0]['visible']==1 ? 'checked':'')?>>
                             </div>
                             <input type="number" value="<?=$blog_entrys_id?>" name="blog_entrys_id" style="display: none;" required>
                             <button type="submit" class="btn btn-success ctext mx-2" name="action" value="save"><span>Speichern</span></button>
