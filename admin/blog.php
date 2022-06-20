@@ -314,7 +314,18 @@ require_once("templates/header.php");
                         <form action="blog.php" method="post" enctype="multipart/form-data" class="p-2 d-flex justify-content-between">
                             <input type="number" value="<?=$blogentry['blog_entrys_id']?>" name="blog_entrys_id" style="display: none;" required>
                             <button type="submit" name="action" class="btn btn-kolping" value="mod">Editieren</button>
-                            <button type="submit" name="action" class="btn btn-danger" value="del">Löschen</button>
+                            <button class="btn btn-danger" type="button" data-bs-toggle="offcanvas" data-bs-target="#deleteCanvas" aria-controls="deleteCanvas">Löschen</button>
+                            <div class="offcanvas offcanvas-end" data-bs-backdrop="static" tabindex="-1" id="deleteCanvas" aria-labelledby="deleteCanvasLable">
+                                <div class="offcanvas-header">
+                                    <h5 class="offcanvas-title" id="deleteCanvasLable">Offcanvas</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                </div>
+                                <div class="offcanvas-body">´
+                                    <input type="number" value="<?=$blogentry['blog_entrys_id']?>" name="blog_entrys_id" style="display: none;" required>
+                                    <button type="submit" name="action" class="btn btn-danger" value="del">Löschen</button>
+                                    <button type="button" class="btn btn-kolping" data-bs-dismiss="offcanvas" aria-label="Close">Abbrechen</button>
+                                </div>
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -322,6 +333,7 @@ require_once("templates/header.php");
         </div>
     </div>
 </div>
+
 <?php
 include_once("templates/footer.php")
 ?>
