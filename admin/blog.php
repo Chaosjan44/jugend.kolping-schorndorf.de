@@ -314,7 +314,7 @@ if (isset($_POST['action'])) {
         if (!$result) {
             error('Datenbank Fehler!', pdo_debugStrParams($stmt));
         }   
-        header("location: blog.php");
+        print("<script>location.href='blog.php'</script>");
         exit;
     }
 }
