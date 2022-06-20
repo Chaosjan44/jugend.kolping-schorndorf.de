@@ -84,7 +84,7 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             <?php foreach ($blogentrys as $blogentry): ?> 
                                 <div class="col card cbg2 mb-3">
                                     <div class="row g-0">
-                                        <div class="col-md-4">
+                                        <div class="col-md-4 my-auto">
                                             <img src="<?=$blogentry['source']?>" class="img-fluid rounded-start" alt="<?=$blogentry['alt']?>">
                                         </div>
                                         <div class="col-md-8">
@@ -147,7 +147,7 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 <?php foreach ($blogentrys as $blogentry): ?> 
                                     <div class="col card cbg2 mb-3">
                                         <div class="row g-0">
-                                            <div class="col-md-4">
+                                            <div class="col-md-4 my-auto">
                                                 <img src="<?=$blogentry['source']?>" class="img-fluid rounded-start" alt="<?=$blogentry['alt']?>">
                                             </div>
                                             <div class="col-md-8">
