@@ -56,8 +56,8 @@ require("templates/header.php");
                                             <img src="<?=$image['source']?>" class="img-fluid rounded" alt="<?=$image['alt']?>">
                                         </div>
                                     </div>
-                                    <div class="modal-footer cbg">
-                                        <span class="ctext text-center"><?=$image['alt']?> | Quelle: <?=$image['owner']?></span>
+                                    <div class="modal-footer cbg justify-content-center">
+                                        <span class="ctext"><?=$image['alt']?> | Quelle: <?=$image['owner']?></span>
                                     </div>
                                 </div>
                             </div>
