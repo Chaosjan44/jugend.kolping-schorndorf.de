@@ -1,12 +1,10 @@
 setStyle();
 
 function toggleStyle() {
-  if (getCookie("acceptCookies") == "true") {
-    if (getCookie("style") == "dark") {
-      setCookie("style", "light", 365);
-    } else {
-      setCookie("style", "dark", 365);
-    }
+  if (getCookie("style") == "dark") {
+    setCookie("style", "light", 365);
+  } else {
+    setCookie("style", "dark", 365);
   }
   setStyle();
 }

@@ -16,7 +16,7 @@ $blogentrys = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 if (isset($_POST['action'])) {
     if ($_POST['action'] == 'save') {
-        if ($user['admin'] != 1) {
+        if ($user['loginperms'] != 1) {
             error('Unzureichende Berechtigungen!');
         }
         if (!isset($_POST['blog_entrys_id'])) {
@@ -134,7 +134,7 @@ if (isset($_POST['action'])) {
 
 
     if ($_POST['action'] == 'mod') {
-        if ($user['admin'] != 1) {
+        if ($user['loginperms'] != 1) {
             error('Unzureichende Berechtigungen!');
         }
         
