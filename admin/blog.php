@@ -74,6 +74,25 @@ if (isset($_POST['action'])) {
                 }                
             }
         }
+        $stmt = $pdo->prepare('UPDATE blog_images SET prev_img= 0 where blog_entrys_id = ?');
+        $stmt->bindValue(1, $_POST[$blog_entrys_id], PDO::PARAM_INT);
+        $result = $stmt->execute();
+        if (!$result) {
+            error('Datenbank Fehler!', pdo_debugStrParams($stmt));
+        }     
+        for ($x = 0; $x < count($imgs); $x++) {
+            $var = 'prevImg-'.$x;
+            if (isset($_POST[$var])) {
+                #del
+                $stmt = $pdo->prepare('UPDATE blog_images SET prev_img= 1 where blog_images_id = ? and blog_entrys_id = ?');
+                $stmt->bindValue(1, $_POST[$var], PDO::PARAM_INT);
+                $stmt->bindValue(2, $_POST[$blog_entrys_id], PDO::PARAM_INT);
+                $result = $stmt->execute();
+                if (!$result) {
+                    error('Datenbank Fehler!', pdo_debugStrParams($stmt));
+                }                
+            }
+        }
 
         if (!empty($_FILES["file"]["name"][0])){
             $allowTypes = array('jpg','png','jpeg','gif');
@@ -197,6 +216,12 @@ if (isset($_POST['action'])) {
                                                 <span class="input-group-text" for="inputVisible">Löschen?</span>
                                                 <div class="input-group-text">
                                                     <input type="checkbox" class="form-check-input" value="<?=$images[$x]['blog_images_id']?>" name="<?='delImage-'.$x?>">
+                                                </div>
+                                            </div>
+                                            <div class="input-group py-2 d-flex justify-content-center">
+                                                <span class="input-group-text" for="inputVisible">Preview Bild?</span>
+                                                <div class="input-group-text">
+                                                    <input type="checkbox" class="form-check-input" value="<?=$images[$x]['blog_images_id']?>" name="<?='prevImg-'.$x?>">
                                                 </div>
                                             </div>
                                         </div>
