@@ -158,7 +158,7 @@ if (isset($_POST['action'])) {
                             <button type="button" class="btn btn-kolping ctext px-3" data-bs-toggle="modal" data-bs-target="#explainModal"><i class="fa-solid fa-circle-question"></i></button>
                         </div>
                         <div class="justify-content-end d-flex">
-                            <div class="input-group cbg ctext">
+                            <div class="input-group align-content-center mx-2">
                                 <span class="input-group-text" for="inputVisible">Visible</span>
                                 <input class="form-check-input mt-0 checkbox-kolping" type="checkbox" id="inputVisible" name="visible" <?=($entry[0]['visible']==1 ? 'checked':'')?>>
                             </div>
