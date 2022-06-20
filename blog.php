@@ -39,12 +39,24 @@ require("templates/header.php");
                 <div class="">
                     <?php $i = 0; foreach ($images as $image):?>
                         <div>
-                            <a data-bs-toggle="modal" data-bs-target="picModal-<?=$i?>"><img src="<?=$image['source']?>" alt="<?=$image['alt']?>" class="img-fluid rounded"></a>
+                            <a data-bs-toggle="modal" data-bs-target="picModal-<?=$i?>">
+                                <img src="<?=$image['source']?>" alt="<?=$image['alt']?>" class="img-fluid rounded">
+                            </a>
+                            <span class="ctext"><?=$image['alt']?> Quelle: <?=$image['owner']?></span>
                         </div>
-                        <div class="modal fade" id="picModal-<?=$i?>" tabindex="-1" aria-hidden="true">
+                        <div class="modal fade" id="picModal-<?=$i?>" tabindex="-1" aria-labelledby="picModal-<?=$i?>-Label" aria-hidden="true">
                             <div class="modal-dialog modal-fullscreen-sm-down">
-                                <img src="<?=$image['source']?>" class="img-fluid rounded" alt="<?=$image['alt']?>">
-                                <span class="ctext"><?=$image['alt']?> Quelle: <?=$image['owner']?></span>
+                                <div class="modal-content">
+                                    <h5 class="modal-title" id="picModal-<?=$i?>-Label"></h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <img src="<?=$image['source']?>" class="img-fluid rounded" alt="<?=$image['alt']?>">
+                                    </div>
+                                    <div class="modal-footer">
+                                        <span class="ctext"><?=$image['alt']?> Quelle: <?=$image['owner']?></span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     <?php $i++; endforeach;?>
