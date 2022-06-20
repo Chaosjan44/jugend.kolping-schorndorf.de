@@ -11,7 +11,7 @@
         <h5 class="mb-1">Vertreten durch das Leitungsteam der Kolpingfamilie Schorndorf:</h5>
         <p class="mb-3">
             Alexander Merkes, Timo Salenbauch, Caroline Weiß<br>
-            E-Mail: <a href="mailto:leitungsteam@kolping-schorndorf.de" class="text-kolping-orange">leitungsteam@kolping-schorndorf.de</a><br>
+            E-Mail: <a href="mailto:leitungsteam@kolping-schorndorf.de" class="link">leitungsteam@kolping-schorndorf.de</a><br>
             Telefon: 0 71 81 - 48 13 78
         </p>
         <h5 class="mb-1">Eintragung im Vereinsregister:</h5>
@@ -29,10 +29,10 @@
             Leitungsteam der Kolpingfamilie Schorndorf<br>
             Lortzingstraße 44<br>
             73614 Schorndorf<br>
-            E-Mail: <a href="mailto:leitungsteam@kolping-schorndorf.de" class="text-kolping-orange">leitungsteam@kolping-schorndorf.de</a><br>
+            E-Mail: <a href="mailto:leitungsteam@kolping-schorndorf.de" class="link">leitungsteam@kolping-schorndorf.de</a><br>
             Telefon: 0 71 81 - 48 13 78<br>
             <br>
-            Nähere Hinweise zu unserem Datenschutz finden Sie unter diesem <a href="/datenschutz.php" class="text-kolping-orange">Link</a>.
+            Nähere Hinweise zu unserem Datenschutz finden Sie unter diesem <a href="/datenschutz.php" class="link">Link</a>.
         </p>
     </div>
 </div>

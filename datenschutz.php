@@ -11,7 +11,7 @@
         <h5 class="mb-1">Datenerfassung auf unserer Website</h5>
         <p class="mb-3">
             Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen<br>
-            Kontaktdaten können Sie dem <a href="/impressum.php" class="text-kolping-orange">lmpressum</a> dieser Website entnehmen.
+            Kontaktdaten können Sie dem <a href="/impressum.php" class="link">lmpressum</a> dieser Website entnehmen.
         </p>
         <h5 class="mb-1">Wie erfassen wir lhre Daten?</h5>
         <p class="mb-3">
@@ -28,7 +28,7 @@
         <p class="mb-3">
             Sie haben jederzeit das Recht unentgeltlich Auskunft über Herkunft, Empfänger und Zweck lhrer gespeicherten personenbezogenen Daten zu erhalten. 
             Sie haben außerdem ein Recht, die Berichtigung, Sperrung oder Löschung dieser Daten zu verlangen. 
-            Hierzu sowie zu weiteren Fragen zum Thema Datenschutz können Sie sich jederzeit unter der im <a href="/impressum.php" class="text-kolping-orange">lmpressum</a> angegebenen Adresse an uns wenden. 
+            Hierzu sowie zu weiteren Fragen zum Thema Datenschutz können Sie sich jederzeit unter der im <a href="/impressum.php" class="link">lmpressum</a> angegebenen Adresse an uns wenden. 
             Des Weiteren steht lhnen ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu.
         </p>
 
@@ -63,7 +63,7 @@
             lm Falle datenschutzrechtlicher Verstöße steht dem Betroffenen ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu. 
             Zuständige Aufsichtsbehörde in datenschutzrechtlichen Fragen ist der Landesdatenschutzbeauftragte des Bundeslandes, in dem unser Unternehmen seinen Sitz hat. 
             Eine Liste der Datenschutzbeauftragten sowie deren Kontaktdaten können folgendem Link entnommen werden:<br>
-            <a href="https://www.bfdi.bund.de/DE/Infothek/Anschriften_Links/anschriften_links-node.html" class="text-kolping-orange">https://www.bfdi.bund.de/DE/Infothek/Anschriften_Links/anschriften_links-node.html</a>.
+            <a href="https://www.bfdi.bund.de/DE/Infothek/Anschriften_Links/anschriften_links-node.html" class="link">https://www.bfdi.bund.de/DE/Infothek/Anschriften_Links/anschriften_links-node.html</a>.
         </p>
         <h5 class="mb-1">Recht auf Datenübertragbarkeit</h5>
         <p class="mb-3">
@@ -75,7 +75,7 @@
         <p class="mb-3">
             Sie haben im Rahmen der geltenden gesetzlichen Bestimmungen jedezeit das Becht auf unentgeltliche Auskunft über lhre gespeicherten personenbezogenen Daten, 
             deren Herkunft und Empfänger und den Zweck der Datenverarbeitung und ggf. ein Recht auf Berichtigung, Sperrung oder Löschung dieser Daten. 
-            Hierzu sowie zu weiteren Fragen zum Thema personenbezogene Daten können Sie sich jederzeit unter der im <a href="/impressum.php" class="text-kolping-orange">lmpressum</a> angegebenen Adresse an uns wenden.
+            Hierzu sowie zu weiteren Fragen zum Thema personenbezogene Daten können Sie sich jederzeit unter der im <a href="/impressum.php" class="link">lmpressum</a> angegebenen Adresse an uns wenden.
         </p>
 
         <h3>3. Datenerfassung auf unserer Website</h3>
