@@ -40,36 +40,22 @@ require("templates/header.php");
                     <?php $i = 0; foreach ($images as $image):?>
                         <div>
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#picModal-<?=$i?>">Full screen</button>
-                            <button type="button" style="display: none;" data-bs-toggle="modal" data-bs-target="#picModal-<?=$i?>">
+                            <a data-bs-toggle="modal" data-bs-target="#picModal-<?=$i?>">
                                 <img src="<?=$image['source']?>" alt="<?=$image['alt']?>" class="img-fluid rounded">
-                            </button>
+                            </a>
                             <span class="ctext"><?=$image['alt']?> Quelle: <?=$image['owner']?></span>
                         </div>
-                        <!-- <div class="modal fade" id="picModal-<?=$i?>" data-bs-backdrop="static" tabindex="-1" aria-labelledby="picModal-<?=$i?>-Label" aria-hidden="true">
-                            <div class="modal-dialog modal-fullscreen-sm-down">
-                                <div class="modal-content">
-                                    <h5 class="modal-title" id="picModal-<?=$i?>-Label"></h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    <div class="modal-body">
-                                        <img src="<?=$image['source']?>" class="img-fluid rounded" alt="<?=$image['alt']?>">
-                                    </div>
-                                    <div class="modal-footer">
-                                        <span class="ctext"><?=$image['alt']?> Quelle: <?=$image['owner']?></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
                         <div class="modal fade" id="picModal-<?=$i?>" tabindex="-1" aria-labelledby="picModal-<?=$i?>-Label" style="display: none;" aria-modal="true">
                             <div class="modal-dialog modal-fullscreen">
                                 <div class="modal-content">
-                                    <div class="modal-header">
+                                    <div class="modal-header cbg">
                                         <h5 class="modal-title" id="picModal-<?=$i?>-Label"></h5>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
-                                    <div class="modal-body">
+                                    <div class="modal-body cbg">
                                         <img src="<?=$image['source']?>" class="img-fluid rounded" alt="<?=$image['alt']?>">
                                     </div>
-                                    <div class="modal-footer">
+                                    <div class="modal-footer cbg">
                                         <span class="ctext"><?=$image['alt']?> Quelle: <?=$image['owner']?></span>
                                     </div>
                                 </div>
