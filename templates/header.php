@@ -39,19 +39,19 @@ if (check_cookie()) {
         <div class="collapse navbar-collapse cbg" tabindex="-1" id="navbarSupportedContent">
             <ul class="navbar-nav">
                 <li class="nav-item text-size-x-large">
-                    <a class="nav-link link" aria-current="page" href="/termine.php">Termine</a>
+                    <a class="nav-link clink" aria-current="page" href="/termine.php">Termine</a>
                 </li>
                 <li class="nav-item text-size-x-large dropdown">
-                    <a class="nav-link dropdown-toggle link" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Über uns</a>
+                    <a class="nav-link dropdown-toggle clink" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Über uns</a>
                     <ul class="dropdown-menu cbg2" aria-labelledby="offcanvasNavbarDropdown">
-                        <li><a class="dropdown-item link" href="/wir.php">Wir</a></li>
+                        <li><a class="dropdown-item clink" href="/wir.php">Wir</a></li>
                     </ul>
                 </li>
                 <li class="nav-item text-size-x-large">
-                    <a class="nav-link link" href="/angebote.php">Angebote</a>
+                    <a class="nav-link clink" href="/angebote.php">Angebote</a>
                 </li>
                 <li class="nav-item text-size-x-large">
-                    <a class="nav-link link" href="/blog.php">Nachrichten/Blog</a>
+                    <a class="nav-link clink" href="/blog.php">Nachrichten/Blog</a>
                 </li>
             </ul>
         </div>

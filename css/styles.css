@@ -212,7 +212,7 @@ ul {
 }
 
 .link {
-    color: #FF8C00;
+    color: #FF8C00 !important;
 }
 
 /* Bootstrap stuff but with custom colors :0 */
