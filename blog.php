@@ -53,7 +53,7 @@ require("templates/header.php");
                                     </div>
                                     <div class="modal-body cbg">
                                         <div class="d-flex justify-content-center align-content-center">
-                                            <img src="<?=$image['source']?>" class="img-fluid rounded" alt="<?=$image['alt']?>">
+                                            <img src="<?=$image['source']?>" class="img-fluid rounded" style="max-height: 70vh;" alt="<?=$image['alt']?>">
                                         </div>
                                     </div>
                                     <div class="modal-footer cbg justify-content-center">
