@@ -42,7 +42,7 @@ require("templates/header.php");
                             <a data-bs-toggle="modal" data-bs-target="#picModal-<?=$i?>">
                                 <img src="<?=$image['source']?>" alt="<?=$image['alt']?>" class="img-fluid rounded">
                             </a>
-                            <span class="ctext"><?=$image['alt']?> Quelle: <?=$image['owner']?></span>
+                            <span class="ctext"><?=$image['alt']?> | Quelle: <?=$image['owner']?></span>
                         </div>
                         <div class="modal fade" id="picModal-<?=$i?>" tabindex="-1" aria-labelledby="picModal-<?=$i?>-Label" style="display: none;" aria-modal="true">
                             <div class="modal-dialog modal-fullscreen">
@@ -52,10 +52,12 @@ require("templates/header.php");
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body cbg">
-                                        <img src="<?=$image['source']?>" class="img-fluid rounded" alt="<?=$image['alt']?>">
+                                        <div class="d-flex justify-content-center align-content-center">
+                                            <img src="<?=$image['source']?>" class="img-fluid rounded" alt="<?=$image['alt']?>">
+                                        </div>
                                     </div>
                                     <div class="modal-footer cbg">
-                                        <span class="ctext"><?=$image['alt']?> Quelle: <?=$image['owner']?></span>
+                                        <span class="ctext text-center"><?=$image['alt']?> | Quelle: <?=$image['owner']?></span>
                                     </div>
                                 </div>
                             </div>
