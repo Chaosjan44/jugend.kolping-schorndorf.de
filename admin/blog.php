@@ -107,6 +107,7 @@ if (isset($_POST['action'])) {
                 }
             }
         }
+        print("<script>location.href='blog.php'</script>");
         exit;
     }
 
