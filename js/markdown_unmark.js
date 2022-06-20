@@ -22,23 +22,29 @@ function unMark(input) {
     input = "";
     for (i = 0; i < inputArray.length; i++) {
         // Heading
-        if (inputArray[i].startsWith('##')) {
-            inputArray[i] = inputArray[i].replace('##', '<h2>');
-            inputArray[i] = inputArray[i].replace('<br>', '</h2><br>');
-        }
         // Link
         if (inputArray[i].includes('(http')) {
             string = inputArray[i]
+            before = string.substring(
+                string.indexOf('[')
+            );
             title = string.substring(
-                string.lastIndexOf("[") + 1, 
-                string.lastIndexOf("]")
+                string.lastIndexOf('[') + 1, 
+                string.lastIndexOf(']')
             );
             link = string.substring(
-                string.lastIndexOf("(") + 1, 
-                string.lastIndexOf(")")
+                string.lastIndexOf('(') + 1, 
+                string.lastIndexOf(')')
             );
-            string = '<a class="link" href="' + link + '">' + title + "</a>"
+            after = string.substring(
+                string.lastIndexOf(')') +1
+            );
+            string = before + '<a class="link" href="' + link + '">' + title + "</a>" + after
             inputArray[i] = string;
+        }
+        if (inputArray[i].startsWith('##')) {
+            inputArray[i] = inputArray[i].replace('##', '<h2>');
+            inputArray[i] = inputArray[i].replace('<br>', '</h2><br>');
         }
         // List
         if (inputArray[i].startsWith('- ')) {
