@@ -160,7 +160,9 @@ if (isset($_POST['action'])) {
                         <div class="justify-content-end d-flex">
                             <div class="input-group flex-nowrap ctext">
                                 <span class="input-group-text" for="inputVisible">Visible</span>
-                                <input class="form-check-input mt-0 checkbox-kolping" type="checkbox" id="inputVisible" name="visible" <?=($entry[0]['visible']==1 ? 'checked':'')?>>
+                                <div class="input-group-text">
+                                    <input class="form-check-input mt-0 checkbox-kolping" type="checkbox" id="inputVisible" name="visible" <?=($entry[0]['visible']==1 ? 'checked':'')?>>
+                                </div>                            
                             </div>
                             <input type="number" value="<?=$blog_entrys_id?>" name="blog_entrys_id" style="display: none;" required>
                             <button type="submit" class="btn btn-success ctext mx-2" name="action" value="save"><span>Speichern</span></button>
