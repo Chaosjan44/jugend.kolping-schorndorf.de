@@ -221,7 +221,7 @@ if (isset($_POST['action'])) {
                                             <div class="input-group py-2 d-flex justify-content-center">
                                                 <span class="input-group-text" for="inputVisible">Preview Bild?</span>
                                                 <div class="input-group-text">
-                                                    <input type="checkbox" class="form-check-input" value="<?=$images[$x]['blog_images_id']?>" name="<?='prevImg-'.$x?>">
+                                                    <input type="checkbox" class="form-check-input" value="<?=$images[$x]['blog_images_id']?>" name="<?='prevImg-'.$x?>" <?=($images[$x]['prev_img']==1 ? 'checked':'')?>>
                                                 </div>
                                             </div>
                                         </div>
