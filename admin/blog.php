@@ -314,7 +314,7 @@ if (isset($_POST['action'])) {
         if (!$result) {
             error('Datenbank Fehler!', pdo_debugStrParams($stmt));
         }   
-        include_once("templates/footer.php");
+        header("location: blog.php");
         exit;
     }
 }
