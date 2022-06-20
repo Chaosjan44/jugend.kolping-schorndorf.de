@@ -53,7 +53,7 @@ if (isset($_POST['action'])) {
                 error('Datenbank Fehler!', pdo_debugStrParams($stmt));
             }
         }
-        $stmt = $pdo->prepare('SELECT * FROM blog_images where blog_images_id = ?');
+        $stmt = $pdo->prepare('SELECT * FROM blog_images where blog_entrys_id = ?');
         $stmt->bindValue(1, $blog_entrys_id, PDO::PARAM_INT);
         $result = $stmt->execute();
         if (!$result) {
@@ -63,6 +63,7 @@ if (isset($_POST['action'])) {
         // DelImgs
         for ($x = 0; $x < count($imgs); $x++) {
             $var = 'delImage-'.$x;
+            error_log($var);
             if (isset($_POST[$var])) {
                 #del
                 $stmt = $pdo->prepare('DELETE FROM blog_images where blog_images_id = ? and blog_entrys_id = ?');
