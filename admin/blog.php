@@ -123,9 +123,9 @@ if (isset($_POST['action'])) {
                     if(move_uploaded_file($_FILES["file"]["tmp_name"][$i], $targetFilePath)){
                         // Einpflegen der Bilder in die Datenbank
                         $stmt = $pdo->prepare("INSERT into blog_images (blog_entrys_id, source, alt, prev_img) VALUES ( ? , ? , ? , ? )");
-                        $stmt->bindValue(1, $blog_entrys_id, PDO::PARAM_INT);
+                        $stmt->bindValue(1, $blog_entrys_id);
                         $stmt->bindValue(2, "/blog_imgs/" . $fileName);
-                        $stmt->bindValue(3, $blog_entrys_id, PDO::PARAM_INT);
+                        $stmt->bindValue(3, $blog_entrys_id);
                         $stmt->bindValue(4, 0);
                         $result = $stmt->execute();
                         if (!$result) {
