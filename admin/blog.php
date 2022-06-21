@@ -108,10 +108,11 @@ if (isset($_POST['action'])) {
         for ($x = 0; $x < count($imgs); $x++) {
             $imgOwner = 'imgOwner-'.$x;
             $imgAlt = 'imgAlt-'.$x;
+            $id = 'blog_image_id-'.$x;
             $stmt = $pdo->prepare('UPDATE blog_images SET `owner` = ?, alt = ? where blog_images_id = ? and blog_entrys_id = ?');
             $stmt->bindValue(1, $_POST[$imgOwner]);
             $stmt->bindValue(2, $_POST[$imgAlt]);
-            $stmt->bindValue(3, $_POST[$var], PDO::PARAM_INT);
+            $stmt->bindValue(3, $_POST[$id], PDO::PARAM_INT);
             $stmt->bindValue(4, $blog_entrys_id, PDO::PARAM_INT);
             $result = $stmt->execute();
             if (!$result) {
@@ -239,6 +240,7 @@ if (isset($_POST['action'])) {
                                     <div class="card prodcard cbg">
                                         <img src="<?=$images[$x]['source']?>" class="card-img-top img-fluid rounded" alt="<?=$images[$x]['alt']?>">
                                         <div class="card-body">
+                                        <input type="number" value="<?=$images[$x]['blog_images_id']?>" name="<?='blog_image_id-'.$x?>" style="display: none;" required>
                                             <div class="input-group pb-2">
                                                 <span class="input-group-text" id="basic-addon1">Quelle</span>
                                                 <input type="text" class="form-control" placeholder="Quelle" value="<?=$images[$x]['owner']?>" name="<?='imgOwner-'.$x?>">
@@ -335,6 +337,8 @@ if (isset($_POST['action'])) {
             error('Unzureichende Berechtigungen!');
         }
         $blog_entrys_id = $_POST['blog_entrys_id'];
+
+        // Delete all Images the blog post uses
         $stmt = $pdo->prepare('SELECT source FROM blog_images where blog_entrys_id = ?');
 		$stmt->bindValue(1, $blog_entrys_id, PDO::PARAM_INT);
 		$result = $stmt->execute();
