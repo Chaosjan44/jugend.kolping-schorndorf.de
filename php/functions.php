@@ -100,14 +100,8 @@ function delBlogImages($images) {
 	foreach ($images as $image) {
 		error_log(print_r($image, true));
 		error_log($image['blog_images_id']);
-		$stmt = $pdo->prepare('SELECT * FROM blog_images where blog_images_id = ?');
-		$stmt->bindValue(1, $image['blog_images_id'], PDO::PARAM_INT);
-		$result = $stmt->execute();
-		if (!$result) {
-			error('Datenbank Fehler!', pdo_debugStrParams($stmt));
-		}
-		$delImg = $stmt->fetchAll(PDO::FETCH_ASSOC);
-		unlink(substr($delImg['source'], 1));
+		error_log($image['source']);
+		unlink(substr($image['source'], 1));
 		$stmt = $pdo->prepare('DELETE FROM blog_images where blog_images_id = ?');
         $stmt->bindValue(1, $image['blog_images_id'], PDO::PARAM_INT);
         $result = $stmt->execute();
