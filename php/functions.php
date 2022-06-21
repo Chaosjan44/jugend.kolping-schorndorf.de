@@ -98,16 +98,17 @@ function check_cookie() {
 function delBlogImages($images) {
 	global $pdo;
 	foreach ($images as $image) {
-		$stmt = $pdo->prepare('SELECT source FROM blog_images where blog_images_id = ?');
-		$stmt->bindValue(1, $image['blog_images_id'], PDO::PARAM_INT);
+		error_log(print_r($image, true));
+		$stmt = $pdo->prepare('SELECT * FROM blog_images where blog_images_id = ?');
+		$stmt->bindValue(1, $image[0]['blog_images_id'], PDO::PARAM_INT);
 		$result = $stmt->execute();
 		if (!$result) {
 			error('Datenbank Fehler!', pdo_debugStrParams($stmt));
 		}
 		$delImg = $stmt->fetchAll(PDO::FETCH_ASSOC);
-		unlink($delImg[0]['source']);
+		unlink(substr($delImg[0]['source'], 1));
 		$stmt = $pdo->prepare('DELETE FROM blog_images where blog_images_id = ?');
-        $stmt->bindValue(1, $image['blog_images_id'], PDO::PARAM_INT);
+        $stmt->bindValue(1, $image[0]['blog_images_id'], PDO::PARAM_INT);
         $result = $stmt->execute();
         if (!$result) {
             error('Datenbank Fehler!', pdo_debugStrParams($stmt));
