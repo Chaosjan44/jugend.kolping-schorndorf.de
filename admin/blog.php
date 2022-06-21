@@ -16,7 +16,7 @@ $blogentrys = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 if (isset($_POST['action'])) {
     if ($_POST['action'] == 'save') {
-        if ($user['admin'] != 1) {
+        if ($user['loginperms'] != 1) {
             error('Unzureichende Berechtigungen!');
         }
         if (!isset($_POST['blog_entrys_id'])) {
@@ -105,6 +105,20 @@ if (isset($_POST['action'])) {
                 $setprev = true;    
             }
         }
+        for ($x = 0; $x < count($imgs); $x++) {
+            $imgOwner = 'imgOwner-'.$x;
+            $imgAlt = 'imgAlt-'.$x;
+            $stmt = $pdo->prepare('UPDATE blog_images SET `owner` = ?, alt = ? where blog_images_id = ? and blog_entrys_id = ?');
+            $stmt->bindValue(1, $_POST[$imgOwner]);
+            $stmt->bindValue(2, $_POST[$imgAlt]);
+            $stmt->bindValue(3, $_POST[$var], PDO::PARAM_INT);
+            $stmt->bindValue(4, $blog_entrys_id, PDO::PARAM_INT);
+            $result = $stmt->execute();
+            if (!$result) {
+                error('Datenbank Fehler!', pdo_debugStrParams($stmt));
+            }            
+        }
+
 
         if (!empty($_FILES["file"]["name"][0])){
             $allowTypes = array('jpg','png','jpeg','gif');
@@ -125,6 +139,7 @@ if (isset($_POST['action'])) {
                         $stmt->bindValue(4, 0);
                         $result = $stmt->execute();
                         if (!$result) {
+                            error_log(print_r($stmt, true));
                             error('Datenbank Fehler!', pdo_debugStrParams($stmt));
                         }                            
                         if (!$stmt) {
@@ -144,7 +159,7 @@ if (isset($_POST['action'])) {
 
 
     if ($_POST['action'] == 'mod') {
-        if ($user['admin'] != 1) {
+        if ($user['loginperms'] != 1) {
             error('Unzureichende Berechtigungen!');
         }
         
@@ -190,7 +205,7 @@ if (isset($_POST['action'])) {
                             <button type="button" class="btn btn-kolping ctext px-3" data-bs-toggle="modal" data-bs-target="#explainModal"><i class="fa-solid fa-circle-question"></i></button>
                         </div>
                         <div class="justify-content-end d-flex">
-                            <div class="input-group flex-nowrap ctext">
+                            <div class="input-group flex-nowrap ctext me-2">
                                 <span class="input-group-text" for="inputVisible">Visible</span>
                                 <div class="input-group-text">
                                     <input class="form-check-input mt-0 checkbox-kolping" type="checkbox" id="inputVisible" name="visible" <?=($entry[0]['visible']==1 ? 'checked':'')?>>
@@ -198,7 +213,7 @@ if (isset($_POST['action'])) {
                             </div>
                             <input type="number" value="<?=$blog_entrys_id?>" name="blog_entrys_id" style="display: none;" required>
                             <button type="submit" class="btn btn-success ctext mx-2" name="action" value="save"><span>Speichern</span></button>
-                            <button type="button" class="btn btn-danger ctext mx-2" onclick="window.location.href = '/admin/blog.php';">Abbrechen</button>
+                            <button type="button" class="btn btn-danger ctext ms-2" onclick="window.location.href = '/admin/blog.php';">Abbrechen</button>
                         </div>
                     </div>
                     <div class="col p-2 rounded">
@@ -224,14 +239,22 @@ if (isset($_POST['action'])) {
                                     <div class="card prodcard cbg">
                                         <img src="<?=$images[$x]['source']?>" class="card-img-top img-fluid rounded" alt="<?=$images[$x]['alt']?>">
                                         <div class="card-body">
-                                            <div class="input-group pb-2 d-flex justify-content-center">
+                                            <div class="input-group pb-2">
+                                                <span class="input-group-text" id="basic-addon1">Quelle</span>
+                                                <input type="text" class="form-control" placeholder="Quelle" value="<?=$images[$x]['owner']?>" name="<?='imgOwner-'.$x?>">
+                                            </div>
+                                            <div class="input-group py-2">
+                                                <span class="input-group-text" id="basic-addon1">Text</span>
+                                                <input type="text" class="form-control" placeholder="Text" value="<?=$images[$x]['alt']?>" name="<?='imgAlt-'.$x?>">
+                                            </div>
+                                            <div class="input-group py-2 d-flex justify-content-center">
                                                 <span class="input-group-text" for="inputVisible">Löschen?</span>
                                                 <div class="input-group-text">
                                                     <input type="checkbox" class="form-check-input checkbox-kolping" value="<?=$images[$x]['blog_images_id']?>" name="<?='delImage-'.$x?>">
                                                 </div>
                                             </div>
                                             <div class="input-group pt-2 d-flex justify-content-center">
-                                                <span class="input-group-text" for="inputVisible">Preview Bild</span>
+                                                <span class="input-group-text" for="inputVisible">Vorschau Bild</span>
                                                 <div class="input-group-text">
                                                     <input type="checkbox" class="form-check-input checkbox-kolping" value="<?=$images[$x]['blog_images_id']?>" name="<?='prevImg-'.$x?>" <?=($images[$x]['prev_img']==1 ? 'checked':'')?>>
                                                 </div>
@@ -294,11 +317,37 @@ if (isset($_POST['action'])) {
         exit;
     }
     if ($_POST['action'] == 'add') {
-
+        require_once("templates/header.php"); 
+        if ($user['loginperms'] != 1) {
+            error('Unzureichende Berechtigungen!');
+        }
         ?>
 
 
-        <?php include_once("templates/footer.php");
+        <?php 
+        include_once("templates/footer.php");
+        exit;
+    }
+
+    if ($_POST['action'] == 'del') {
+        require_once("templates/header.php"); 
+        if ($user['loginperms'] != 1) {
+            error('Unzureichende Berechtigungen!');
+        }
+        $blog_entrys_id = $_POST['blog_entrys_id'];
+        $stmt = $pdo->prepare('DELETE FROM blog_images where blog_entrys_id = ?');
+        $stmt->bindValue(1, $blog_entrys_id, PDO::PARAM_INT);
+        $result = $stmt->execute();
+        if (!$result) {
+            error('Datenbank Fehler!', pdo_debugStrParams($stmt));
+        }
+        $stmt = $pdo->prepare('DELETE FROM blog_entrys where blog_entrys_id = ?');
+        $stmt->bindValue(1, $blog_entrys_id, PDO::PARAM_INT);
+        $result = $stmt->execute();
+        if (!$result) {
+            error('Datenbank Fehler!', pdo_debugStrParams($stmt));
+        }   
+        print("<script>location.href='blog.php'</script>");
         exit;
     }
 }
@@ -330,10 +379,12 @@ require_once("templates/header.php");
                                     <h5 class="offcanvas-title ctext" id="deleteCanvasLable">Wirklich Löschen?</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                                 </div>
-                                <div class="offcanvas-body cbg ctext">´
-                                    <input type="number" value="<?=$blogentry['blog_entrys_id']?>" name="blog_entrys_id" style="display: none;" required>
-                                    <button type="submit" name="action" class="btn btn-danger" value="del">Löschen</button>
-                                    <button type="button" class="btn btn-kolping" data-bs-dismiss="offcanvas" aria-label="Close">Abbrechen</button>
+                                <div class="offcanvas-body cbg ctext">
+                                    <div class="col d-flex justify-content-center">
+                                        <input type="number" value="<?=$blogentry['blog_entrys_id']?>" name="blog_entrys_id" style="display: none;" required>
+                                        <button type="submit" name="action" class="btn btn-danger mx-2" value="del">Löschen</button>
+                                        <button type="button" class="btn btn-kolping mx-2" data-bs-dismiss="offcanvas" aria-label="Close">Abbrechen</button>
+                                    </div>
                                 </div>
                             </div>
                         </form>

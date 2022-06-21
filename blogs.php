@@ -10,7 +10,7 @@ $blogentrys = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <h1 class="display-3 text-center mb-3 text-kolping-orange">Blogs</h1>
         <div class="row row-cols-5 gx-3">
             <?php foreach ($blogentrys as $blogentry): ?>
-                <div class="col">
+                <div class="col p-2">
                     <div class="card cbg2" style="height: 100% !important;">
                         <img src="<?=$blogentry['source']?>" class="card-img-top img-fluid rounded" alt="<?=$blogentry['alt']?>">
                         <div class="card-body ctext">
@@ -25,3 +25,5 @@ $blogentrys = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </div>
 </div>
 <?php require_once("templates/footer.php"); ?>
+
+

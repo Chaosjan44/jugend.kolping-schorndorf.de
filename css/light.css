@@ -43,13 +43,8 @@ button {
     color: #000000 !important;
 }
 
-.hctext {
+.clink {
     color: #000000 !important;
-}
-
-.hctext:hover {
-    transition: 0.7s !important;
-    color: #FF8C00 !important;
 }
 
 .navbar-toggler-icon {

@@ -9,26 +9,26 @@ $crdate = "2020";
                 <div class="col-2 text-center">
                     <ul class="px-0">
                         <li>
-                            <a href="/" class="hoverlink ctext">Start</a>
+                            <a href="/" class="link ctext">Start</a>
                         </li>
                         <li>
-                            <a href="/termine.php" class="hoverlink ctext">Termine</a>
+                            <a href="/termine.php" class="link ctext">Termine</a>
                         </li>
                         <li>
-                            <a href="/angebote.php" class="hoverlink ctext">Angebote</a>
+                            <a href="/angebote.php" class="link ctext">Angebote</a>
                         </li>
                     </ul>
                 </div>
                 <div class="col-2 text-center">
                     <ul class="px-0">
                         <li>
-                            <a href="/disclaimer.php" class="hoverlink ctext">Disclaimer</a>
+                            <a href="/disclaimer.php" class="link ctext">Disclaimer</a>
                         </li>
                         <li>
-                            <a href="/impressum.php" class="hoverlink ctext">Impressum</a> 
+                            <a href="/impressum.php" class="link ctext">Impressum</a> 
                         </li>
                         <li>
-                            <a href="/datenschutz.php" class="hoverlink ctext">Datenschutz</a>
+                            <a href="/datenschutz.php" class="link ctext">Datenschutz</a>
                         </li>
                     </ul>
                 </div>
@@ -49,22 +49,22 @@ $crdate = "2020";
                 <div class="col text-center px-0">
                     <ul class="px-0">
                         <li>
-                            <a href="/" class="hoverlink ctext">Start</a>
+                            <a href="/" class="link ctext">Start</a>
                         </li>
                         <li>
-                            <a href="/termine.php" class="hoverlink ctext">Termine</a>
+                            <a href="/termine.php" class="link ctext">Termine</a>
                         </li>
                         <li>
-                            <a href="/angebote.php" class="hoverlink ctext">Angebote</a>
+                            <a href="/angebote.php" class="link ctext">Angebote</a>
                         </li>
                         <li>
-                            <a href="/datenschutz.php" class="hoverlink ctext">Datenschutz</a>
+                            <a href="/datenschutz.php" class="link ctext">Datenschutz</a>
                         </li>
                         <li>
-                            <a href="/disclaimer.php" class="hoverlink ctext">Disclaimer</a>
+                            <a href="/disclaimer.php" class="link ctext">Disclaimer</a>
                         </li>
                         <li>
-                            <a href="/impressum.php" class="hoverlink ctext">Impressum</a> 
+                            <a href="/impressum.php" class="link ctext">Impressum</a> 
                         </li>
                     </ul>
                 </div>
