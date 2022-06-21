@@ -335,17 +335,14 @@ if (isset($_POST['action'])) {
             error('Unzureichende Berechtigungen!');
         }
         $blog_entrys_id = $_POST['blog_entrys_id'];
-        $stmt = $pdo->prepare('SELECT source FROM blog_images where blog_images_id = ? and blog_entrys_id = ?');
-        $stmt->bindValue(1, $_POST[$var], PDO::PARAM_INT);
-        $stmt->bindValue(2, $blog_entrys_id, PDO::PARAM_INT);
-        $result = $stmt->execute();
-        if (!$result) {
-            error('Datenbank Fehler!', pdo_debugStrParams($stmt));
-        }
-        $delImgs = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        foreach ($delImgs as $delImg) {
-            unlink($delImg['source']);
-        }
+        $stmt = $pdo->prepare('SELECT source FROM blog_images where blog_entrys_id = ?');
+		$stmt->bindValue(1, $blog_entrys_id, PDO::PARAM_INT);
+		$result = $stmt->execute();
+		if (!$result) {
+			error('Datenbank Fehler!', pdo_debugStrParams($stmt));
+		}
+		$delImgs = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        delBlogImages($delImgs);
 
         $stmt = $pdo->prepare('DELETE FROM blog_images where blog_entrys_id = ?');
         $stmt->bindValue(1, $blog_entrys_id, PDO::PARAM_INT);

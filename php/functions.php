@@ -94,4 +94,24 @@ function check_cookie() {
 		return false;
 	}
 }
+
+function delBlogImages($images) {
+	global $pdo;
+	foreach ($images as $image) {
+		$stmt = $pdo->prepare('SELECT source FROM blog_images where blog_images_id = ?');
+		$stmt->bindValue(1, $image, PDO::PARAM_INT);
+		$result = $stmt->execute();
+		if (!$result) {
+			error('Datenbank Fehler!', pdo_debugStrParams($stmt));
+		}
+		$delImg = $stmt->fetchAll(PDO::FETCH_ASSOC);
+		unlink($delImg['source']);
+		$stmt = $pdo->prepare('DELETE FROM blog_images where blog_images_id = ?');
+        $stmt->bindValue(1, $image, PDO::PARAM_INT);
+        $result = $stmt->execute();
+        if (!$result) {
+            error('Datenbank Fehler!', pdo_debugStrParams($stmt));
+        }
+	}
+}
 ?>
