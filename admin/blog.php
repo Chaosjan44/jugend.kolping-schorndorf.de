@@ -64,6 +64,7 @@ if (isset($_POST['action'])) {
         for ($x = 0; $x < count($imgs); $x++) {
             $var = 'delImage-'.$x;
             if (isset($_POST[$var])) {
+                error_log($_POST[$var]);
                 #del
                 $stmt = $pdo->prepare('SELECT * FROM blog_images where blog_images_id = ? and blog_entrys_id = ?');
                 $stmt->bindValue(1, $_POST[$var], PDO::PARAM_INT);
