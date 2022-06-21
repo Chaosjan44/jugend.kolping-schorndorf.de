@@ -339,7 +339,7 @@ if (isset($_POST['action'])) {
         $blog_entrys_id = $_POST['blog_entrys_id'];
 
         // Delete all Images the blog post uses
-        $stmt = $pdo->prepare('SELECT source FROM blog_images where blog_entrys_id = ?');
+        $stmt = $pdo->prepare('SELECT source, blog_images_id FROM blog_images where blog_entrys_id = ?');
 		$stmt->bindValue(1, $blog_entrys_id, PDO::PARAM_INT);
 		$result = $stmt->execute();
 		if (!$result) {
@@ -386,10 +386,10 @@ require_once("templates/header.php");
                         <form action="blog.php" method="post" enctype="multipart/form-data" class="p-2 d-flex justify-content-between">
                             <input type="number" value="<?=$blogentry['blog_entrys_id']?>" name="blog_entrys_id" style="display: none;" required>
                             <button type="submit" name="action" class="btn btn-kolping" value="mod">Editieren</button>
-                            <button class="btn btn-danger" type="button" data-bs-toggle="offcanvas" data-bs-target="#deleteCanvas" aria-controls="deleteCanvas">Löschen</button>
-                            <div class="offcanvas offcanvas-end ctext cbg" data-bs-backdrop="static" tabindex="-1" id="deleteCanvas" aria-labelledby="deleteCanvasLable">
+                            <button class="btn btn-danger" type="button" data-bs-toggle="offcanvas" data-bs-target="#deleteCanvas-<?=$blogentry['blog_entrys_id']?>" aria-controls="deleteCanvas-<?=$blogentry['blog_entrys_id']?>">Löschen</button>
+                            <div class="offcanvas offcanvas-end ctext cbg" data-bs-backdrop="static" tabindex="-1" id="deleteCanvas-<?=$blogentry['blog_entrys_id']?>" aria-labelledby="deleteCanvasLable-<?=$blogentry['blog_entrys_id']?>">
                                 <div class="offcanvas-header cbg">
-                                    <h5 class="offcanvas-title ctext" id="deleteCanvasLable">Wirklich Löschen?</h5>
+                                    <h5 class="offcanvas-title ctext" id="deleteCanvasLable-<?=$blogentry['blog_entrys_id']?>">Wirklich Löschen?</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                                 </div>
                                 <div class="offcanvas-body cbg ctext">
