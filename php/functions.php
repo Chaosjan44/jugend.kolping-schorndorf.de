@@ -98,9 +98,6 @@ function check_cookie() {
 function delBlogImages($images) {
 	global $pdo;
 	foreach ($images as $image) {
-		error_log(print_r($image, true));
-		error_log($image['blog_images_id']);
-		error_log($image['source']);
 		unlink(substr($image['source'], 1));
 		$stmt = $pdo->prepare('DELETE FROM blog_images where blog_images_id = ?');
         $stmt->bindValue(1, $image['blog_images_id'], PDO::PARAM_INT);
@@ -109,5 +106,16 @@ function delBlogImages($images) {
             error('Datenbank Fehler!', pdo_debugStrParams($stmt));
         }
 	}
+}
+
+function delBlogPost($blog_entrys_id) {
+	global $pdo;
+	$stmt = $pdo->prepare('DELETE FROM blog_entrys where blog_entrys_id = ?');
+	$stmt->bindValue(1, $blog_entrys_id, PDO::PARAM_INT);
+	$result = $stmt->execute();
+	if (!$result) {
+		error('Datenbank Fehler!', pdo_debugStrParams($stmt));
+	}   
+	print("<script>location.href='blog.php'</script>");
 }
 ?>
