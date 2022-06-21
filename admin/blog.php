@@ -439,7 +439,7 @@ if (isset($_POST['action'])) {
         delBlogPost($blog_entrys_id);
         exit;
     }
-} 
+}
 
 require_once("templates/header.php"); 
 ?>
