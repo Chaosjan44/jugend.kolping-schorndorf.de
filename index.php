@@ -91,8 +91,9 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                             <div class="card-body ctext">
                                                 <h3 class="card-title"><?=$blogentry['name']?></h3>
                                                 <span id="indextext-<?=$blogentry['blog_entrys_id']?>">
-                                                    <script>unMarkToDiv("<?=$blogentry['text']?>", "indextext-<?=$blogentry['blog_entrys_id']?>")</script>
+                                                    <?=$blogentry['text']?>
                                                 </span>
+                                                <script>unMarkToSpan("indextext-<?=$blogentry['blog_entrys_id']?>")</script>
                                             </div>
                                         </div>
                                         <a href="/blog.php?id=<?=$blogentry['blog_entrys_id']?>" class="stretched-link"></a>
@@ -156,8 +157,9 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                                 <div class="card-body ctext">
                                                     <h3 class="card-title"><?=$blogentry['name']?></h3>
                                                     <span id="indextext-<?=$blogentry['blog_entrys_id']?>">
-                                                        <script>unMarkToDiv("<?=$blogentry['text']?>", "indextext-<?=$blogentry['blog_entrys_id']?>")</script>
+                                                        <?=$blogentry['text']?>
                                                     </span>
+                                                    <script>unMarkToSpan("indextext-<?=$blogentry['blog_entrys_id']?>")</script>
                                                 </div>
                                             </div>
                                             <a href="/blog.php?id=<?=$blogentry['blog_entrys_id']?>" class="stretched-link"></a>

@@ -56,6 +56,6 @@ function unMark(input) {
     return input;
 }
 
-function unMarkToDiv(text, span) {
-    document.getElementById(span).innerHTML = unMark(text);
+function unMarkToSpan(span) {
+    document.getElementById(span).innerHTML = unMark(document.getElementById(span).innerHTML);
 }
