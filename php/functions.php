@@ -118,4 +118,5 @@ function delBlogPost($blog_entrys_id) {
 	}   
 	print("<script>location.href='blog.php'</script>");
 }
+
 ?>
