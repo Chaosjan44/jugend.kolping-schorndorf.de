@@ -1,7 +1,5 @@
 function unMarkPrev(textarea) {
-    input = textarea.value;
-    output = unMark(input);
-    input = "";
+    output = unMark(textarea.value);
     document.getElementById("prevModalText").innerHTML = output;
     const myModal = new bootstrap.Modal('#prevModal');
     const modalToggle = document.getElementById('prevModal');
@@ -18,27 +16,27 @@ function unMark(input) {
     input = input.replace('/~~', '</del>');
     input = input.replace('__', '<ins>');
     input = input.replace('/__', '</ins>');
-    inputArray = input.split('<split>');
+    var inputArray = input.split('<split>');
     
     input = "";
     for (i = 0; i < inputArray.length; i++) {
         // Heading
         // Link
         if (inputArray[i].includes('(http')) {
-            string = inputArray[i]
-            before = string.substring(
+            var string = inputArray[i]
+            var before = string.substring(
                 0,
                 string.indexOf('[')
             );
-            title = string.substring(
+            var title = string.substring(
                 string.lastIndexOf('[') + 1, 
                 string.lastIndexOf(']')
             );
-            link = string.substring(
+            var link = string.substring(
                 string.lastIndexOf('(') + 1, 
                 string.lastIndexOf(')')
             );
-            after = string.substring(
+            var after = string.substring(
                 string.lastIndexOf(')') +1
             );
             string = before + '<a class="link" href="' + link + '">' + title + "</a>" + after
@@ -55,6 +53,9 @@ function unMark(input) {
         }
         input += inputArray[i]
     }
-   
     return input;
+}
+
+function unMarkToDiv(text, span) {
+    document.getElementById(span).innerHTML = unMark(text);
 }
