@@ -41,8 +41,8 @@ require("templates/header.php");
                         <div>
                             <a data-bs-toggle="modal" data-bs-target="#picModal-<?=$i?>">
                                 <img src="<?=$image['source']?>" alt="<?=$image['alt']?>" class="img-fluid rounded">
+                                <span class="ctext d-flex pt-2"><?=$image['alt']?> | Quelle: <?=$image['owner']?></span>
                             </a>
-                            <span class="ctext"><?=$image['alt']?> | Quelle: <?=$image['owner']?></span>
                         </div>
                         <div class="modal fade" id="picModal-<?=$i?>" tabindex="-1" aria-labelledby="picModal-<?=$i?>-Label" style="display: none;" aria-modal="true">
                             <div class="modal-dialog modal-fullscreen">
