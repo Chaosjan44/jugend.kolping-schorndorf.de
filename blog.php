@@ -66,6 +66,8 @@ require("templates/header.php");
                 </div>
             </div>
         </div>
+        <span class="text-center justify-content-center text-size-larger" id="indextext-<?=$blogentry['blog_entrys_id']?>"><?=$entry[0]["prev_text"]?></span>
+        <script>unMarkToSpan("indextext-<?=$blogentry['blog_entrys_id']?>")</script>
         <span id="indextext-<?=$blogentry['blog_entrys_id']?>"><?=$entry[0]["text"]?></span>
         <script>unMarkToSpan("indextext-<?=$blogentry['blog_entrys_id']?>")</script>
     </div>
