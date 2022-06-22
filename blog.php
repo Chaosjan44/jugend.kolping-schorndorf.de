@@ -66,10 +66,10 @@ require("templates/header.php");
                 </div>
             </div>
         </div>
-        <span class="text-center justify-content-center text-size-larger" id="indextext-<?=$blogentry['blog_entrys_id']?>"><?=$entry[0]["prev_text"]?></span>
-        <script>unMarkToSpan("indextext-<?=$blogentry['blog_entrys_id']?>")</script>
-        <span id="indextext-<?=$blogentry['blog_entrys_id']?>"><?=$entry[0]["text"]?></span>
-        <script>unMarkToSpan("indextext-<?=$blogentry['blog_entrys_id']?>")</script>
+        <span class="text-center justify-content-center text-size-larger" id="prevtext-<?=$blogentry['blog_entrys_id']?>"><?=$entry[0]["prev_text"]?></span>
+        <script>unMarkToSpan("prevtext-<?=$blogentry['blog_entrys_id']?>")</script>
+        <span id="text-<?=$blogentry['blog_entrys_id']?>"><?=$entry[0]["text"]?></span>
+        <script>unMarkToSpan("text-<?=$blogentry['blog_entrys_id']?>")</script>
     </div>
     <div class="row justify-content-between">
         <div class="col d-flex justify-content-start text-start ctext text-size-large">
