@@ -455,7 +455,8 @@ require_once("templates/header.php");
                         <img src="<?=$blogentry['source']?>" class="card-img-top img-fluid rounded" alt="<?=$blogentry['alt']?>">
                         <div class="card-body ctext">
                             <h3 class="card-title text-center"><?=$blogentry['name']?></h3>
-                            <?=$blogentry['prev_text']?>
+                            <span id="indextext-<?=$blogentry['blog_entrys_id']?>"><?=$blogentry['prev_text']?></span>
+                            <script>unMarkToSpan("indextext-<?=$blogentry['blog_entrys_id']?>")</script>
                         </div>
                         <form action="blog.php" method="post" enctype="multipart/form-data" class="p-2 d-flex justify-content-between">
                             <input type="number" value="<?=$blogentry['blog_entrys_id']?>" name="blog_entrys_id" style="display: none;" required>

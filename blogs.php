@@ -15,7 +15,8 @@ $blogentrys = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <img src="<?=$blogentry['source']?>" class="card-img-top img-fluid rounded" alt="<?=$blogentry['alt']?>">
                         <div class="card-body ctext">
                             <h3 class="card-title text-center"><?=$blogentry['name']?></h3>
-                            <?=$blogentry['prev_text']?>
+                            <span id="indextext-<?=$blogentry['blog_entrys_id']?>"><?=$blogentry['prev_text']?></span>
+                            <script>unMarkToSpan("indextext-<?=$blogentry['blog_entrys_id']?>")</script>
                         </div>
                         <a href="/blog.php?id=<?=$blogentry['blog_entrys_id']?>" class="stretched-link"></a>
                     </div>

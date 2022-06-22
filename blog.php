@@ -66,7 +66,8 @@ require("templates/header.php");
                 </div>
             </div>
         </div>
-        <?=$entry[0]["text"]?>
+        <span id="indextext-<?=$blogentry['blog_entrys_id']?>"><?=$entry[0]["text"]?></span>
+        <script>unMarkToSpan("indextext-<?=$blogentry['blog_entrys_id']?>")</script>
     </div>
     <div class="row justify-content-between">
         <div class="col d-flex justify-content-start text-start ctext text-size-large">
