@@ -90,7 +90,7 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                         <div class="col-md-8">
                                             <div class="card-body ctext">
                                                 <h3 class="card-title"><?=$blogentry['name']?></h3>
-                                                <script>unMark(<?=$blogentry['prev_text']?>)</script>
+                                                <script>unMark("<?=$blogentry['prev_text']?>")</script>
                                             </div>
                                         </div>
                                         <a href="/blog.php?id=<?=$blogentry['blog_entrys_id']?>" class="stretched-link"></a>
@@ -153,7 +153,7 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                             <div class="col-md-8">
                                                 <div class="card-body ctext">
                                                     <h3 class="card-title"><?=$blogentry['name']?></h3>
-                                                    <script>unMark(<?=$blogentry['prev_text']?>)</script>
+                                                    <script>unMark("<?=$blogentry['prev_text']?>")</script>
                                                 </div>
                                             </div>
                                             <a href="/blog.php?id=<?=$blogentry['blog_entrys_id']?>" class="stretched-link"></a>
