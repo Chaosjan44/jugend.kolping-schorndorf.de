@@ -70,13 +70,13 @@ require("templates/header.php");
         <script>unMarkToSpan("prevtext-<?=$entry['blog_entrys_id']?>")</script>
         <span id="text-<?=$entry['blog_entrys_id']?>"><?=$entry[0]["text"]?></span>
         <script>unMarkToSpan("text-<?=$entry['blog_entrys_id']?>")</script>
-    </div>
-    <div class="row justify-content-between">
-        <div class="col d-flex justify-content-start text-start ctext text-size-large">
-            <?=$creator[0]['vorname']?> <?=$creator[0]['nachname']?>
-        </div>
-        <div class="col d-flex justify-content-end text-end ctext text-size-large">
-            <?=date('d.m.Y H:i', strtotime($entry[0]['created_at']))?>
+        <div class="row justify-content-between">
+            <div class="col d-flex justify-content-start text-start ctext text-size-large">
+                <?=$creator[0]['vorname']?> <?=$creator[0]['nachname']?>
+            </div>
+            <div class="col d-flex justify-content-end text-end ctext text-size-large">
+                <?=date('d.m.Y H:i', strtotime($entry[0]['created_at']))?>
+            </div>
         </div>
     </div>
 </div>
