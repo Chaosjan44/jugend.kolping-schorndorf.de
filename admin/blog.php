@@ -179,7 +179,6 @@ if (isset($_POST['action'])) {
         <script src="https://kit.fontawesome.com/0ba9bd5158.js" crossorigin="anonymous"></script>
         <div class="container-xxl py-3" style="min-height: 80vh;">
             <script src="/js/markdown_mark.js"></script>
-            <script src="/js/markdown_unmark.js"></script>
             <div class="row row-cols-1 m-4 p-2 cbg2 rounded">
                 <form action="blog.php" method="post" enctype="multipart/form-data">
                     <div class="col p-2 rounded">
@@ -319,7 +318,6 @@ if (isset($_POST['action'])) {
         <script src="https://kit.fontawesome.com/0ba9bd5158.js" crossorigin="anonymous"></script>
         <div class="container-xxl py-3" style="min-height: 80vh;">
             <script src="/js/markdown_mark.js"></script>
-            <script src="/js/markdown_unmark.js"></script>
             <div class="row row-cols-1 m-4 p-2 cbg2 rounded">
                 <form action="blog.php" method="post" enctype="multipart/form-data">
                     <div class="col p-2 rounded">

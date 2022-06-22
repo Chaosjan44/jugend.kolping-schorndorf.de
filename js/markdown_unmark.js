@@ -7,6 +7,7 @@ function unMarkPrev(textarea) {
     const modalToggle = document.getElementById('prevModal');
     myModal.show(modalToggle);
 }
+
 function unMark(input) {
     input = input.replace(/(?:\r\n|\r|\n)/g, '<br><split>');
     input = input.replace('**', '<b>');
@@ -57,10 +58,3 @@ function unMark(input) {
    
     return input;
 }
-
-
-function replaceSelectedText(textarea, text) {
-    var sel = getSelNum(textarea), val = textarea.value;
-    textarea.value = val.slice(0, sel.start) + text + val.slice(sel.end);
-}
-

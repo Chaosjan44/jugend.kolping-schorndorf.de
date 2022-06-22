@@ -19,6 +19,7 @@ session_start();
     <link rel="stylesheet" href="/css/dark.css" disabled>
     <link rel="stylesheet" href="/css/light.css" disabled>
     <script src="/js/custom.js"></script>
+    <script src="/js/markdown_unmark.js"></script>
     <link rel="icon" type="image/svg" href="/favicon.svg" sizes="1024x1024" />
     <title>Kolpingjugend Schorndorf</title>
 </head>
