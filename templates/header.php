@@ -44,7 +44,7 @@ session_start();
                     <a class="nav-link clink" href="/blog.php">Nachrichten</a>
                 </li>
                 <li class="nav-item text-size-x-large">
-                    <a class="nav-link clink clink" href="/wir.php">Wir</a>>
+                    <a class="nav-link clink clink" href="/wir.php">Wir</a>
                 </li>
             </ul>
         </div>
