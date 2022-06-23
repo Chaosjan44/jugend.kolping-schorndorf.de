@@ -15,7 +15,7 @@ $crdate = "2022";
                             <a href="/termine.php" class="link ctext">Termine</a>
                         </li>
                         <li>
-                            <a href="/angebote.php" class="link ctext">Angebote</a>
+                            <a href="/blogs.php" class="link ctext">Nachrichten</a>
                         </li>
                     </ul>
                 </div>
@@ -55,7 +55,7 @@ $crdate = "2022";
                             <a href="/termine.php" class="link ctext">Termine</a>
                         </li>
                         <li>
-                            <a href="/angebote.php" class="link ctext">Angebote</a>
+                            <a href="/blogs.php" class="link ctext">Nachrichten</a>
                         </li>
                         <li>
                             <a href="/datenschutz.php" class="link ctext">Datenschutz</a>
