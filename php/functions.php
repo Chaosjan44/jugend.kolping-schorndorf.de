@@ -88,6 +88,7 @@ function check_style() {
 }
 
 function check_cookie() {
+	return true; // Remove this line to get the cookie modal back
 	if(isset($_COOKIE['acceptCookies'])) {
 		return true;
 	} else {
