@@ -58,7 +58,7 @@ session_start();
 </nav>
 
 <div class="modal fade" id="cookieModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="cookieModalLabel" aria-hidden="true">
-    <div class="modal-dialog cbg">
+    <div class="modal-dialog cbg2">
         <div class="modal-content cbg">
             <div class="modal-header cbg">
                 <h4 class="modal-title ctext fw-bold" id="cookieModalLabel">Mhhh Lecker &#x1F36A;!</h4>
@@ -73,7 +73,7 @@ session_start();
                 </div>
             </div>
             <div class="modal-footer ctext cbg fw-bold">
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Ablehnen</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal" onclick='setCookie("acceptCookies", "false", 365)'>Ablehnen</button>
                 <button type="button" class="btn btn-success" data-bs-dismiss="modal" onclick='setCookie("acceptCookies", "true", 365)'>Akzeptieren</button>
             </div>
         </div>
