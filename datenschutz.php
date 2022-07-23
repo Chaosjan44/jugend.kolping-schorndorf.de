@@ -45,7 +45,7 @@
         </p>
         <h5 class="mb-1">Hinweis zur verantwortlichen Stelle</h5>
         <p class="mb-3">
-            Die verantwortliche Stelle für die Datenverarbeilung auf dieser Website ist:
+            Die verantwortliche Stelle für die Datenverarbeilung auf dieser Website ist:<br>
             <br>
             Kolpingwerk Deutschland <br>
             St. -Apern-Str. 32 <br>
