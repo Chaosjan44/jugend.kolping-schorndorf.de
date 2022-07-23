@@ -52,7 +52,7 @@
             50667 Köln <br>
             <br>
             Telefon: 0 22 1 / 2 07 01 - 0 <br>
-            E-Mail: <a href="mailto:datenschutz-bundessekretariat@kolping.de" type="link">datenschutz-bundessekretariat@kolping.de</a><br>
+            E-Mail: <a href="mailto:datenschutz-bundessekretariat@kolping.de" class="link">datenschutz-bundessekretariat@kolping.de</a><br>
             <br>
             Verantwortliche Stelle ist die natürliche oder juristische Person, 
             die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z.B.Namen, E-Mail-Adressen o. Ä.) entscheidet.
