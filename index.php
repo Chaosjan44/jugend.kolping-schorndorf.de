@@ -14,19 +14,19 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <div id="carouselExampleFade" class="carousel <?php if (check_style() == "dark") { print("carousel-dark "); }?>slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="/media/wirn.jpg" loading="lazy" class="d-block w-100" style="height: <?php if (!isMobile()) {print("50vh");} else {print("40vh");}?>; object-fit: cover; object-position: 50% 40%;" data-bs-interval="5000">
+                    <img src="/media/wirn.jpg" class="d-block w-100" style="height: <?php if (!isMobile()) {print("50vh");} else {print("40vh");}?>; object-fit: cover; object-position: 50% 40%;" data-bs-interval="5000">
                 </div>
                 <div class="carousel-item">
-                    <img src="/media/Vorgarten.jpg" loading="lazy" class="d-block w-100" style="height: <?php if (!isMobile()) {print("50vh");} else {print("40vh");}?>; object-fit: cover; object-position: 50% 38%;" data-bs-interval="5000">
+                    <img src="/media/Vorgarten.jpg" class="d-block w-100" style="height: <?php if (!isMobile()) {print("50vh");} else {print("40vh");}?>; object-fit: cover; object-position: 50% 38%;" data-bs-interval="5000">
                 </div>
                 <div class="carousel-item">
-                    <img src="/media/jummysoup.jpg" loading="lazy" class="d-block w-100" style="height: <?php if (!isMobile()) {print("50vh");} else {print("40vh");}?>; object-fit: cover; object-position: 50% 48%;" data-bs-interval="5000">
+                    <img src="/media/jummysoup.jpg" class="d-block w-100" style="height: <?php if (!isMobile()) {print("50vh");} else {print("40vh");}?>; object-fit: cover; object-position: 50% 48%;" data-bs-interval="5000">
                 </div>
                 <div class="carousel-item">
-                    <img src="/media/karten1.jpg" loading="lazy" class="d-block w-100" style="height: <?php if (!isMobile()) {print("50vh");} else {print("40vh");}?>; object-fit: cover; object-position: 50% 22%;" data-bs-interval="5000">
+                    <img src="/media/karten1.jpg" class="d-block w-100" style="height: <?php if (!isMobile()) {print("50vh");} else {print("40vh");}?>; object-fit: cover; object-position: 50% 22%;" data-bs-interval="5000">
                 </div>
                 <div class="carousel-item">
-                    <img src="/media/karten2.jpg" loading="lazy" class="d-block w-100" style="height: <?php if (!isMobile()) {print("50vh");} else {print("40vh");}?>; object-fit: cover; object-position: 50% 65%;" data-bs-interval="5000">
+                    <img src="/media/karten2.jpg" class="d-block w-100" style="height: <?php if (!isMobile()) {print("50vh");} else {print("40vh");}?>; object-fit: cover; object-position: 50% 65%;" data-bs-interval="5000">
                 </div>
             </div>
             <button class="carousel-control-prev justify-content-start px-3" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
@@ -85,7 +85,7 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 <div class="col card cbg2 mb-3 px-0">
                                     <div class="row g-0">
                                         <div class="col-md-4 my-auto">
-                                            <img src="<?=$blogentry['source']?>" loading="lazy" class="img-fluid rounded-start" alt="<?=$blogentry['alt']?>">
+                                            <img src="<?=$blogentry['source']?>" class="img-fluid rounded-start" alt="<?=$blogentry['alt']?>">
                                         </div>
                                         <div class="col-md-8">
                                             <div class="card-body ctext">
@@ -149,7 +149,7 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                     <div class="col card cbg2 mb-3 px-0">
                                         <div class="row g-0">
                                             <div class="col-md-4 my-auto">
-                                                <img src="<?=$blogentry['source']?>" loading="lazy" class="img-fluid rounded-start" alt="<?=$blogentry['alt']?>">
+                                                <img src="<?=$blogentry['source']?>" class="img-fluid rounded-start" alt="<?=$blogentry['alt']?>">
                                             </div>
                                             <div class="col-md-8">
                                                 <div class="card-body ctext">
