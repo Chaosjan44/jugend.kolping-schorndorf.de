@@ -174,7 +174,7 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                         <div class="row g-0">
                                             <div class="col-md-4 my-auto">
                                                 <picture>
-                                                    <source type="image/webp" srcset="<?php removeFileEnding($blogentry['source'])?>.webp" class="img-fluid rounded-start">
+                                                    <source type="image/webp" srcset="<?=substr($blogentry['source'], 0, strpos($blogentry['source'], "."))?>.webp" class="img-fluid rounded-start">
                                                     <source type="image/jpeg" srcset="<?=$blogentry['source']?>" class="img-fluid rounded-start">
                                                     <img src="<?=$blogentry['source']?>" class="img-fluid rounded-start" alt="<?=$blogentry['alt']?>">
                                                 </picture>
