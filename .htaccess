@@ -9,11 +9,11 @@ RedirectMatch permanent /hidden(.*) /index.php
 <IfModule mod_headers.c>
     # Caching
     # 1 Jahr (der maximale unterstützte Wert) für Grafik-/Multimediadateien
-    <FilesMatch "\.(ico|jpg|jpeg|gif|png|pdf|mp3|mp4)$">
+    <FilesMatch "\.(ico|jpg|jpeg|gif|png|pdf|mp3|mp4|webp|svg)$">
     Header set Cache-Control "public, max-age=31536000, no-transform"
     </FilesMatch>
     # 2 Stunden für Textdateien
-    <FilesMatch "\.(html|htm|xml|txt|xsl)$">
+    <FilesMatch "\.(html|htm|xml|txt|xsl|css|js)$">
     Header set Cache-Control "public, max-age=7200, must-revalidate"
     </FilesMatch>
 </IfModule> 
