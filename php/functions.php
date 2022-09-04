@@ -154,9 +154,11 @@ function convertToWEBP($file, $compression_quality = 80)
     return false;
 }
 
-function removeFileEnding($file) {
-	// substr($file, 0, strpos($file, "."))
-	return ("ello");
+function getImgSizes($file) {
+	$info = getimagesize($file);
+	$width = $info[0];
+	$height = $info[1];
+	return ("height: " + $height + " width: " + $width);
 }
 
 function delBlogImages($images) {

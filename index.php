@@ -173,7 +173,7 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                     <div class="col card cbg2 mb-3 px-0">
                                         <div class="row g-0">
                                             <div class="col-md-4">
-                                                <picture>
+                                                <picture style="height: auto;">
                                                     <source type="image/webp" srcset="<?=substr($blogentry['source'], 0, strpos($blogentry['source'], "."))?>.webp" class="img-fluid rounded-start">
                                                     <source type="image/jpeg" srcset="<?=$blogentry['source']?>" class="img-fluid rounded-start">
                                                     <img src="<?=$blogentry['source']?>" class="img-fluid rounded-start" alt="<?=$blogentry['alt']?>">
