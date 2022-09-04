@@ -15,37 +15,37 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <picture data-bs-interval="5000">
-                        <source type="image/webp" srcset="/media/wirn.webp" class="d-block w-100" style="max-height: <?php if (!isMobile()) {print("50vh");} else {print("40vh");}?>; object-fit: cover; object-position: 50% 40%;">
-                        <source type="image/jpeg" srcset="/media/wirn.jpg" class="d-block w-100" style="max-height: <?php if (!isMobile()) {print("50vh");} else {print("40vh");}?>; object-fit: cover; object-position: 50% 40%;">
-                        <img src="/media/wirn.jpg" class="d-block w-100" style="max-height: <?php if (!isMobile()) {print("50vh");} else {print("40vh");}?>; object-fit: cover; object-position: 50% 40%;">
+                        <source type="image/webp" srcset="/media/indexpic1<?php if (isMobile()) {print("_mobile");}?>.webp" class="d-block w-100" style=" object-fit: cover;">
+                        <source type="image/jpeg" srcset="/media/indexpic1<?php if (isMobile()) {print("_mobile");}?>.jpg" class="d-block w-100" style="object-fit: cover;">
+                        <img src="/media/indexpic1<?php if (isMobile()) {print("_mobile");}?>.jpg" class="d-block w-100" style="object-fit: cover;">
                     </picture>
                 </div>
                 <div class="carousel-item">
                     <picture data-bs-interval="5000">
-                        <source type="image/webp" srcset="/media/Vorgarten.webp" class="d-block w-100" style="max-height: <?php if (!isMobile()) {print("50vh");} else {print("40vh");}?>; object-fit: cover; object-position: 50% 38%;">
-                        <source type="image/jpeg" srcset="/media/Vorgarten.jpg" class="d-block w-100" style="max-height: <?php if (!isMobile()) {print("50vh");} else {print("40vh");}?>; object-fit: cover; object-position: 50% 38%;">
-                        <img src="/media/Vorgarten.jpg" class="d-block w-100" style="max-height: <?php if (!isMobile()) {print("50vh");} else {print("40vh");}?>; object-fit: cover; object-position: 50% 38%;">
+                        <source type="image/webp" srcset="/media/indexpic2<?php if (isMobile()) {print("_mobile");}?>.webp" class="d-block w-100" style="object-fit: cover;">
+                        <source type="image/jpeg" srcset="/media/indexpic2<?php if (isMobile()) {print("_mobile");}?>.jpg" class="d-block w-100" style="object-fit: cover;">
+                        <img src="/media/indexpic2<?php if (isMobile()) {print("_mobile");}?>.jpg" class="d-block w-100" style="object-fit: cover;">
                     </picture>
                 </div>
                 <div class="carousel-item">
                     <picture data-bs-interval="5000">
-                        <source type="image/webp" srcset="/media/jummysoup.webp" class="d-block w-100" style="max-height: <?php if (!isMobile()) {print("50vh");} else {print("40vh");}?>; object-fit: cover; object-position: 50% 48%;">
-                        <source type="image/jpeg" srcset="/media/jummysoup.jpg" class="d-block w-100" style="max-height: <?php if (!isMobile()) {print("50vh");} else {print("40vh");}?>; object-fit: cover; object-position: 50% 48%;">
-                        <img src="/media/jummysoup.jpg" class="d-block w-100" style="max-height: <?php if (!isMobile()) {print("50vh");} else {print("40vh");}?>; object-fit: cover; object-position: 50% 48%;">
+                        <source type="image/webp" srcset="/media/indexpic3<?php if (isMobile()) {print("_mobile");}?>.webp" class="d-block w-100" style="object-fit: cover;">
+                        <source type="image/jpeg" srcset="/media/indexpic3<?php if (isMobile()) {print("_mobile");}?>.jpg" class="d-block w-100" style="object-fit: cover;">
+                        <img src="/media/indexpic3<?php if (isMobile()) {print("_mobile");}?>.jpg" class="d-block w-100" style="object-fit: cover;">
                     </picture>
                 </div>
                 <div class="carousel-item">
                     <picture data-bs-interval="5000">
-                        <source type="image/webp" srcset="/media/karten1.webp" class="d-block w-100" style="max-height: <?php if (!isMobile()) {print("50vh");} else {print("40vh");}?>; object-fit: cover; object-position: 50% 22%;">
-                        <source type="image/jpeg" srcset="/media/karten1.jpg" class="d-block w-100" style="max-height: <?php if (!isMobile()) {print("50vh");} else {print("40vh");}?>; object-fit: cover; object-position: 50% 22%;">
-                        <img src="/media/karten1.jpg" class="d-block w-100" style="max-height: <?php if (!isMobile()) {print("50vh");} else {print("40vh");}?>; object-fit: cover; object-position: 50% 22%;">
+                        <source type="image/webp" srcset="/media/indexpic4<?php if (isMobile()) {print("_mobile");}?>.webp" class="d-block w-100" style="object-fit: cover;">
+                        <source type="image/jpeg" srcset="/media/indexpic4<?php if (isMobile()) {print("_mobile");}?>.jpg" class="d-block w-100" style="object-fit: cover;">
+                        <img src="/media/indexpic4<?php if (isMobile()) {print("_mobile");}?>.jpg" class="d-block w-100" style="object-fit: cover;">
                     </picture>
                 </div>
                 <div class="carousel-item">
                     <picture data-bs-interval="5000">
-                        <source type="image/webp" srcset="/media/karten2.webp" class="d-block w-100" style="max-height: <?php if (!isMobile()) {print("50vh");} else {print("40vh");}?>; object-fit: cover; object-position: 50% 65%;">
-                        <source type="image/jpeg" srcset="/media/karten2.jpg" class="d-block w-100" style="max-height: <?php if (!isMobile()) {print("50vh");} else {print("40vh");}?>; object-fit: cover; object-position: 50% 65%;">
-                        <img src="/media/karten2.jpg" class="d-block w-100" style="max-height: <?php if (!isMobile()) {print("50vh");} else {print("40vh");}?>; object-fit: cover; object-position: 50% 65%;">
+                        <source type="image/webp" srcset="/media/indexpic5<?php if (isMobile()) {print("_mobile");}?>.webp" class="d-block w-100" style="object-fit: cover;">
+                        <source type="image/jpeg" srcset="/media/indexpic5<?php if (isMobile()) {print("_mobile");}?>.jpg" class="d-block w-100" style="object-fit: cover;">
+                        <img src="/media/indexpic5<?php if (isMobile()) {print("_mobile");}?>.jpg" class="d-block w-100" style="object-fit: cover;">
                     </picture>
                 </div>
             </div>
