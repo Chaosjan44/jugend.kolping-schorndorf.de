@@ -138,7 +138,9 @@ if (isset($_POST['action'])) {
                         if (!$result) {
                             error_log(print_r($stmt, true));
                             error('Datenbank Fehler!', pdo_debugStrParams($stmt));
-                        }                            
+                        } else {
+                            convertToWEBP($targetFilePath);
+                        }
                         if (!$stmt) {
                             error("Hochladen Fehlgeschlagen");
                         } 

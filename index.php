@@ -15,37 +15,37 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <picture data-bs-interval="5000">
-                        <source type="image/webp" srcset="/media/indexpic1<?php if (isMobile()) {print("_mobile");}?>.webp" class="d-block w-100" style=" object-fit: cover;">
-                        <source type="image/jpeg" srcset="/media/indexpic1<?php if (isMobile()) {print("_mobile");}?>.jpg" class="d-block w-100" style="object-fit: cover;">
-                        <img src="/media/indexpic1<?php if (isMobile()) {print("_mobile");}?>.jpg" class="d-block w-100" style="object-fit: cover;">
+                        <source type="image/webp" srcset="/media/indexpic1<?php if (isMobile()) {print("_mobile");}?>.webp" class="d-block w-100">
+                        <source type="image/jpeg" srcset="/media/indexpic1<?php if (isMobile()) {print("_mobile");}?>.jpg" class="d-block w-100">
+                        <img src="/media/indexpic1<?php if (isMobile()) {print("_mobile");}?>.jpg" class="d-block w-100">
                     </picture>
                 </div>
                 <div class="carousel-item">
                     <picture data-bs-interval="5000">
-                        <source type="image/webp" srcset="/media/indexpic2<?php if (isMobile()) {print("_mobile");}?>.webp" class="d-block w-100" style="object-fit: cover;">
-                        <source type="image/jpeg" srcset="/media/indexpic2<?php if (isMobile()) {print("_mobile");}?>.jpg" class="d-block w-100" style="object-fit: cover;">
-                        <img src="/media/indexpic2<?php if (isMobile()) {print("_mobile");}?>.jpg" class="d-block w-100" style="object-fit: cover;">
+                        <source type="image/webp" srcset="/media/indexpic2<?php if (isMobile()) {print("_mobile");}?>.webp" class="d-block w-100">
+                        <source type="image/jpeg" srcset="/media/indexpic2<?php if (isMobile()) {print("_mobile");}?>.jpg" class="d-block w-100">
+                        <img src="/media/indexpic2<?php if (isMobile()) {print("_mobile");}?>.jpg" class="d-block w-100">
                     </picture>
                 </div>
                 <div class="carousel-item">
                     <picture data-bs-interval="5000">
-                        <source type="image/webp" srcset="/media/indexpic3<?php if (isMobile()) {print("_mobile");}?>.webp" class="d-block w-100" style="object-fit: cover;">
-                        <source type="image/jpeg" srcset="/media/indexpic3<?php if (isMobile()) {print("_mobile");}?>.jpg" class="d-block w-100" style="object-fit: cover;">
-                        <img src="/media/indexpic3<?php if (isMobile()) {print("_mobile");}?>.jpg" class="d-block w-100" style="object-fit: cover;">
+                        <source type="image/webp" srcset="/media/indexpic3<?php if (isMobile()) {print("_mobile");}?>.webp" class="d-block w-100">
+                        <source type="image/jpeg" srcset="/media/indexpic3<?php if (isMobile()) {print("_mobile");}?>.jpg" class="d-block w-100">
+                        <img src="/media/indexpic3<?php if (isMobile()) {print("_mobile");}?>.jpg" class="d-block w-100">
                     </picture>
                 </div>
                 <div class="carousel-item">
                     <picture data-bs-interval="5000">
-                        <source type="image/webp" srcset="/media/indexpic4<?php if (isMobile()) {print("_mobile");}?>.webp" class="d-block w-100" style="object-fit: cover;">
-                        <source type="image/jpeg" srcset="/media/indexpic4<?php if (isMobile()) {print("_mobile");}?>.jpg" class="d-block w-100" style="object-fit: cover;">
-                        <img src="/media/indexpic4<?php if (isMobile()) {print("_mobile");}?>.jpg" class="d-block w-100" style="object-fit: cover;">
+                        <source type="image/webp" srcset="/media/indexpic4<?php if (isMobile()) {print("_mobile");}?>.webp" class="d-block w-100">
+                        <source type="image/jpeg" srcset="/media/indexpic4<?php if (isMobile()) {print("_mobile");}?>.jpg" class="d-block w-100">
+                        <img src="/media/indexpic4<?php if (isMobile()) {print("_mobile");}?>.jpg" class="d-block w-100">
                     </picture>
                 </div>
                 <div class="carousel-item">
                     <picture data-bs-interval="5000">
-                        <source type="image/webp" srcset="/media/indexpic5<?php if (isMobile()) {print("_mobile");}?>.webp" class="d-block w-100" style="object-fit: cover;">
-                        <source type="image/jpeg" srcset="/media/indexpic5<?php if (isMobile()) {print("_mobile");}?>.jpg" class="d-block w-100" style="object-fit: cover;">
-                        <img src="/media/indexpic5<?php if (isMobile()) {print("_mobile");}?>.jpg" class="d-block w-100" style="object-fit: cover;">
+                        <source type="image/webp" srcset="/media/indexpic5<?php if (isMobile()) {print("_mobile");}?>.webp" class="d-block w-100">
+                        <source type="image/jpeg" srcset="/media/indexpic5<?php if (isMobile()) {print("_mobile");}?>.jpg" class="d-block w-100">
+                        <img src="/media/indexpic5<?php if (isMobile()) {print("_mobile");}?>.jpg" class="d-block w-100">
                     </picture>
                 </div>
             </div>
@@ -105,7 +105,11 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 <div class="col card cbg2 mb-3 px-0">
                                     <div class="row g-0">
                                         <div class="col-md-4 my-auto">
-                                            <img src="<?=$blogentry['source']?>" class="img-fluid rounded-start" alt="<?=$blogentry['alt']?>">
+                                            <picture>
+                                                <source type="image/webp" srcset="<?php removeFileEnding($blogentry['source'])?>.webp" class="img-fluid rounded-start">
+                                                <source type="image/jpeg" srcset="<?=$blogentry['source']?>" class="img-fluid rounded-start">
+                                                <img src="<?=$blogentry['source']?>" class="img-fluid rounded-start" alt="<?=$blogentry['alt']?>">
+                                            </picture>
                                         </div>
                                         <div class="col-md-8">
                                             <div class="card-body ctext">
@@ -169,7 +173,11 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                     <div class="col card cbg2 mb-3 px-0">
                                         <div class="row g-0">
                                             <div class="col-md-4 my-auto">
-                                                <img src="<?=$blogentry['source']?>" class="img-fluid rounded-start" alt="<?=$blogentry['alt']?>">
+                                                <picture>
+                                                    <source type="image/webp" srcset="<?php removeFileEnding($blogentry['source'])?>.webp" class="img-fluid rounded-start">
+                                                    <source type="image/jpeg" srcset="<?=$blogentry['source']?>" class="img-fluid rounded-start">
+                                                    <img src="<?=$blogentry['source']?>" class="img-fluid rounded-start" alt="<?=$blogentry['alt']?>">
+                                                </picture>
                                             </div>
                                             <div class="col-md-8">
                                                 <div class="card-body ctext">
