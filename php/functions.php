@@ -155,7 +155,8 @@ function convertToWEBP($file, $compression_quality = 80)
 }
 
 function removeFileEnding($file) {
-	return (substr($file, 0, strpos($file, ".")));
+	// substr($file, 0, strpos($file, "."))
+	return ("ello");
 }
 
 function delBlogImages($images) {
