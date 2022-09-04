@@ -172,8 +172,8 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 <?php foreach ($blogentrys as $blogentry): ?> 
                                     <div class="col card cbg2 mb-3 px-0">
                                         <div class="row g-0">
-                                            <div class="col-md-4">
-                                                <picture style="height: auto;">
+                                            <div class="col-md-4" style="height: auto;">
+                                                <picture>
                                                     <source type="image/webp" srcset="<?=substr($blogentry['source'], 0, strpos($blogentry['source'], "."))?>.webp" class="img-fluid rounded-start">
                                                     <source type="image/jpeg" srcset="<?=$blogentry['source']?>" class="img-fluid rounded-start">
                                                     <img src="<?=$blogentry['source']?>" class="img-fluid rounded-start" alt="<?=$blogentry['alt']?>">
