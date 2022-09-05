@@ -185,4 +185,15 @@ function delBlogPost($blog_entrys_id) {
 	print("<script>location.href='blog.php'</script>");
 }
 
+function delEvent($events_id) {
+	global $pdo;
+	$stmt = $pdo->prepare('DELETE FROM events where events_id = ?');
+	$stmt->bindValue(1, $events_id, PDO::PARAM_INT);
+	$result = $stmt->execute();
+	if (!$result) {
+		error('Datenbank Fehler!', pdo_debugStrParams($stmt));
+	}   
+	print("<script>location.href='termine.php'</script>");
+}
+
 ?>

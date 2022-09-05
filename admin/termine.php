@@ -7,9 +7,9 @@ if (!isset($user)) {
     exit;
 }
 
-$stmt = $pdo->prepare('SELECT * ,(SELECT source From blog_images WHERE blog_images.blog_entrys_id=blog_entrys.blog_entrys_id AND prev_img=1) AS source,(SELECT alt From blog_images WHERE blog_images.blog_entrys_id=blog_entrys.blog_entrys_id AND prev_img=1) AS alt FROM blog_entrys ORDER BY created_at desc');
+$stmt = $pdo->prepare('SELECT * FROM events ORDER BY created_at desc');
 $stmt->execute();
-$blogentrys = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$events = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
 
@@ -22,42 +22,46 @@ if (isset($_POST['action'])) {
             error('Unzureichende Berechtigungen!');
         }
         // if there is no blog_entrys_id, this happens if we save a new article which is just being created
-        if (!isset($_POST['blog_entrys_id'])) {
-            $stmt = $pdo->prepare('INSERT INTO blog_entrys (name, prev_text, text, visible, created_by, created_at, updated_at) VALUE (?, ?, ?, ?, ?, now(), now())');
+        if (!isset($_POST['events_id'])) {
+            $stmt = $pdo->prepare('INSERT INTO events (title, text, date, datetime_from, datetime_to, visible, created_by, created_at, updated_at) VALUE (?, ?, ?, ?, ?, ?, ?, now(), now())');
             $stmt->bindValue(1, $_POST['titleinput']);
-            $stmt->bindValue(2, $_POST['previnput']);
-            $stmt->bindValue(3, $_POST['textinput']);
-            $stmt->bindValue(4, (isset($_POST['visible']) ? "1" : "0"), PDO::PARAM_INT);
-            $stmt->bindValue(5, $user['user_id'],PDO::PARAM_INT);
+            $stmt->bindValue(2, $_POST['textinput']);
+            $stmt->bindValue(3, $_POST['date']);
+            $stmt->bindValue(4, $_POST['datetime-from']);
+            $stmt->bindValue(5, $_POST['datetime-till']);
+            $stmt->bindValue(6, (isset($_POST['visible']) ? "1" : "0"), PDO::PARAM_INT);
+            $stmt->bindValue(7, $user['user_id'],PDO::PARAM_INT);
             $result = $stmt->execute();
             if (!$result) {
                 error('Datenbank Fehler!', pdo_debugStrParams($stmt));
             }
             // Abfrage des Produkts um die ID zu bekommen
-            $stmt = $pdo->prepare('SELECT * FROM blog_entrys where name = ? and `text` = ? order by blog_entrys_id desc');
+            $stmt = $pdo->prepare('SELECT * FROM events where title = ? and `text` = ? order by events_id desc');
             $stmt->bindValue(1, $_POST['titleinput']);
             $stmt->bindValue(2, $_POST['textinput']);
             $result = $stmt->execute();
             if (!$result) {
                 error('Datenbank Fehler!', pdo_debugStrParams($stmt));
             }            
-            $blog_id = $stmt->fetchAll(PDO::FETCH_ASSOC); 
-            $blog_entrys_id = $blog_id[0]['blog_entrys_id'];
+            $event_id = $stmt->fetchAll(PDO::FETCH_ASSOC); 
+            $events_id = $event_id[0]['events_id'];
         // Wenn der Artikel bereits existiert
         } else {
-            $blog_entrys_id = $_POST['blog_entrys_id'];
-            $stmt = $pdo->prepare('UPDATE blog_entrys SET name = ?, prev_text = ?, text = ?, visible = ?, updated_at = now() WHERE blog_entrys_id = ?');
+            $events_id = $_POST['events_id'];
+            $stmt = $pdo->prepare('UPDATE blog_entrys SET title = ?, text = ?, date = ?, datetime_from = ?, datetime_to = ?, visible = ?, updated_at = now() WHERE events_id = ?');
             $stmt->bindValue(1, $_POST['titleinput']);
-            $stmt->bindValue(2, $_POST['previnput']);
-            $stmt->bindValue(3, $_POST['textinput']);
-            $stmt->bindValue(4, (isset($_POST['visible']) ? "1" : "0"), PDO::PARAM_INT);
-            $stmt->bindValue(5, $blog_entrys_id, PDO::PARAM_INT);
+            $stmt->bindValue(2, $_POST['textinput']);
+            $stmt->bindValue(3, $_POST['date']);
+            $stmt->bindValue(4, $_POST['datetime-from']);
+            $stmt->bindValue(5, $_POST['datetime-till']);
+            $stmt->bindValue(6, (isset($_POST['visible']) ? "1" : "0"), PDO::PARAM_INT);
+            $stmt->bindValue(7, $events_id, PDO::PARAM_INT);
             $result = $stmt->execute();
             if (!$result) {
                 error('Datenbank Fehler!', pdo_debugStrParams($stmt));
             }
         }
-        print("<script>location.href='blog.php'</script>");
+        print("<script>location.href='termine.php'</script>");
         exit;
     }
 
@@ -66,14 +70,14 @@ if (isset($_POST['action'])) {
         if ($user['loginperms'] != 1) {
             error('Unzureichende Berechtigungen!');
         }
-        $blog_entrys_id = $_POST['blog_entrys_id'];
-        $stmt = $pdo->prepare('SELECT * FROM blog_entrys where blog_entrys_id  = ?');
+        $events_id = $_POST['events_id'];
+        $stmt = $pdo->prepare('SELECT * FROM events where events_id  = ?');
         // bindValue will allow us to use integer in the SQL statement, we need to use for LIMIT
-        $stmt->bindValue(1, $blog_entrys_id, PDO::PARAM_INT);
-        $stmt->execute();
+        $stmt->bindValue(1, $events_id, PDO::PARAM_INT);
+        $event = $stmt->execute();
         if ($stmt->rowCount() != 1) {
             error_log($stmt->rowCount());
-            header("location: blog.php");
+            header("location: termine.php");
             exit;
         }
         require_once("templates/header.php"); 
@@ -82,9 +86,9 @@ if (isset($_POST['action'])) {
         <div class="container-xxl py-3" style="min-height: 80vh;">
             <script src="/js/markdown_mark.js"></script>
             <div class="row row-cols-1 m-4 p-2 cbg2 rounded">
-                <form action="blog.php" method="post" enctype="multipart/form-data">
+                <form action="termine.php" method="post" enctype="multipart/form-data">
                     <div class="col p-2 rounded">
-                        <textarea class="form-control cbg ctext" name="titleinput" id="titleinput" style="max-height: 20px;"><?=$entry[0]["name"]?></textarea>
+                        <textarea class="form-control cbg ctext" name="titleinput" id="titleinput" style="max-height: 20px;"><?=$event[0]["title"]?></textarea>
                     </div>
                     <div class="col p-2 rounded d-flex">
                         <div class="input-group justify-content-start">
@@ -102,19 +106,36 @@ if (isset($_POST['action'])) {
                             <div class="input-group flex-nowrap ctext me-2">
                                 <span class="input-group-text" for="inputVisible">Visible</span>
                                 <div class="input-group-text">
-                                    <input class="form-check-input mt-0 checkbox-kolping" type="checkbox" id="inputVisible" name="visible" <?=($entry[0]['visible']==1 ? 'checked':'')?>>
+                                    <input class="form-check-input mt-0 checkbox-kolping" type="checkbox" id="inputVisible" name="visible" <?=($event[0]['visible']==1 ? 'checked':'')?>>
                                 </div>                            
                             </div>
-                            <input type="number" value="<?=$blog_entrys_id?>" name="blog_entrys_id" style="display: none;" required>
+                            <input type="number" value="<?=$events_id?>" name="events_id" style="display: none;" required>
                             <button type="submit" class="btn btn-success ctext mx-2" name="action" value="save"><span>Speichern</span></button>
-                            <button type="button" class="btn btn-danger ctext ms-2" onclick="window.location.href = '/admin/blog.php';">Abbrechen</button>
+                            <button type="button" class="btn btn-danger ctext ms-2" onclick="window.location.href = '/admin/termine.php';">Abbrechen</button>
                         </div>
                     </div>
                     <div class="col p-2 rounded">
-                        <textarea class="form-control cbg ctext" name="previnput" id="precinput" rows="3"><?=$entry[0]["prev_text"]?></textarea>
+                        <div class="input-group flex-nowrap ctext me-2">
+                            <span class="input-group-text" for="date">Datum</span>
+                            <div class="input-group-text">
+                                <input type="date" name="date" id="date" class="mt-0 form-control" placeholder="<?=$event[0]['date']?>">
+                            </div>                            
+                        </div>
+                        <div class="input-group flex-nowrap ctext me-2">
+                            <span class="input-group-text" for="datetime-from">Datum von</span>
+                            <div class="input-group-text">
+                                <input type="datetime" name="datetime-from" id="datetime-from" class="mt-0 form-control" placeholder="<?=$event[0]['datetime-from']?>">
+                            </div>                            
+                        </div>
+                        <div class="input-group flex-nowrap ctext me-2">
+                            <span class="input-group-text" for="date">Datum bis</span>
+                            <div class="input-group-text">
+                                <input type="datetime" name="datetime-till" id="datetime-till" class="mt-0 form-control" placeholder="<?=$event[0]['datetime-to']?>">
+                            </div>                            
+                        </div>
                     </div>
                     <div class="col p-2 rounded">
-                        <textarea class="form-control cbg ctext" name="textinput" id="textinput" rows="10"><?=$entry[0]["text"]?></textarea>
+                        <textarea class="form-control cbg ctext" name="textinput" id="textinput" rows="10"><?=$event[0]["text"]?></textarea>
                     </div>
                 </form>
             </div>
@@ -201,14 +222,31 @@ if (isset($_POST['action'])) {
                                 </div>                            
                             </div>
                             <button type="submit" class="btn btn-success ctext mx-2" name="action" value="save"><span>Speichern</span></button>
-                            <button type="button" class="btn btn-danger ctext ms-2" onclick="window.location.href = '/admin/blog.php';">Abbrechen</button>
+                            <button type="button" class="btn btn-danger ctext ms-2" onclick="window.location.href = '/admin/termine.php';">Abbrechen</button>
                         </div>
                     </div>
                     <div class="col p-2 rounded">
-                        <textarea class="form-control cbg ctext" name="previnput" id="precinput" rows="3" placeholder="Vorschau Text"></textarea>
+                        <div class="input-group flex-nowrap ctext me-2">
+                            <span class="input-group-text" for="date">Datum</span>
+                            <div class="input-group-text">
+                                <input type="date" name="date" id="date" class="mt-0 form-control">
+                            </div>                            
+                        </div>
+                        <div class="input-group flex-nowrap ctext me-2">
+                            <span class="input-group-text" for="datetime-from">Datum von</span>
+                            <div class="input-group-text">
+                                <input type="datetime" name="datetime-from" id="datetime-from" class="mt-0 form-control">
+                            </div>                            
+                        </div>
+                        <div class="input-group flex-nowrap ctext me-2">
+                            <span class="input-group-text" for="date">Datum bis</span>
+                            <div class="input-group-text">
+                                <input type="datetime" name="datetime-till" id="datetime-till" class="mt-0 form-control">
+                            </div>                            
+                        </div>
                     </div>
                     <div class="col p-2 rounded">
-                        <textarea class="form-control cbg ctext" name="textinput" id="textinput" rows="10" placeholder="Artikel Text"></textarea>
+                        <textarea class="form-control cbg ctext" name="textinput" id="textinput" rows="10" placeholder="Termin Text"></textarea>
                     </div>
                 </form>
             </div>
@@ -268,10 +306,10 @@ if (isset($_POST['action'])) {
         if ($user['loginperms'] != 1) {
             error('Unzureichende Berechtigungen!');
         }
-        $blog_entrys_id = $_POST['blog_entrys_id'];
+        $events_id = $_POST['events_id'];
 
         // Delete Blog Post
-        delBlogPost($blog_entrys_id);
+        delEvent($events_id);
         exit;
     }
 }
@@ -281,31 +319,29 @@ require_once("templates/header.php");
 <div class="container py-3">
     <div style="min-height: 80vh;">
         <h1 class="display-3 text-center mb-3 text-kolping-orange">Blogs Editieren</h1>
-        <form action="blog.php" method="post" enctype="multipart/form-data" class="d-flex justify-content-end">
+        <form action="termine.php" method="post" enctype="multipart/form-data" class="d-flex justify-content-end">
             <button type="submit" name="action" class="btn btn-kolping" value="add">Blog Hinzufügen</button>
         </form>
         
         <div class="row row-cols-5 gx-3">
-            <?php foreach ($blogentrys as $blogentry): ?>
+            <?php foreach ($events as $event): ?>
                 <div class="col p-2">
                     <div class="card cbg2" style="height: 100% !important;">
                         <div class="card-body ctext">
-                            <h3 class="card-title text-center"><?=$blogentry['name']?></h3>
-                            <span id="text-<?=$blogentry['blog_entrys_id']?>"><?=$blogentry['prev_text']?></span>
-                            <script>unMarkToSpan("text-<?=$blogentry['blog_entrys_id']?>")</script>
+                            <h3 class="card-title text-center"><?=$event['title']?></h3>
                         </div>
-                        <form action="blog.php" method="post" enctype="multipart/form-data" class="p-2 d-flex justify-content-between">
-                            <input type="number" value="<?=$blogentry['blog_entrys_id']?>" name="blog_entrys_id" style="display: none;" required>
+                        <form action="termine.php" method="post" enctype="multipart/form-data" class="p-2 d-flex justify-content-between">
+                            <input type="number" value="<?=$event['events_id']?>" name="events_id" style="display: none;" required>
                             <button type="submit" name="action" class="btn btn-kolping" value="mod">Editieren</button>
-                            <button class="btn btn-danger" type="button" data-bs-toggle="offcanvas" data-bs-target="#deleteCanvas-<?=$blogentry['blog_entrys_id']?>" aria-controls="deleteCanvas-<?=$blogentry['blog_entrys_id']?>">Löschen</button>
-                            <div class="offcanvas offcanvas-end ctext cbg" data-bs-backdrop="static" tabindex="-1" id="deleteCanvas-<?=$blogentry['blog_entrys_id']?>" aria-labelledby="deleteCanvasLable-<?=$blogentry['blog_entrys_id']?>">
+                            <button class="btn btn-danger" type="button" data-bs-toggle="offcanvas" data-bs-target="#deleteCanvas-<?=$event['events_id']?>" aria-controls="deleteCanvas-<?=$event['events_id']?>">Löschen</button>
+                            <div class="offcanvas offcanvas-end ctext cbg" data-bs-backdrop="static" tabindex="-1" id="deleteCanvas-<?=$event['events_id']?>" aria-labelledby="deleteCanvasLable-<?=$event['events_id']?>">
                                 <div class="offcanvas-header cbg">
-                                    <h5 class="offcanvas-title ctext" id="deleteCanvasLable-<?=$blogentry['blog_entrys_id']?>">Wirklich Löschen?</h5>
+                                    <h5 class="offcanvas-title ctext" id="deleteCanvasLable-<?=$event['events_id']?>">Wirklich Löschen?</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                                 </div>
                                 <div class="offcanvas-body cbg ctext">
                                     <div class="col d-flex justify-content-center">
-                                        <input type="number" value="<?=$blogentry['blog_entrys_id']?>" name="blog_entrys_id" style="display: none;" required>
+                                        <input type="number" value="<?=$event['events_id']?>" name="events_id" style="display: none;" required>
                                         <button type="submit" name="action" class="btn btn-danger mx-2" value="del">Löschen</button>
                                         <button type="button" class="btn btn-kolping mx-2" data-bs-dismiss="offcanvas" aria-label="Close">Abbrechen</button>
                                     </div>
