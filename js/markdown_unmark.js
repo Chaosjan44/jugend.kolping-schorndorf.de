@@ -16,6 +16,7 @@ function unMark2(input) {
         console.log(inputArray[i]);
         if (i + 1 % 2 == 0 && i != 0) {
             inputArray[i].replace('<b>', '</b>');
+            console.log(i + "replaced");
         }
         console.log(inputArray[i]);
         input += inputArray[i]
