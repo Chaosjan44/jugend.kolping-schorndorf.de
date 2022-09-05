@@ -126,6 +126,9 @@ if (isset($_POST['action'])) {
                 $fileName = uniqid('image_') . '_' . basename($_FILES["file"]["name"][$i]);
                 $targetFilePath = "blog_imgs/" . $fileName;
                 if(in_array(pathinfo($targetFilePath,PATHINFO_EXTENSION), $allowTypes)){
+                    convertToJPEG($targetFilePath, $targetFilePath, 80);
+                    $fileName = $fileName + ".jpg";
+                    $targetFilePath = $targetFilePath + ".jpg";
                     // Hochladen der Bilder
                     if(move_uploaded_file($_FILES["file"]["tmp_name"][$i], $targetFilePath)){
                         // Einpflegen der Bilder in die Datenbank
