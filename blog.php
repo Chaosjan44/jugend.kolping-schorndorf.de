@@ -55,7 +55,7 @@ require("templates/header.php");
                                         <h5 class="modal-title" id="picModal-<?=$i?>-Label"></h5>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
-                                    <div class="modal-body cbg">
+                                    <div class="modal-body cbg px-auto py-auto">
                                         <div class="d-flex justify-content-center align-content-center">
                                             <img src="<?=$image['source']?>" class="img-fluid rounded" alt="<?=$image['alt']?>" style="max-height: 70vh;">
                                         </div>
