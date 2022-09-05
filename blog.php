@@ -40,7 +40,11 @@ require("templates/header.php");
                     <?php $i = 0; foreach ($images as $image):?>
                         <div>
                             <a data-bs-toggle="modal" data-bs-target="#picModal-<?=$i?>">
-                                <img src="<?=$image['source']?>" alt="<?=$image['alt']?>" class="img-fluid rounded">
+                                <picture style="max-height: 70vh;">
+                                    <source type="image/webp" srcset="<?=$image['source']?>.webp" class="img-fluid rounded">
+                                    <source type="image/jpeg" srcset="<?=$image['source']?>" class="img-fluid rounded">
+                                    <img src="<?=$image['source']?>" class="img-fluid rounded" alt="<?=$image['alt']?>">
+                                </picture>
                                 <span class="ctext d-flex pt-2"><?=$image['alt']?> | Quelle: <?=$image['owner']?></span>
                             </a>
                         </div>
@@ -53,7 +57,11 @@ require("templates/header.php");
                                     </div>
                                     <div class="modal-body cbg">
                                         <div class="d-flex justify-content-center align-content-center">
-                                            <img src="<?=$image['source']?>" class="img-fluid rounded" style="max-height: 70vh;" alt="<?=$image['alt']?>">
+                                            <picture style="max-height: 70vh;">
+                                                <source type="image/webp" srcset="<?=$image['source']?>.webp" class="img-fluid rounded">
+                                                <source type="image/jpeg" srcset="<?=$image['source']?>" class="img-fluid rounded">
+                                                <img src="<?=$image['source']?>" class="img-fluid rounded" alt="<?=$image['alt']?>">
+                                            </picture>
                                         </div>
                                     </div>
                                     <div class="modal-footer cbg justify-content-center">
