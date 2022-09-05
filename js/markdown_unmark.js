@@ -8,8 +8,8 @@ function unMarkPrev(textarea) {
 
 function unMark2(input) {
     input = input.replace(/(?:\r\n|\r|\n)/g, '<br><split>');
-    input = input.replaceAll('**', '<b>');
-    var inputArray = input.split('<b>');
+    input = input.replaceAll('**', '<b><bsplit>');
+    var inputArray = input.split('<bsplit>');
     input = "";
     for (i = 0; i < inputArray.length; i++) {
         if (i - 1 % 2 == 0) {
