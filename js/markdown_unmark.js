@@ -13,14 +13,14 @@ function unMark2(input) {
     input = "";
     for (i = 0; i < inputArray.length; i++) {
         console.log(i);
-        console.log(inputArray[i];)
+        console.log(inputArray[i]);
         if (i + 1 % 2 == 0 && i != 0) {
             inputArray[i].replace('<b>', '</b>');
         }
-        console.log(inputArray[i])
+        console.log(inputArray[i]);
         input += inputArray[i]
     }
-    input.replace()
+    input.replace();
 
 
 
