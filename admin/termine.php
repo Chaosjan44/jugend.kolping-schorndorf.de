@@ -56,6 +56,7 @@ if (isset($_POST['action'])) {
             $stmt->bindValue(5, $_POST['datetime-till']);
             $stmt->bindValue(6, (isset($_POST['visible']) ? "1" : "0"), PDO::PARAM_INT);
             $stmt->bindValue(7, $events_id, PDO::PARAM_INT);
+            error_log(print_r($stmt, true));
             $result = $stmt->execute();
             if (!$result) {
                 error('Datenbank Fehler!', pdo_debugStrParams($stmt));
@@ -82,7 +83,6 @@ if (isset($_POST['action'])) {
         }
         $event = $stmt->fetchAll(PDO::FETCH_ASSOC); 
         require_once("templates/header.php"); 
-        error_log($events_id)
         ?>
         <script src="https://kit.fontawesome.com/0ba9bd5158.js" crossorigin="anonymous"></script>
         <div class="container-xxl py-3" style="min-height: 80vh;">
@@ -128,14 +128,14 @@ if (isset($_POST['action'])) {
                             <div class="input-group-text">
                                 <input type="datetime" name="datetime-from" id="datetime-from" class="mt-0 form-control" value="<?=$event[0]['datetime_from']?>">
                             </div>
-                            <span class="input-group-text" for="date">1970-02-28 23:59:59</span>                       
+                            <span class="input-group-text" for="date">Beispiel: 1970-02-28 23:59:59</span>                       
                         </div>
                         <div class="input-group flex-nowrap ctext me-2 my-1">
                             <span class="input-group-text" for="date">Datum bis</span>
                             <div class="input-group-text">
                                 <input type="datetime" name="datetime-till" id="datetime-till" class="mt-0 form-control" value="<?=$event[0]['datetime_to']?>">
                             </div>
-                            <span class="input-group-text" for="date">1970-02-28 23:59:59</span>                            
+                            <span class="input-group-text" for="date">Beispiel: 1970-03-01 23:59:59</span>                            
                         </div>
                     </div>
                     <div class="col p-2 rounded">
