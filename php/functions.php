@@ -164,7 +164,7 @@ function delBlogImages($images) {
 	global $pdo;
 	foreach ($images as $image) {
 		unlink(substr($image['source'], 1));
-		unlink(substr($image['source'] + ".webp", 1));
+		unlink(substr($image['source'], 1) + ".webp");
 		$stmt = $pdo->prepare('DELETE FROM blog_images where blog_images_id = ?');
         $stmt->bindValue(1, $image['blog_images_id'], PDO::PARAM_INT);
         $result = $stmt->execute();
