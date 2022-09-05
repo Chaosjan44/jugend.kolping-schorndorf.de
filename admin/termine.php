@@ -74,7 +74,7 @@ if (isset($_POST['action'])) {
         $stmt = $pdo->prepare('SELECT * FROM events where events_id  = ?');
         // bindValue will allow us to use integer in the SQL statement, we need to use for LIMIT
         $stmt->bindValue(1, $events_id, PDO::PARAM_INT);
-        $event = $stmt->execute();
+        $stmt->execute();
         if ($stmt->rowCount() != 1) {
             error_log($stmt->rowCount());
             header("location: termine.php");
