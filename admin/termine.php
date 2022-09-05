@@ -120,19 +120,19 @@ if (isset($_POST['action'])) {
                         <div class="input-group flex-nowrap ctext me-2">
                             <span class="input-group-text" for="date">Datum</span>
                             <div class="input-group-text">
-                                <input type="date" name="date" id="date" class="mt-0 form-control" placeholder="<?=$event[0]['date']?>">
+                                <input type="date" name="date" id="date" class="mt-0 form-control" value="<?=$event[0]['date']?>">
                             </div>                            
                         </div>
                         <div class="input-group flex-nowrap ctext me-2">
                             <span class="input-group-text" for="datetime-from">Datum von</span>
                             <div class="input-group-text">
-                                <input type="datetime" name="datetime-from" id="datetime-from" class="mt-0 form-control" placeholder="<?=$event[0]['datetime-from']?>">
+                                <input type="datetime" name="datetime-from" id="datetime-from" class="mt-0 form-control" value="<?=$event[0]['datetime-from']?>">
                             </div>                            
                         </div>
                         <div class="input-group flex-nowrap ctext me-2">
                             <span class="input-group-text" for="date">Datum bis</span>
                             <div class="input-group-text">
-                                <input type="datetime" name="datetime-till" id="datetime-till" class="mt-0 form-control" placeholder="<?=$event[0]['datetime-to']?>">
+                                <input type="datetime" name="datetime-till" id="datetime-till" class="mt-0 form-control" value="<?=$event[0]['datetime-to']?>">
                             </div>                            
                         </div>
                     </div>
