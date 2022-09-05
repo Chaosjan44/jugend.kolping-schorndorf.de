@@ -273,10 +273,10 @@ if (isset($_POST['action'])) {
                         </div>
                         <div class="modal-body">
                             <span>
-                                Text <b>fett</b> machen: **Text/**<br>
-                                Text <i>italic</i> machen: *_Text/*_<br>
-                                Text <del>durchstreichen</del>: ~~Text/~~<br>
-                                Text <ins>unterstreichen</ins>: __Text/__<br>
+                                Text <b>fett</b> machen: **Text**<br>
+                                Text <i>italic</i> machen: *_Text*_<br>
+                                Text <del>durchstreichen</del>: ~~Text~~<br>
+                                Text <ins>unterstreichen</ins>: __Text__<br>
                                 Text zu einer <h4 style="padding: 0px; display: inline-block;">Überschrift</h4> machen: ##Text<br>
                                 Text zu einem Link machen: [Titel](https://example.com)<br>
                                 Text zu einer Liste machen: - Text<br>
