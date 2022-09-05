@@ -57,11 +57,7 @@ require("templates/header.php");
                                     </div>
                                     <div class="modal-body cbg">
                                         <div class="d-flex justify-content-center align-content-center">
-                                            <picture>
-                                                <source type="image/webp" srcset="<?=$image['source']?>.webp" class="img-fluid rounded">
-                                                <source type="image/jpeg" srcset="<?=$image['source']?>" class="img-fluid rounded">
-                                                <img src="<?=$image['source']?>" class="img-fluid rounded" alt="<?=$image['alt']?>" style="max-height: 70vh;">
-                                            </picture>
+                                            <img src="<?=$image['source']?>" class="img-fluid rounded" alt="<?=$image['alt']?>" style="max-height: 70vh;">
                                         </div>
                                     </div>
                                     <div class="modal-footer cbg justify-content-center">
