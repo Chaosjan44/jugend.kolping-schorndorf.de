@@ -1,28 +1,57 @@
 function unMarkPrev(textarea) {
-    output = unMark2(textarea.value);
+    output = unMark(textarea.value);
     document.getElementById("prevModalText").innerHTML = output;
     const myModal = new bootstrap.Modal('#prevModal');
     const modalToggle = document.getElementById('prevModal');
     myModal.show(modalToggle);
 }
 
-function unMark2(input) {
+function unMark(input) {
     input = input.replace(/(?:\r\n|\r|\n)/g, '<br><split>');
+
     input = input.replaceAll('**', '<bsplit><b>');
     var inputArray = input.split('<bsplit>');
     input = "";
     for (i = 0; i < inputArray.length; i++) {
-        console.log(i);
         if (i % 2 == 0 && i != 0) {
             inputArray[i] = inputArray[i].replace('<b>', '</b>');
-            console.log(i + "replaced");
         }
-        console.log(inputArray[i]);
         input += inputArray[i]
     }
     input.replace();
 
+    input = input.replaceAll('*_', '<isplit><i>');
+    var inputArray = input.split('<isplit>');
+    input = "";
+    for (i = 0; i < inputArray.length; i++) {
+        if (i % 2 == 0 && i != 0) {
+            inputArray[i] = inputArray[i].replace('<i>', '</i>');
+        }
+        input += inputArray[i]
+    }
+    input.replace();
 
+    input = input.replaceAll('~~', '<delsplit><del>');
+    var inputArray = input.split('<delsplit>');
+    input = "";
+    for (i = 0; i < inputArray.length; i++) {
+        if (i % 2 == 0 && i != 0) {
+            inputArray[i] = inputArray[i].replace('<del>', '</del>');
+        }
+        input += inputArray[i]
+    }
+    input.replace();
+
+    input = input.replaceAll('__', '<inssplit><ins>');
+    var inputArray = input.split('<inssplit>');
+    input = "";
+    for (i = 0; i < inputArray.length; i++) {
+        if (i % 2 == 0 && i != 0) {
+            inputArray[i] = inputArray[i].replace('<ins>', '</ins>');
+        }
+        input += inputArray[i]
+    }
+    input.replace();
 
 
 
@@ -67,7 +96,7 @@ function unMark2(input) {
 }
 
 
-function unMark(input) {
+function unMarkOld(input) {
     input = input.replace(/(?:\r\n|\r|\n)/g, '<br><split>');
     input = input.replace('**', '<b>');
     input = input.replace('/**', '</b>');
