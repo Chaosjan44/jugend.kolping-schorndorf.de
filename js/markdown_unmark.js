@@ -14,7 +14,7 @@ function unMark2(input) {
     for (i = 0; i < inputArray.length; i++) {
         console.log(i);
         if (i % 2 == 0) {
-            inputArray[i].replace('<b>', '</b>');
+            inputArray[i].replace('<b>', '<c>');
             console.log(i + "replaced");
         }
         console.log(inputArray[i]);
