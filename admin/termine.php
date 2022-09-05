@@ -117,23 +117,25 @@ if (isset($_POST['action'])) {
                         </div>
                     </div>
                     <div class="col p-2 rounded">
-                        <div class="input-group flex-nowrap ctext me-2">
+                        <div class="input-group flex-nowrap ctext me-2 my-1">
                             <span class="input-group-text" for="date">Datum</span>
                             <div class="input-group-text">
                                 <input type="date" name="date" id="date" class="mt-0 form-control" value="<?=$event[0]['date']?>">
                             </div>                            
                         </div>
-                        <div class="input-group flex-nowrap ctext me-2">
+                        <div class="input-group flex-nowrap ctext me-2 my-1">
                             <span class="input-group-text" for="datetime-from">Datum von</span>
                             <div class="input-group-text">
                                 <input type="datetime" name="datetime-from" id="datetime-from" class="mt-0 form-control" value="<?=$event[0]['datetime_from']?>">
-                            </div>                            
+                            </div>
+                            <span class="input-group-text" for="date">1970-02-28 23:59:59</span>                       
                         </div>
-                        <div class="input-group flex-nowrap ctext me-2">
+                        <div class="input-group flex-nowrap ctext me-2 my-1">
                             <span class="input-group-text" for="date">Datum bis</span>
                             <div class="input-group-text">
                                 <input type="datetime" name="datetime-till" id="datetime-till" class="mt-0 form-control" value="<?=$event[0]['datetime_to']?>">
-                            </div>                            
+                            </div>
+                            <span class="input-group-text" for="date">1970-02-28 23:59:59</span>                            
                         </div>
                     </div>
                     <div class="col p-2 rounded">
