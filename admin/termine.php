@@ -56,99 +56,6 @@ if (isset($_POST['action'])) {
             if (!$result) {
                 error('Datenbank Fehler!', pdo_debugStrParams($stmt));
             }
-
-            $stmt = $pdo->prepare('SELECT * FROM blog_images where blog_entrys_id = ?');
-            $stmt->bindValue(1, $blog_entrys_id, PDO::PARAM_INT);
-            $result = $stmt->execute();
-            if (!$result) {
-                error('Datenbank Fehler!', pdo_debugStrParams($stmt));
-            }
-            $imgs = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            // DelImgs
-            for ($x = 0; $x < count($imgs); $x++) {
-                $var = 'delImage-'.$x;
-                if (isset($_POST[$var])) {
-                    #del
-                    $stmt = $pdo->prepare('SELECT source, blog_images_id FROM blog_images where blog_images_id = ? and blog_entrys_id = ?');
-                    $stmt->bindValue(1, $_POST[$var], PDO::PARAM_INT);
-                    $stmt->bindValue(2, $blog_entrys_id, PDO::PARAM_INT);
-                    $result = $stmt->execute();
-                    if (!$result) {
-                        error('Datenbank Fehler!', pdo_debugStrParams($stmt));
-                    }   
-                    $delImgs = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                    delBlogImages($delImgs);            
-                }
-            }
-            $stmt = $pdo->prepare('UPDATE blog_images SET prev_img= 0 where blog_entrys_id = ?');
-            $stmt->bindValue(1, $blog_entrys_id, PDO::PARAM_INT);
-            $result = $stmt->execute();
-            if (!$result) {
-                error('Datenbank Fehler!', pdo_debugStrParams($stmt));
-            }     
-            $setprev = false;
-            for ($x = 0; $x < count($imgs); $x++) {
-                $var = 'prevImg-'.$x;
-                if (isset($_POST[$var]) && !$setprev) {
-                    #del
-                    $stmt = $pdo->prepare('UPDATE blog_images SET prev_img= 1 where blog_images_id = ? and blog_entrys_id = ?');
-                    $stmt->bindValue(1, $_POST[$var], PDO::PARAM_INT);
-                    $stmt->bindValue(2, $blog_entrys_id, PDO::PARAM_INT);
-                    $result = $stmt->execute();
-                    if (!$result) {
-                        error('Datenbank Fehler!', pdo_debugStrParams($stmt));
-                    }            
-                    $setprev = true;    
-                }
-            }
-            for ($x = 0; $x < count($imgs); $x++) {
-                $imgOwner = 'imgOwner-'.$x;
-                $imgAlt = 'imgAlt-'.$x;
-                $id = 'blog_image_id-'.$x;
-                $stmt = $pdo->prepare('UPDATE blog_images SET `owner` = ?, alt = ? where blog_images_id = ? and blog_entrys_id = ?');
-                $stmt->bindValue(1, $_POST[$imgOwner]);
-                $stmt->bindValue(2, $_POST[$imgAlt]);
-                $stmt->bindValue(3, $_POST[$id], PDO::PARAM_INT);
-                $stmt->bindValue(4, $blog_entrys_id, PDO::PARAM_INT);
-                $result = $stmt->execute();
-                if (!$result) {
-                    error('Datenbank Fehler!', pdo_debugStrParams($stmt));
-                }            
-            }
-        }
-        // File Upload
-        if (!empty($_FILES["file"]["name"][0])){
-            $allowTypes = array('jpg','png','jpeg','gif');
-            $fileCount = count($_FILES['file']['name']);
-            // für jedes Bild
-            for($i = 0; $i < $fileCount; $i++){
-                // Bild wird zum Abspeichern mit einer Einmaligen ID + Uhrsprungsame versehen
-                $fileName = uniqid('image_') . '_' . basename($_FILES["file"]["name"][$i]);
-                $targetFilePath = "blog_imgs/" . $fileName;
-                if(in_array(pathinfo($targetFilePath,PATHINFO_EXTENSION), $allowTypes)){
-                    // Hochladen der Bilder
-                    if(move_uploaded_file($_FILES["file"]["tmp_name"][$i], $targetFilePath)){
-                        // Einpflegen der Bilder in die Datenbank
-                        $stmt = $pdo->prepare("INSERT into blog_images (blog_entrys_id, source, alt, prev_img) VALUES ( ? , ? , ? , ? )");
-                        $stmt->bindValue(1, $blog_entrys_id);
-                        $stmt->bindValue(2, "/blog_imgs/" . $fileName);
-                        $stmt->bindValue(3, $blog_entrys_id);
-                        $stmt->bindValue(4, 0);
-                        $result = $stmt->execute();
-                        if (!$result) {
-                            error_log(print_r($stmt, true));
-                            error('Datenbank Fehler!', pdo_debugStrParams($stmt));
-                        }                            
-                        if (!$stmt) {
-                            error("Hochladen Fehlgeschlagen");
-                        } 
-                    } else {
-                        error("Hochladen Fehlgeschlagen (2)");
-                    }
-                } else {
-                    error('Wir unterstützen nur JPG, JPEG, PNG & GIF Dateien.');
-                }
-            }
         }
         print("<script>location.href='blog.php'</script>");
         exit;
@@ -169,11 +76,6 @@ if (isset($_POST['action'])) {
             header("location: blog.php");
             exit;
         }
-        $entry = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        $stmt = $pdo->prepare('SELECT * FROM blog_images where blog_entrys_id = ?');
-        $stmt->bindValue(1, $entry[0]['blog_entrys_id'], PDO::PARAM_INT);
-        $stmt->execute();
-        $images = $stmt->fetchAll(PDO::FETCH_ASSOC);
         require_once("templates/header.php"); 
         ?>
         <script src="https://kit.fontawesome.com/0ba9bd5158.js" crossorigin="anonymous"></script>
@@ -214,50 +116,6 @@ if (isset($_POST['action'])) {
                     <div class="col p-2 rounded">
                         <textarea class="form-control cbg ctext" name="textinput" id="textinput" rows="10"><?=$entry[0]["text"]?></textarea>
                     </div>
-                    <div class="col p-2 rounded d-flex">
-                        <div class="input-group cbg ctext">
-                            <input type="file" class="form-control" id="PicUpload" name="file[]" accept="image/png, image/gif, image/jpeg" multiple onchange="showPreview(event);">
-                            <label class="input-group-text " for="PicUpload">Bilder Hochladen</label>
-                        </div>
-                    </div>
-                    <div class="col p-2 rounded">
-                        <h2>Diese Bilder werden Hinzugefügt:</h2>
-                        <div class="row row-cols-4 row-cols-md-4 g-4 py-2" id="preview">
-                        </div>
-                        <h2>Diese Bilder sind aktuell vorhanden:</h2>
-                        <div class="row row-cols-4 row-cols-md-4 g-4 py-2">
-                            <?php for ($x = 0; $x < count($images); $x++) :?>
-                                <div class="col">
-                                    <div class="card prodcard cbg">
-                                        <img src="<?=$images[$x]['source']?>" class="card-img-top img-fluid rounded" alt="<?=$images[$x]['alt']?>">
-                                        <div class="card-body">
-                                        <input type="number" value="<?=$images[$x]['blog_images_id']?>" name="<?='blog_image_id-'.$x?>" style="display: none;" required>
-                                            <div class="input-group pb-2">
-                                                <span class="input-group-text" id="basic-addon1">Quelle</span>
-                                                <input type="text" class="form-control" placeholder="Quelle" value="<?=$images[$x]['owner']?>" name="<?='imgOwner-'.$x?>">
-                                            </div>
-                                            <div class="input-group py-2">
-                                                <span class="input-group-text" id="basic-addon1">Text</span>
-                                                <input type="text" class="form-control" placeholder="Text" value="<?=$images[$x]['alt']?>" name="<?='imgAlt-'.$x?>">
-                                            </div>
-                                            <div class="input-group py-2 d-flex justify-content-center">
-                                                <span class="input-group-text" for="inputVisible">Löschen?</span>
-                                                <div class="input-group-text">
-                                                    <input type="checkbox" class="form-check-input checkbox-kolping" value="<?=$images[$x]['blog_images_id']?>" name="<?='delImage-'.$x?>">
-                                                </div>
-                                            </div>
-                                            <div class="input-group pt-2 d-flex justify-content-center">
-                                                <span class="input-group-text" for="inputVisible">Vorschau Bild</span>
-                                                <div class="input-group-text">
-                                                    <input type="checkbox" class="form-check-input checkbox-kolping" value="<?=$images[$x]['blog_images_id']?>" name="<?='prevImg-'.$x?>" <?=($images[$x]['prev_img']==1 ? 'checked':'')?>>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            <?php endfor;?>
-                        </div>
-                    </div>
                 </form>
             </div>
 
@@ -271,10 +129,10 @@ if (isset($_POST['action'])) {
                         </div>
                         <div class="modal-body">
                             <span>
-                                Text <b>fett</b> machen: **Text/**<br>
-                                Text <i>italic</i> machen: *_Text/*_<br>
-                                Text <del>durchstreichen</del>: ~~Text/~~<br>
-                                Text <ins>unterstreichen</ins>: __Text/__<br>
+                                Text <b>fett</b> machen: **Text**<br>
+                                Text <i>italic</i> machen: ___Text___<br>
+                                Text <del>durchstreichen</del>: ~~Text~~<br>
+                                Text <ins>unterstreichen</ins>: __Text__<br>
                                 Text zu einer <h4 style="padding: 0px; display: inline-block;">Überschrift</h4> machen: ##Text<br>
                                 Text zu einem Link machen: [Titel](https://example.com)<br>
                                 Text zu einer Liste machen: - Text<br>
@@ -352,17 +210,6 @@ if (isset($_POST['action'])) {
                     <div class="col p-2 rounded">
                         <textarea class="form-control cbg ctext" name="textinput" id="textinput" rows="10" placeholder="Artikel Text"></textarea>
                     </div>
-                    <div class="col p-2 rounded d-flex">
-                        <div class="input-group cbg ctext">
-                            <input type="file" class="form-control" id="PicUpload" name="file[]" accept="image/png, image/gif, image/jpeg" multiple onchange="showPreview(event);">
-                            <label class="input-group-text " for="PicUpload">Bilder Hochladen</label>
-                        </div>
-                    </div>
-                    <div class="col p-2 rounded">
-                        <h2>Diese Bilder werden Hinzugefügt:</h2>
-                        <div class="row row-cols-4 row-cols-md-4 g-4 py-2" id="preview">
-                        </div>
-                    </div>
                 </form>
             </div>
 
@@ -423,16 +270,6 @@ if (isset($_POST['action'])) {
         }
         $blog_entrys_id = $_POST['blog_entrys_id'];
 
-        // Delete all Images the blog post uses
-        $stmt = $pdo->prepare('SELECT source, blog_images_id FROM blog_images where blog_entrys_id = ?');
-		$stmt->bindValue(1, $blog_entrys_id, PDO::PARAM_INT);
-		$result = $stmt->execute();
-		if (!$result) {
-			error('Datenbank Fehler!', pdo_debugStrParams($stmt));
-		}
-		$delImgs = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        delBlogImages($delImgs);
-
         // Delete Blog Post
         delBlogPost($blog_entrys_id);
         exit;
@@ -452,7 +289,6 @@ require_once("templates/header.php");
             <?php foreach ($blogentrys as $blogentry): ?>
                 <div class="col p-2">
                     <div class="card cbg2" style="height: 100% !important;">
-                        <img src="<?=$blogentry['source']?>" class="card-img-top img-fluid rounded" alt="<?=$blogentry['alt']?>">
                         <div class="card-body ctext">
                             <h3 class="card-title text-center"><?=$blogentry['name']?></h3>
                             <span id="text-<?=$blogentry['blog_entrys_id']?>"><?=$blogentry['prev_text']?></span>
