@@ -29,7 +29,7 @@ function replaceSelectedText(textarea, text) {
 function makeBold(textarea) {
     textarea.focus();
     input = getSel(textarea);
-    replace = "**" + input + "/**";
+    replace = "**" + input + "**";
     replaceSelectedText(textarea, replace);
 }
 
@@ -37,7 +37,7 @@ function makeBold(textarea) {
 function makeItalic(textarea) {
     textarea.focus();
     input = getSel(textarea);
-    replace = "*_" + input + "/*_";
+    replace = "___" + input + "___";
     replaceSelectedText(textarea, replace);
 }
 
@@ -45,7 +45,7 @@ function makeItalic(textarea) {
 function makeStrikethrough(textarea) {
     textarea.focus();
     input = getSel(textarea);
-    replace = "~~" + input + "/~~";
+    replace = "~~" + input + "~~";
     replaceSelectedText(textarea, replace);
 }
 
@@ -53,7 +53,7 @@ function makeStrikethrough(textarea) {
 function makeUnderline(textarea) {
     textarea.focus();
     input = getSel(textarea);
-    replace = "__" + input + "/__";
+    replace = "__" + input + "__";
     replaceSelectedText(textarea, replace);
 }
 
