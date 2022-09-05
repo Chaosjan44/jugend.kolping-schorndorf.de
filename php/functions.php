@@ -164,10 +164,10 @@ function delBlogImages($images) {
 	global $pdo;
 	foreach ($images as $image) {
 		unlink(substr($image['source'], 1));
-		$webp = substr($image['source'], 1) + ".webp";
+		$webp = substr($image['source'] + ".webp", 1);
 		error_log("");
 		error_log(print_r($image['source'], true));
-		error_log(print_r(substr($image['source'], 1), true));
+		error_log(print_r(substr($image['source'] + ".webp", 1), true));
 		error_log(print_r($webp, true));
 		unlink($webp);
 		$stmt = $pdo->prepare('DELETE FROM blog_images where blog_images_id = ?');
