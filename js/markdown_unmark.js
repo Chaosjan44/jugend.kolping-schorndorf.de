@@ -7,8 +7,10 @@ function unMarkPrev(textarea) {
 }
 
 function unMark(input) {
-    input = input.replace(/(?:\r\n|\r|\n)/g, '<br><split>');
+    // Replaces all line breaks with a string i will use later
+    input = input.replaceAll(/(?:\r\n|\r|\n)/g, '<br><split>');
 
+    // Replaces the ** with bold text
     input = input.replaceAll('**', '<bsplit><b>');
     var inputArray = input.split('<bsplit>');
     input = "";
@@ -18,9 +20,9 @@ function unMark(input) {
         }
         input += inputArray[i]
     }
-    input.replace();
 
-    input = input.replaceAll('*_', '<isplit><i>');
+    // Replaces the ___ with italic text
+    input = input.replaceAll('___', '<isplit><i>');
     var inputArray = input.split('<isplit>');
     input = "";
     for (i = 0; i < inputArray.length; i++) {
@@ -29,8 +31,8 @@ function unMark(input) {
         }
         input += inputArray[i]
     }
-    input.replace();
 
+    // Replaces the ~~ with strikethrough text
     input = input.replaceAll('~~', '<delsplit><del>');
     var inputArray = input.split('<delsplit>');
     input = "";
@@ -40,8 +42,8 @@ function unMark(input) {
         }
         input += inputArray[i]
     }
-    input.replace();
 
+    // replaces the __ with underlined text
     input = input.replaceAll('__', '<inssplit><ins>');
     var inputArray = input.split('<inssplit>');
     input = "";
@@ -51,12 +53,9 @@ function unMark(input) {
         }
         input += inputArray[i]
     }
-    input.replace();
 
-
-
+    // Splits the text into Lines
     var inputArray = input.split('<split>');
-    
     input = "";
     for (i = 0; i < inputArray.length; i++) {
         // Link
@@ -96,55 +95,55 @@ function unMark(input) {
 }
 
 
-function unMarkOld(input) {
-    input = input.replace(/(?:\r\n|\r|\n)/g, '<br><split>');
-    input = input.replace('**', '<b>');
-    input = input.replace('/**', '</b>');
-    input = input.replace('*_', '<i>');
-    input = input.replace('/*_', '</i>');
-    input = input.replace('~~', '<del>');
-    input = input.replace('/~~', '</del>');
-    input = input.replace('__', '<ins>');
-    input = input.replace('/__', '</ins>');
-    var inputArray = input.split('<split>');
+// function unMarkOld(input) {
+//     input = input.replace(/(?:\r\n|\r|\n)/g, '<br><split>');
+//     input = input.replace('**', '<b>');
+//     input = input.replace('/**', '</b>');
+//     input = input.replace('*_', '<i>');
+//     input = input.replace('/*_', '</i>');
+//     input = input.replace('~~', '<del>');
+//     input = input.replace('/~~', '</del>');
+//     input = input.replace('__', '<ins>');
+//     input = input.replace('/__', '</ins>');
+//     var inputArray = input.split('<split>');
     
-    input = "";
-    for (i = 0; i < inputArray.length; i++) {
-        // Link
-        if (inputArray[i].includes('(http')) {
-            var string = inputArray[i]
-            var before = string.substring(
-                0,
-                string.indexOf('[')
-            );
-            var title = string.substring(
-                string.lastIndexOf('[') + 1, 
-                string.lastIndexOf(']')
-            );
-            var link = string.substring(
-                string.lastIndexOf('(') + 1, 
-                string.lastIndexOf(')')
-            );
-            var after = string.substring(
-                string.lastIndexOf(')') +1
-            );
-            string = before + '<a class="link" href="' + link + '">' + title + "</a>" + after
-            inputArray[i] = string;
-        }
-        // Heading
-        if (inputArray[i].startsWith('##')) {
-            inputArray[i] = inputArray[i].replace('##', '<h2>');
-            inputArray[i] = inputArray[i].replace('<br>', '</h2>');
-        }
-        // List
-        if (inputArray[i].startsWith('- ')) {
-            inputArray[i] = inputArray[i].replace('- ', '<li>');
-            inputArray[i] = inputArray[i].replace('<br>', '</li>');
-        }
-        input += inputArray[i]
-    }
-    return input;
-}
+//     input = "";
+//     for (i = 0; i < inputArray.length; i++) {
+//         // Link
+//         if (inputArray[i].includes('(http')) {
+//             var string = inputArray[i]
+//             var before = string.substring(
+//                 0,
+//                 string.indexOf('[')
+//             );
+//             var title = string.substring(
+//                 string.lastIndexOf('[') + 1, 
+//                 string.lastIndexOf(']')
+//             );
+//             var link = string.substring(
+//                 string.lastIndexOf('(') + 1, 
+//                 string.lastIndexOf(')')
+//             );
+//             var after = string.substring(
+//                 string.lastIndexOf(')') +1
+//             );
+//             string = before + '<a class="link" href="' + link + '">' + title + "</a>" + after
+//             inputArray[i] = string;
+//         }
+//         // Heading
+//         if (inputArray[i].startsWith('##')) {
+//             inputArray[i] = inputArray[i].replace('##', '<h2>');
+//             inputArray[i] = inputArray[i].replace('<br>', '</h2>');
+//         }
+//         // List
+//         if (inputArray[i].startsWith('- ')) {
+//             inputArray[i] = inputArray[i].replace('- ', '<li>');
+//             inputArray[i] = inputArray[i].replace('<br>', '</li>');
+//         }
+//         input += inputArray[i]
+//     }
+//     return input;
+// }
 
 function unMarkToSpan(span) {
     document.getElementById(span).innerHTML = unMark(document.getElementById(span).innerHTML);

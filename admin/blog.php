@@ -274,7 +274,7 @@ if (isset($_POST['action'])) {
                         <div class="modal-body">
                             <span>
                                 Text <b>fett</b> machen: **Text**<br>
-                                Text <i>italic</i> machen: *_Text*_<br>
+                                Text <i>italic</i> machen: ___Text___<br>
                                 Text <del>durchstreichen</del>: ~~Text~~<br>
                                 Text <ins>unterstreichen</ins>: __Text__<br>
                                 Text zu einer <h4 style="padding: 0px; display: inline-block;">Überschrift</h4> machen: ##Text<br>
