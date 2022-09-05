@@ -13,8 +13,8 @@ function unMark2(input) {
     input = "";
     for (i = 0; i < inputArray.length; i++) {
         console.log(i);
-        if (i % 2 == 0) {
-            inputArray[i].replace('<b>', '<c>');
+        if (i % 2 == 0 && i != 0) {
+            inputArray[i] = inputArray[i].replace('<b>', '</b>');
             console.log(i + "replaced");
         }
         console.log(inputArray[i]);
