@@ -12,6 +12,7 @@ function unMark2(input) {
     var inputArray = input.split('<bsplit>');
     input = "";
     for (i = 0; i < inputArray.length; i++) {
+        console.log(i);
         if (i + 1 % 2 == 0 && i != 0) {
             inputArray[i].replace('<b>', '</b>');
         }
