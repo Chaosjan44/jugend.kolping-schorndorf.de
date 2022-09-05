@@ -12,8 +12,8 @@ function unMark2(input) {
     input = input.replace('**', '<b>');
     var inputArray = input.split('<b>');
     input = "";
-    for (i = 1; i < inputArray.length + 1; i++) {
-        if (i % 2 == 0) {
+    for (i = 0; i < inputArray.length; i++) {
+        if (i - 1 % 2 == 0) {
             inputArray[i].replace('<b>', '</b>');
         }
         input += inputArray[i]
