@@ -80,8 +80,9 @@ if (isset($_POST['action'])) {
             header("location: termine.php");
             exit;
         }
+        $event = $stmt->fetchAll(PDO::FETCH_ASSOC); 
         require_once("templates/header.php"); 
-        error_log($events_id);
+        error_log($events_id)
         ?>
         <script src="https://kit.fontawesome.com/0ba9bd5158.js" crossorigin="anonymous"></script>
         <div class="container-xxl py-3" style="min-height: 80vh;">
