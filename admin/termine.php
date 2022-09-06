@@ -322,9 +322,9 @@ require_once("templates/header.php");
 ?>
 <div class="container py-3">
     <div style="min-height: 80vh;">
-        <h1 class="display-3 text-center mb-3 text-kolping-orange">Blogs Editieren</h1>
+        <h1 class="display-3 text-center mb-3 text-kolping-orange">Termine Editieren</h1>
         <form action="termine.php" method="post" enctype="multipart/form-data" class="d-flex justify-content-end">
-            <button type="submit" name="action" class="btn btn-kolping" value="add">Blog Hinzufügen</button>
+            <button type="submit" name="action" class="btn btn-kolping" value="add">Termin Hinzufügen</button>
         </form>
         
         <div class="row row-cols-5 gx-3">
@@ -333,6 +333,13 @@ require_once("templates/header.php");
                     <div class="card cbg2" style="height: 100% !important;">
                         <div class="card-body ctext">
                             <h3 class="card-title text-center"><?=$event['title']?></h3>
+                        </div>
+                        <div class="col-md-2 d-flex justify-content-start align-items-center">
+                            <div class="card cbg text-size-larger py-3 px-3 align-items-center text-center">
+                                <?=date('d', strtotime($event['date']))?>
+                                <br>
+                                <?=date('M', strtotime($event['date']))?>
+                            </div>
                         </div>
                         <form action="termine.php" method="post" enctype="multipart/form-data" class="p-2 d-flex justify-content-between">
                             <input type="number" value="<?=$event['events_id']?>" name="events_id" style="display: none;" required>
