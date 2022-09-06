@@ -327,7 +327,7 @@ require_once("templates/header.php");
             <button type="submit" name="action" class="btn btn-kolping" value="add">Termin Hinzufügen</button>
         </form>
         
-        <div class="row row-cols-3 gx-3">
+        <div class="row row-cols-<?php if (!isMobile()) print("3"); else print("1");?> gx-3">
             <?php foreach ($events as $event): ?>
                 <div class="col p-2">
                     <div class="card cbg2" style="height: 100% !important;">
