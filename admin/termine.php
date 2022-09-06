@@ -128,14 +128,12 @@ if (isset($_POST['action'])) {
                             <div class="input-group-text">
                                 <input type="datetime" name="datetime-from" id="datetime-from" class="mt-0 form-control" value="<?=$event[0]['datetime_from']?>">
                             </div>
-                            <span class="input-group-text" for="date">Beispiel: 1970-02-28 23:59:59</span>                       
                         </div>
                         <div class="input-group flex-nowrap ctext me-2 my-1">
                             <span class="input-group-text" for="date">Datum bis</span>
                             <div class="input-group-text">
                                 <input type="datetime" name="datetime-till" id="datetime-till" class="mt-0 form-control" value="<?=$event[0]['datetime_to']?>">
                             </div>
-                            <span class="input-group-text" for="date">Beispiel: 1970-03-01 23:59:59</span>                            
                         </div>
                     </div>
                     <div class="col p-2 rounded">
@@ -240,13 +238,15 @@ if (isset($_POST['action'])) {
                             <span class="input-group-text" for="datetime-from">Datum von</span>
                             <div class="input-group-text">
                                 <input type="datetime" name="datetime-from" id="datetime-from" class="mt-0 form-control">
-                            </div>                            
+                            </div>                      
+                            <span class="input-group-text" for="date">Beispiel: 1970-02-28 23:59:59</span>      
                         </div>
                         <div class="input-group flex-nowrap ctext me-2">
                             <span class="input-group-text" for="date">Datum bis</span>
                             <div class="input-group-text">
                                 <input type="datetime" name="datetime-till" id="datetime-till" class="mt-0 form-control">
-                            </div>                            
+                            </div>                
+                            <span class="input-group-text" for="date">Beispiel: 1970-03-01 23:59:59</span>           
                         </div>
                     </div>
                     <div class="col p-2 rounded">
