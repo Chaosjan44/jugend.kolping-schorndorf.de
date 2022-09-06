@@ -333,12 +333,14 @@ require_once("templates/header.php");
                     <div class="card cbg2" style="height: 100% !important;">
                         <div class="card-body ctext">
                             <h3 class="card-title text-center"><?=$event['title']?></h3>
-                        </div>
-                        <div class="col-md-2 d-flex justify-content-start align-items-center">
-                            <div class="card cbg text-size-larger py-3 px-3 align-items-center text-center">
-                                <?=date('d', strtotime($event['date']))?>
-                                <br>
-                                <?=date('M', strtotime($event['date']))?>
+                            <div class="col-md-2 mx-autp d-flex justify-content-center align-items-center">
+                                <div class="card cbg text-size-larger py-3 px-3 align-items-center text-center">
+                                    <span>
+                                        <?=date('d', strtotime($event['date']))?>
+                                        <br>
+                                        <?=date('M', strtotime($event['date']))?>
+                                    </span>
+                                </div>
                             </div>
                         </div>
                         <form action="termine.php" method="post" enctype="multipart/form-data" class="p-2 d-flex justify-content-between">
