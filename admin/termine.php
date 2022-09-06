@@ -200,7 +200,7 @@ if (isset($_POST['action'])) {
         <div class="container-xxl py-3" style="min-height: 80vh;">
             <script src="/js/markdown_mark.js"></script>
             <div class="row row-cols-1 m-4 p-2 cbg2 rounded">
-                <form action="blog.php" method="post" enctype="multipart/form-data">
+                <form action="termine.php" method="post" enctype="multipart/form-data">
                     <div class="col p-2 rounded">
                         <textarea class="form-control cbg ctext" name="titleinput" id="titleinput" placeholder="Titel" style="max-height: 20px;"></textarea>
                     </div>
@@ -312,7 +312,7 @@ if (isset($_POST['action'])) {
         }
         $events_id = $_POST['events_id'];
 
-        // Delete Blog Post
+        // Delete Event
         delEvent($events_id);
         exit;
     }
