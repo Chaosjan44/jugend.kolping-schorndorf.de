@@ -29,7 +29,7 @@
             Leitungsteam der Kolpingfamilie Schorndorf<br>
             Lortzingstraße 44<br>
             73614 Schorndorf<br>
-            E-Mail: <a href="mailto:leitungsteam@kolping-schorndorf.de" class="link">leitungsteam@kolping-schorndorf.de</a><br>
+            E-Mail: <a href="mailto:webmaster@jugend.kolping-schorndorf.de" class="link">webmaster@jugend.kolping-schorndorf.de</a><br>
             Telefon: 0 71 81 - 48 13 78<br>
             <br>
             Nähere Hinweise zu unserem Datenschutz finden Sie unter diesem <a href="/datenschutz.php" class="link">Link</a>.
