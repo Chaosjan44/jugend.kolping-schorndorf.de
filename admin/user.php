@@ -101,7 +101,7 @@ if(isset($_POST['action'])) {
                                 <div class="input-group justify-content-center">
                                     <label for="loginrechte" class="input-group-text">Login Berechtigungen?</label>
                                     <div class="input-group-text">
-                                        <input value="remember-me" id="loginrechte" type="checkbox" name="loginrechte" value="1" class="form-check-input checkbox-kolping" checked>
+                                        <input value="remember-me" id="loginrechte" type="checkbox" name="loginrechte" value="1" class="form-check-input checkbox-kolping" <?php if ($user1[0]['loginperms'] == 1) print("checked");?>>
                                     </div>
                                 </div>
                             </div>
