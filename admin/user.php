@@ -20,7 +20,7 @@ if(isset($_POST['action'])) {
         if ($user['admin'] != 1 || $_POST['user_id'] == 1) {
             error('Unzureichende Berechtigungen!');
         }
-        if(isset($_POST['userid']) and !empty($_POST['user_id'])) {
+        if(isset($_POST['user_id']) and !empty($_POST['user_id'])) {
             $stmt = $pdo->prepare('DELETE FROM securitytokens WHERE user_id = ?');
             $stmt->bindValue(1, $_POST['user_id'], PDO::PARAM_INT);
             $result = $stmt->execute();
@@ -126,8 +126,8 @@ if(isset($_POST['action'])) {
                         </div>
                     </div>
                     <input type="number" value="<?=$_POST['user_id']?>" name="user_id" style="display: none;" required>
-                    <button type="submit" name="action" value="mod" class="me-2 btn btn-success ctext">Speichern</button>
-                    <button type="submit" name="action" value="cancel" class="ms-2 btn btn-danger ctext">Abrechen</button>
+                    <button type="submit" name="action" value="mod" class="me-2 btn btn-success">Speichern</button>
+                    <button type="submit" name="action" value="cancel" class="ms-2 btn btn-danger">Abrechen</button>
                 </form>
             </div>
         </div>
@@ -201,15 +201,15 @@ require_once("templates/header.php");
                                         </div>
                                         <div class="">
                                             <input type="number" value="<?=$user1['user_id']?>" name="user_id" style="display: none;" required>
-                                            <button class="btn btn-danger ctext" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas<?=$user1['user_id']?>" aria-controls="offcanvas<?=$user1['user_id']?>">Löschen</button>
+                                            <button class="btn btn-danger" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas<?=$user1['user_id']?>" aria-controls="offcanvas<?=$user1['user_id']?>">Löschen</button>
                                             <div class="offcanvas offcanvas-end cbg" data-bs-scroll="true" tabindex="-1" id="offcanvas<?=$user1['user_id']?>" aria-labelledby="offcanvas<?=$user1['user_id']?>Label">
                                                 <div class="offcanvas-header">
                                                     <h2 class="offcanvas-title ctext" id="offcanvas<?=$user1['user_id']?>Label">Wirklich Löschen?</h2>
                                                     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                                                 </div>
                                                 <div class="offcanvas-body">
-                                                    <button class="btn btn-success ctext mx-2" type="submit" name="action" value="deleteconfirm">Ja</button>
-                                                    <button class="btn btn-danger ctext mx-2" type="button" data-bs-dismiss="offcanvas" aria-label="Close">Nein</button>
+                                                    <button class="btn btn-success mx-2" type="submit" name="action" value="deleteconfirm">Ja</button>
+                                                    <button class="btn btn-danger mx-2" type="button" data-bs-dismiss="offcanvas" aria-label="Close">Nein</button>
                                                 </div>
                                             </div>
                                         </div>
