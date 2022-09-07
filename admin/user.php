@@ -11,13 +11,13 @@ if ($user['admin'] != 1) {
 $stmt = $pdo->prepare('SELECT * FROM users ORDER BY user_id');
 $result = $stmt->execute();
 if (!$result) {
-    error('0Datenbank Fehler!', pdo_debugStrParams($stmt));
+    error('Datenbank Fehler!', pdo_debugStrParams($stmt));
 }
 $total_users = $stmt->rowCount();
 $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 if(isset($_POST['action'])) {
     if ($_POST['action'] == 'deleteconfirm') {
-        if ($user['admin'] != 1 || $_POST['user_id'] == 1) {
+        if ($user['admin'] != 1) {
             error('Unzureichende Berechtigungen!');
         }
         if(isset($_POST['user_id']) and !empty($_POST['user_id'])) {
@@ -25,13 +25,13 @@ if(isset($_POST['action'])) {
             $stmt->bindValue(1, $_POST['user_id'], PDO::PARAM_INT);
             $result = $stmt->execute();
             if (!$result) {
-                error('1Datenbank Fehler!', pdo_debugStrParams($stmt));
+                error('Datenbank Fehler!', pdo_debugStrParams($stmt));
             }
             $stmt = $pdo->prepare('DELETE FROM users WHERE user_id = ?');
             $stmt->bindValue(1, $_POST['user_id'], PDO::PARAM_INT);
             $result = $stmt->execute();
             if (!$result) {
-                error('2Datenbank Fehler!', pdo_debugStrParams($stmt));
+                error('Datenbank Fehler!', pdo_debugStrParams($stmt));
             }
             echo("<script>location.href='user.php'</script>");
             exit;
@@ -48,7 +48,7 @@ if(isset($_POST['action'])) {
         $stmt->bindValue(1, $_POST['user_id'], PDO::PARAM_INT);
         $result = $stmt->execute();
         if (!$result) {
-            error('3Datenbank Fehler!', pdo_debugStrParams($stmt));
+            error('Datenbank Fehler!', pdo_debugStrParams($stmt));
         }
         $user1 = $stmt->fetchAll(PDO::FETCH_ASSOC);
         if(isset($_POST['vorname']) and isset($_POST['nachname']) and isset($_POST['passwortNeu']) and isset($_POST['passwortNeu2']) and !empty($_POST['vorname']) and !empty($_POST['nachname'])) {
@@ -60,7 +60,7 @@ if(isset($_POST['action'])) {
             $stmt->bindValue(5, (isset($_POST['adminrechte']) ? "1" : "0"), PDO::PARAM_INT);
             $result = $stmt->execute();
             if (!$result) {
-                error('4Datenbank Fehler!', pdo_debugStrParams($stmt));
+                error('Datenbank Fehler!', pdo_debugStrParams($stmt));
             }
             // Überprüfe ob die eingegebenen Passwörter übereinstimmen
             if($_POST['passwortNeu'] == $_POST['passwortNeu2']) {
@@ -71,7 +71,7 @@ if(isset($_POST['action'])) {
                     $stmt->bindValue(2, $_POST['user_id'], PDO::PARAM_INT);
                     $result = $stmt->execute();
                     if (!$result) {
-                        error('5Datenbank Fehler!', pdo_debugStrParams($stmt));
+                        error('Datenbank Fehler!', pdo_debugStrParams($stmt));
                     }                    
                 }
             } else {
