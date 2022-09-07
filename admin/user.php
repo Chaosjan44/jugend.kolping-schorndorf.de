@@ -44,15 +44,15 @@ if(isset($_POST['action'])) {
             error('Unzureichende Berechtigungen!');
         }
         // Ziehe alle Daten zu gegebenen User aus der Datenbank
-        $stmt = $pdo->prepare('SELECT * FROM users where users.user_id = ?');
+        $stmt = $pdo->prepare('SELECT * FROM users where user_id = ?');
         $stmt->bindValue(1, $_POST['user_id'], PDO::PARAM_INT);
         $result = $stmt->execute();
         if (!$result) {
-            error('Datenbank Fehler!', pdo_debugStrParams($stmt));
+            error('Datenbank Fehler 1!', pdo_debugStrParams($stmt));
         }
         $user1 = $stmt->fetchAll(PDO::FETCH_ASSOC);
         if(isset($_POST['vorname']) and isset($_POST['nachname']) and isset($_POST['passwortNeu']) and isset($_POST['passwortNeu2']) and !empty($_POST['vorname']) and !empty($_POST['nachname'])) {
-            $stmt = $pdo->prepare("UPDATE users SET vorname = ?, nachname = ?, loginperms = ?, admin = ?, updated_at = now() WHERE users.user_id = ?");
+            $stmt = $pdo->prepare("UPDATE users SET vorname = ?, nachname = ?, loginperms = ?, admin = ? WHERE user_id = ?");
             $stmt->bindValue(1, $_POST['vorname']);
             $stmt->bindValue(2, $_POST['nachname']);
             $stmt->bindValue(3, $_POST['user_id'], PDO::PARAM_INT);
