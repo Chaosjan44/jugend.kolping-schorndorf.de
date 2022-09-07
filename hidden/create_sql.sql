@@ -38,6 +38,7 @@ CREATE TABLE `blog_images` (
   `blog_entrys_id` int(10) NOT NULL,
   `source` varchar(255) NOT NULL,
   `alt` text DEFAULT NULL,
+  `owner` text DEFAULT NULL,
   `prev_img` tinyint(1) DEFAULT 0,
   PRIMARY KEY (`blog_images_id`),
   FOREIGN KEY (`blog_entrys_id`) REFERENCES `blog_entrys` (`blog_entrys_id`)
@@ -52,6 +53,7 @@ CREATE TABLE `events` (
     `text` mediumtext NOT NULL,
     `visible` tinyint(1) NOT NULL DEFAULT 0,
     `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP(),
+    `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
     `created_by` INT(10) NOT NULL,
     PRIMARY KEY (`events_id`),
     FOREIGN KEY (`created_by`) REFERENCES `users` (`user_id`)
