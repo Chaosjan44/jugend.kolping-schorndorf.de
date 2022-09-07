@@ -29,7 +29,7 @@ if (isset($_POST['action'])) {
                     error_log("Error while registering user");
                     exit;
                 }
-                $user = $stmt->fetch();
+                $error_msg = "<span class='text-success'>Der User wurde erfolgreich angelegt. :)<br><br></span>";
             } else {
                 $error_msg = "<span class='text-danger'>Die angegebenen Passwörter stimmen nicht überein.<br><br></span>";
             }
@@ -58,7 +58,7 @@ include_once("templates/header.php");
                                 <label for="inputPassword" class="text-dark fw-bold">Passwort</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input id="inputPassword2" type="password2" name="passwort2" placeholder="Passwort wiederholen" class="form-control border-0 ps-4 text-dark fw-bold" required>
+                                <input id="inputPassword2" type="password" name="passwort2" placeholder="Passwort wiederholen" class="form-control border-0 ps-4 text-dark fw-bold" required>
                                 <label for="inputPassword2" class="text-dark fw-bold">Passwort wiederholen</label>
                             </div>
                             <div class="form-floating mb-3">
@@ -69,19 +69,19 @@ include_once("templates/header.php");
                                 <input id="inputNachname" type="text" name="nachname" placeholder="Nachname" class="form-control border-0 ps-4 text-dark fw-bold" required>
                                 <label for="inputNachname" class="text-dark fw-bold">Nachname</label>
                             </div>
-                            <div class="col">
+                            <div class="col mb-3">
                                 <div class="input-group justify-content-center">
                                     <label for="loginrechte" class="input-group-text">Login Berechtigungen?</label>
                                     <div class="input-group-text">
-                                        <input value="remember-me" id="loginrechte" type="checkbox" name="loginrechte" value="1" class="form-check-input checkbox-kolping" checked>
+                                        <input value="remember-me" id="loginrechte" type="checkbox" name="loginrechte" value="0" class="form-check-input checkbox-kolping" checked>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col">
+                            <div class="col mb-3">
                                 <div class="input-group justify-content-center">
                                     <label for="adminrechte" class="input-group-text">Admin Berechtigungen?</label>
                                     <div class="input-group-text">
-                                        <input value="remember-me" id="adminrechte" type="checkbox" name="adminrechte" value="1" class="form-check-input checkbox-kolping" checked>
+                                        <input value="remember-me" id="adminrechte" type="checkbox" name="adminrechte" value="0" class="form-check-input checkbox-kolping" checked>
                                     </div>
                                 </div>
                             </div>
