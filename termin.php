@@ -47,7 +47,8 @@ require("templates/header.php");
                 </div>
             </div>
         </div>
-        <?=$event[0]["text"]?>
+        <span id="text-<?=$event[0]["text"]?>"><?=$event[0]["text"]?></span>
+        <script>unMarkToSpan("text-<?=$event[0]["text"]?>")</script>
     </div>
     <div class="row justify-content-between">
         <div class="col d-flex justify-content-start text-start ctext text-size-large">

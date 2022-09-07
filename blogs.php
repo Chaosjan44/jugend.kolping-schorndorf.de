@@ -8,7 +8,7 @@ $blogentrys = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <div class="container py-3">
     <div style="min-height: 80vh;">
         <h1 class="display-3 text-center mb-3 text-kolping-orange">Blogs</h1>
-        <div class="row row-cols-5 gx-3">
+        <div class="row row-cols-<?php if (!isMobile()) print("4"); else print("1");?> gx-3">
             <?php foreach ($blogentrys as $blogentry): ?>
                 <div class="col p-2">
                     <div class="card cbg2" style="height: 100% !important;">
