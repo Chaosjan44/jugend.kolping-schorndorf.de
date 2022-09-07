@@ -38,6 +38,7 @@ if (isset($_POST['action'])) {
         }
     }
 }
+include_once("templates/header.php");
 ?>
 <div class="container py-3" style="min-height: 80vh;">
 	<div class="row justify-content-center">
