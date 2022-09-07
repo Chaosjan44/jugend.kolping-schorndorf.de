@@ -83,7 +83,7 @@ if(isset($_POST['action'])) {
         require_once("templates/header.php");
         ?>
         <!-- Formular zur Bearbeitung des Users anzeigen -->
-        <div class="minheight100 px-3 py-3">
+        <div class="px-3 py-3" style="min-height: 80vh;">
             <h1>Einstellungen</h1>
             <div>
                 <form action="user.php" method="post">
@@ -143,7 +143,7 @@ if(isset($_POST['action'])) {
 }
 require_once("templates/header.php"); 
 ?>
-<div class="container minheight100 users content-wrapper py-3 px-3">
+<div class="container users content-wrapper py-3 px-3" style="min-height: 80vh;">
     <div class="row">
         <div class="py-3 px-3 cbg ctext rounded">
             <div class="d-flex justify-content-between">
