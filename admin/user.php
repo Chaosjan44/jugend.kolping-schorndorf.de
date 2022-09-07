@@ -101,7 +101,7 @@ if(isset($_POST['action'])) {
                                 <div class="input-group justify-content-center">
                                     <label for="loginrechte" class="input-group-text">Login Berechtigungen?</label>
                                     <div class="input-group-text">
-                                        <input value="remember-me" id="loginrechte" type="checkbox" name="loginrechte" value="0" class="form-check-input checkbox-kolping" checked>
+                                        <input value="remember-me" id="loginrechte" type="checkbox" name="loginrechte" value="<?=$user1[0]['loginperms']?>" class="form-check-input checkbox-kolping" checked>
                                     </div>
                                 </div>
                             </div>
@@ -109,7 +109,7 @@ if(isset($_POST['action'])) {
                                 <div class="input-group justify-content-center">
                                     <label for="adminrechte" class="input-group-text">Admin Berechtigungen?</label>
                                     <div class="input-group-text">
-                                        <input value="remember-me" id="adminrechte" type="checkbox" name="adminrechte" value="0" class="form-check-input checkbox-kolping" checked>
+                                        <input value="remember-me" id="adminrechte" type="checkbox" name="adminrechte" value="<?=$user1[0]['admin']?>" class="form-check-input checkbox-kolping" checked>
                                     </div>
                                 </div>
                             </div>
