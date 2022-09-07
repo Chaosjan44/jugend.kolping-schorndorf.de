@@ -126,8 +126,8 @@ if(isset($_POST['action'])) {
                         </div>
                     </div>
                     <input type="number" value="<?=$_POST['user_id']?>" name="user_id" style="display: none;" required>
-                    <button type="submit" name="action" value="mod" class="me-2 btn btn-outline-success">Speichern</button>
-                    <button type="submit" name="action" value="cancel" class="ms-2 btn btn-outline-danger">Abrechen</button>
+                    <button type="submit" name="action" value="mod" class="me-2 btn btn-success ctext">Speichern</button>
+                    <button type="submit" name="action" value="cancel" class="ms-2 btn btn-danger ctext">Abrechen</button>
                 </form>
             </div>
         </div>
@@ -152,7 +152,7 @@ require_once("templates/header.php");
                 </div>
                 <div class="col-4 d-flex justify-content-end">
                     <div>
-                        <button class="btn btn-outline-primary" onclick="window.location.href = '/register.php';">User registrieren</button>
+                        <button class="btn btn-kolping" onclick="window.location.href = '/register.php';">User registrieren</button>
                     </div>
                 </div>
             </div>
@@ -197,19 +197,19 @@ require_once("templates/header.php");
                                     <form action="user.php" method="post" class="d-grid gap-2 d-md-flex justify-content-md-end">
                                         <div class="">
                                             <input type="number" value="<?=$user1['user_id']?>" name="user_id" style="display: none;" required>
-                                            <button type="submit" name="action" value="mod" class="btn btn-outline-primary">Editieren</button>
+                                            <button type="submit" name="action" value="mod" class="btn btn-kolping">Editieren</button>
                                         </div>
                                         <div class="">
                                             <input type="number" value="<?=$user1['user_id']?>" name="user_id" style="display: none;" required>
-                                            <button class="btn btn-outline-danger" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas<?=$user1['user_id']?>" aria-controls="offcanvas<?=$user1['user_id']?>">Löschen</button>
+                                            <button class="btn btn-danger ctext" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas<?=$user1['user_id']?>" aria-controls="offcanvas<?=$user1['user_id']?>">Löschen</button>
                                             <div class="offcanvas offcanvas-end cbg" data-bs-scroll="true" tabindex="-1" id="offcanvas<?=$user1['user_id']?>" aria-labelledby="offcanvas<?=$user1['user_id']?>Label">
                                                 <div class="offcanvas-header">
                                                     <h2 class="offcanvas-title ctext" id="offcanvas<?=$user1['user_id']?>Label">Wirklich Löschen?</h2>
                                                     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                                                 </div>
                                                 <div class="offcanvas-body">
-                                                    <button class="btn btn-outline-success mx-2" type="submit" name="action" value="deleteconfirm">Ja</button>
-                                                    <button class="btn btn-outline-danger mx-2" type="button" data-bs-dismiss="offcanvas" aria-label="Close">Nein</button>
+                                                    <button class="btn btn-success ctext mx-2" type="submit" name="action" value="deleteconfirm">Ja</button>
+                                                    <button class="btn btn-danger ctext mx-2" type="button" data-bs-dismiss="offcanvas" aria-label="Close">Nein</button>
                                                 </div>
                                             </div>
                                         </div>
