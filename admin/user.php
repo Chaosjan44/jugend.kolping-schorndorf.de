@@ -55,9 +55,9 @@ if(isset($_POST['action'])) {
             $stmt = $pdo->prepare("UPDATE users SET vorname = ?, nachname = ?, loginperms = ?, admin = ? WHERE user_id = ?");
             $stmt->bindValue(1, $_POST['vorname']);
             $stmt->bindValue(2, $_POST['nachname']);
-            $stmt->bindValue(3, $_POST['user_id'], PDO::PARAM_INT);
-            $stmt->bindValue(4, (isset($_POST['loginrechte']) ? "1" : "0"), PDO::PARAM_INT);
-            $stmt->bindValue(5, (isset($_POST['adminrechte']) ? "1" : "0"), PDO::PARAM_INT);
+            $stmt->bindValue(3, (isset($_POST['loginrechte']) ? "1" : "0"), PDO::PARAM_INT);
+            $stmt->bindValue(4, (isset($_POST['adminrechte']) ? "1" : "0"), PDO::PARAM_INT);
+            $stmt->bindValue(5, $_POST['user_id'], PDO::PARAM_INT);
             $result = $stmt->execute();
             if (!$result) {
                 error('Datenbank Fehler!', pdo_debugStrParams($stmt));
