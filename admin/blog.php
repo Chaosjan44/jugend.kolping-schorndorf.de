@@ -454,7 +454,11 @@ require_once("templates/header.php");
             <?php foreach ($blogentrys as $blogentry): ?>
                 <div class="col p-2">
                     <div class="card cbg2" style="height: 100% !important;">
-                        <img src="<?=$blogentry['source']?>" class="card-img-top img-fluid rounded" alt="<?=$blogentry['alt']?>">
+                        <picture>
+                            <source type="image/webp" srcset="<?=$blogentry['source']?>.webp" class="card-img-top img-fluid rounded">
+                            <source type="image/jpeg" srcset="<?=$blogentry['source']?>" class="card-img-top img-fluid rounded">
+                            <img src="<?=$blogentry['source']?>" class="card-img-top img-fluid rounded" alt="<?=$blogentry['alt']?>">
+                        </picture>
                         <div class="card-body ctext">
                             <h3 class="card-title text-center"><?=$blogentry['name']?></h3>
                             <span id="text-<?=$blogentry['blog_entrys_id']?>"><?=$blogentry['prev_text']?></span>
