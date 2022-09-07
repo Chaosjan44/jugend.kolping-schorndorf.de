@@ -48,7 +48,7 @@ if(isset($_POST['action'])) {
         $stmt->bindValue(1, $_POST['user_id'], PDO::PARAM_INT);
         $result = $stmt->execute();
         if (!$result) {
-            error('Datenbank Fehler 1!', pdo_debugStrParams($stmt));
+            error('Datenbank Fehler !', pdo_debugStrParams($stmt));
         }
         $user1 = $stmt->fetchAll(PDO::FETCH_ASSOC);
         if(isset($_POST['vorname']) and isset($_POST['nachname']) and isset($_POST['passwortNeu']) and isset($_POST['passwortNeu2']) and !empty($_POST['vorname']) and !empty($_POST['nachname'])) {
@@ -101,7 +101,7 @@ if(isset($_POST['action'])) {
                                 <div class="input-group justify-content-center">
                                     <label for="loginrechte" class="input-group-text">Login Berechtigungen?</label>
                                     <div class="input-group-text">
-                                        <input value="remember-me" id="loginrechte" type="checkbox" name="loginrechte" value="<?=$user1[0]['loginperms']?>" class="form-check-input checkbox-kolping" checked>
+                                        <input value="remember-me" id="loginrechte" type="checkbox" name="loginrechte" value="1" class="form-check-input checkbox-kolping" checked>
                                     </div>
                                 </div>
                             </div>
@@ -109,7 +109,7 @@ if(isset($_POST['action'])) {
                                 <div class="input-group justify-content-center">
                                     <label for="adminrechte" class="input-group-text">Admin Berechtigungen?</label>
                                     <div class="input-group-text">
-                                        <input value="remember-me" id="adminrechte" type="checkbox" name="adminrechte" value="<?=$user1[0]['admin']?>" class="form-check-input checkbox-kolping" checked>
+                                        <input value="remember-me" id="adminrechte" type="checkbox" name="adminrechte" value="1" class="form-check-input checkbox-kolping" <?php if ($user1[0]['admin'] == 1) print("checked");?>>
                                     </div>
                                 </div>
                             </div>
