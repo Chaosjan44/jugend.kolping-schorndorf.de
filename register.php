@@ -5,6 +5,9 @@ if (!isset($user)) {
     print("<script>location.href='/login.php'</script>");
     exit;
 }
+if ($user['admin'] != 1) {
+    error('Unzureichende Berechtigungen!');
+}
 
 $error_msg = "";
 if (isset($_POST['action'])) {
