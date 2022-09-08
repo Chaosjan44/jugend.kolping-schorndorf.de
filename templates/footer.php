@@ -46,25 +46,25 @@ $crdate = "2022";
     <footer class="container-fluid cbg2 footer py-3">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col text-center px-0">
+                <div class="col text-start px-0">
                     <ul class="px-0">
                         <li>
-                            <a href="/" class="link ctext">Start</a>
+                            <a href="/" class="link ctext">> Start</a>
                         </li>
                         <li>
-                            <a href="/termine.php" class="link ctext">Termine</a>
+                            <a href="/termine.php" class="link ctext">> Termine</a>
                         </li>
                         <li>
-                            <a href="/blogs.php" class="link ctext">Nachrichten</a>
+                            <a href="/blogs.php" class="link ctext">> Nachrichten</a>
                         </li>
                         <li>
-                            <a href="/datenschutz.php" class="link ctext">Datenschutz</a>
+                            <a href="/datenschutz.php" class="link ctext">> Datenschutz</a>
                         </li>
                         <li>
-                            <a href="/disclaimer.php" class="link ctext">Disclaimer</a>
+                            <a href="/disclaimer.php" class="link ctext">> Disclaimer</a>
                         </li>
                         <li>
-                            <a href="/impressum.php" class="link ctext">Impressum</a> 
+                            <a href="/impressum.php" class="link ctext">> Impressum</a> 
                         </li>
                     </ul>
                 </div>
