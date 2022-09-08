@@ -47,6 +47,12 @@ session_start();
                 <li class="nav-item text-size-x-large">
                     <a class="nav-link clink clink" href="/wir.php">Wir</a>
                 </li>
+                <li>
+                    <a href="https://kolping-schorndorf.de">
+                        <img src="/images/Kolping.jpg" class="navbar-kolping_light align-text-bottom pe-2" alt="Kolping Logo">
+                        <img src="/images/Kolping_invert.png" class="navbar-kolping_dark align-text-bottom pe-2" alt="Kolping Logo">
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
