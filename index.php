@@ -63,7 +63,11 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <div class="container-xxl">
         <div class="row ctext">
             <h1 class="display-4 text-center">Kolpingjugend Schorndorf</h1>
-            <span class="text-center text-size-larger">Die Kolpingjugend Schorndorf ist eine Jugendgruppe der <a href="https://kolping-schorndorf.de/" class="text-size-larger link">Kolpingsfamilie Schorndorf</a>,<br>wir treffen uns jeden 2. Samstag zu Gruppenstunden.</span>
+            <span class="text-center text-size-larger">
+                Die Kolpingjugend Schorndorf ist eine Jugendgruppe der <a href="https://kolping-schorndorf.de/" class="text-size-larger link">Kolpingsfamilie Schorndorf</a>,<br>
+                wir treffen uns jeden 2. Samstag zu Gruppenstunden.<br>
+                Wenn ihr lust habt auch zu unserer Gruppenstunde zu kommen meldet euch bitte <a href="mailto:jugend@kolping-schorndorf.de">hier</a>.
+        </span>
         </div>
         <div class="row gx-5 pt-3">
             <div class="col justify-content-center">
