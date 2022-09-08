@@ -47,7 +47,7 @@ require("templates/header.php");
                 </div>
             </div>
         </div>
-        <span class="col<?php if (!isMobile()) print("-6");?>" id="text-<?=$event[0]["text"]?>"><?=$event[0]["events_id"]?></span>
+        <span class="col<?php if (!isMobile()) print("-6");?>" id="text-<?=$event[0]["events_id"]?>"><?=$event[0]["text"]?></span>
         <script>unMarkToSpan("text-<?=$event[0]["events_id"]?>")</script>
     </div>
     <div class="row justify-content-between">
