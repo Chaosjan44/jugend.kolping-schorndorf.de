@@ -75,7 +75,7 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <div class="col justify-content-center">
                 <div class="row row-cols-1">
                     <h2 class="col display-6 ctext text-center">Termine</h2>
-                    <div class="col d-flex justify-content-center">
+                    <div class="col">
                         <div class="row row-cols-1">
                             <?php foreach ($events as $event): ?> 
                                 <div class="col mb-3">
@@ -152,7 +152,7 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <div class="col justify-content-center my-2">
                     <div class="row row-cols-1">
                         <h2 class="col display-6 ctext text-center">Termine</h2>
-                        <div class="col d-flex justify-content-center">
+                        <div class="col">
                             <div class="row row-cols-1">
                             <?php foreach ($events as $event): ?> 
                                 <div class="col mb-3 card cbg2 py-3 px-3"> 
