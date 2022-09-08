@@ -4,7 +4,7 @@ require_once("templates/header.php"); ?>
 <div class="container py-3">
     <div style="min-height: 80vh;">
         <h1 class="display-3 text-center mb-3 text-kolping-orange">Wir</h1>
-        <div class="text-center">
+        <div class="text-start">
             <span class="text-size-larger">
                 Die Kolpingjugend Schorndorf wurde 2019 von uns Gruppenleitenden wiedergegründet.<br>
                 Seitdem treffen wir uns in regelmäßigen Abständen als Jugendgruppe in unserem Kolpinghaus in Schorndorf.<br>
