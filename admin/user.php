@@ -66,7 +66,7 @@ if(isset($_POST['action'])) {
             if($_POST['passwortNeu'] == $_POST['passwortNeu2']) {
                 // überprüft das die Passwörter nicht leer sind
                 if (!empty($_POST['passwortNeu']) and !empty($_POST['passwortNeu2'])) {
-                    $stmt = $pdo->prepare("UPDATE users SET passwort = ? WHERE user_id = ?");
+                    $stmt = $pdo->prepare("UPDATE users SET password = ? WHERE user_id = ?");
                     $stmt->bindValue(1, password_hash($_POST['passwortNeu'], PASSWORD_DEFAULT));
                     $stmt->bindValue(2, $_POST['user_id'], PDO::PARAM_INT);
                     $result = $stmt->execute();
