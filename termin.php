@@ -51,7 +51,7 @@ require("templates/header.php");
         <script>unMarkToSpan("text-<?=$event[0]["events_id"]?>")</script>
     </div>
     <div class="row justify-content-between pt-3">
-        <div class="col d-flex justify-content-start text-start ctext text-size-large">
+        <div class="col d-flex justify-content-start text-start ctext text-size-large <?php if (!isMobile()) print("ps-0");?>">
             <?=$creator[0]['vorname']?> <?=$creator[0]['nachname']?>
         </div>
         <div class="col d-flex justify-content-end text-end ctext text-size-large">
