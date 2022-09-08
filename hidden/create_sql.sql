@@ -4,7 +4,7 @@ CREATE TABLE `users` (
   `password` varchar(255) NOT NULL,
   `nachname` varchar(255) NOT NULL,
   `vorname` varchar(255) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `loginperms` tinyint(1) NOT NULL DEFAULT 0,
   `admin` tinyint(1) NOT NULL DEFAULT 0,
   PRIMARY KEY (`user_id`)

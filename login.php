@@ -49,7 +49,7 @@ if (isset($_POST['action'])) {
                     $error_msg = "<span class='text-danger'>User oder Passwort war ungültig!<br><br></span>";
                 }
             } else {
-                $error_msg = "<span class='text-danger'>Dieser User darf dich nicht einloggen!<br><br></span>";
+                $error_msg = "<span class='text-danger'>Dieser User darf sich nicht einloggen!<br><br></span>";
             }
         }
     }
