@@ -50,7 +50,7 @@ require("templates/header.php");
         <span class="col<?php if (!isMobile()) print("-6");?>" id="text-<?=$event[0]["events_id"]?>"><?=$event[0]["text"]?></span>
         <script>unMarkToSpan("text-<?=$event[0]["events_id"]?>")</script>
     </div>
-    <div class="row justify-content-between">
+    <div class="row justify-content-between pt-3">
         <div class="col d-flex justify-content-start text-start ctext text-size-large">
             <?=$creator[0]['vorname']?> <?=$creator[0]['nachname']?>
         </div>

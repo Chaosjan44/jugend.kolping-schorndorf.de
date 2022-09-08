@@ -74,7 +74,7 @@ require("templates/header.php");
         <script>unMarkToSpan("prevtext-<?=$entry['blog_entrys_id']?>")</script>
         <span id="text-<?=$entry['blog_entrys_id']?>"><?=$entry[0]["text"]?></span>
         <script>unMarkToSpan("text-<?=$entry['blog_entrys_id']?>")</script>
-        <div class="row justify-content-between py-3">
+        <div class="row justify-content-between pt-3">
             <div class="col ctext text-size-large">
                 <?=$creator[0]['vorname']?> <?=$creator[0]['nachname']?>
             </div>
