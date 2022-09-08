@@ -140,7 +140,7 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <h1 class="display-4 text-center">Kolpingjugend Schorndorf</h1>
             <span class="text-center text-size-larger">
                 Die Kolpingjugend Schorndorf ist eine Jugendgruppe der <a href="https://kolping-schorndorf.de/" class="text-size-larger link">Kolpingsfamilie Schorndorf</a>,<br>
-                wir treffen uns jeden 2. Samstag zu Gruppenstunden.
+                wir treffen uns jeden 2. Samstag zu Gruppenstunden.<br>
                 Wenn du zwischen 11 und 18 Jahre alt bist und lust hast auch zu unserer Gruppenstunde zu kommen, melde dich gerne bei uns unter:<br>
                 E-Mail: <a href="mailto:jugend@kolping-schorndorf.de" class="text-size-larger link">jugend@kolping-schorndorf.de</a><br>
                 Wir freuen uns auf dich!
