@@ -46,43 +46,52 @@ $crdate = "2022";
     <footer class="container-fluid cbg2 footer py-3">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col text-start px-0">
+                <div class="col-8 text-start px-0">
                     <ul class="px-0">
                         <li>
                             <i class="fa-solid fa-angle-right"></i>
-                            <a href="/" class="link ctext">Start</a>
+                            <a href="/" class="link ctext ps-2">Start</a>
                         </li>
                         <li>
                             <i class="fa-solid fa-angle-right"></i>
-                            <a href="/termine.php" class="link ctext">Termine</a>
+                            <a href="/termine.php" class="link ctext ps-2">Termine</a>
                         </li>
                         <li>
                             <i class="fa-solid fa-angle-right"></i>
-                            <a href="/blogs.php" class="link ctext">Nachrichten</a>
+                            <a href="/blogs.php" class="link ctext ps-2">Nachrichten</a>
                         </li>
                         <li>
                             <i class="fa-solid fa-angle-right"></i>
-                            <a href="/datenschutz.php" class="link ctext">Datenschutz</a>
+                            <a href="/datenschutz.php" class="link ctext ps-2">Datenschutz</a>
                         </li>
                         <li>
                             <i class="fa-solid fa-angle-right"></i>
-                            <a href="/disclaimer.php" class="link ctext">Disclaimer</a>
+                            <a href="/disclaimer.php" class="link ctext ps-2">Disclaimer</a>
                         </li>
                         <li>
                             <i class="fa-solid fa-angle-right"></i>
-                            <a href="/impressum.php" class="link ctext">Impressum</a> 
+                            <a href="/impressum.php" class="link ctext ps-2">Impressum</a> 
                         </li>
                     </ul>
                 </div>
+                <div class="col-4 row">
+                    <div class="col text-end ctext light justify-content-end align-items-start">
+                        <a href="/admin.php" class="text-center ctext light">&copy; <?=$crdate?><br>Kolpingfamilie<br>Schorndorf e.V.</a>
+                    </div>
+                    <div class="col pe-0 pb-3 d-flex justify-content-end align-items-end">
+                    <input onchange="toggleStyle()" class="styleswitcher" type="checkbox" name="switch" id="style_switch" <?php if (check_style() == "dark"): print("checked"); endif; ?> >
+                        <label class="styleswitcherlabel" for="style_switch"></label>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="row justify-content-end align-items-center">
+        <!-- <div class="row justify-content-end align-items-center">
             <div class="col-4 text-center ctext light"><a href="/admin.php" class="text-center ctext light">&copy; <?=$crdate?><br>Kolpingfamilie<br>Schorndorf e.V.</a></div>
             <div class="col-4 d-flex justify-content-end">
             <input onchange="toggleStyle()" class="styleswitcher" type="checkbox" name="switch" id="style_switch" <?php if (check_style() == "dark"): print("checked"); endif; ?> >
                 <label class="styleswitcherlabel" for="style_switch"></label>
             </div>
-        </div>
+        </div> -->
     </footer>
 <?php endif; ?>
 
