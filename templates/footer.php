@@ -49,23 +49,28 @@ $crdate = "2022";
                 <div class="col text-start px-0">
                     <ul class="px-0">
                         <li>
-                            <i class="fa-regular fa-angle-right"></i>
-                            <a href="/" class="link ctext">> Start</a>
+                            <i class="fa-solid fa-angle-right"></i>
+                            <a href="/" class="link ctext">Start</a>
                         </li>
                         <li>
-                            <a href="/termine.php" class="link ctext">> Termine</a>
+                            <i class="fa-solid fa-angle-right"></i>
+                            <a href="/termine.php" class="link ctext">Termine</a>
                         </li>
                         <li>
-                            <a href="/blogs.php" class="link ctext">> Nachrichten</a>
+                            <i class="fa-solid fa-angle-right"></i>
+                            <a href="/blogs.php" class="link ctext">Nachrichten</a>
                         </li>
                         <li>
-                            <a href="/datenschutz.php" class="link ctext">> Datenschutz</a>
+                            <i class="fa-solid fa-angle-right"></i>
+                            <a href="/datenschutz.php" class="link ctext">Datenschutz</a>
                         </li>
                         <li>
-                            <a href="/disclaimer.php" class="link ctext">> Disclaimer</a>
+                            <i class="fa-solid fa-angle-right"></i>
+                            <a href="/disclaimer.php" class="link ctext">Disclaimer</a>
                         </li>
                         <li>
-                            <a href="/impressum.php" class="link ctext">> Impressum</a> 
+                            <i class="fa-solid fa-angle-right"></i>
+                            <a href="/impressum.php" class="link ctext">Impressum</a> 
                         </li>
                     </ul>
                 </div>
