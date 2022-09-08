@@ -49,6 +49,7 @@ $crdate = "2022";
                 <div class="col text-start px-0">
                     <ul class="px-0">
                         <li>
+                            <i class="fa-regular fa-angle-right"></i>
                             <a href="/" class="link ctext">> Start</a>
                         </li>
                         <li>
