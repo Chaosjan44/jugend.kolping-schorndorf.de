@@ -70,8 +70,6 @@ require("templates/header.php");
                 </div>
             </div>
         </div>
-        <span class="text-center justify-content-center d-block" id="prevtext-<?=$entry['blog_entrys_id']?>"><?=$entry[0]["prev_text"]?></span>
-        <script>unMarkToSpan("prevtext-<?=$entry['blog_entrys_id']?>")</script>
         <span id="text-<?=$entry['blog_entrys_id']?>"><?=$entry[0]["text"]?></span>
         <script>unMarkToSpan("text-<?=$entry['blog_entrys_id']?>")</script>
         <div class="row justify-content-between pt-3">
