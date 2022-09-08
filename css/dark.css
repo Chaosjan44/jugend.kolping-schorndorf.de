@@ -29,14 +29,12 @@ button {
 
 .navbar-kolping_light {
     display: none;
-    height: 50px;
-    width: 50px;
+    height: 40px;
 }
 
 .navbar-kolping_dark {
     display: inline-block;
-    height: 50px;
-    width: 50px;
+    height: 40px;
 }
 
 .footer {
