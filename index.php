@@ -15,16 +15,16 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <div class="carousel-inner">
                 <!-- <div class="carousel-item active">
                     <picture data-bs-interval="5000">
-                        <source type="image/webp" srcset="/media/indexpic1<?php if (isMobile()) {print("_mobile");}?>.webp" class="d-block w-100">
-                        <source type="image/jpeg" srcset="/media/indexpic1<?php if (isMobile()) {print("_mobile");}?>.jpg" class="d-block w-100">
-                        <img src="/media/indexpic1<?php if (isMobile()) {print("_mobile");}?>.jpg" class="d-block w-100" alt="Vorschaubild">
+                        <source type="image/webp" srcset="/media/indexpic1<?php #if (isMobile()) {print("_mobile");}?>.webp" class="d-block w-100">
+                        <source type="image/jpeg" srcset="/media/indexpic1<?php #if (isMobile()) {print("_mobile");}?>.jpg" class="d-block w-100">
+                        <img src="/media/indexpic1<?php #if (isMobile()) {print("_mobile");}?>.jpg" class="d-block w-100" alt="Vorschaubild">
                     </picture>
                 </div>
                 <div class="carousel-item">
                     <picture data-bs-interval="5000">
-                        <source type="image/webp" srcset="/media/indexpic2<?php if (isMobile()) {print("_mobile");}?>.webp" class="d-block w-100">
-                        <source type="image/jpeg" srcset="/media/indexpic2<?php if (isMobile()) {print("_mobile");}?>.jpg" class="d-block w-100">
-                        <img src="/media/indexpic2<?php if (isMobile()) {print("_mobile");}?>.jpg" class="d-block w-100" alt="Vorschaubild">
+                        <source type="image/webp" srcset="/media/indexpic2<?php #if (isMobile()) {print("_mobile");}?>.webp" class="d-block w-100">
+                        <source type="image/jpeg" srcset="/media/indexpic2<?php #if (isMobile()) {print("_mobile");}?>.jpg" class="d-block w-100">
+                        <img src="/media/indexpic2<?php #if (isMobile()) {print("_mobile");}?>.jpg" class="d-block w-100" alt="Vorschaubild">
                     </picture>
                 </div> -->
                 <div class="carousel-item active">
