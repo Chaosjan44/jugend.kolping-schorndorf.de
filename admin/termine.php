@@ -48,7 +48,7 @@ if (isset($_POST['action'])) {
         // Wenn der Artikel bereits existiert
         } else {
             $events_id = $_POST['events_id'];
-            $stmt = $pdo->prepare('UPDATE blog_entrys SET title = ?, text = ?, date = ?, datetime_from = ?, datetime_to = ?, visible = ?, updated_at = now() WHERE events_id = ?');
+            $stmt = $pdo->prepare('UPDATE events SET title = ?, text = ?, date = ?, datetime_from = ?, datetime_to = ?, visible = ?, updated_at = now() WHERE events_id = ?');
             $stmt->bindValue(1, $_POST['titleinput']);
             $stmt->bindValue(2, $_POST['textinput']);
             $stmt->bindValue(3, $_POST['date']);
