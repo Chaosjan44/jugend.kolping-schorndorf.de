@@ -28,11 +28,11 @@ require("templates/header.php");
     <div class="row">
         <h1 class="display-4 text-center mb-3 text-kolping-orange"><?=$event[0]["title"]?></h1>
     </div>
-    <div class="clearfix">
-        <div class="col-6 mb-3">
+    <div class="<?php if (!isMobile()) print("row");?>">
+        <div class="col<?php if (!isMobile()) print("-6");?> mb-3">
             <div class="card cbg2 py-3 px-3">
                 <div class="row g-0">
-                    <div class="col-md-2 d-flex justify-content-start align-items-center">
+                    <div class="col">
                         <div class="card cbg text-size-larger py-3 px-3 align-items-center text-center">
                             <?=date('d', strtotime($event[0]['date']))?>
                             <br>
@@ -47,8 +47,8 @@ require("templates/header.php");
                 </div>
             </div>
         </div>
-        <span id="text-<?=$event[0]["text"]?>"><?=$event[0]["text"]?></span>
-        <script>unMarkToSpan("text-<?=$event[0]["text"]?>")</script>
+        <span class="col<?php if (!isMobile()) print("-6");?>" id="text-<?=$event[0]["text"]?>"><?=$event[0]["events_id"]?></span>
+        <script>unMarkToSpan("text-<?=$event[0]["events_id"]?>")</script>
     </div>
     <div class="row justify-content-between">
         <div class="col d-flex justify-content-start text-start ctext text-size-large">
