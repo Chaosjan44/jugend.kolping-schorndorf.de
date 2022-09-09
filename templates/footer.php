@@ -6,29 +6,35 @@ $crdate = "2022";
     <footer class="container-fluid cbg2 footer py-3">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-2 text-center">
+                <div class="col-2 text-start">
                     <ul class="px-0">
                         <li>
-                            <a href="/" class="link ctext">Start</a>
+                            <i class="fa-solid fa-angle-right"></i>
+                            <a href="/" class="link ctext ps-2">Start</a>
                         </li>
                         <li>
-                            <a href="/termine.php" class="link ctext">Termine</a>
+                            <i class="fa-solid fa-angle-right"></i>
+                            <a href="/termine.php" class="link ctext ps-2">Termine</a>
                         </li>
                         <li>
-                            <a href="/blogs.php" class="link ctext">Nachrichten</a>
+                            <i class="fa-solid fa-angle-right"></i>
+                            <a href="/blogs.php" class="link ctext ps-2">Nachrichten</a>
                         </li>
                     </ul>
                 </div>
-                <div class="col-2 text-center">
+                <div class="col-2 text-start">
                     <ul class="px-0">
                         <li>
-                            <a href="/disclaimer.php" class="link ctext">Disclaimer</a>
+                            <i class="fa-solid fa-angle-right"></i>
+                            <a href="/disclaimer.php" class="link ctext ps-2">Disclaimer</a>
                         </li>
                         <li>
-                            <a href="/impressum.php" class="link ctext">Impressum</a> 
+                            <i class="fa-solid fa-angle-right"></i>
+                            <a href="/impressum.php" class="link ctext ps-2">Impressum</a> 
                         </li>
                         <li>
-                            <a href="/datenschutz.php" class="link ctext">Datenschutz</a>
+                            <i class="fa-solid fa-angle-right"></i>
+                            <a href="/datenschutz.php" class="link ctext ps-2">Datenschutz</a>
                         </li>
                     </ul>
                 </div>

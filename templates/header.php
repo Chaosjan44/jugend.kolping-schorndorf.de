@@ -50,8 +50,8 @@ session_start();
                 </li>
                 <li class="nav-item text-size-x-large <?php if (!isMobile()) print("ps-2");?>">
                     <a href="https://kolping-schorndorf.de">
-                        <img src="/images/Kolping.jpg" class="navbar-kolping_light align-text-bottom pe-2" alt="Kolping Logo">
-                        <img src="/images/Kolping_invert.png" class="navbar-kolping_dark align-text-bottom pe-2" alt="Kolping Logo">
+                        <img src="/images/Kolping_logo.png" class="navbar-kolping_light align-text-bottom pe-2" alt="Kolping Logo">
+                        <img src="/images/Kolping_logo.png" class="navbar-kolping_dark align-text-bottom pe-2" alt="Kolping Logo">
                     </a>
                 </li>
             </ul>
