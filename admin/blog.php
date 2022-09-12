@@ -178,6 +178,7 @@ if (isset($_POST['action'])) {
         $images = $stmt->fetchAll(PDO::FETCH_ASSOC);
         require_once("templates/header.php"); 
         ?>
+        <script src="https://kit.fontawesome.com/0ba9bd5158.js" crossorigin="anonymous"></script>
         <div class="container-xxl py-3" style="min-height: 80vh;">
             <script src="/js/markdown_mark.js"></script>
             <div class="row row-cols-1 m-4 p-2 cbg2 rounded">
@@ -316,6 +317,7 @@ if (isset($_POST['action'])) {
             error('Unzureichende Berechtigungen!');
         }
         ?>
+        <script src="https://kit.fontawesome.com/0ba9bd5158.js" crossorigin="anonymous"></script>
         <div class="container-xxl py-3" style="min-height: 80vh;">
             <script src="/js/markdown_mark.js"></script>
             <div class="row row-cols-1 m-4 p-2 cbg2 rounded">
