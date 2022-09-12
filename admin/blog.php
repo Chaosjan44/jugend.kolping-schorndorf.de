@@ -118,7 +118,7 @@ if (isset($_POST['action'])) {
         }
         // File Upload
         if (!empty($_FILES["file"]["name"][0])){
-            $allowTypes = array('jpg','png','jpeg','gif');
+            $allowTypes = array('jpg','png','jpeg','gif','JPG','PNG','JPEG','GIF');
             $fileCount = count($_FILES['file']['name']);
             // für jedes Bild
             for($i = 0; $i < $fileCount; $i++){
