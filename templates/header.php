@@ -26,7 +26,10 @@ session_start();
     <title>Kolpingjugend Schorndorf</title>
 </head>
 <body>
-
+<?php
+require_once("php/functions.php");
+$user = check_user();
+?>
 <nav class="navbar header-header navbar-expand-lg cbg ctext sticky-top">
     <div class="container-fluid">
         <a class="navbar-brand" href="/">
@@ -48,6 +51,22 @@ session_start();
                 <li class="nav-item text-size-x-large">
                     <a class="nav-link clink clink" href="/wir.php">Wir</a>
                 </li>
+                <?php if(isset($user)): ?>
+                    <?php if($user['admin'] == 1):?>
+                        <li class="nav-item text-size-x-large">
+                            <a class="nav-link clink clink" href="/admin/user.php">User</a>
+                        </li>
+                    <?php endif; ?>
+                    <li class="nav-item text-size-x-large">
+                        <a class="nav-link clink clink" href="/admin/blog.php">Blogs</a>
+                    </li>
+                    <li class="nav-item text-size-x-large">
+                        <a class="nav-link clink clink" href="/admin/termine.php">Termine</a>
+                    </li>
+                    <li class="nav-item text-size-x-large">
+                        <a class="nav-link clink clink" href="/logout.php">Abmelden</a>
+                    </li>
+                <?php endif; ?>
                 <li class="nav-item text-size-x-large <?php if (!isMobile()) print("ps-2");?>">
                     <a href="https://kolping-schorndorf.de">
                         <img src="/images/Kolping_logo.png" class="navbar-kolping_light align-text-bottom pe-2" alt="Kolping Logo">
