@@ -36,9 +36,9 @@ require("templates/header.php");
     <div class="clearfix">
         <div class="col-md-6 float-md-end mb-3 ms-md-3">
             <div class="card py-3 px-3 cbg2 d-flex justify-content-center">
-                <div class="">
+                <div>
                     <?php $i = 0; foreach ($images as $image):?>
-                        <div>
+                        <div class="pb-5">
                             <a data-bs-toggle="modal" data-bs-target="#picModal-<?=$i?>">
                                 <picture style="max-height: 70vh;">
                                     <source type="image/webp" srcset="<?=$image['source']?>.webp" class="img-fluid rounded">
