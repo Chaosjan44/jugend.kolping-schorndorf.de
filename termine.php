@@ -26,7 +26,7 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 </div>
                             </div>
                         </div>
-                        <a href="/event.php?id=<?=$event['events_id']?>" class="stretched-link"></a>
+                        <a href="/termine.php?id=<?=$event['events_id']?>" class="stretched-link"></a>
                     </div>
                 </div>
             <?php endforeach; ?>
