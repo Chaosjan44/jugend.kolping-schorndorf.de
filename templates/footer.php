@@ -101,7 +101,7 @@ $crdate = "2022";
                     </ul>
                 </div>
                 <div class="row justify-content-between align-items-center">
-                    <div class="col-4 ctext text-start light ps-0"><a href="/admin.php" class="ctext light">&copy; <?=$crdate?> Kolpingfamilie Schorndorf e.V.</a></div>
+                    <div class="col-4 ctext text-center light ps-0"><a href="/admin.php" class="ctext light">&copy; <?=$crdate?> Kolpingfamilie Schorndorf e.V.</a></div>
                     <div class="col-4 d-flex justify-content-end">
                         <input onchange="toggleStyle()" class="styleswitcher" type="checkbox" name="switch" id="style_switch" <?php if (check_style() == "dark"): print("checked"); endif; ?> >
                         <label class="styleswitcherlabel" for="style_switch"></label>
