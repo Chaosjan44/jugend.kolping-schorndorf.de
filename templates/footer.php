@@ -20,6 +20,10 @@ $crdate = "2022";
                             <i class="bi bi-chevron-right"></i>
                             <a href="/blogs.php" class="link ctext ps-2">Nachrichten</a>
                         </li>
+                        <li>
+                            <i class="bi bi-chevron-right"></i>
+                            <a href="/wir.php" class="link ctext ps-2">Wir</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="col-2 text-start">
@@ -35,6 +39,10 @@ $crdate = "2022";
                         <li>
                             <i class="bi bi-chevron-right"></i>
                             <a href="/datenschutz.php" class="link ctext ps-2">Datenschutz</a>
+                        </li>
+                        <li>
+                            <i class="bi bi-chevron-right"></i>
+                            <a href="/admin.php" class="link ctext ps-2">Intern</a>
                         </li>
                     </ul>
                 </div>
@@ -66,6 +74,10 @@ $crdate = "2022";
                             <i class="bi bi-chevron-right"></i>
                             <a href="/blogs.php" class="link ctext ps-2">Nachrichten</a>
                         </li>
+                        <li>
+                            <i class="bi bi-chevron-right"></i>
+                            <a href="/wir.php" class="link ctext ps-2">Wir</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="col-6 text-start ps-2">
@@ -81,6 +93,10 @@ $crdate = "2022";
                         <li>
                             <i class="bi bi-chevron-right"></i>
                             <a href="/datenschutz.php" class="link ctext ps-2">Datenschutz</a>
+                        </li>
+                        <li>
+                            <i class="bi bi-chevron-right"></i>
+                            <a href="/admin.php" class="link ctext ps-2">Intern</a>
                         </li>
                     </ul>
                 </div>

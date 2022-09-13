@@ -93,7 +93,7 @@
             <li>Referrer URL</li>
             <li>Hostname des zugreifenden Rechners</li>
             <li>Uhzeit der Serveranfrage</li>
-            <li>lP-Adresse</li>
+            <li>IP-Adresse</li>
             <br>
             <br>
             Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen.
