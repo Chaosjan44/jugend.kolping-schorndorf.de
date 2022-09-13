@@ -6,7 +6,7 @@ if (!isset($_GET["id"])) {
     exit;
 }
 
-$stmt = $pdo->prepare('SELECT * FROM events where events_id  = ?');
+$stmt = $pdo->prepare('SELECT * FROM events where events_id  = ?  and visible = 1');
 // bindValue will allow us to use integer in the SQL statement, we need to use for LIMIT
 $stmt->bindValue(1, $_GET["id"], PDO::PARAM_INT);
 $stmt->execute();

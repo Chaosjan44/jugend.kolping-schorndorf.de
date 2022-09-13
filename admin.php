@@ -12,14 +12,25 @@ require_once("templates/header.php"); ?>
         <div class="card cbg2 my-3 py-3 px-3">
             <div class="card-body text-center">
                 <h1 class="card-title display-3 text-center mb-4 text-kolping-orange">Admin Bereich</h1>
-                <div class="card-text">
-                    <?php if ($user['admin'] == "1"): ?>
-                        <button class="btn btn-kolping mx-1" type="button" onclick="window.location.href = 'admin/user.php';">User</button>
-                    <?php endif; ?>
-                    <button class="btn btn-kolping mx-1" type="button" onclick="window.location.href = 'admin/blog.php';">Blogs</button>
-                    <button class="btn btn-kolping mx-1" type="button" onclick="window.location.href = 'admin/termine.php';">Termine</button>
-                    <button class="btn btn-kolping mx-1" type="button" onclick="window.location.href = 'logout.php';">Logout</button>
-                </div>
+                <?php if (!isMobile()): ?>
+                    <div class="card-text">
+                        <?php if ($user['admin'] == "1"): ?>
+                            <button class="btn btn-kolping mx-1" type="button" onclick="window.location.href = 'admin/user.php';">User</button>
+                        <?php endif; ?>
+                        <button class="btn btn-kolping mx-1" type="button" onclick="window.location.href = 'admin/blog.php';">Blogs</button>
+                        <button class="btn btn-kolping mx-1 my-2" type="button" onclick="window.location.href = 'admin/termine.php';">Termine</button>
+                        <button class="btn btn-kolping mx-1 my-2" type="button" onclick="window.location.href = 'logout.php';">Logout</button>
+                    </div>
+                <?php else: ?>
+                    <div class="card-text">
+                        <?php if ($user['admin'] == "1"): ?>
+                            <button class="btn btn-kolping mx-1" type="button" onclick="window.location.href = 'admin/user.php';">User</button>
+                        <?php endif; ?>
+                        <button class="btn btn-kolping mx-1" type="button" onclick="window.location.href = 'admin/blog.php';">Blogs</button>
+                    </div>
+                    <button class="btn btn-kolping mx-1 my-2" type="button" onclick="window.location.href = 'admin/termine.php';">Termine</button>
+                    <button class="btn btn-kolping mx-1 my-2" type="button" onclick="window.location.href = 'logout.php';">Logout</button>
+                <?php endif;?>
             </div>
         </div>
     </div>
