@@ -91,30 +91,69 @@ if (isset($_POST['action'])) {
                     <div class="col p-2 rounded">
                         <textarea class="form-control cbg ctext" name="titleinput" id="titleinput" style="max-height: 20px;"><?=$event[0]["title"]?></textarea>
                     </div>
-                    <div class="col p-2 rounded d-flex">
-                        <div class="input-group justify-content-start">
-                            <button type="button" class="btn btn-kolping ctext px-3" onclick="makeBold(textinput)"><b>B</b></button>
-                            <button type="button" class="btn btn-kolping ctext px-3" onclick="makeItalic(textinput)"><i>I</i></button>
-                            <button type="button" class="btn btn-kolping ctext px-3" onclick="makeStrikethrough(textinput)"><del>Text</del></button>
-                            <button type="button" class="btn btn-kolping ctext px-3" onclick="makeUnderline(textinput)"><ins>Text</ins></button>
-                            <button type="button" class="btn btn-kolping ctext px-3" onclick="makeHeading(textinput)"><span>Überschrift</span></button>
-                            <button type="button" class="btn btn-kolping ctext px-3" onclick="makeLink(textinput)"><a><i class="bi bi-link-45deg"></i></a></button>
-                            <button type="button" class="btn btn-kolping ctext px-3" onclick="makeList(textinput)"><a><i class="bi bi-list-ul"></i></a></button>
-                            <button type="button" class="btn btn-kolping ctext px-3" onclick="unMarkPrev(textinput)"><i class="bi bi-search"></i><span class="ms-2">Vorschau</span></button>
-                            <button type="button" class="btn btn-kolping ctext px-3" data-bs-toggle="modal" data-bs-target="#explainModal"><i class="bi bi-question-circle-fill"></i></button>
-                        </div>
-                        <div class="justify-content-end d-flex">
-                            <div class="input-group flex-nowrap ctext me-2">
-                                <span class="input-group-text" for="inputVisible">Visible</span>
-                                <div class="input-group-text">
-                                    <input class="form-check-input mt-0 checkbox-kolping" type="checkbox" id="inputVisible" name="visible" <?=($event[0]['visible']==1 ? 'checked':'')?>>
-                                </div>                            
+                    <?php if (!isMobile()): ?>
+                        <div class="col p-2 rounded d-flex">
+                            <div class="input-group justify-content-start">
+                                <button type="button" class="btn btn-kolping ctext px-3" onclick="makeBold(textinput)"><b>B</b></button>
+                                <button type="button" class="btn btn-kolping ctext px-3" onclick="makeItalic(textinput)"><i>I</i></button>
+                                <button type="button" class="btn btn-kolping ctext px-3" onclick="makeStrikethrough(textinput)"><del>Text</del></button>
+                                <button type="button" class="btn btn-kolping ctext px-3" onclick="makeUnderline(textinput)"><ins>Text</ins></button>
+                                <button type="button" class="btn btn-kolping ctext px-3" onclick="makeHeading(textinput)"><span>Überschrift</span></button>
+                                <button type="button" class="btn btn-kolping ctext px-3" onclick="makeLink(textinput)"><a><i class="bi bi-link-45deg"></i></a></button>
+                                <button type="button" class="btn btn-kolping ctext px-3" onclick="makeList(textinput)"><a><i class="bi bi-list-ul"></i></a></button>
+                                <button type="button" class="btn btn-kolping ctext px-3" onclick="unMarkPrev(textinput)"><i class="bi bi-search"></i><span class="ms-2">Vorschau</span></button>
+                                <button type="button" class="btn btn-kolping ctext px-3" data-bs-toggle="modal" data-bs-target="#explainModal"><i class="bi bi-question-circle-fill"></i></button>
                             </div>
-                            <input type="number" value="<?=$events_id?>" name="events_id" style="display: none;" required>
-                            <button type="submit" class="btn btn-success ctext mx-2" name="action" value="save"><span>Speichern</span></button>
-                            <button type="button" class="btn btn-danger ctext ms-2" onclick="window.location.href = '/admin/termine.php';">Abbrechen</button>
+                            <div class="justify-content-end d-flex">
+                                <div class="input-group flex-nowrap ctext me-2">
+                                    <span class="input-group-text" for="inputVisible">Visible</span>
+                                    <div class="input-group-text">
+                                        <input class="form-check-input mt-0 checkbox-kolping" type="checkbox" id="inputVisible" name="visible" <?=($event[0]['visible']==1 ? 'checked':'')?>>
+                                    </div>                            
+                                </div>
+                                <input type="number" value="<?=$events_id?>" name="events_id" style="display: none;" required>
+                                <button type="submit" class="btn btn-success ctext mx-2" name="action" value="save"><span>Speichern</span></button>
+                                <button type="button" class="btn btn-danger ctext ms-2" onclick="window.location.href = '/admin/termine.php';">Abbrechen</button>
+                            </div>
                         </div>
-                    </div>
+                    <?php else: ?>
+                        <div class="col p-2 rounded">
+                            <div class="input-group justify-content-center">
+                                <button type="button" class="btn btn-kolping ctext px-3" onclick="makeBold(textinput)"><b>B</b></button>
+                                <button type="button" class="btn btn-kolping ctext px-3" onclick="makeItalic(textinput)"><i>I</i></button>
+                                <button type="button" class="btn btn-kolping ctext px-3" onclick="makeStrikethrough(textinput)"><del>Text</del></button>
+                                <button type="button" class="btn btn-kolping ctext px-3" onclick="makeUnderline(textinput)"><ins>Text</ins></button>
+                            </div>
+                        </div>
+                        <div class="col p-2 rounded">
+                            <div class="input-group justify-content-center">
+                                <button type="button" class="btn btn-kolping ctext px-3" onclick="makeHeading(textinput)"><span>Überschrift</span></button>
+                                <button type="button" class="btn btn-kolping ctext px-3" onclick="makeLink(textinput)"><a><i class="bi bi-link-45deg"></i></a></button>
+                                <button type="button" class="btn btn-kolping ctext px-3" onclick="makeList(textinput)"><a><i class="bi bi-list-ul"></i></a></button>
+                            </div>
+                        </div>
+                        <div class="col p-2 rounded">
+                            <div class="input-group justify-content-center">
+                                <button type="button" class="btn btn-kolping ctext px-3" onclick="unMarkPrev(textinput)"><i class="bi bi-search"></i><span class="ms-2">Vorschau</span></button>
+                                <button type="button" class="btn btn-kolping ctext px-3" data-bs-toggle="modal" data-bs-target="#explainModal"><i class="bi bi-question-circle-fill"></i></button>
+                            </div>
+                        </div>
+                        <div class="col p-2 rounded">
+                            <div>
+                                <div class="input-group flex-nowrap justify-content-center ctext">
+                                    <span class="input-group-text" for="inputVisible">Visible</span>
+                                    <div class="input-group-text">
+                                        <input class="form-check-input mt-0 checkbox-kolping" type="checkbox" id="inputVisible" name="visible" <?=($event[0]['visible']==1 ? 'checked':'')?>>
+                                    </div>                            
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col p-2 rounded d-flex justify-content-between">
+                            <input type="number" value="<?=$events_id?>" name="events_id" style="display: none;" required>
+                            <button type="submit" class="btn btn-success ctext" name="action" value="save"><span>Speichern</span></button>
+                            <button type="button" class="btn btn-danger ctext" onclick="window.location.href = '/admin/termine.php';">Abbrechen</button>
+                        </div>
+                    <?php endif; ?>
                     <div class="col p-2 rounded">
                         <div class="input-group flex-nowrap ctext me-2 my-1">
                             <span class="input-group-text" for="date">Datum</span>
@@ -202,29 +241,67 @@ if (isset($_POST['action'])) {
                     <div class="col p-2 rounded">
                         <textarea class="form-control cbg ctext" name="titleinput" id="titleinput" placeholder="Titel" style="max-height: 20px;"></textarea>
                     </div>
-                    <div class="col p-2 rounded d-flex">
-                        <div class="input-group justify-content-start">
-                            <button type="button" class="btn btn-kolping ctext px-3" onclick="makeBold(textinput)"><b>B</b></button>
-                            <button type="button" class="btn btn-kolping ctext px-3" onclick="makeItalic(textinput)"><i>I</i></button>
-                            <button type="button" class="btn btn-kolping ctext px-3" onclick="makeStrikethrough(textinput)"><del>Text</del></button>
-                            <button type="button" class="btn btn-kolping ctext px-3" onclick="makeUnderline(textinput)"><ins>Text</ins></button>
-                            <button type="button" class="btn btn-kolping ctext px-3" onclick="makeHeading(textinput)"><span>Überschrift</span></button>
-                            <button type="button" class="btn btn-kolping ctext px-3" onclick="makeLink(textinput)"><a><i class="bi bi-link-45deg"></i></a></button>
-                            <button type="button" class="btn btn-kolping ctext px-3" onclick="makeList(textinput)"><a><i class="bi bi-list-ul"></i></a></button>
-                            <button type="button" class="btn btn-kolping ctext px-3" onclick="unMarkPrev(textinput)"><i class="bi bi-search"></i><span class="ms-2">Vorschau</span></button>
-                            <button type="button" class="btn btn-kolping ctext px-3" data-bs-toggle="modal" data-bs-target="#explainModal"><i class="bi bi-question-circle-fill"></i></button>
-                        </div>
-                        <div class="justify-content-end d-flex">
-                            <div class="input-group flex-nowrap ctext me-2">
-                                <span class="input-group-text" for="inputVisible">Visible</span>
-                                <div class="input-group-text">
-                                    <input class="form-check-input mt-0 checkbox-kolping" type="checkbox" id="inputVisible" name="visible" checked>
-                                </div>                            
+                    <?php if (!isMobile()): ?>
+                        <div class="col p-2 rounded d-flex">
+                            <div class="input-group justify-content-start">
+                                <button type="button" class="btn btn-kolping ctext px-3" onclick="makeBold(textinput)"><b>B</b></button>
+                                <button type="button" class="btn btn-kolping ctext px-3" onclick="makeItalic(textinput)"><i>I</i></button>
+                                <button type="button" class="btn btn-kolping ctext px-3" onclick="makeStrikethrough(textinput)"><del>Text</del></button>
+                                <button type="button" class="btn btn-kolping ctext px-3" onclick="makeUnderline(textinput)"><ins>Text</ins></button>
+                                <button type="button" class="btn btn-kolping ctext px-3" onclick="makeHeading(textinput)"><span>Überschrift</span></button>
+                                <button type="button" class="btn btn-kolping ctext px-3" onclick="makeLink(textinput)"><a><i class="bi bi-link-45deg"></i></a></button>
+                                <button type="button" class="btn btn-kolping ctext px-3" onclick="makeList(textinput)"><a><i class="bi bi-list-ul"></i></a></button>
+                                <button type="button" class="btn btn-kolping ctext px-3" onclick="unMarkPrev(textinput)"><i class="bi bi-search"></i><span class="ms-2">Vorschau</span></button>
+                                <button type="button" class="btn btn-kolping ctext px-3" data-bs-toggle="modal" data-bs-target="#explainModal"><i class="bi bi-question-circle-fill"></i></button>
                             </div>
-                            <button type="submit" class="btn btn-success ctext mx-2" name="action" value="save"><span>Speichern</span></button>
-                            <button type="button" class="btn btn-danger ctext ms-2" onclick="window.location.href = '/admin/termine.php';">Abbrechen</button>
+                            <div class="justify-content-end d-flex">
+                                <div class="input-group flex-nowrap ctext me-2">
+                                    <span class="input-group-text" for="inputVisible">Visible</span>
+                                    <div class="input-group-text">
+                                        <input class="form-check-input mt-0 checkbox-kolping" type="checkbox" id="inputVisible" name="visible">
+                                    </div>                            
+                                </div>
+                                <button type="submit" class="btn btn-success ctext mx-2" name="action" value="save"><span>Speichern</span></button>
+                                <button type="button" class="btn btn-danger ctext ms-2" onclick="window.location.href = '/admin/termine.php';">Abbrechen</button>
+                            </div>
                         </div>
-                    </div>
+                    <?php else: ?>
+                        <div class="col p-2 rounded">
+                            <div class="input-group justify-content-center">
+                                <button type="button" class="btn btn-kolping ctext px-3" onclick="makeBold(textinput)"><b>B</b></button>
+                                <button type="button" class="btn btn-kolping ctext px-3" onclick="makeItalic(textinput)"><i>I</i></button>
+                                <button type="button" class="btn btn-kolping ctext px-3" onclick="makeStrikethrough(textinput)"><del>Text</del></button>
+                                <button type="button" class="btn btn-kolping ctext px-3" onclick="makeUnderline(textinput)"><ins>Text</ins></button>
+                            </div>
+                        </div>
+                        <div class="col p-2 rounded">
+                            <div class="input-group justify-content-center">
+                                <button type="button" class="btn btn-kolping ctext px-3" onclick="makeHeading(textinput)"><span>Überschrift</span></button>
+                                <button type="button" class="btn btn-kolping ctext px-3" onclick="makeLink(textinput)"><a><i class="bi bi-link-45deg"></i></a></button>
+                                <button type="button" class="btn btn-kolping ctext px-3" onclick="makeList(textinput)"><a><i class="bi bi-list-ul"></i></a></button>
+                            </div>
+                        </div>
+                        <div class="col p-2 rounded">
+                            <div class="input-group justify-content-center">
+                                <button type="button" class="btn btn-kolping ctext px-3" onclick="unMarkPrev(textinput)"><i class="bi bi-search"></i><span class="ms-2">Vorschau</span></button>
+                                <button type="button" class="btn btn-kolping ctext px-3" data-bs-toggle="modal" data-bs-target="#explainModal"><i class="bi bi-question-circle-fill"></i></button>
+                            </div>
+                        </div>
+                        <div class="col p-2 rounded">
+                            <div>
+                                <div class="input-group flex-nowrap justify-content-center ctext">
+                                    <span class="input-group-text" for="inputVisible">Visible</span>
+                                    <div class="input-group-text">
+                                        <input class="form-check-input mt-0 checkbox-kolping" type="checkbox" id="inputVisible" name="visible">
+                                    </div>                            
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col p-2 rounded d-flex justify-content-between">
+                            <button type="submit" class="btn btn-success ctext" name="action" value="save"><span>Speichern</span></button>
+                            <button type="button" class="btn btn-danger ctext" onclick="window.location.href = '/admin/termine.php';">Abbrechen</button>
+                        </div>
+                    <?php endif; ?>
                     <div class="col p-2 rounded">
                         <div class="input-group flex-nowrap ctext me-2">
                             <span class="input-group-text" for="date">Datum</span>
@@ -235,16 +312,14 @@ if (isset($_POST['action'])) {
                         <div class="input-group flex-nowrap ctext me-2">
                             <span class="input-group-text" for="datetime-from">Datum von</span>
                             <div class="input-group-text">
-                                <input type="datetime" name="datetime-from" id="datetime-from" class="mt-0 form-control">
+                                <input type="datetime" name="datetime-from" id="datetime-from" class="mt-0 form-control" placeholder="1970-02-28 23:59:59">
                             </div>                      
-                            <span class="input-group-text" for="date">Beispiel: 1970-02-28 23:59:59</span>      
                         </div>
                         <div class="input-group flex-nowrap ctext me-2">
                             <span class="input-group-text" for="date">Datum bis</span>
                             <div class="input-group-text">
-                                <input type="datetime" name="datetime-till" id="datetime-till" class="mt-0 form-control">
+                                <input type="datetime" name="datetime-till" id="datetime-till" class="mt-0 form-control" placeholder="1970-03-01 23:59:59">
                             </div>                
-                            <span class="input-group-text" for="date">Beispiel: 1970-03-01 23:59:59</span>           
                         </div>
                     </div>
                     <div class="col p-2 rounded">
