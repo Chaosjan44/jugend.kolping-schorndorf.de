@@ -112,9 +112,9 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                     <div class="row g-0">
                                         <div class="col-md-4">
                                             <picture>
-                                                <source type="image/webp" srcset="<?=$blogentry['source']?>.webp" class="img-fluid rounded-start">
-                                                <source type="image/jpeg" srcset="<?=$blogentry['source']?>" class="img-fluid rounded-start">
-                                                <img src="<?=$blogentry['source']?>" class="img-fluid rounded-start" alt="<?=$blogentry['alt']?>">
+                                                <source type="image/webp" srcset="<?=$blogentry['source']?>.webp" class="img-fluid rounded-top">
+                                                <source type="image/jpeg" srcset="<?=$blogentry['source']?>" class="img-fluid rounded-top">
+                                                <img src="<?=$blogentry['source']?>" class="img-fluid rounded-top" alt="<?=$blogentry['alt']?>">
                                             </picture>
                                         </div>
                                         <div class="col-md-8">
