@@ -124,6 +124,7 @@ if (isset($_POST['action'])) {
             for($i = 0; $i < $fileCount; $i++){
                 // Bild wird zum Abspeichern mit einer Einmaligen ID + Uhrsprungsame versehen
                 $fileName = uniqid('image_') . '_' . basename($_FILES["file"]["name"][$i]);
+                $fileName = $fileName.str_replace(" ", "_", $fileName);
                 $targetFilePath = "blog_imgs/" . $fileName;
                 if(in_array(pathinfo($targetFilePath,PATHINFO_EXTENSION), $allowTypes)){
                     // Hochladen der Bilder
