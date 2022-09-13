@@ -84,7 +84,6 @@ if (isset($_POST['action'])) {
         $event = $stmt->fetchAll(PDO::FETCH_ASSOC); 
         require_once("templates/header.php"); 
         ?>
-        <script src="https://kit.fontawesome.com/0ba9bd5158.js" crossorigin="anonymous"></script>
         <div class="container-xxl py-3" style="min-height: 80vh;">
             <script src="/js/markdown_mark.js"></script>
             <div class="row row-cols-1 m-4 p-2 cbg2 rounded">
@@ -99,10 +98,10 @@ if (isset($_POST['action'])) {
                             <button type="button" class="btn btn-kolping ctext px-3" onclick="makeStrikethrough(textinput)"><del>Text</del></button>
                             <button type="button" class="btn btn-kolping ctext px-3" onclick="makeUnderline(textinput)"><ins>Text</ins></button>
                             <button type="button" class="btn btn-kolping ctext px-3" onclick="makeHeading(textinput)"><span>Überschrift</span></button>
-                            <button type="button" class="btn btn-kolping ctext px-3" onclick="makeLink(textinput)"><a><i class="fa-solid fa-link"></i></a></button>
-                            <button type="button" class="btn btn-kolping ctext px-3" onclick="makeList(textinput)"><a><i class="fa-solid fa-list"></i></a></button>
-                            <button type="button" class="btn btn-kolping ctext px-3" onclick="unMarkPrev(textinput)"><i class="fa-solid fa-magnifying-glass"></i><span class="ms-2">Vorschau</span></button>
-                            <button type="button" class="btn btn-kolping ctext px-3" data-bs-toggle="modal" data-bs-target="#explainModal"><i class="fa-solid fa-circle-question"></i></button>
+                            <button type="button" class="btn btn-kolping ctext px-3" onclick="makeLink(textinput)"><a><i class="bi bi-link-45deg"></i></a></button>
+                            <button type="button" class="btn btn-kolping ctext px-3" onclick="makeList(textinput)"><a><i class="bi bi-list-ul"></i></a></button>
+                            <button type="button" class="btn btn-kolping ctext px-3" onclick="unMarkPrev(textinput)"><i class="bi bi-search"></i><span class="ms-2">Vorschau</span></button>
+                            <button type="button" class="btn btn-kolping ctext px-3" data-bs-toggle="modal" data-bs-target="#explainModal"><i class="bi bi-question-circle-fill"></i></button>
                         </div>
                         <div class="justify-content-end d-flex">
                             <div class="input-group flex-nowrap ctext me-2">
@@ -196,7 +195,6 @@ if (isset($_POST['action'])) {
             error('Unzureichende Berechtigungen!');
         }
         ?>
-        <script src="https://kit.fontawesome.com/0ba9bd5158.js" crossorigin="anonymous"></script>
         <div class="container-xxl py-3" style="min-height: 80vh;">
             <script src="/js/markdown_mark.js"></script>
             <div class="row row-cols-1 m-4 p-2 cbg2 rounded">
@@ -211,10 +209,10 @@ if (isset($_POST['action'])) {
                             <button type="button" class="btn btn-kolping ctext px-3" onclick="makeStrikethrough(textinput)"><del>Text</del></button>
                             <button type="button" class="btn btn-kolping ctext px-3" onclick="makeUnderline(textinput)"><ins>Text</ins></button>
                             <button type="button" class="btn btn-kolping ctext px-3" onclick="makeHeading(textinput)"><span>Überschrift</span></button>
-                            <button type="button" class="btn btn-kolping ctext px-3" onclick="makeLink(textinput)"><a><i class="fa-solid fa-link"></i></a></button>
-                            <button type="button" class="btn btn-kolping ctext px-3" onclick="makeList(textinput)"><a><i class="fa-solid fa-list"></i></a></button>
-                            <button type="button" class="btn btn-kolping ctext px-3" onclick="unMarkPrev(textinput)"><i class="fa-solid fa-magnifying-glass"></i><span class="ms-2">Vorschau</span></button>
-                            <button type="button" class="btn btn-kolping ctext px-3" data-bs-toggle="modal" data-bs-target="#explainModal"><i class="fa-solid fa-circle-question"></i></button>
+                            <button type="button" class="btn btn-kolping ctext px-3" onclick="makeLink(textinput)"><a><i class="bi bi-link-45deg"></i></a></button>
+                            <button type="button" class="btn btn-kolping ctext px-3" onclick="makeList(textinput)"><a><i class="bi bi-list-ul"></i></a></button>
+                            <button type="button" class="btn btn-kolping ctext px-3" onclick="unMarkPrev(textinput)"><i class="bi bi-search"></i><span class="ms-2">Vorschau</span></button>
+                            <button type="button" class="btn btn-kolping ctext px-3" data-bs-toggle="modal" data-bs-target="#explainModal"><i class="bi bi-question-circle-fill"></i></button>
                         </div>
                         <div class="justify-content-end d-flex">
                             <div class="input-group flex-nowrap ctext me-2">
