@@ -45,7 +45,7 @@ require("templates/header.php");
                                     <source type="image/jpeg" srcset="<?=$image['source']?>" class="img-fluid rounded">
                                     <img src="<?=$image['source']?>" class="img-fluid rounded" alt="<?=$image['alt']?>">
                                 </picture>
-                                <span class="ctext d-flex pt-2"><?=$image['alt']?> | Quelle: <?=$image['owner']?></span>
+                                <span class="ctext d-flex pt-2"><?=$image['alt']?><?php if (!isMobile()) print(" | "); else print("<br>");?>Quelle: <?=$image['owner']?></span>
                             </a>
                         </div>
                         <div class="modal fade" id="picModal-<?=$i?>" tabindex="-1" aria-labelledby="picModal-<?=$i?>-Label" style="display: none;" aria-modal="true">
@@ -61,7 +61,7 @@ require("templates/header.php");
                                         </div>
                                     </div>
                                     <div class="modal-footer cbg justify-content-center">
-                                        <span class="ctext"><?=$image['alt']?> | Quelle: <?=$image['owner']?></span>
+                                        <span class="ctext"><?=$image['alt']?><?php if (!isMobile()) print(" | "); else print("<br>");?>Quelle: <?=$image['owner']?></span>
                                     </div>
                                 </div>
                             </div>
