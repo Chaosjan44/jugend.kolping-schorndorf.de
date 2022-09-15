@@ -264,10 +264,10 @@ if (isset($_POST['action'])) {
                     </div>
                     <div class="col p-2 rounded">
                         <h2>Diese Bilder werden Hinzugefügt:</h2>
-                        <div class="row row-cols-4 row-cols-md-4 g-4 py-2" id="preview">
+                        <div class="row row-cols-<?php if (!isMobile()) print("4"); else print("1"); ?> row-cols-md-4 g-4 py-2" id="preview">
                         </div>
                         <h2>Diese Bilder sind aktuell vorhanden:</h2>
-                        <div class="row row-cols-4 row-cols-md-4 g-4 py-2">
+                        <div class="row row-cols-<?php if (!isMobile()) print("4"); else print("1"); ?> row-cols-md-4 g-4 py-2">
                             <?php for ($x = 0; $x < count($images); $x++) :?>
                                 <div class="col">
                                     <div class="card prodcard cbg">
@@ -440,7 +440,7 @@ if (isset($_POST['action'])) {
                     </div>
                     <div class="col p-2 rounded">
                         <h2>Diese Bilder werden Hinzugefügt:</h2>
-                        <div class="row row-cols-4 row-cols-md-4 g-4 py-2" id="preview">
+                        <div class="row row-cols-<?php if (!isMobile()) print("4"); else print("1"); ?> row-cols-md-4 g-4 py-2" id="preview">
                         </div>
                     </div>
                 </form>
