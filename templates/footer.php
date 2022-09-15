@@ -1,84 +1,124 @@
+<?php 
+$crdate = "2022";
+?>
+
 <?php if (!isMobile()): ?>
-    <footer class="container-fluid sticky-bottom footer py-3">
+    <footer class="container-fluid cbg2 footer py-3">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-2 text-center">
+                <div class="col-2 text-start">
                     <ul class="px-0">
                         <li>
-                            <a href="/" class="hoverlink ctext">Start</a>
+                            <i class="bi bi-chevron-right"></i>
+                            <a href="/" class="link ctext ps-2">Start</a>
                         </li>
                         <li>
-                            <a href="/termine.php" class="hoverlink ctext">Termine</a>
+                            <i class="bi bi-chevron-right"></i>
+                            <a href="/termine.php" class="link ctext ps-2">Termine</a>
                         </li>
                         <li>
-                            <a href="/angebote.php" class="hoverlink ctext">Angebote</a>
+                            <i class="bi bi-chevron-right"></i>
+                            <a href="/blogs.php" class="link ctext ps-2">Nachrichten</a>
+                        </li>
+                        <li>
+                            <i class="bi bi-chevron-right"></i>
+                            <a href="/wir.php" class="link ctext ps-2">Wir</a>
                         </li>
                     </ul>
                 </div>
-                <div class="col-2 text-center">
+                <div class="col-2 text-start">
                     <ul class="px-0">
                         <li>
-                            <a href="/kontakt.php" class="hoverlink ctext text-center">Kontakt</a>
+                            <i class="bi bi-chevron-right"></i>
+                            <a href="/disclaimer.php" class="link ctext ps-2">Disclaimer</a>
                         </li>
                         <li>
-                            <a href="/impressum.php" class="hoverlink ctext">Impressum</a>
+                            <i class="bi bi-chevron-right"></i>
+                            <a href="/impressum.php" class="link ctext ps-2">Impressum</a> 
                         </li>
                         <li>
-                            <a href="/datenschutz.php" class="hoverlink ctext">Datenschutz</a>
+                            <i class="bi bi-chevron-right"></i>
+                            <a href="/datenschutz.php" class="link ctext ps-2">Datenschutz</a>
+                        </li>
+                        <li>
+                            <i class="bi bi-chevron-right"></i>
+                            <a href="/admin.php" class="link ctext ps-2">Intern</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="row justify-content-end align-items-center">
-            <div class="col-4 text-center ctext light">&copy; 2020 Kolpingfamilie Schorndorf e.V.</div>
+            <div class="col-4 text-center ctext light"><a href="/admin.php" class="text-center ctext light">&copy; <?=$crdate?> Kolpingfamilie Schorndorf e.V.</a></div>
             <div class="col-4 d-flex justify-content-end">
-                <input onchange="toggleStyle()" class="styleswitcher" type="checkbox" name="switch" id="style_switch">
+                <input onchange="toggleStyle()" class="styleswitcher" type="checkbox" name="switch" id="style_switch" <?php if (check_style() == "dark"): print("checked"); endif; ?> >
                 <label class="styleswitcherlabel" for="style_switch"></label>
             </div>
         </div>
     </footer>
 <?php else: ?>
-    <footer class="container-fluid sticky-bottom footer py-3">
+    <footer class="container-fluid cbg2 footer py-3">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col text-center px-0">
+                <div class="col-6 text-start ps-2">
                     <ul class="px-0">
                         <li>
-                            <a href="/" class="hoverlink ctext">Start</a>
+                            <i class="bi bi-chevron-right"></i>
+                            <a href="/" class="link ctext ps-2">Start</a>
                         </li>
                         <li>
-                            <a href="/termine.php" class="hoverlink ctext">Termine</a>
+                            <i class="bi bi-chevron-right"></i>
+                            <a href="/termine.php" class="link ctext ps-2">Termine</a>
                         </li>
                         <li>
-                            <a href="/angebote.php" class="hoverlink ctext">Angebote</a>
+                            <i class="bi bi-chevron-right"></i>
+                            <a href="/blogs.php" class="link ctext ps-2">Nachrichten</a>
                         </li>
                         <li>
-                            <a href="/datenschutz.php" class="hoverlink ctext">Datenschutz</a>
-                        </li>
-                        <li>
-                            <a href="/impressum.php" class="hoverlink ctext">Impressum</a>
-                        </li>
-                        <li>
-                            <a href="/kontakt.php" class="hoverlink ctext">Kontakt</a>
+                            <i class="bi bi-chevron-right"></i>
+                            <a href="/wir.php" class="link ctext ps-2">Wir</a>
                         </li>
                     </ul>
                 </div>
+                <div class="col-6 text-start ps-2">
+                    <ul class="px-0">
+                        <li>
+                            <i class="bi bi-chevron-right"></i>
+                            <a href="/disclaimer.php" class="link ctext ps-2">Disclaimer</a>
+                        </li>
+                        <li>
+                            <i class="bi bi-chevron-right"></i>
+                            <a href="/impressum.php" class="link ctext ps-2">Impressum</a> 
+                        </li>
+                        <li>
+                            <i class="bi bi-chevron-right"></i>
+                            <a href="/datenschutz.php" class="link ctext ps-2">Datenschutz</a>
+                        </li>
+                        <li>
+                            <i class="bi bi-chevron-right"></i>
+                            <a href="/admin.php" class="link ctext ps-2">Intern</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row justify-content-between align-items-center">
+                    <div class="col-4 ctext text-start light ps-0"><a href="/admin.php" class="ctext light">&copy; <?=$crdate?> Kolpingfamilie Schorndorf e.V.</a></div>
+                    <div class="col-4 d-flex justify-content-end">
+                        <input onchange="toggleStyle()" class="styleswitcher" type="checkbox" name="switch" id="style_switch" <?php if (check_style() == "dark"): print("checked"); endif; ?> >
+                        <label class="styleswitcherlabel" for="style_switch"></label>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="row justify-content-end align-items-center">
-            <div class="col-4 text-center ctext light">&copy; 2020<br>Kolpingfamilie<br>Schorndorf e.V.</div>
+        <!-- <div class="row justify-content-end align-items-center">
+            <div class="col-4 text-center ctext light"><a href="/admin.php" class="text-center ctext light">&copy; <?=$crdate?><br>Kolpingfamilie<br>Schorndorf e.V.</a></div>
             <div class="col-4 d-flex justify-content-end">
-                <input onchange="toggleStyle()" class="styleswitcher" type="checkbox" name="switch" id="style_switch">
+            <input onchange="toggleStyle()" class="styleswitcher" type="checkbox" name="switch" id="style_switch" <?php if (check_style() == "dark"): print("checked"); endif; ?> >
                 <label class="styleswitcherlabel" for="style_switch"></label>
             </div>
-        </div>
+        </div> -->
     </footer>
 <?php endif; ?>
 
-
-
-<!-- Bootstrap JS Script -->
 <script src="/js/custom.js"></script>
 </body>
 </html>

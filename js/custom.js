@@ -7,17 +7,19 @@ function toggleStyle() {
     setCookie("style", "dark", 365);
   }
   setStyle();
-  setTimeout(() => {  location.reload(); }, 500);  
 }
 
 function setStyle() {
   if (getCookie("style") == "dark") {
-    document.getElementById('style_switch').checked = true;
-    setCookie("style", "dark", 365);
+    if (getCookie("acceptCookies") == "true") {
+      setCookie("style", "dark", 365);
+    }
     document.querySelectorAll("link[href='/css/dark.css']")[0].disabled = false;
     document.querySelectorAll("link[href='/css/light.css']")[0].disabled = true;
   } else {
-    setCookie("style", "light", 365);
+    if (getCookie("acceptCookies") == "true") {
+      setCookie("style", "light", 365);
+    }
     document.querySelectorAll("link[href='/css/dark.css']")[0].disabled = true;
     document.querySelectorAll("link[href='/css/light.css']")[0].disabled = false;
   }
@@ -44,4 +46,13 @@ function getCookie(cname) {
     }
   }
   return "";
+}
+
+function showPreview(event){
+	var files = event.target.files;
+	var preview = document.getElementById('preview');
+	preview.innerHTML = '';
+	for (var i = 0, f; f = files[i]; i++) { 
+		preview.innerHTML += ['<div class="col"><div class="card prodcard cbg"><img src="', URL.createObjectURL(f), '" class="card-img-top img-fluid rounded" title="', escape(f.name), '" alt="', escape(f.name), '"></div></div>'].join('');
+	}
 }

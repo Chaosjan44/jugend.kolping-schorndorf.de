@@ -11,6 +11,32 @@ html, body {
     overflow-x: hidden; 
 }
 
+button {
+    color: #2d3238 !important;
+}
+
+.navbar-icon_light {
+    display: none;
+    height: 50px;
+    width: 50px;
+}
+
+.navbar-icon_dark {
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+}
+
+.navbar-kolping_light {
+    display: none;
+    height: 56px;
+}
+
+.navbar-kolping_dark {
+    display: inline-block;
+    height: 56px;
+}
+
 .footer {
     background-color: #212529;
 }
@@ -24,5 +50,17 @@ html, body {
 }
 
 .ctext {
-    color: #ffffff;
+    color: #ffffff !important;
 }
+
+.clink {
+    color: #ffffff !important;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(45,50,56,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important;
+}
+
+  .navbar-toggler {
+    background-color: #FF8C00 !important;
+} 

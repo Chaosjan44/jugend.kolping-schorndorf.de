@@ -58,11 +58,11 @@ ul {
     font-size: larger !important;
 }
 
-.text-size-x-larger {
+.text-size-x-large {
     font-size: x-large !important;
 }
 
-.text-size-xx-larger {
+.text-size-xx-large {
     font-size: xx-large !important;
 }
 
@@ -201,17 +201,70 @@ ul {
     box-shadow: 0 0 2px #ffffff;
 }
 
+.header-header {
+    /* height: 6vh; */
+    border-bottom: 10px solid #FF8C00;
+    display: block;
+}
+
 .nav-link {
     font-size: 1.3rem;
 }
 
-.navbar-icon {
-    display: block;
-    height: 50px;
-    width: 50px;
+.link {
+    color: #FF8C00 !important;
 }
 
-.hoverlink:hover {
-    transition: 0.7s;
-    color: #FF8C00;
+/* Bootstrap stuff but with custom colors :0 */
+/* Button in Kolping Orange */
+.btn-kolping {
+    color: #fff;
+    background-color: #FF8C00 !important;
+    border-color: #ef8400 !important;
+}
+
+.btn-kolping:hover {
+    color: #fff;
+    background-color: #da7800 !important;
+    border-color: #bd6901 !important;
+}
+
+.btn-check:focus+.btn-kolping,.btn-kolping:focus {
+    color: #fff;
+    background-color: #FF8C00 !important;
+    border-color: #ef8400 !important;
+    box-shadow: 0 0 0 .25rem rgba(255, 140, 0, .75) !important;
+}
+
+.btn-check:active+.btn-kolping,.btn-check:checked+.btn-kolping,.btn-kolping.active,.btn-kolping:active,.show>.btn-kolping.dropdown-toggle {
+    color: #fff;
+    background-color: #FF8C00 !important;
+    border-color: #ef8400 !important;
+}
+
+.btn-check:active+.btn-kolping:focus,.btn-check:checked+.btn-kolping:focus,.btn-kolping.active:focus,.btn-kolping:active:focus,.show>.btn-kolping.dropdown-toggle:focus {
+    box-shadow: 0 0 0 .25rem rgba(255, 140, 0, .75) !important;
+}
+
+.btn-kolping.disabled,.btn-kolping:disabled {
+    color: #fff;
+    background-color: #ffa83ebb !important;
+    border-color: #ca8531bb !important;
+}
+
+/* Checkbox in Kolping Orange */
+.checkbox-kolping:checked {
+    background-color: #FF8C00 !important;
+    border-color: #ef8400 !important;
+}
+
+.checkbox-kolping:focus+.checkbox-kolping,.checkbox-kolping:focus {
+    background-color: #FF8C00 !important;
+    border-color: #ef8400 !important;
+    box-shadow: 0 0 0 .25rem rgba(255, 140, 0, .75) !important;
+}
+
+.checkbox-kolping:active+.checkbox-kolping:focus,.checkbox-kolping:checked+.checkbox-kolping:focus,.checkbox-kolping.active:focus,.checkbox-kolping:active:focus,.show>.checkbox-kolping.dropdown-toggle:focus {
+    border-color: #ef8400 !important;
+    box-shadow: 0 0 0 .25rem rgba(255, 140, 0, .75) !important;
 }

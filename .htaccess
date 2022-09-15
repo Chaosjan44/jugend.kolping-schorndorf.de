@@ -4,4 +4,18 @@ RewriteCond %{REQUEST_FILENAME}\.php -f
 RewriteRule ^(.*)$ $1.php [NC,L]
 RewriteCond %{REQUEST_FILENAME}\.html -f
 RewriteRule ^(.*)$ $1.html [NC,L]
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
 RedirectMatch permanent /hidden(.*) /index.php
+
+<IfModule mod_headers.c>
+    # Caching
+    # 1 Jahr (der maximale unterstützte Wert) für Grafik-/Multimediadateien
+    <FilesMatch "\.(ico|jpg|jpeg|gif|png|pdf|mp3|mp4|webp|svg)$">
+    Header set Cache-Control "public, max-age=31536000, no-transform"
+    </FilesMatch>
+    # 2 Stunden für Textdateien
+    <FilesMatch "\.(html|htm|xml|txt|xsl|css|js|php)$">
+    Header set Cache-Control "public, max-age=7200, must-revalidate"
+    </FilesMatch>
+</IfModule> 
