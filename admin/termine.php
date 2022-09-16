@@ -23,14 +23,12 @@ if (isset($_POST['action'])) {
         }
         // if there is no blog_entrys_id, this happens if we save a new article which is just being created
         if (!isset($_POST['events_id'])) {
-            $stmt = $pdo->prepare('INSERT INTO events (title, text, date, datetime_from, datetime_to, visible, created_by, created_at, updated_at) VALUE (?, ?, ?, ?, ?, ?, ?, now(), now())');
+            $stmt = $pdo->prepare('INSERT INTO events (title, text, date, visible, created_by, created_at, updated_at) VALUE (?, ?, ?, ?, ?, now(), now())');
             $stmt->bindValue(1, $_POST['titleinput']);
             $stmt->bindValue(2, $_POST['textinput']);
             $stmt->bindValue(3, $_POST['date']);
-            $stmt->bindValue(4, $_POST['datetime-from']);
-            $stmt->bindValue(5, $_POST['datetime-till']);
-            $stmt->bindValue(6, (isset($_POST['visible']) ? "1" : "0"), PDO::PARAM_INT);
-            $stmt->bindValue(7, $user['user_id'],PDO::PARAM_INT);
+            $stmt->bindValue(4, (isset($_POST['visible']) ? "1" : "0"), PDO::PARAM_INT);
+            $stmt->bindValue(5, $user['user_id'],PDO::PARAM_INT);
             $result = $stmt->execute();
             if (!$result) {
                 error('Datenbank Fehler!', pdo_debugStrParams($stmt));
@@ -48,14 +46,12 @@ if (isset($_POST['action'])) {
         // Wenn der Artikel bereits existiert
         } else {
             $events_id = $_POST['events_id'];
-            $stmt = $pdo->prepare('UPDATE events SET title = ?, text = ?, date = ?, datetime_from = ?, datetime_to = ?, visible = ?, updated_at = now() WHERE events_id = ?');
+            $stmt = $pdo->prepare('UPDATE events SET title = ?, text = ?, date = ?, visible = ?, updated_at = now() WHERE events_id = ?');
             $stmt->bindValue(1, $_POST['titleinput']);
             $stmt->bindValue(2, $_POST['textinput']);
             $stmt->bindValue(3, $_POST['date']);
-            $stmt->bindValue(4, $_POST['datetime-from']);
-            $stmt->bindValue(5, $_POST['datetime-till']);
-            $stmt->bindValue(6, (isset($_POST['visible']) ? "1" : "0"), PDO::PARAM_INT);
-            $stmt->bindValue(7, $events_id, PDO::PARAM_INT);
+            $stmt->bindValue(4, (isset($_POST['visible']) ? "1" : "0"), PDO::PARAM_INT);
+            $stmt->bindValue(5, $events_id, PDO::PARAM_INT);
             error_log(print_r($stmt, true));
             $result = $stmt->execute();
             if (!$result) {
@@ -160,18 +156,6 @@ if (isset($_POST['action'])) {
                             <div class="input-group-text">
                                 <input type="date" name="date" id="date" class="mt-0 form-control" value="<?=$event[0]['date']?>">
                             </div>                            
-                        </div>
-                        <div class="input-group flex-nowrap ctext me-2 my-1">
-                            <span class="input-group-text" for="datetime-from">Datum von</span>
-                            <div class="input-group-text">
-                                <input type="datetime" name="datetime-from" id="datetime-from" class="mt-0 form-control" value="<?=$event[0]['datetime_from']?>">
-                            </div>
-                        </div>
-                        <div class="input-group flex-nowrap ctext me-2 my-1">
-                            <span class="input-group-text" for="date">Datum bis</span>
-                            <div class="input-group-text">
-                                <input type="datetime" name="datetime-till" id="datetime-till" class="mt-0 form-control" value="<?=$event[0]['datetime_to']?>">
-                            </div>
                         </div>
                     </div>
                     <div class="col p-2 rounded">
@@ -308,18 +292,6 @@ if (isset($_POST['action'])) {
                             <div class="input-group-text">
                                 <input type="date" name="date" id="date" class="mt-0 form-control">
                             </div>                            
-                        </div>
-                        <div class="input-group flex-nowrap ctext me-2">
-                            <span class="input-group-text" for="datetime-from">Datum von</span>
-                            <div class="input-group-text">
-                                <input type="datetime" name="datetime-from" id="datetime-from" class="mt-0 form-control" placeholder="1970-02-28 23:59:59">
-                            </div>                      
-                        </div>
-                        <div class="input-group flex-nowrap ctext me-2">
-                            <span class="input-group-text" for="date">Datum bis</span>
-                            <div class="input-group-text">
-                                <input type="datetime" name="datetime-till" id="datetime-till" class="mt-0 form-control" placeholder="1970-03-01 23:59:59">
-                            </div>                
                         </div>
                     </div>
                     <div class="col p-2 rounded">
