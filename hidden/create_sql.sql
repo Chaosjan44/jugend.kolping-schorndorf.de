@@ -47,8 +47,6 @@ CREATE TABLE `blog_images` (
 CREATE TABLE `events` (
     `events_id` INT(10) NOT NULL AUTO_INCREMENT,
     `date` date NOT NULL,
-    `datetime_from` datetime NOT NULL,
-    `datetime_to` datetime NOT NULL,
     `title` varchar(255) NOT NULL,
     `text` mediumtext NOT NULL,
     `visible` tinyint(1) NOT NULL DEFAULT 0,
