@@ -109,13 +109,6 @@ $crdate = "2022";
                 </div>
             </div>
         </div>
-        <!-- <div class="row justify-content-end align-items-center">
-            <div class="col-4 text-center ctext light"><a href="/admin.php" class="text-center ctext light">&copy; <?=$crdate?><br>Kolpingfamilie<br>Schorndorf e.V.</a></div>
-            <div class="col-4 d-flex justify-content-end">
-            <input onchange="toggleStyle()" class="styleswitcher" type="checkbox" name="switch" id="style_switch" <?php if (check_style() == "dark"): print("checked"); endif; ?> >
-                <label class="styleswitcherlabel" for="style_switch"></label>
-            </div>
-        </div> -->
     </footer>
 <?php endif; ?>
 
