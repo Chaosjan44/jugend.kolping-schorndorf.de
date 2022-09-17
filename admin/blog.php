@@ -384,7 +384,6 @@ if (isset($_POST['action'])) {
                                         <input class="form-check-input mt-0 checkbox-kolping" type="checkbox" id="inputVisible" name="visible">
                                     </div>                            
                                 </div>
-                                <input type="number" value="<?=$blog_entrys_id?>" name="blog_entrys_id" style="display: none;" required>
                                 <button type="submit" class="btn btn-success ctext mx-2" name="action" value="save"><span>Speichern</span></button>
                                 <button type="button" class="btn btn-danger ctext ms-2" onclick="window.location.href = '/admin/blog.php';">Abbrechen</button>
                             </div>

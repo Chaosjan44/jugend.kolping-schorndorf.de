@@ -18,7 +18,7 @@ $crdate = "2022";
                         </li>
                         <li>
                             <i class="bi bi-chevron-right"></i>
-                            <a href="/blogs.php" class="link ctext ps-2">Nachrichten</a>
+                            <a href="/nachrichten.php" class="link ctext ps-2">Nachrichten</a>
                         </li>
                         <li>
                             <i class="bi bi-chevron-right"></i>
@@ -72,7 +72,7 @@ $crdate = "2022";
                         </li>
                         <li>
                             <i class="bi bi-chevron-right"></i>
-                            <a href="/blogs.php" class="link ctext ps-2">Nachrichten</a>
+                            <a href="/nachrichten.php" class="link ctext ps-2">Nachrichten</a>
                         </li>
                         <li>
                             <i class="bi bi-chevron-right"></i>

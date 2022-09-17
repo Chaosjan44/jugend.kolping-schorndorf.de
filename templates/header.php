@@ -43,7 +43,7 @@ session_start();
                     <a class="nav-link clink" aria-current="page" href="/termine.php">Termine</a>
                 </li>
                 <li class="nav-item text-size-x-large">
-                    <a class="nav-link clink" href="/blog.php">Nachrichten</a>
+                    <a class="nav-link clink" href="/nachricht.php">Nachrichten</a>
                 </li>
                 <li class="nav-item text-size-x-large">
                     <a class="nav-link clink clink" href="/wir.php">Wir</a>

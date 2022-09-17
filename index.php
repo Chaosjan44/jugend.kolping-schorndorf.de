@@ -124,7 +124,7 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                                 <script>unMarkToSpan("text-<?=$blogentry['blog_entrys_id']?>")</script>
                                             </div>
                                         </div>
-                                        <a href="/blog.php?id=<?=$blogentry['blog_entrys_id']?>" class="stretched-link"></a>
+                                        <a href="/nachricht.php?id=<?=$blogentry['blog_entrys_id']?>" class="stretched-link"></a>
                                     </div>
                                 </div>
                             <?php endforeach; ?>
@@ -199,7 +199,7 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                                     <script>unMarkToSpan("text-<?=$blogentry['blog_entrys_id']?>")</script>
                                                 </div>
                                             </div>
-                                            <a href="/blog.php?id=<?=$blogentry['blog_entrys_id']?>" class="stretched-link"></a>
+                                            <a href="/nachricht.php?id=<?=$blogentry['blog_entrys_id']?>" class="stretched-link"></a>
                                         </div>
                                     </div>
                                 <?php endforeach; ?>

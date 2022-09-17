@@ -22,7 +22,7 @@ $blogentrys = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             <span id="text-<?=$blogentry['blog_entrys_id']?>"><?=$blogentry['prev_text']?></span>
                             <script>unMarkToSpan("text-<?=$blogentry['blog_entrys_id']?>")</script>
                         </div>
-                        <a href="/blog.php?id=<?=$blogentry['blog_entrys_id']?>" class="stretched-link"></a>
+                        <a href="/nachricht.php?id=<?=$blogentry['blog_entrys_id']?>" class="stretched-link"></a>
                     </div>
                 </div>
             <?php endforeach; ?>
