@@ -111,11 +111,13 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 <div class="col card cbg2 mb-3 px-0">
                                     <div class="row g-0">
                                         <div class="col-md-4">
-                                            <picture>
-                                                <source type="image/webp" srcset="<?=$blogentry['source']?>.webp" class="img-fluid rounded-start">
-                                                <source type="image/jpeg" srcset="<?=$blogentry['source']?>" class="img-fluid rounded-start">
-                                                <img src="<?=$blogentry['source']?>" class="img-fluid rounded-start" alt="<?=$blogentry['alt']?>">
-                                            </picture>
+                                            <?php if(isset($blogentry['source'])): ?>
+                                                <picture>
+                                                    <source type="image/webp" srcset="<?=$blogentry['source']?>.webp" class="img-fluid rounded-start">
+                                                    <source type="image/jpeg" srcset="<?=$blogentry['source']?>" class="img-fluid rounded-start">
+                                                    <img src="<?=$blogentry['source']?>" class="img-fluid rounded-start" alt="<?=$blogentry['alt']?>">
+                                                </picture>
+                                            <?php endif;?>
                                         </div>
                                         <div class="col-md-8">
                                             <div class="card-body ctext">
@@ -186,11 +188,13 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                     <div class="col card cbg2 mb-3 px-0">
                                         <div class="row g-0">
                                             <div class="col-md-4">
-                                                <picture>
-                                                    <source type="image/webp" srcset="<?=$blogentry['source']?>.webp" class="img-fluid rounded-top">
-                                                    <source type="image/jpeg" srcset="<?=$blogentry['source']?>" class="img-fluid rounded-top">
-                                                    <img src="<?=$blogentry['source']?>" class="img-fluid rounded-top" alt="<?=$blogentry['alt']?>">
-                                                </picture>
+                                                <?php if(isset($blogentry['source'])): ?>
+                                                    <picture>
+                                                        <source type="image/webp" srcset="<?=$blogentry['source']?>.webp" class="img-fluid rounded-top">
+                                                        <source type="image/jpeg" srcset="<?=$blogentry['source']?>" class="img-fluid rounded-top">
+                                                        <img src="<?=$blogentry['source']?>" class="img-fluid rounded-top" alt="<?=$blogentry['alt']?>">
+                                                    </picture>
+                                                <?php endif;?>
                                             </div>
                                             <div class="col-md-8">
                                                 <div class="card-body ctext">
