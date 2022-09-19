@@ -2,7 +2,7 @@
 require_once("php/functions.php");
 
 if (!isset($_GET["id"])) {
-    header("location: blogs.php");
+    header("location: nachrichten.php");
     exit;
 }
 
@@ -12,7 +12,7 @@ $stmt->bindValue(1, $_GET["id"], PDO::PARAM_INT);
 $stmt->execute();
 if ($stmt->rowCount() != 1) {
     error_log($stmt->rowCount());
-    header("location: blogs.php");
+    header("location: nachrichten.php");
     exit;
 }
 $entry = $stmt->fetchAll(PDO::FETCH_ASSOC);

@@ -27,16 +27,6 @@ button {
     width: 50px;
 }
 
-.navbar-kolping_light {
-    display: none;
-    height: 56px;
-}
-
-.navbar-kolping_dark {
-    display: inline-block;
-    height: 56px;
-}
-
 .footer {
     background-color: #212529;
 }

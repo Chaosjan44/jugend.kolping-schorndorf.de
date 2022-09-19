@@ -106,7 +106,7 @@ function check_cookie() {
 	}
 }
 
-function convertToWEBP($file, $compression_quality = 80)
+function convertToWEBP($file, $compression_quality = 40)
 {
     // check if file exists
     if (!file_exists($file)) {
