@@ -18,7 +18,7 @@ if (isset($_POST['action'])) {
 
     // Save article
     if ($_POST['action'] == 'save') {
-        if ($user['loginperms'] != 1) {
+        if ($user['perm_blog'] != 1) {
             error('Unzureichende Berechtigungen!');
         }
         // if there is no blog_entrys_id, this happens if we save a new article which is just being created
@@ -160,7 +160,7 @@ if (isset($_POST['action'])) {
 
     // Modify an existing article
     if ($_POST['action'] == 'mod') {
-        if ($user['loginperms'] != 1) {
+        if ($user['perm_blog'] != 1) {
             error('Unzureichende Berechtigungen!');
         }
         $blog_entrys_id = $_POST['blog_entrys_id'];
@@ -353,7 +353,7 @@ if (isset($_POST['action'])) {
     }
     if ($_POST['action'] == 'add') {
         require_once("templates/header.php"); 
-        if ($user['loginperms'] != 1) {
+        if ($user['perm_blog'] != 1) {
             error('Unzureichende Berechtigungen!');
         }
         ?>
@@ -497,7 +497,7 @@ if (isset($_POST['action'])) {
 
     if ($_POST['action'] == 'del') {
         require_once("templates/header.php"); 
-        if ($user['loginperms'] != 1) {
+        if ($user['perm_blog'] != 1) {
             error('Unzureichende Berechtigungen!');
         }
         $blog_entrys_id = $_POST['blog_entrys_id'];

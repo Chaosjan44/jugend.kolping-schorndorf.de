@@ -16,7 +16,7 @@ if (isset($_POST['action'])) {
                 exit;
             }
             $user = $stmt->fetch();
-            if ($user['loginperms'] == "1") {
+            if ($user['perm_login'] == "1") {
                 //Überprüfung des Passworts
                 if ($user !== false && password_verify($passwort, $user['password'])) {
                     $_SESSION['userid'] = $user['user_id'];

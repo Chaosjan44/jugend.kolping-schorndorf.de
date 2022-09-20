@@ -5,7 +5,7 @@ $user = check_user();
 if ($user == false) {
     print("<script>location.href='/login.php'</script>");
 }
-if ($user['admin'] != 1) {
+if ($user['perm_admin'] != 1) {
     error('Unzureichende Berechtigungen!');
 }
 $stmt = $pdo->prepare('SELECT * FROM users ORDER BY user_id');
@@ -17,30 +17,48 @@ $total_users = $stmt->rowCount();
 $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 if(isset($_POST['action'])) {
     if ($_POST['action'] == 'deleteconfirm') {
-        if ($user['admin'] != 1) {
+        if ($user['perm_admin'] != 1) {
             error('Unzureichende Berechtigungen!');
         }
         if(isset($_POST['user_id']) and !empty($_POST['user_id'])) {
-            $stmt = $pdo->prepare('DELETE FROM securitytokens WHERE user_id = ?');
-            $stmt->bindValue(1, $_POST['user_id'], PDO::PARAM_INT);
-            $result = $stmt->execute();
-            if (!$result) {
-                error('Datenbank Fehler!', pdo_debugStrParams($stmt));
+            if ($_POST['user_id'] != 0) {
+                $stmt = $pdo->prepare('DELETE FROM securitytokens WHERE user_id = ?');
+                $stmt->bindValue(1, $_POST['user_id'], PDO::PARAM_INT);
+                $result = $stmt->execute();
+                if (!$result) {
+                    error('Datenbank Fehler!', pdo_debugStrParams($stmt));
+                }
+
+                $stmt = $pdo->prepare('UPDATE events SET created_by = 0 WHERE created_by = ?');
+                $stmt->bindValue(1, $_POST['user_id'], PDO::PARAM_INT);
+                $result = $stmt->execute();
+                if (!$result) {
+                    error('Datenbank Fehler!', pdo_debugStrParams($stmt));
+                }
+
+                $stmt = $pdo->prepare('UPDATE blog_entrys SET created_by = 0 WHERE created_by = ?');
+                $stmt->bindValue(1, $_POST['user_id'], PDO::PARAM_INT);
+                $result = $stmt->execute();
+                if (!$result) {
+                    error('Datenbank Fehler!', pdo_debugStrParams($stmt));
+                }
+
+
+                $stmt = $pdo->prepare('DELETE FROM users WHERE user_id = ?');
+                $stmt->bindValue(1, $_POST['user_id'], PDO::PARAM_INT);
+                $result = $stmt->execute();
+                if (!$result) {
+                    error('Datenbank Fehler!', pdo_debugStrParams($stmt));
+                }
+                echo("<script>location.href='user.php'</script>");
+                exit;
             }
-            $stmt = $pdo->prepare('DELETE FROM users WHERE user_id = ?');
-            $stmt->bindValue(1, $_POST['user_id'], PDO::PARAM_INT);
-            $result = $stmt->execute();
-            if (!$result) {
-                error('Datenbank Fehler!', pdo_debugStrParams($stmt));
-            }
-            echo("<script>location.href='user.php'</script>");
-            exit;
         }
     }
     // Wenn action "mod" ist
     if($_POST['action'] == 'mod') {
         // Zeit die Error Seite wenn der User keine Berechtigungen hat
-        if ($user['admin'] != 1) {
+        if ($user['perm_admin'] != 1 && $_POST['user_id'] != 0) {
             error('Unzureichende Berechtigungen!');
         }
         // Ziehe alle Daten zu gegebenen User aus der Datenbank
@@ -52,12 +70,14 @@ if(isset($_POST['action'])) {
         }
         $user1 = $stmt->fetchAll(PDO::FETCH_ASSOC);
         if(isset($_POST['vorname']) and isset($_POST['nachname']) and isset($_POST['passwortNeu']) and isset($_POST['passwortNeu2']) and !empty($_POST['vorname']) and !empty($_POST['nachname'])) {
-            $stmt = $pdo->prepare("UPDATE users SET vorname = ?, nachname = ?, loginperms = ?, admin = ? WHERE user_id = ?");
+            $stmt = $pdo->prepare("UPDATE users SET vorname = ?, nachname = ?, perm_login = ?, perm_admin = ?, perm_event = ?, perm_blog = ? WHERE user_id = ?");
             $stmt->bindValue(1, $_POST['vorname']);
             $stmt->bindValue(2, $_POST['nachname']);
-            $stmt->bindValue(3, (isset($_POST['loginrechte']) ? "1" : "0"), PDO::PARAM_INT);
-            $stmt->bindValue(4, (isset($_POST['adminrechte']) ? "1" : "0"), PDO::PARAM_INT);
-            $stmt->bindValue(5, $_POST['user_id'], PDO::PARAM_INT);
+            $stmt->bindValue(3, (isset($_POST['perm_login']) ? "1" : "0"), PDO::PARAM_INT);
+            $stmt->bindValue(4, (isset($_POST['perm_admin']) ? "1" : "0"), PDO::PARAM_INT);
+            $stmt->bindValue(5, (isset($_POST['perm_event']) ? "1" : "0"), PDO::PARAM_INT);
+            $stmt->bindValue(6, (isset($_POST['perm_blog']) ? "1" : "0"), PDO::PARAM_INT);
+            $stmt->bindValue(7, $_POST['user_id'], PDO::PARAM_INT);
             $result = $stmt->execute();
             if (!$result) {
                 error('Datenbank Fehler!', pdo_debugStrParams($stmt));
@@ -99,17 +119,33 @@ if(isset($_POST['action'])) {
                             </div>
                             <div class="col mb-3">
                                 <div class="input-group justify-content-center">
-                                    <label for="loginrechte" class="input-group-text">Login Berechtigungen?</label>
+                                    <label for="perm_login" class="input-group-text">Login Berechtigungen?</label>
                                     <div class="input-group-text">
-                                        <input value="remember-me" id="loginrechte" type="checkbox" name="loginrechte" value="1" class="form-check-input checkbox-kolping" <?php if ($user1[0]['loginperms'] == 1) print("checked");?>>
+                                        <input value="remember-me" id="perm_login" type="checkbox" name="perm_login" value="1" class="form-check-input checkbox-kolping" <?php if ($user1[0]['perm_login'] == 1) print("checked");?>>
                                     </div>
                                 </div>
                             </div>
                             <div class="col mb-3">
                                 <div class="input-group justify-content-center">
-                                    <label for="adminrechte" class="input-group-text">Admin Berechtigungen?</label>
+                                    <label for="perm_admin" class="input-group-text">Admin Berechtigungen?</label>
                                     <div class="input-group-text">
-                                        <input value="remember-me" id="adminrechte" type="checkbox" name="adminrechte" value="1" class="form-check-input checkbox-kolping" <?php if ($user1[0]['admin'] == 1) print("checked");?>>
+                                        <input value="remember-me" id="perm_admin" type="checkbox" name="perm_admin" value="1" class="form-check-input checkbox-kolping" <?php if ($user1[0]['perm_admin'] == 1) print("checked");?>>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col mb-3">
+                                <div class="input-group justify-content-center">
+                                    <label for="perm_event" class="input-group-text">Termine Berechtigungen?</label>
+                                    <div class="input-group-text">
+                                        <input value="remember-me" id="perm_event" type="checkbox" name="perm_event" value="1" class="form-check-input checkbox-kolping" <?php if ($user1[0]['perm_event'] == 1) print("checked");?>>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col mb-3">
+                                <div class="input-group justify-content-center">
+                                    <label for="perm_blog" class="input-group-text">Nachrichten Berechtigungen?</label>
+                                    <div class="input-group-text">
+                                        <input value="remember-me" id="perm_blog" type="checkbox" name="perm_blog" value="1" class="form-check-input checkbox-kolping" <?php if ($user1[0]['perm_blog'] == 1) print("checked");?>>
                                     </div>
                                 </div>
                             </div>
@@ -194,6 +230,7 @@ require_once("templates/header.php");
                                     <strong><?=$user1['created_at']?></strong>
                                 </td>
                                 <td class="border-0 actions text-center">
+                                    <?php if ($user1['user_id'] != 0):?>
                                     <form action="user.php" method="post" class="d-grid gap-2 d-md-flex justify-content-md-end">
                                         <div class="">
                                             <input type="number" value="<?=$user1['user_id']?>" name="user_id" style="display: none;" required>
@@ -214,6 +251,7 @@ require_once("templates/header.php");
                                             </div>
                                         </div>
                                     </form>
+                                    <?php endif; ?>
                                 </td>
                             </tr>
                         <?php endforeach; ?>

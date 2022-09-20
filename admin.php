@@ -14,21 +14,29 @@ require_once("templates/header.php"); ?>
                 <h1 class="card-title display-3 text-center mb-4 text-kolping-orange">Admin Bereich</h1>
                 <?php if (!isMobile()): ?>
                     <div class="card-text">
-                        <?php if ($user['admin'] == "1"): ?>
+                        <?php if ($user['perm_admin'] == "1"): ?>
                             <button class="btn btn-kolping mx-1" type="button" onclick="window.location.href = 'admin/user.php';">User</button>
                         <?php endif; ?>
-                        <button class="btn btn-kolping mx-1" type="button" onclick="window.location.href = 'admin/blog.php';">Blogs</button>
-                        <button class="btn btn-kolping mx-1 my-2" type="button" onclick="window.location.href = 'admin/termine.php';">Termine</button>
+                        <?php if ($user['perm_blog'] == "1"): ?>
+                            <button class="btn btn-kolping mx-1" type="button" onclick="window.location.href = 'admin/blog.php';">Blogs</button>
+                        <?php endif; ?>
+                        <?php if ($user['perm_event'] == "1"): ?>
+                            <button class="btn btn-kolping mx-1 my-2" type="button" onclick="window.location.href = 'admin/termine.php';">Termine</button>
+                        <?php endif; ?>
                         <button class="btn btn-kolping mx-1 my-2" type="button" onclick="window.location.href = 'logout.php';">Logout</button>
                     </div>
                 <?php else: ?>
                     <div class="card-text">
-                        <?php if ($user['admin'] == "1"): ?>
+                        <?php if ($user['perm_admin'] == "1"): ?>
                             <button class="btn btn-kolping mx-1" type="button" onclick="window.location.href = 'admin/user.php';">User</button>
                         <?php endif; ?>
-                        <button class="btn btn-kolping mx-1" type="button" onclick="window.location.href = 'admin/blog.php';">Blogs</button>
+                        <?php if ($user['perm_blog'] == "1"): ?>
+                            <button class="btn btn-kolping mx-1" type="button" onclick="window.location.href = 'admin/blog.php';">Blogs</button>
+                        <?php endif; ?>
                     </div>
-                    <button class="btn btn-kolping mx-1 my-2" type="button" onclick="window.location.href = 'admin/termine.php';">Termine</button>
+                    <?php if ($user['perm_event'] == "1"): ?>
+                        <button class="btn btn-kolping mx-1 my-2" type="button" onclick="window.location.href = 'admin/termine.php';">Termine</button>
+                    <?php endif; ?>
                     <button class="btn btn-kolping mx-1 my-2" type="button" onclick="window.location.href = 'logout.php';">Logout</button>
                 <?php endif;?>
             </div>

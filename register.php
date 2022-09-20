@@ -5,7 +5,7 @@ if (!isset($user)) {
     print("<script>location.href='/login.php'</script>");
     exit;
 }
-if ($user['admin'] != 1) {
+if ($user['perm_admin'] != 1) {
     error('Unzureichende Berechtigungen!');
 }
 
@@ -20,13 +20,15 @@ if (isset($_POST['action'])) {
                 $vorname = trim($_POST['vorname']);
                 $nachname = trim($_POST['nachname']);
 
-                $stmt = $pdo->prepare("INSERT INTO users SET login = ?, password = ?, nachname = ?, vorname = ?, loginperms = ?, admin = ?");
+                $stmt = $pdo->prepare("INSERT INTO users SET login = ?, password = ?, nachname = ?, vorname = ?, perm_login = ?, perm_admin = ?, perm_event = ?, perm_blog = ?");
                 $stmt->bindValue(1, $username);
                 $stmt->bindValue(2, $passwort);
                 $stmt->bindValue(3, $nachname);
                 $stmt->bindValue(4, $vorname);
-                $stmt->bindValue(5, (isset($_POST['loginrechte']) ? "1" : "0"), PDO::PARAM_INT);
-                $stmt->bindValue(6, (isset($_POST['adminrechte']) ? "1" : "0"), PDO::PARAM_INT);
+                $stmt->bindValue(5, (isset($_POST['perm_login']) ? "1" : "0"), PDO::PARAM_INT);
+                $stmt->bindValue(6, (isset($_POST['perm_admin']) ? "1" : "0"), PDO::PARAM_INT);
+                $stmt->bindValue(7, (isset($_POST['perm_login']) ? "1" : "0"), PDO::PARAM_INT);
+                $stmt->bindValue(8, (isset($_POST['perm_admin']) ? "1" : "0"), PDO::PARAM_INT);
                 $result = $stmt->execute();
                 if (!$result) {
                     error_log("Error while registering user");
@@ -74,17 +76,33 @@ include_once("templates/header.php");
                             </div>
                             <div class="col mb-3">
                                 <div class="input-group justify-content-center">
-                                    <label for="loginrechte" class="input-group-text">Login Berechtigungen?</label>
+                                    <label for="perm_login" class="input-group-text">Login Berechtigungen?</label>
                                     <div class="input-group-text">
-                                        <input value="remember-me" id="loginrechte" type="checkbox" name="loginrechte" value="0" class="form-check-input checkbox-kolping">
+                                        <input value="perm_login" id="perm_login" type="checkbox" name="perm_login" value="0" class="form-check-input checkbox-kolping">
                                     </div>
                                 </div>
                             </div>
                             <div class="col mb-3">
                                 <div class="input-group justify-content-center">
-                                    <label for="adminrechte" class="input-group-text">Admin Berechtigungen?</label>
+                                    <label for="perm_admin" class="input-group-text">Admin Berechtigungen?</label>
                                     <div class="input-group-text">
-                                        <input value="remember-me" id="adminrechte" type="checkbox" name="adminrechte" value="0" class="form-check-input checkbox-kolping">
+                                        <input value="perm_admin" id="perm_admin" type="checkbox" name="perm_admin" value="0" class="form-check-input checkbox-kolping">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col mb-3">
+                                <div class="input-group justify-content-center">
+                                    <label for="perm_event" class="input-group-text">Termine Berechtigungen?</label>
+                                    <div class="input-group-text">
+                                        <input value="perm_event" id="perm_event" type="checkbox" name="perm_event" value="0" class="form-check-input checkbox-kolping">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col mb-3">
+                                <div class="input-group justify-content-center">
+                                    <label for="perm_blog" class="input-group-text">Nachrichten Berechtigungen?</label>
+                                    <div class="input-group-text">
+                                        <input value="perm_blog" id="perm_blog" type="checkbox" name="perm_blog" value="0" class="form-check-input checkbox-kolping">
                                     </div>
                                 </div>
                             </div>
