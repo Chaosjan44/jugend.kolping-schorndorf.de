@@ -109,7 +109,7 @@ if (isset($_POST['action'])) {
                                 </div>
                                 <input type="number" value="<?=$events_id?>" name="events_id" style="display: none;" required>
                                 <button type="submit" class="btn btn-success ctext mx-2" name="action" value="save"><span>Speichern</span></button>
-                                <button type="button" class="btn btn-danger ctext ms-2" onclick="window.location.href = '/admin/termine.php';">Abbrechen</button>
+                                <button type="button" class="btn btn-danger ctext ms-2" onclick="window.location.href = '/internal/termine.php';">Abbrechen</button>
                             </div>
                         </div>
                     <?php else: ?>
@@ -147,7 +147,7 @@ if (isset($_POST['action'])) {
                         <div class="col p-2 rounded d-flex justify-content-between">
                             <input type="number" value="<?=$events_id?>" name="events_id" style="display: none;" required>
                             <button type="submit" class="btn btn-success ctext" name="action" value="save"><span>Speichern</span></button>
-                            <button type="button" class="btn btn-danger ctext" onclick="window.location.href = '/admin/termine.php';">Abbrechen</button>
+                            <button type="button" class="btn btn-danger ctext" onclick="window.location.href = '/internal/termine.php';">Abbrechen</button>
                         </div>
                     <?php endif; ?>
                     <div class="col p-2 rounded">
@@ -246,7 +246,7 @@ if (isset($_POST['action'])) {
                                     </div>                            
                                 </div>
                                 <button type="submit" class="btn btn-success ctext mx-2" name="action" value="save"><span>Speichern</span></button>
-                                <button type="button" class="btn btn-danger ctext ms-2" onclick="window.location.href = '/admin/termine.php';">Abbrechen</button>
+                                <button type="button" class="btn btn-danger ctext ms-2" onclick="window.location.href = '/internal/termine.php';">Abbrechen</button>
                             </div>
                         </div>
                     <?php else: ?>
@@ -283,7 +283,7 @@ if (isset($_POST['action'])) {
                         </div>
                         <div class="col p-2 rounded d-flex justify-content-between">
                             <button type="submit" class="btn btn-success ctext" name="action" value="save"><span>Speichern</span></button>
-                            <button type="button" class="btn btn-danger ctext" onclick="window.location.href = '/admin/termine.php';">Abbrechen</button>
+                            <button type="button" class="btn btn-danger ctext" onclick="window.location.href = '/internal/termine.php';">Abbrechen</button>
                         </div>
                     <?php endif; ?>
                     <div class="col p-2 rounded">

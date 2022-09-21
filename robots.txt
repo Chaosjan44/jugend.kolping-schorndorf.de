@@ -28,7 +28,6 @@
 #
 User-agent: *
 Sitemap: https://jugend.kolping-schorndorf.de/sitemap.xml
-Disallow: /admin/
+Disallow: /internal/
 Disallow: /hidden/
 Disallow: /internal.php
-Disallow: /register.php

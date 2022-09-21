@@ -1,4 +1,5 @@
 <?php 
+chdir ($_SERVER['DOCUMENT_ROOT']);
 session_start();
 session_destroy();
 unset($_SESSION['userid']);
@@ -15,9 +16,9 @@ if (!$result) {
 }
 
 // Entfernt Cookies
-setcookie("identifier","",time()-(3600*24*365)); 
-setcookie("securitytoken","",time()-(3600*24*365)); 
+setcookie("identifier","",time()-(3600*24*365),"/"); 
+setcookie("securitytoken","",time()-(3600*24*365),"/"); 
 
-header("location: index.php");
+header("location: /index.php");
 exit();
 ?>
