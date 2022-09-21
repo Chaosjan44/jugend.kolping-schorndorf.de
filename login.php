@@ -39,7 +39,7 @@ if (isset($_POST['action'])) {
                             setcookie("securitytoken",$securitytoken,time()+(3600*24*365)); //Valid for 1 year
                         }
                         $error_msg = "<span class='text-success'>Login Erfolgreich!<br><br></span>";
-                        echo("<script>location.href='admin.php'</script>");
+                        echo("<script>location.href='internal.php'</script>");
                         exit;
                     } else {
                         $error_msg = "<span class='text-danger'>für den Login müssen Cookies aktiv sein!<br><br></span>";
