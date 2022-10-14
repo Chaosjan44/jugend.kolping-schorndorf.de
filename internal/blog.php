@@ -180,6 +180,9 @@ if (isset($_POST['action'])) {
         $images = $stmt->fetchAll(PDO::FETCH_ASSOC);
         require_once("templates/header.php"); 
         ?>
+        <script>
+            let blocker = true;
+        </script>
         <div class="container-xxl py-3" style="min-height: 80vh;">
             <script src="/js/markdown_mark.js"></script>
             <div class="row row-cols-1 m-4 p-2 cbg2 rounded">
@@ -208,8 +211,8 @@ if (isset($_POST['action'])) {
                                     </div>                            
                                 </div>
                                 <input type="number" value="<?=$blog_entrys_id?>" name="blog_entrys_id" style="display: none;" required>
-                                <button type="submit" class="btn btn-success ctext mx-2" name="action" value="save"><span>Speichern</span></button>
-                                <button type="button" class="btn btn-danger ctext ms-2" onclick="window.location.href = '/internal/blog.php';">Abbrechen</button>
+                                <button type="submit" class="btn btn-success ctext mx-2" name="action" value="save" onclick="blocker = false;"><span>Speichern</span></button>
+                                <button type="button" class="btn btn-danger ctext ms-2" onclick="blocker = false; window.location.href = '/internal/blog.php';">Abbrechen</button>
                             </div>
                         </div>
                     <?php else: ?>
@@ -246,8 +249,8 @@ if (isset($_POST['action'])) {
                         </div>
                         <div class="col p-2 rounded d-flex justify-content-between">
                             <input type="number" value="<?=$blog_entrys_id?>" name="blog_entrys_id" style="display: none;" required>
-                            <button type="submit" class="btn btn-success ctext" name="action" value="save"><span>Speichern</span></button>
-                            <button type="button" class="btn btn-danger ctext" onclick="window.location.href = '/internal/blog.php';">Abbrechen</button>
+                            <button type="submit" class="btn btn-success ctext" name="action" value="save" onclick="blocker = false;"><span>Speichern</span></button>
+                            <button type="button" class="btn btn-danger ctext" onclick="blocker = false; window.location.href = '/internal/blog.php';">Abbrechen</button>
                         </div>
                     <?php endif; ?>
                     <div class="col p-2 rounded">
@@ -348,6 +351,14 @@ if (isset($_POST['action'])) {
                 </div>
             </div>
         </div>
+        <script>
+            window.onbeforeunload = function() { 
+                if (blocker == true) {
+                    return "Achtung, deine Arbeit wird eventuell nicht gespeichert!"; 
+                    blocker = true;
+                }
+            }
+        </script>
         <?php include_once("templates/footer.php");
         exit;
     }
@@ -357,6 +368,9 @@ if (isset($_POST['action'])) {
             error('Unzureichende Berechtigungen!');
         }
         ?>
+        <script>
+            let blocker = true;
+        </script>
         <div class="container-xxl py-3" style="min-height: 80vh;">
             <script src="/js/markdown_mark.js"></script>
             <div class="row row-cols-1 m-4 p-2 cbg2 rounded">
@@ -384,8 +398,8 @@ if (isset($_POST['action'])) {
                                         <input class="form-check-input mt-0 checkbox-kolping" type="checkbox" id="inputVisible" name="visible">
                                     </div>                            
                                 </div>
-                                <button type="submit" class="btn btn-success ctext mx-2" name="action" value="save"><span>Speichern</span></button>
-                                <button type="button" class="btn btn-danger ctext ms-2" onclick="window.location.href = '/internal/blog.php';">Abbrechen</button>
+                                <button type="submit" class="btn btn-success ctext mx-2" name="action" value="save" onclick="blocker = false;"><span>Speichern</span></button>
+                                <button type="button" class="btn btn-danger ctext ms-2" onclick="blocker = false; window.location.href = '/internal/blog.php';">Abbrechen</button>
                             </div>
                         </div>
                     <?php else: ?>
@@ -421,8 +435,8 @@ if (isset($_POST['action'])) {
                             </div>
                         </div>
                         <div class="col p-2 rounded d-flex justify-content-between">
-                            <button type="submit" class="btn btn-success ctext" name="action" value="save"><span>Speichern</span></button>
-                            <button type="button" class="btn btn-danger ctext" onclick="window.location.href = '/internal/blog.php';">Abbrechen</button>
+                            <button type="submit" class="btn btn-success ctext" name="action" value="save" onclick="blocker = false;"><span>Speichern</span></button>
+                            <button type="button" class="btn btn-danger ctext" onclick="blocker = false; window.location.href = '/internal/blog.php';">Abbrechen</button>
                         </div>
                     <?php endif; ?>
                     <div class="col p-2 rounded">
@@ -490,6 +504,14 @@ if (isset($_POST['action'])) {
                 </div>
             </div>
         </div>
+        <script>
+            window.onbeforeunload = function() { 
+                if (blocker == true) {
+                    return "Achtung, deine Arbeit wird eventuell nicht gespeichert!"; 
+                    blocker = true;
+                }
+            }
+        </script>
         <?php 
         include_once("templates/footer.php");
         exit;
