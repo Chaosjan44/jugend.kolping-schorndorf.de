@@ -8,7 +8,7 @@ if (isset($_POST['action'])) {
             $username = $_POST['user'];
             $passwort = $_POST['passwort'];
 
-            $stmt = $pdo->prepare("SELECT * FROM users WHERE login = ?");
+            $stmt = $pdo->prepare("SELECT * FROM users WHERE UPPER(login) = UPPER(?)");
             $stmt->bindValue(1, $username);
             $result = $stmt->execute();
             if (!$result) {
