@@ -105,7 +105,7 @@ if (isset($_POST['action'])) {
                             </div>
                             <div class="justify-content-end d-flex">
                                 <div class="input-group flex-nowrap ctext me-2">
-                                    <span class="input-group-text" for="inputVisible">Visible</span>
+                                    <span class="input-group-text" for="inputVisible">Sichtbar</span>
                                     <div class="input-group-text">
                                         <input class="form-check-input mt-0 checkbox-kolping" type="checkbox" id="inputVisible" name="visible" <?=($event[0]['visible']==1 ? 'checked':'')?>>
                                     </div>                            
@@ -254,7 +254,7 @@ if (isset($_POST['action'])) {
                             </div>
                             <div class="justify-content-end d-flex">
                                 <div class="input-group flex-nowrap ctext me-2">
-                                    <span class="input-group-text" for="inputVisible">Visible</span>
+                                    <span class="input-group-text" for="inputVisible">Sichtbar</span>
                                     <div class="input-group-text">
                                         <input class="form-check-input mt-0 checkbox-kolping" type="checkbox" id="inputVisible" name="visible">
                                     </div>                            
@@ -415,6 +415,12 @@ require_once("templates/header.php");
                         <form action="termine.php" method="post" enctype="multipart/form-data" class="p-2 d-flex justify-content-between">
                             <input type="number" value="<?=$event['events_id']?>" name="events_id" style="display: none;" required>
                             <button type="submit" name="action" class="btn btn-kolping" value="mod">Editieren</button>
+                            <div class="input-group flex-nowrap justify-content-center ctext">
+                                <span class="input-group-text" for="inputVisible">Sichtbar</span>
+                                <div class="input-group-text">
+                                    <input class="form-check-input mt-0 checkbox-kolping" type="checkbox" id="inputVisible" name="visible" <?=($event['visible']==1 ? 'checked':'')?> disabled>
+                                </div>   
+                            </div>                         
                             <button class="btn btn-danger" type="button" data-bs-toggle="offcanvas" data-bs-target="#deleteCanvas-<?=$event['events_id']?>" aria-controls="deleteCanvas-<?=$event['events_id']?>">Löschen</button>
                             <div class="offcanvas offcanvas-end ctext cbg" data-bs-backdrop="static" tabindex="-1" id="deleteCanvas-<?=$event['events_id']?>" aria-labelledby="deleteCanvasLable-<?=$event['events_id']?>">
                                 <div class="offcanvas-header cbg">

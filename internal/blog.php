@@ -205,7 +205,7 @@ if (isset($_POST['action'])) {
                             </div>
                             <div class="justify-content-end d-flex">
                                 <div class="input-group flex-nowrap ctext me-2">
-                                    <span class="input-group-text" for="inputVisible">Visible</span>
+                                    <span class="input-group-text" for="inputVisible">Sichtbar</span>
                                     <div class="input-group-text">
                                         <input class="form-check-input mt-0 checkbox-kolping" type="checkbox" id="inputVisible" name="visible" <?=($entry[0]['visible']==1 ? 'checked':'')?>>
                                     </div>                            
@@ -427,7 +427,7 @@ if (isset($_POST['action'])) {
                         <div class="col p-2 rounded">
                             <div>
                                 <div class="input-group flex-nowrap justify-content-center ctext">
-                                    <span class="input-group-text" for="inputVisible">Visible</span>
+                                    <span class="input-group-text" for="inputVisible">Sichtbar</span>
                                     <div class="input-group-text">
                                         <input class="form-check-input mt-0 checkbox-kolping" type="checkbox" id="inputVisible" name="visible" checked>
                                     </div>                            
@@ -549,7 +549,7 @@ require_once("templates/header.php");
             <button type="submit" name="action" class="btn btn-kolping" value="add">Nachricht Hinzufügen</button>
         </form>
         
-        <div class="row row-cols-<?php if (!isMobile()) print("4"); else print("1");?> gx-3">
+        <div class="row row-cols-<?php if (!isMobile()) print("3"); else print("1");?> gx-3">
             <?php foreach ($blogentrys as $blogentry): ?>
                 <div class="col p-2">
                     <div class="card cbg2" style="height: 100% !important;">
@@ -568,6 +568,12 @@ require_once("templates/header.php");
                         <form action="blog.php" method="post" enctype="multipart/form-data" class="p-2 d-flex justify-content-between">
                             <input type="number" value="<?=$blogentry['blog_entrys_id']?>" name="blog_entrys_id" style="display: none;" required>
                             <button type="submit" name="action" class="btn btn-kolping" value="mod">Editieren</button>
+                            <div class="input-group flex-nowrap justify-content-center ctext">
+                                <span class="input-group-text" for="inputVisible">Sichtbar</span>
+                                <div class="input-group-text">
+                                    <input class="form-check-input mt-0 checkbox-kolping" type="checkbox" id="inputVisible" name="visible" <?=($blogentry['visible']==1 ? 'checked':'')?> disabled>
+                                </div>   
+                            </div>                           
                             <button class="btn btn-danger" type="button" data-bs-toggle="offcanvas" data-bs-target="#deleteCanvas-<?=$blogentry['blog_entrys_id']?>" aria-controls="deleteCanvas-<?=$blogentry['blog_entrys_id']?>">Löschen</button>
                             <div class="offcanvas offcanvas-end ctext cbg" data-bs-backdrop="static" tabindex="-1" id="deleteCanvas-<?=$blogentry['blog_entrys_id']?>" aria-labelledby="deleteCanvasLable-<?=$blogentry['blog_entrys_id']?>">
                                 <div class="offcanvas-header cbg">
