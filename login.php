@@ -38,18 +38,18 @@ if (isset($_POST['action'])) {
                             setcookie("identifier",$identifier,time()+(3600*24*365)); //Valid for 1 year
                             setcookie("securitytoken",$securitytoken,time()+(3600*24*365)); //Valid for 1 year
                         }
-                        $error_msg = "<span class='text-success'>Login Erfolgreich!<br><br></span>";
+                        $error_msg = "<span class='text-success'>Anmeldung Erfolgreich!<br><br></span>";
                         echo("<script>location.href='internal.php'</script>");
                         exit;
                     } else {
-                        $error_msg = "<span class='text-danger'>für den Login müssen Cookies aktiv sein!<br><br></span>";
+                        $error_msg = "<span class='text-danger'>für die Anmeldung müssen Cookies aktiv sein!<br><br></span>";
                         exit;
                     }
                 } else {
-                    $error_msg = "<span class='text-danger'>User oder Passwort war ungültig!<br><br></span>";
+                    $error_msg = "<span class='text-danger'>Nutzername oder Passwort war ungültig!<br><br></span>";
                 }
             } else {
-                $error_msg = "<span class='text-danger'>Dieser User darf sich nicht einloggen!<br><br></span>";
+                $error_msg = "<span class='text-danger'>Diese*r Nutzer*in darf sich nicht anmelden!<br><br></span>";
             }
         }
     }
@@ -67,7 +67,7 @@ require_once("templates/header.php"); ?>
                         <form action="login.php" method="post">
                             <div class="form-floating mb-3">
                                 <input id="inputUser" type="text" name="user" placeholder="User" autofocus class="form-control border-0 ps-4 text-dark fw-bold" required>
-                                <label for="inputUser" class="text-dark fw-bold">Username</label>
+                                <label for="inputUser" class="text-dark fw-bold">Nutzername</label>
                             </div>
                             <div class="form-floating mb-3">
                                 <input id="inputPassword" type="password" name="passwort" placeholder="Passwort" class="form-control border-0 ps-4 text-dark fw-bold" required>

@@ -15,25 +15,25 @@ require_once("templates/header.php"); ?>
                 <?php if (!isMobile()): ?>
                     <div class="card-text">
                         <?php if ($user['perm_admin'] == "1"): ?>
-                            <button class="btn btn-kolping mx-1" type="button" onclick="window.location.href = '/internal/user.php';">User</button>
+                            <button class="btn btn-kolping mx-1" type="button" onclick="window.location.href = '/internal/user.php';">Benutzer</button>
                         <?php endif; ?>
                         <?php if ($user['perm_blog'] == "1"): ?>
-                            <button class="btn btn-kolping mx-1" type="button" onclick="window.location.href = '/internal/blog.php';">Blogs</button>
+                            <button class="btn btn-kolping mx-1" type="button" onclick="window.location.href = '/internal/blog.php';">Nachrichten</button>
                         <?php endif; ?>
                         <?php if ($user['perm_event'] == "1"): ?>
                             <button class="btn btn-kolping mx-1 my-2" type="button" onclick="window.location.href = '/internal/termine.php';">Termine</button>
                         <?php endif; ?>
                         <button class="btn btn-kolping mx-1 my-2" type="button" onclick="window.location.href = 'https://daten.kolping-schorndorf.de';">Nextcloud</button>
                         <button class="btn btn-kolping mx-1 my-2" type="button" onclick="window.location.href = '/internal/settings.php';">Einstellungen</button>
-                        <button class="btn btn-kolping mx-1 my-2" type="button" onclick="window.location.href = '/internal/logout.php';">Logout</button>
+                        <button class="btn btn-kolping mx-1 my-2" type="button" onclick="window.location.href = '/internal/logout.php';">Abmelden</button>
                     </div>
                 <?php else: ?>
                     <div class="card-text my-2">
                         <?php if ($user['perm_admin'] == "1"): ?>
-                            <button class="btn btn-kolping mx-1" type="button" onclick="window.location.href = '/internal/user.php';">User</button>
+                            <button class="btn btn-kolping mx-1" type="button" onclick="window.location.href = '/internal/user.php';">Benutzer</button>
                         <?php endif; ?>
                         <?php if ($user['perm_blog'] == "1"): ?>
-                            <button class="btn btn-kolping mx-1" type="button" onclick="window.location.href = '/internal/blog.php';">Blogs</button>
+                            <button class="btn btn-kolping mx-1" type="button" onclick="window.location.href = '/internal/blog.php';">Nachrichten</button>
                         <?php endif; ?>
                     </div>
                     <?php if ($user['perm_event'] == "1"): ?>
@@ -42,7 +42,7 @@ require_once("templates/header.php"); ?>
                         <button class="btn btn-kolping mx-1 my-2" type="button" onclick="window.location.href = 'https://daten.kolping-schorndorf.de';">Nextcloud</button>
                     <div class="card-text">
                         <button class="btn btn-kolping mx-1 my-2" type="button" onclick="window.location.href = '/internal/settings.php';">Einstellungen</button>
-                        <button class="btn btn-kolping mx-1 my-2" type="button" onclick="window.location.href = '/internal/logout.php';">Logout</button>
+                        <button class="btn btn-kolping mx-1 my-2" type="button" onclick="window.location.href = '/internal/logout.php';">Abmelden</button>
                     </div>
                 <?php endif;?>
             </div>

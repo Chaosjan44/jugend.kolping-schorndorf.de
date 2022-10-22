@@ -57,7 +57,7 @@ include_once("templates/header.php");
                         <form action="register.php" method="post">
                             <div class="form-floating mb-3">
                                 <input id="inputUser" type="text" name="user" placeholder="User" autofocus class="form-control border-0 ps-4 text-dark fw-bold" required>
-                                <label for="inputUser" class="text-dark fw-bold">Username</label>
+                                <label for="inputUser" class="text-dark fw-bold">Nutzername</label>
                             </div>
                             <div class="form-floating mb-3">
                                 <input id="inputPassword" type="password" name="passwort" placeholder="Passwort" class="form-control border-0 ps-4 text-dark fw-bold" required>
@@ -77,7 +77,7 @@ include_once("templates/header.php");
                             </div>
                             <div class="col mb-3">
                                 <div class="input-group justify-content-center">
-                                    <label for="perm_login" class="input-group-text">Login Berechtigungen?</label>
+                                    <label for="perm_login" class="input-group-text">Anmelde Berechtigungen?</label>
                                     <div class="input-group-text">
                                         <input value="perm_login" id="perm_login" type="checkbox" name="perm_login" value="0" class="form-check-input checkbox-kolping">
                                     </div>

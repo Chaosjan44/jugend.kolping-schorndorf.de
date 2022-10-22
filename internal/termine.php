@@ -140,7 +140,7 @@ if (isset($_POST['action'])) {
                         <div class="col p-2 rounded">
                             <div>
                                 <div class="input-group flex-nowrap justify-content-center ctext">
-                                    <span class="input-group-text" for="inputVisible">Visible</span>
+                                    <span class="input-group-text" for="inputVisible">Sichtbar</span>
                                     <div class="input-group-text">
                                         <input class="form-check-input mt-0 checkbox-kolping" type="checkbox" id="inputVisible" name="visible" <?=($event[0]['visible']==1 ? 'checked':'')?>>
                                     </div>                            
@@ -288,7 +288,7 @@ if (isset($_POST['action'])) {
                         <div class="col p-2 rounded">
                             <div>
                                 <div class="input-group flex-nowrap justify-content-center ctext">
-                                    <span class="input-group-text" for="inputVisible">Visible</span>
+                                    <span class="input-group-text" for="inputVisible">Sichtbar</span>
                                     <div class="input-group-text">
                                         <input class="form-check-input mt-0 checkbox-kolping" type="checkbox" id="inputVisible" name="visible">
                                     </div>                            

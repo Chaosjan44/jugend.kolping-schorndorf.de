@@ -240,7 +240,7 @@ if (isset($_POST['action'])) {
                         <div class="col p-2 rounded">
                             <div>
                                 <div class="input-group flex-nowrap justify-content-center ctext">
-                                    <span class="input-group-text" for="inputVisible">Visible</span>
+                                    <span class="input-group-text" for="inputVisible">Sichtbar</span>
                                     <div class="input-group-text">
                                         <input class="form-check-input mt-0 checkbox-kolping" type="checkbox" id="inputVisible" name="visible" <?=($entry[0]['visible']==1 ? 'checked':'')?>>
                                     </div>                            
@@ -393,7 +393,7 @@ if (isset($_POST['action'])) {
                             </div>
                             <div class="justify-content-end d-flex">
                                 <div class="input-group flex-nowrap ctext me-2">
-                                    <span class="input-group-text" for="inputVisible">Visible</span>
+                                    <span class="input-group-text" for="inputVisible">Sichtbar</span>
                                     <div class="input-group-text">
                                         <input class="form-check-input mt-0 checkbox-kolping" type="checkbox" id="inputVisible" name="visible">
                                     </div>                            
@@ -544,9 +544,9 @@ require_once("templates/header.php");
 ?>
 <div class="container py-3">
     <div style="min-height: 80vh;">
-        <h1 class="display-3 text-center mb-3 text-kolping-orange">Blogs Editieren</h1>
+        <h1 class="display-3 text-center mb-3 text-kolping-orange">Nachrichten Editieren</h1>
         <form action="blog.php" method="post" enctype="multipart/form-data" class="d-flex justify-content-end">
-            <button type="submit" name="action" class="btn btn-kolping" value="add">Blog Hinzufügen</button>
+            <button type="submit" name="action" class="btn btn-kolping" value="add">Nachricht Hinzufügen</button>
         </form>
         
         <div class="row row-cols-<?php if (!isMobile()) print("4"); else print("1");?> gx-3">
