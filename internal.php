@@ -23,7 +23,7 @@ require_once("templates/header.php"); ?>
                         <?php if ($user['perm_event'] == "1"): ?>
                             <button class="btn btn-kolping mx-1 my-2" type="button" onclick="window.location.href = '/internal/termine.php';">Termine</button>
                         <?php endif; ?>
-                        <button class="btn btn-kolping mx-1 my-2" type="button" onclick="window.location.href = 'https://cloud.kolping-schorndorf.de';">Cloud (Bilder usw.)</button>
+                        <button class="btn btn-kolping mx-1 my-2" type="button" onclick="window.location.href = 'https://daten.kolping-schorndorf.de';">Nextcloud</button>
                         <button class="btn btn-kolping mx-1 my-2" type="button" onclick="window.location.href = '/internal/settings.php';">Einstellungen</button>
                         <button class="btn btn-kolping mx-1 my-2" type="button" onclick="window.location.href = '/internal/logout.php';">Logout</button>
                     </div>
@@ -39,7 +39,7 @@ require_once("templates/header.php"); ?>
                     <?php if ($user['perm_event'] == "1"): ?>
                         <button class="btn btn-kolping mx-1 my-2" type="button" onclick="window.location.href = '/internal/termine.php';">Termine</button>
                     <?php endif; ?>
-                        <button class="btn btn-kolping mx-1 my-2" type="button" onclick="window.location.href = 'https://cloud.kolping-schorndorf.de';">Cloud (Bilder usw.)</button>
+                        <button class="btn btn-kolping mx-1 my-2" type="button" onclick="window.location.href = 'https://daten.kolping-schorndorf.de';">Nextcloud</button>
                     <div class="card-text">
                         <button class="btn btn-kolping mx-1 my-2" type="button" onclick="window.location.href = '/internal/settings.php';">Einstellungen</button>
                         <button class="btn btn-kolping mx-1 my-2" type="button" onclick="window.location.href = '/internal/logout.php';">Logout</button>
