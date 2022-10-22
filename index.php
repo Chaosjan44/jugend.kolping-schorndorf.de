@@ -5,7 +5,7 @@ $stmt->execute();
 $blogentrys = $stmt->fetchAll(PDO::FETCH_ASSOC);
 #print_r($blogentrys);
 
-$stmt = $pdo->prepare('SELECT * FROM events where visible = 1 ORDER BY date desc');
+$stmt = $pdo->prepare('SELECT * FROM events where visible = 1 AND date > DATE_SUB(NOW(), INTERVAL 1 DAY) ORDER BY date desc');
 $stmt->execute();
 $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
