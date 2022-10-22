@@ -552,7 +552,7 @@ require_once("templates/header.php");
         <div class="row row-cols-<?php if (!isMobile()) print("3"); else print("1");?> gx-3">
             <?php foreach ($blogentrys as $blogentry): ?>
                 <div class="col p-2">
-                    <div class="card cbg2" style="height: 100% !important;">
+                    <div class="card cbg2 shadow1" style="height: 100% !important;">
                         <?php if(isset($blogentry['source'])): ?>
                             <picture>
                                 <source type="image/webp" srcset="<?=$blogentry['source']?>.webp" class="card-img-top img-fluid rounded">
