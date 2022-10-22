@@ -15,7 +15,7 @@ require_once("templates/header.php"); ?>
                 <?php if (!isMobile()): ?>
                     <div class="card-text">
                         <?php if ($user['perm_admin'] == "1"): ?>
-                            <button class="btn btn-kolping mx-1" type="button" onclick="window.location.href = '/internal/user.php';">Benutzer</button>
+                            <button class="btn btn-kolping mx-1" type="button" onclick="window.location.href = '/internal/user.php';">Nutzer*innen</button>
                         <?php endif; ?>
                         <?php if ($user['perm_blog'] == "1"): ?>
                             <button class="btn btn-kolping mx-1" type="button" onclick="window.location.href = '/internal/blog.php';">Nachrichten</button>
@@ -30,7 +30,7 @@ require_once("templates/header.php"); ?>
                 <?php else: ?>
                     <div class="card-text my-2">
                         <?php if ($user['perm_admin'] == "1"): ?>
-                            <button class="btn btn-kolping mx-1" type="button" onclick="window.location.href = '/internal/user.php';">Benutzer</button>
+                            <button class="btn btn-kolping mx-1" type="button" onclick="window.location.href = '/internal/user.php';">Nutzer*innen</button>
                         <?php endif; ?>
                         <?php if ($user['perm_blog'] == "1"): ?>
                             <button class="btn btn-kolping mx-1" type="button" onclick="window.location.href = '/internal/blog.php';">Nachrichten</button>
