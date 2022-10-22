@@ -245,7 +245,7 @@ require_once("templates/header.php");
                                                     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                                                 </div>
                                                 <div class="offcanvas-body">
-                                                    <span class="pb-3">Alles was diese*r User angelegt hat wird auf den User Admin zugeordnet!<br></span>
+                                                    <span class="pb-3">Alles was diese*r Nutzer*in angelegt hat wird auf den Nutzer Admin zugeordnet!<br></span>
                                                     <button class="btn btn-success mx-2" type="submit" name="action" value="deleteconfirm">Ja</button>
                                                     <button class="btn btn-danger mx-2" type="button" data-bs-dismiss="offcanvas" aria-label="Close">Nein</button>
                                                 </div>
