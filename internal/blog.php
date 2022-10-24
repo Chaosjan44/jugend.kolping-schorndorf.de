@@ -131,11 +131,37 @@ if (isset($_POST['action'])) {
                     // Hochladen der Bilder
                     if(move_uploaded_file($_FILES["file"]["tmp_name"][$i], $targetFilePath)){
                         // Einpflegen der Bilder in die Datenbank
-                        $stmt = $pdo->prepare("INSERT into blog_images (blog_entrys_id, source, alt, prev_img) VALUES ( ? , ? , ? , ? )");
+                        $hash = md5_file("blog_imgs/" . $fileName);
+                        $imgAlt = 'imgAlt-'.$hash;
+                        if (isset($_POST[$imgAlt])) {
+                            $imgAlt = $_POST[$imgAlt];
+                        } else {
+                            $imgAlt = $blog_entrys_id;
+                        }
+                        $imgOwner = 'imgOwner-'.$hash;
+                        if (isset($_POST[$imgOwner])) {
+                            $imgOwner = $_POST[$imgOwner];
+                        } else {
+                            $imgOwner = $blog_entrys_id;
+                        }
+                        $prev_img = 'prevImg-'.$hash;
+                        if (isset($_POST[$prev_img])) {
+                            $prev_img = 1;
+                            $stmt = $pdo->prepare('UPDATE blog_images SET prev_img= 0 where blog_entrys_id = ?');
+                            $stmt->bindValue(1, $blog_entrys_id, PDO::PARAM_INT);
+                            $result = $stmt->execute();
+                            if (!$result) {
+                                error('Datenbank Fehler!', pdo_debugStrParams($stmt));
+                            }
+                        } else {
+                            $prev_img = 0;
+                        }
+                        $stmt = $pdo->prepare("INSERT into blog_images (blog_entrys_id, source, alt, owner, prev_img) VALUES ( ? , ? , ? , ? , ? )");
                         $stmt->bindValue(1, $blog_entrys_id);
                         $stmt->bindValue(2, "/blog_imgs/" . $fileName);
-                        $stmt->bindValue(3, $blog_entrys_id);
-                        $stmt->bindValue(4, 0);
+                        $stmt->bindValue(3, $imgAlt);
+                        $stmt->bindValue(4, $imgOwner);
+                        $stmt->bindValue(5, $prev_img);
                         $result = $stmt->execute();
                         if (!$result) {
                             error_log(print_r($stmt, true));
@@ -184,6 +210,7 @@ if (isset($_POST['action'])) {
             let blocker = true;
         </script>
         <div class="container-xxl py-3" style="min-height: 80vh;">
+            <script src='/js/md5.js'></script>
             <script src="/js/markdown_mark.js"></script>
             <div class="row row-cols-1 m-4 p-2 cbg2 rounded">
                 <form action="blog.php" method="post" enctype="multipart/form-data">
@@ -372,6 +399,7 @@ if (isset($_POST['action'])) {
             let blocker = true;
         </script>
         <div class="container-xxl py-3" style="min-height: 80vh;">
+            <script src='/js/md5.js'></script>
             <script src="/js/markdown_mark.js"></script>
             <div class="row row-cols-1 m-4 p-2 cbg2 rounded">
                 <form action="blog.php" method="post" enctype="multipart/form-data">
