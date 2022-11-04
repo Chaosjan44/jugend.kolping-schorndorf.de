@@ -7,16 +7,18 @@ $blogentrys = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <div class="container py-3">
     <div style="min-height: 80vh;">
-        <h1 class="display-3 text-center mb-3 text-kolping-orange">Blogs</h1>
+        <h1 class="display-3 text-center mb-3 text-kolping-orange">Nachrichten</h1>
         <div class="row row-cols-<?php if (!isMobile()) print("4"); else print("1");?> gx-3">
             <?php foreach ($blogentrys as $blogentry): ?>
                 <div class="col p-2">
-                    <div class="card cbg2" style="height: 100% !important;">
-                        <picture>
-                            <source type="image/webp" srcset="<?=$blogentry['source']?>.webp" class="card-img-top img-fluid rounded">
-                            <source type="image/jpeg" srcset="<?=$blogentry['source']?>" class="card-img-top img-fluid rounded">
-                            <img src="<?=$blogentry['source']?>" class="card-img-top img-fluid rounded" alt="<?=$blogentry['alt']?>">
-                        </picture>
+                    <div class="card cbg2 shadow1" style="height: 100% !important;">
+                        <?php if(isset($blogentry['source'])): ?>
+                            <picture>
+                                <source type="image/webp" srcset="<?=$blogentry['source']?>.webp" class="card-img-top img-fluid rounded">
+                                <source type="image/jpeg" srcset="<?=$blogentry['source']?>" class="card-img-top img-fluid rounded">
+                                <img src="<?=$blogentry['source']?>" class="card-img-top img-fluid rounded" alt="<?=$blogentry['alt']?>">
+                            </picture>
+                        <?php endif;?>
                         <div class="card-body ctext">
                             <h3 class="card-title text-center"><?=$blogentry['name']?></h3>
                             <span id="text-<?=$blogentry['blog_entrys_id']?>"><?=$blogentry['prev_text']?></span>

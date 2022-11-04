@@ -1,11 +1,11 @@
 <?php require_once("templates/header.php"); 
 
-$stmt = $pdo->prepare('SELECT * ,(SELECT source From blog_images WHERE blog_images.blog_entrys_id=blog_entrys.blog_entrys_id AND prev_img=1) AS source,(SELECT alt From blog_images WHERE blog_images.blog_entrys_id=blog_entrys.blog_entrys_id AND prev_img=1) AS alt FROM blog_entrys where visible = 1 ORDER BY created_at desc');
+$stmt = $pdo->prepare('SELECT * ,(SELECT source From blog_images WHERE blog_images.blog_entrys_id=blog_entrys.blog_entrys_id AND prev_img=1) AS source,(SELECT alt From blog_images WHERE blog_images.blog_entrys_id=blog_entrys.blog_entrys_id AND prev_img=1) AS alt FROM blog_entrys where visible = 1 ORDER BY created_at desc LIMIT 6;');
 $stmt->execute();
 $blogentrys = $stmt->fetchAll(PDO::FETCH_ASSOC);
 #print_r($blogentrys);
 
-$stmt = $pdo->prepare('SELECT * FROM events where visible = 1 ORDER BY date desc');
+$stmt = $pdo->prepare('SELECT * FROM events where visible = 1 AND date > DATE_SUB(NOW(), INTERVAL 1 DAY) ORDER BY date asc LIMIT 6;');
 $stmt->execute();
 $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -79,7 +79,7 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <div class="row row-cols-1">
                             <?php foreach ($events as $event): ?> 
                                 <div class="col mb-3">
-                                    <div class="card cbg2 py-3 px-3">
+                                    <div class="card cbg2 py-3 px-3 shadow1">
                                         <div class="row g-0">
                                             <div class="col-md-2 d-flex justify-content-start align-items-center">
                                                 <div class="card cbg text-size-larger py-3 px-3 align-items-center text-center">
@@ -90,7 +90,7 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                             </div>
                                             <div class="col-md-10 d-flex justify-content-start align-items-center">
                                                 <div class="card-body ctext align-items-center">
-                                                    <h3 class="card-title align-center"><?=$event['title']?></h3>
+                                                    <h3 class="card-title mb-0 align-center"><?=$event['title']?></h3>
                                                 </div>
                                             </div>
                                             <a href="/termin.php?id=<?=$event['events_id']?>" class="stretched-link"></a>
@@ -108,14 +108,16 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <div class="col">
                         <div class="row row-cols-1">
                             <?php foreach ($blogentrys as $blogentry): ?> 
-                                <div class="col card cbg2 mb-3 px-0">
+                                <div class="col card cbg2 mb-3 px-0 shadow1">
                                     <div class="row g-0">
                                         <div class="col-md-4">
-                                            <picture>
-                                                <source type="image/webp" srcset="<?=$blogentry['source']?>.webp" class="img-fluid rounded-start">
-                                                <source type="image/jpeg" srcset="<?=$blogentry['source']?>" class="img-fluid rounded-start">
-                                                <img src="<?=$blogentry['source']?>" class="img-fluid rounded-start" alt="<?=$blogentry['alt']?>">
-                                            </picture>
+                                            <?php if(isset($blogentry['source'])): ?>
+                                                <picture>
+                                                    <source type="image/webp" srcset="<?=$blogentry['source']?>.webp" class="img-fluid rounded-start">
+                                                    <source type="image/jpeg" srcset="<?=$blogentry['source']?>" class="img-fluid rounded-start">
+                                                    <img src="<?=$blogentry['source']?>" class="img-fluid rounded-start" alt="<?=$blogentry['alt']?>">
+                                                </picture>
+                                            <?php endif;?>
                                         </div>
                                         <div class="col-md-8">
                                             <div class="card-body ctext">
@@ -155,7 +157,7 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <div class="col">
                             <div class="row row-cols-1">
                             <?php foreach ($events as $event): ?> 
-                                <div class="col mb-3 card cbg2 py-3 px-3"> 
+                                <div class="col mb-3 card cbg2 py-3 px-3 shadow1"> 
                                     <div class="row g-0 row-cols-2">
                                         <div class="col-3 d-flex justify-content-start align-items-center">
                                             <div class="card cbg text-size-larger py-3 px-3 align-items-center text-center">
@@ -166,7 +168,7 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                         </div>
                                         <div class="col-9 d-flex justify-content-start align-items-center">
                                             <div class="card-body ctext align-items-center">
-                                                <h5 class="card-title align-center text-break"><?=$event['title']?></h5>
+                                                <h5 class="card-title align-center mb-0 text-break"><?=$event['title']?></h5>
                                             </div>
                                         </div>
                                         <a href="/termin.php?id=<?=$event['events_id']?>" class="stretched-link"></a>
@@ -183,14 +185,16 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <div class="col">
                             <div class="row row-cols-1">
                                 <?php foreach ($blogentrys as $blogentry): ?> 
-                                    <div class="col card cbg2 mb-3 px-0">
+                                    <div class="col card cbg2 mb-3 px-0 shadow1">
                                         <div class="row g-0">
                                             <div class="col-md-4">
-                                                <picture>
-                                                    <source type="image/webp" srcset="<?=$blogentry['source']?>.webp" class="img-fluid rounded-top">
-                                                    <source type="image/jpeg" srcset="<?=$blogentry['source']?>" class="img-fluid rounded-top">
-                                                    <img src="<?=$blogentry['source']?>" class="img-fluid rounded-top" alt="<?=$blogentry['alt']?>">
-                                                </picture>
+                                                <?php if(isset($blogentry['source'])): ?>
+                                                    <picture>
+                                                        <source type="image/webp" srcset="<?=$blogentry['source']?>.webp" class="img-fluid rounded-top">
+                                                        <source type="image/jpeg" srcset="<?=$blogentry['source']?>" class="img-fluid rounded-top">
+                                                        <img src="<?=$blogentry['source']?>" class="img-fluid rounded-top" alt="<?=$blogentry['alt']?>">
+                                                    </picture>
+                                                <?php endif;?>
                                             </div>
                                             <div class="col-md-8">
                                                 <div class="card-body ctext">

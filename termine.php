@@ -11,7 +11,7 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <div class="row row-cols-<?php if (!isMobile()) print("3"); else print("1");?> gx-3">
             <?php foreach ($events as $event): ?>
                 <div class="col p-2">
-                    <div class="card cbg2" style="height: 100% !important;">
+                    <div class="card cbg2 shadow1" style="height: 100% !important;">
                         <div class="card-body ctext">
                             <h3 class="card-title text-center"><?=$event['title']?></h3>
                             <div class="col-md-2 mx-auto">
