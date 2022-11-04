@@ -16,8 +16,10 @@ session_start();
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <script defer src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+    <!-- remember to remove "defer" incase I want stuff opening the second the page loads -->
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <script defer data-domain="jugend.kolping-schorndorf.de" src="https://plausible.schniebs.com/js/plausible.js"></script>
+    <link rel="stylesheet" href="/css/styles.min.css">          <!-- Link Stylesheet -->
     <link rel="preload" href="/css/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">          <!-- Link Stylesheet -->
     <link rel="stylesheet" href="/css/dark.css" disabled>   <!-- Link Dark Stylesheet and disable it -->
     <link rel="stylesheet" href="/css/light.css" disabled>  <!-- Link Light Stylesheet and disable it -->
@@ -27,6 +29,9 @@ session_start();
     <title>Kolpingjugend Schorndorf</title>
 </head>
 <body>
+
+<style>
+</style>
 
 <nav class="navbar header-header navbar-expand-lg cbg ctext sticky-top">
     <div class="container-fluid">
@@ -60,7 +65,7 @@ session_start();
 </nav>
 
 <div class="modal fade" id="cookieModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="cookieModalLabel" aria-hidden="true">
-    <div class="modal-dialog cbg2">
+    <div class="modal-dialog">
         <div class="modal-content cbg">
             <div class="modal-header cbg">
                 <h4 class="modal-title ctext fw-bold" id="cookieModalLabel">Mhhh Lecker &#x1F36A;!</h4>
@@ -68,7 +73,7 @@ session_start();
             </div>
             <div class="modal-body ctext cbg fw-normal">
                 <div class="px-2">
-                    <p>Wir nutzen Cookies auf unserer Website.<br>
+                    <p>Wir nutzen Cookies auf unserer Webseite.<br>
                     Alle Cookies welche auf dieser Webseite verwendet werden sind für die Funktion der Webseite nötig. <br>
                     Die Cookies werden nicht ausgewertet.
                     </p>

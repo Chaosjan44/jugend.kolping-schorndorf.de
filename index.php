@@ -1,16 +1,12 @@
 <?php require_once("templates/header.php"); 
-
 $stmt = $pdo->prepare('SELECT * ,(SELECT source From blog_images WHERE blog_images.blog_entrys_id=blog_entrys.blog_entrys_id AND prev_img=1) AS source,(SELECT alt From blog_images WHERE blog_images.blog_entrys_id=blog_entrys.blog_entrys_id AND prev_img=1) AS alt FROM blog_entrys where visible = 1 ORDER BY created_at desc LIMIT 6;');
 $stmt->execute();
 $blogentrys = $stmt->fetchAll(PDO::FETCH_ASSOC);
-#print_r($blogentrys);
 
 $stmt = $pdo->prepare('SELECT * FROM events where visible = 1 AND date > DATE_SUB(NOW(), INTERVAL 1 DAY) ORDER BY date asc LIMIT 6;');
 $stmt->execute();
 $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
-<style>
-</style>
 <div class="container-fluid px-0 pt-0 pb-3">
     <div class="mb-3" style="min-height: <?php if (!isMobile()) print("33"); else print("38"); ?>vh;">
         <div id="carouselExampleFade" class="carousel <?php if (check_style() == "dark") { print("carousel-dark "); }?>slide carousel-fade" data-bs-ride="carousel">

@@ -1,11 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-/* remove scrollbar */
-::-webkit-scrollbar {
-    display: none;
-}
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -25,18 +20,8 @@ ul {
     list-style-type: none;
 }
 
-
-.index-img {
-    width: 100%;
-}
-
 .shadow1 {
     box-shadow: 5px 5px 15px 1px rgba(0, 0, 0, 0.495);
-}
-
-.navbar-kolping {
-    display: inline-block;
-    height: 50px;
 }
 
 .light {

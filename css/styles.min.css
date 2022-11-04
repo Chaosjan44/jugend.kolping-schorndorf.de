@@ -1,0 +1,14 @@
+/* remove scrollbar */
+::-webkit-scrollbar {
+    display: none;
+}
+
+
+.navbar-kolping {
+    display: inline-block;
+    height: 50px;
+}
+
+.index-img {
+    width: 100%;
+}
