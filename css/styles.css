@@ -25,6 +25,11 @@ ul {
     list-style-type: none;
 }
 
+
+.index-img {
+    width: 100%;
+}
+
 .shadow1 {
     box-shadow: 5px 5px 15px 1px rgba(0, 0, 0, 0.495);
 }

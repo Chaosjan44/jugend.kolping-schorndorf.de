@@ -9,43 +9,45 @@ $stmt = $pdo->prepare('SELECT * FROM events where visible = 1 AND date > DATE_SU
 $stmt->execute();
 $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
+<style>
+</style>
 <div class="container-fluid px-0 pt-0 pb-3">
     <div class="mb-3" style="min-height: <?php if (!isMobile()) print("33"); else print("38"); ?>vh;">
         <div id="carouselExampleFade" class="carousel <?php if (check_style() == "dark") { print("carousel-dark "); }?>slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <!-- <div class="carousel-item active">
                     <picture data-bs-interval="5000">
-                        <source type="image/webp" srcset="/media/indexpic1<?php #if (isMobile()) {print("_mobile");}?>.webp" class="d-block w-100">
-                        <source type="image/jpeg" srcset="/media/indexpic1<?php #if (isMobile()) {print("_mobile");}?>.jpg" class="d-block w-100">
-                        <img src="/media/indexpic1<?php #if (isMobile()) {print("_mobile");}?>.jpg" class="d-block w-100" alt="Vorschaubild">
+                        <source type="image/webp" srcset="/media/indexpic1<?php #if (isMobile()) {print("_mobile");}?>.webp" class="d-block w-100 index-img">
+                        <source type="image/jpeg" srcset="/media/indexpic1<?php #if (isMobile()) {print("_mobile");}?>.jpg" class="d-block w-100 index-img">
+                        <img src="/media/indexpic1<?php #if (isMobile()) {print("_mobile");}?>.jpg" class="d-block w-100 index-img" alt="Vorschaubild">
                     </picture>
                 </div>
                 <div class="carousel-item">
                     <picture data-bs-interval="5000">
-                        <source type="image/webp" srcset="/media/indexpic2<?php #if (isMobile()) {print("_mobile");}?>.webp" class="d-block w-100">
-                        <source type="image/jpeg" srcset="/media/indexpic2<?php #if (isMobile()) {print("_mobile");}?>.jpg" class="d-block w-100">
-                        <img src="/media/indexpic2<?php #if (isMobile()) {print("_mobile");}?>.jpg" class="d-block w-100" alt="Vorschaubild">
+                        <source type="image/webp" srcset="/media/indexpic2<?php #if (isMobile()) {print("_mobile");}?>.webp" class="d-block w-100 index-img">
+                        <source type="image/jpeg" srcset="/media/indexpic2<?php #if (isMobile()) {print("_mobile");}?>.jpg" class="d-block w-100 index-img">
+                        <img src="/media/indexpic2<?php #if (isMobile()) {print("_mobile");}?>.jpg" class="d-block w-100 index-img" alt="Vorschaubild">
                     </picture>
                 </div> -->
                 <div class="carousel-item active">
                     <picture data-bs-interval="5000">
-                        <source type="image/webp" srcset="/media/indexpic3<?php if (isMobile()) {print("_mobile");}?>.webp" class="d-block w-100">
-                        <source type="image/jpeg" srcset="/media/indexpic3<?php if (isMobile()) {print("_mobile");}?>.jpg" class="d-block w-100">
-                        <img src="/media/indexpic3<?php if (isMobile()) {print("_mobile");}?>.jpg" class="d-block w-100" alt="Vorschaubild">
+                        <source type="image/webp" srcset="/media/indexpic3<?php if (isMobile()) {print("_mobile");}?>.webp" class="d-block w-100 index-img">
+                        <source type="image/jpeg" srcset="/media/indexpic3<?php if (isMobile()) {print("_mobile");}?>.jpg" class="d-block w-100 index-img">
+                        <img src="/media/indexpic3<?php if (isMobile()) {print("_mobile");}?>.jpg" class="d-block w-100 index-img" alt="Vorschaubild">
                     </picture>
                 </div>
                 <div class="carousel-item">
                     <picture data-bs-interval="5000">
-                        <source type="image/webp" srcset="/media/indexpic4<?php if (isMobile()) {print("_mobile");}?>.webp" class="d-block w-100">
-                        <source type="image/jpeg" srcset="/media/indexpic4<?php if (isMobile()) {print("_mobile");}?>.jpg" class="d-block w-100">
-                        <img src="/media/indexpic4<?php if (isMobile()) {print("_mobile");}?>.jpg" class="d-block w-100" alt="Vorschaubild">
+                        <source type="image/webp" srcset="/media/indexpic4<?php if (isMobile()) {print("_mobile");}?>.webp" class="d-block w-100 index-img">
+                        <source type="image/jpeg" srcset="/media/indexpic4<?php if (isMobile()) {print("_mobile");}?>.jpg" class="d-block w-100 index-img">
+                        <img src="/media/indexpic4<?php if (isMobile()) {print("_mobile");}?>.jpg" class="d-block w-100 index-img" alt="Vorschaubild">
                     </picture>
                 </div>
                 <div class="carousel-item">
                     <picture data-bs-interval="5000">
-                        <source type="image/webp" srcset="/media/indexpic5<?php if (isMobile()) {print("_mobile");}?>.webp" class="d-block w-100">
-                        <source type="image/jpeg" srcset="/media/indexpic5<?php if (isMobile()) {print("_mobile");}?>.jpg" class="d-block w-100">
-                        <img src="/media/indexpic5<?php if (isMobile()) {print("_mobile");}?>.jpg" class="d-block w-100" alt="Vorschaubild">
+                        <source type="image/webp" srcset="/media/indexpic5<?php if (isMobile()) {print("_mobile");}?>.webp" class="d-block w-100 index-img">
+                        <source type="image/jpeg" srcset="/media/indexpic5<?php if (isMobile()) {print("_mobile");}?>.jpg" class="d-block w-100 index-img">
+                        <img src="/media/indexpic5<?php if (isMobile()) {print("_mobile");}?>.jpg" class="d-block w-100 index-img" alt="Vorschaubild">
                     </picture>
                 </div>
             </div>
