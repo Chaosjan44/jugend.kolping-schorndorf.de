@@ -33,38 +33,41 @@ session_start();
 
 <style>
 </style>
-
-<nav class="navbar header-header navbar-expand-lg cbg ctext sticky-top">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="/">
-            <img src="/favicon.svg" class="navbar-icon_light align-text-bottom pe-2" alt="Navbar Logo">
-            <img src="/favicon_dark.svg" class="navbar-icon_dark align-text-bottom pe-2" alt="Navbar Logo">
-                <span class="d-inline-block">Kolpingjugend<br>Schorndorf</span>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse cbg" tabindex="-1" id="navbarSupportedContent">
-            <ul class="navbar-nav">
-                <li class="nav-item text-size-x-large">
-                    <a class="nav-link clink" aria-current="page" href="/termine.php">Termine</a>
-                </li>
-                <li class="nav-item text-size-x-large">
-                    <a class="nav-link clink" href="/nachricht.php">Nachrichten</a>
-                </li>
-                <li class="nav-item text-size-x-large">
-                    <a class="nav-link clink clink" href="/wir.php">Wir</a>
-                </li>
-                <li class="nav-item text-size-x-large <?php if (!isMobile()) print("ps-2"); else print("pt-2");""?>">
-                    <a href="https://kolping-schorndorf.de">
-                        <img src="/images/Kolping_logo_n.png" class="navbar-kolping align-text-bottom pe-2" alt="Kolping Logo" style="height: 50px;">
-                    </a>
-                </li>
-            </ul>
+<header class="sticky-top">
+    <nav class="navbar navbar-expand-lg cbg ctext">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                <img src="/favicon.svg" class="navbar-icon_light align-text-bottom pe-2" alt="Navbar Logo">
+                <img src="/favicon_dark.svg" class="navbar-icon_dark align-text-bottom pe-2" alt="Navbar Logo">
+                    <span class="d-inline-block">Kolpingjugend<br>Schorndorf</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse cbg" tabindex="-1" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item text-size-x-large">
+                        <a class="nav-link clink" aria-current="page" href="/termine.php">Termine</a>
+                    </li>
+                    <li class="nav-item text-size-x-large">
+                        <a class="nav-link clink" href="/nachricht.php">Nachrichten</a>
+                    </li>
+                    <li class="nav-item text-size-x-large">
+                        <a class="nav-link clink clink" href="/wir.php">Wir</a>
+                    </li>
+                    <li class="nav-item text-size-x-large <?php if (!isMobile()) print("ps-2"); else print("pt-2");""?>">
+                        <a href="https://kolping-schorndorf.de">
+                            <img src="/images/Kolping_logo_n.png" class="navbar-kolping align-text-bottom pe-2" alt="Kolping Logo" style="height: 50px;">
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
+    </nav>
+    <div class="header-line text-end">
+        <a href="mailto:jugend@kolping-schorndorf.de" class="ctext pe-1"><i class="bi bi-envelope-fill pe-1"></i>jugend@kolping-schorndorf.de</a>
     </div>
-</nav>
-
+</header>
 <div class="modal fade" id="cookieModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="cookieModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content cbg">
