@@ -1,6 +1,6 @@
 <?php require_once("templates/header.php"); 
 
-$stmt = $pdo->prepare('SELECT * FROM events WHERE visible = 1 ORDER BY date desc');
+$stmt = $pdo->prepare('SELECT * FROM events WHERE visible = 1 AND date > DATE_SUB(NOW(), INTERVAL 1 DAY) ORDER BY date asc');
 $stmt->execute();
 $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -18,9 +18,9 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 <div class="card cbg text-size-larger py-3 px-3 align-items-center text-center">
                                     <div>
                                         <span>
-                                            <?=date('d', strtotime($event['date']))?>
+                                            <?=$datedd->format(strtotime($event['date']))?>
                                             <br>
-                                            <?=date('M', strtotime($event['date']))?>
+                                            <?=$dateMMM->format(strtotime($event['date']))?>
                                         </span>
                                     </div> 
                                 </div>

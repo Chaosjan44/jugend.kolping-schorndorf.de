@@ -81,9 +81,9 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                         <div class="row g-0">
                                             <div class="col-md-2 d-flex justify-content-start align-items-center">
                                                 <div class="card cbg text-size-larger py-3 px-3 align-items-center text-center">
-                                                    <?=date('d', strtotime($event['date']))?>
+                                                    <?=$datedd->format(strtotime($event['date']))?>
                                                     <br>
-                                                    <?=date('M', strtotime($event['date']))?>
+                                                    <?=$dateMMM->format(strtotime($event['date']))?>
                                                 </div>
                                             </div>
                                             <div class="col-md-10 d-flex justify-content-start align-items-center">
@@ -159,9 +159,9 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                     <div class="row g-0 row-cols-2">
                                         <div class="col-3 d-flex justify-content-start align-items-center">
                                             <div class="card cbg text-size-larger py-3 px-3 align-items-center text-center">
-                                                <?=date('d', strtotime($event['date']))?>
+                                                <?=$datedd->format(strtotime($event['date']))?>
                                                 <br>
-                                                <?=date('M', strtotime($event['date']))?>
+                                                <?=$dateMMM->format(strtotime($event['date']))?>
                                             </div>
                                         </div>
                                         <div class="col-9 d-flex justify-content-start align-items-center">

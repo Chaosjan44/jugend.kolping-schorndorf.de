@@ -7,7 +7,7 @@ if (!isset($user)) {
     exit;
 }
 
-$stmt = $pdo->prepare('SELECT * FROM events ORDER BY created_at desc');
+$stmt = $pdo->prepare('SELECT * FROM events ORDER BY date asc');
 $stmt->execute();
 $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -404,9 +404,9 @@ require_once("templates/header.php");
                                 <div class="card cbg text-size-larger py-3 px-3 align-items-center text-center">
                                     <div>
                                         <span>
-                                            <?=date('d', strtotime($event['date']))?>
+                                            <?=$datedd->format(strtotime($event['date']))?>
                                             <br>
-                                            <?=date('M', strtotime($event['date']))?>
+                                            <?=$dateMMM->format(strtotime($event['date']))?>
                                         </span>
                                     </div> 
                                 </div>

@@ -34,9 +34,9 @@ require("templates/header.php");
                 <div class="row g-0">
                     <div class="col">
                         <div class="card cbg text-size-larger py-3 px-3 align-items-center text-center">
-                            <?=date('d', strtotime($event[0]['date']))?>
+                            <?=$datedd->format(strtotime($event[0]['date']))?>
                             <br>
-                            <?=date('M', strtotime($event[0]['date']))?>
+                            <?=$dateMMM->format(strtotime($event[0]['date']))?>
                         </div>
                     </div>
                     <div class="col-md-10 d-flex justify-content-start align-items-center">
