@@ -62,7 +62,7 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <div class="row ctext">
             <h1 class="display-4 text-center">Kolpingjugend Schorndorf</h1>
             <span class="text-center text-size-larger">
-                Die Kolpingjugend Schorndorf ist eine Jugendgruppe der <a href="https://kolping-schorndorf.de/" class="text-size-large link">Kolpingsfamilie Schorndorf</a>.<br>
+                Die Kolpingjugend Schorndorf ist eine Jugendgruppe der <a href="https://kolping-schorndorf.de/" target="_blank" class="text-size-large link">Kolpingsfamilie Schorndorf</a>.<br>
                 Wir treffen uns jeden 2. Samstag zu Gruppenstunden.<br>
                 Wenn du zwischen 11 und 25 Jahre alt bist und Lust hast auch zu unserer Gruppenstunde zu kommen, melde dich gerne bei uns unter:<br>
                 E-Mail: <a href="mailto:jugend@kolping-schorndorf.de" class="text-size-large link">jugend@kolping-schorndorf.de</a><br>
@@ -140,7 +140,7 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <h1 class="display-4 text-center">Kolpingjugend Schorndorf</h1>
             <span class="text-center text-size-larger">
                 Die Kolpingjugend Schorndorf ist eine Jugendgruppe der<br>
-                <a href="https://kolping-schorndorf.de/" class="text-size-large link">Kolpingsfamilie Schorndorf</a>.<br>
+                <a href="https://kolping-schorndorf.de/" target="_blank" class="text-size-large link">Kolpingsfamilie Schorndorf</a>.<br>
                 Wir treffen uns jeden 2. Samstag zu Gruppenstunden.<br>
                 Wenn du zwischen 11 und 25 Jahren alt bist und Lust hast auch zu unserer Gruppenstunde zu kommen, melde dich gerne bei uns unter:<br>
                 E-Mail: <a href="mailto:jugend@kolping-schorndorf.de" class="text-size-large link">jugend@kolping-schorndorf.de</a><br>
