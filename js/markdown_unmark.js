@@ -76,7 +76,7 @@ function unMark(input) {
             var after = string.substring(
                 string.lastIndexOf(')') +1
             );
-            string = before + '<a class="link" href="' + link + '">' + title + "</a>" + after
+            string = before + '<a class="link" target="_blank" href="' + link + '">' + title + "</a>" + after
             inputArray[i] = string;
         }
         // Heading
