@@ -51,11 +51,11 @@ require("templates/header.php");
         <script>unMarkToSpan("text-<?=$event[0]["events_id"]?>")</script>
     </div>
     <div class="row justify-content-between pt-3">
-        <div class="col d-flex justify-content-start text-start ctext text-size-large <?php if (!isMobile()) print("ps-0");?>">
-            <?=$creator[0]['vorname']?> <?=$creator[0]['nachname']?>
+        <div class="col ctext text-size-large <?php if (!isMobile()) print("ps-0");?>">
+            Author*in:<?php if (isMobile()) print("<br>");?> <?=$creator[0]['vorname']?> <?=$creator[0]['nachname']?>
         </div>
-        <div class="col d-flex justify-content-end text-end ctext text-size-large">
-            <?=date('d.m.Y H:i', strtotime($event[0]['created_at']))?>
+        <div class="col text-end ctext text-size-large">
+            Letzte Änderung:<?php if (isMobile()) print("<br>");?> <?=date('d.m.Y H:i', strtotime($event[0]['updated_at']))?>
         </div>
     </div>
 </div>

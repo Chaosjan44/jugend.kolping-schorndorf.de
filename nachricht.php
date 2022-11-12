@@ -33,7 +33,7 @@ require("templates/header.php");
     <div class="row">
         <h1 class="display-4 text-center mb-3 text-kolping-orange"><?=$entry[0]["name"]?></h1>
     </div>
-    <div class="clearfix">
+    <div class="clearfix p-2">
         <div class="col-md-6 float-md-end mb-3 ms-md-3">
             <div class="card py-3 px-3 cbg2 d-flex justify-content-center">
                 <div>
@@ -70,14 +70,14 @@ require("templates/header.php");
                 </div>
             </div>
         </div>
-        <span id="text-<?=$entry['blog_entrys_id']?>"><?=$entry[0]["text"]?></span>
-        <script>unMarkToSpan("text-<?=$entry['blog_entrys_id']?>")</script>
+        <span id="text-<?=$entry[0]['blog_entrys_id']?>"><?=$entry[0]["text"]?></span>
+        <script>unMarkToSpan("text-<?=$entry[0]['blog_entrys_id']?>")</script>
         <div class="row justify-content-between pt-3">
             <div class="col ctext text-size-large <?php if (!isMobile()) print("ps-0");?>">
-                <?=$creator[0]['vorname']?> <?=$creator[0]['nachname']?>
+                Author*in:<?php if (isMobile()) print("<br>");?> <?=$creator[0]['vorname']?> <?=$creator[0]['nachname']?>
             </div>
             <div class="col text-end ctext text-size-large">
-                <?=date('d.m.Y H:i', strtotime($entry[0]['created_at']))?>
+                Letzte Änderung:<?php if (isMobile()) print("<br>");?> <?=date('d.m.Y H:i', strtotime($entry[0]['updated_at']))?>
             </div>
         </div>
     </div>
