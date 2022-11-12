@@ -1,7 +1,7 @@
 <?php 
 $crdate = "2022";
 ?>
-
+</body>
 <?php if (!isMobile()): ?>
     <footer class="container-fluid cbg2 footer py-3">
         <div class="container">
@@ -113,5 +113,5 @@ $crdate = "2022";
 <?php endif; ?>
 
 <script src="/js/custom.js"></script>
-</body>
+
 </html>
