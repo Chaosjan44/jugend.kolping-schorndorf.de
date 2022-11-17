@@ -1,5 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@100;200;300;400;500;600;700;800;900&display=swap');
+/* ubuntu-300 - latin */
+@font-face {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 300;
+    src: url('fonts/ubuntu-v20-latin-300.eot'); /* IE9 Compat Modes */
+    src: local(''),
+         url('fonts/ubuntu-v20-latin-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('fonts/ubuntu-v20-latin-300.woff2') format('woff2'), /* Super Modern Browsers */
+         url('fonts/ubuntu-v20-latin-300.woff') format('woff'), /* Modern Browsers */
+         url('fonts/ubuntu-v20-latin-300.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('fonts/ubuntu-v20-latin-300.svg#Ubuntu') format('svg'); /* Legacy iOS */
+}
+/* ubuntu-regular - latin */
+@font-face {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 400;
+    src: url('fonts/ubuntu-v20-latin-regular.eot'); /* IE9 Compat Modes */
+    src: local(''),
+            url('fonts/ubuntu-v20-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+            url('fonts/ubuntu-v20-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+            url('fonts/ubuntu-v20-latin-regular.woff') format('woff'), /* Modern Browsers */
+            url('fonts/ubuntu-v20-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+            url('fonts/ubuntu-v20-latin-regular.svg#Ubuntu') format('svg'); /* Legacy iOS */
+}
 
 /* remove scrollbar */
 ::-webkit-scrollbar {
