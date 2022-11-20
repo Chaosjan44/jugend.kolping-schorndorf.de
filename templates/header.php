@@ -51,7 +51,7 @@ session_start();
                     <li class="nav-item text-size-x-large">
                         <a class="nav-link clink clink" href="/wir.php">Wir</a>
                     </li>
-                    <li class="nav-item text-size-x-large <?php if (!isMobile()) print("ps-2 pt-2");?>">
+                    <li class="nav-item text-size-x-large <?php if (!isMobile()) print("p-2"); else print("pb-2");?>">
                         <a href="https://kolping-schorndorf.de" target="_blank">
                             <img src="/images/KolpingK.jpg" class="navbar-icon_light_k" alt="Navbar Logo">
                             <img src="/images/KolpingK_dark.png" class="navbar-icon_dark_k" alt="Navbar Logo">
