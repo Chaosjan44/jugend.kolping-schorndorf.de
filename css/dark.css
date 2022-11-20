@@ -27,6 +27,16 @@ button {
     width: 50px;
 }
 
+.navbar-icon_light_k {
+    display: none;
+    height: 20px;
+}
+
+.navbar-icon_dark_k {
+    display: inline-block;
+    height: 20px;
+}
+
 .footer {
     background-color: #212529;
 }
