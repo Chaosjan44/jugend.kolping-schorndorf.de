@@ -34,9 +34,8 @@ session_start();
     <nav class="navbar navbar-expand-lg cbg ctext">
         <div class="container-fluid">
             <a class="navbar-brand" href="/">
-                <img src="/favicon.svg" class="navbar-icon_light align-text-bottom pe-2" alt="Navbar Logo">
-                <img src="/favicon_dark.svg" class="navbar-icon_dark align-text-bottom pe-2" alt="Navbar Logo">
-                    <span class="d-inline-block">Kolpingjugend<br>Schorndorf</span>
+                <img src="/images/Kolpingjugend_light.svg" class="navbar-icon_light align-text-bottom pe-2" alt="Navbar Logo">
+                <img src="/images/Kolpingjugend_dark.svg" class="navbar-icon_dark align-text-bottom pe-2" alt="Navbar Logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -52,7 +51,7 @@ session_start();
                     <li class="nav-item text-size-x-large">
                         <a class="nav-link clink clink" href="/wir.php">Wir</a>
                     </li>
-                    <li class="nav-item text-size-x-large <?php if (!isMobile()) print("ps-2 pt-1");?>">
+                    <li class="nav-item text-size-x-large <?php if (!isMobile()) print("ps-2 pt-2");?>">
                         <a href="https://kolping-schorndorf.de" target="_blank">
                             <img src="/images/KolpingK.jpg" class="navbar-icon_light_k align-text-bottom pe-2" alt="Navbar Logo">
                             <img src="/images/KolpingK_dark.png" class="navbar-icon_dark_k align-text-bottom pe-2" alt="Navbar Logo">
