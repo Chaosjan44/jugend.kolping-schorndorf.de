@@ -28,8 +28,8 @@ if (isset($_POST['action'])) {
                 $stmt->bindValue(4, $vorname);
                 $stmt->bindValue(5, (isset($_POST['perm_login']) ? "1" : "0"), PDO::PARAM_INT);
                 $stmt->bindValue(6, (isset($_POST['perm_admin']) ? "1" : "0"), PDO::PARAM_INT);
-                $stmt->bindValue(7, (isset($_POST['perm_login']) ? "1" : "0"), PDO::PARAM_INT);
-                $stmt->bindValue(8, (isset($_POST['perm_admin']) ? "1" : "0"), PDO::PARAM_INT);
+                $stmt->bindValue(7, (isset($_POST['perm_event']) ? "1" : "0"), PDO::PARAM_INT);
+                $stmt->bindValue(8, (isset($_POST['perm_blog']) ? "1" : "0"), PDO::PARAM_INT);
                 $result = $stmt->execute();
                 if (!$result) {
                     error_log("Error while registering user");
