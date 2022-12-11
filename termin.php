@@ -52,7 +52,7 @@ require("templates/header.php");
     </div>
     <div class="row justify-content-between pt-3">
         <div class="col ctext text-size-large <?php if (!isMobile()) print("ps-0");?>">
-            Author*in:<?php if (isMobile()) print("<br>");?> <?=$creator[0]['vorname']?> <?=$creator[0]['nachname']?>
+            Autor*in:<?php if (isMobile()) print("<br>");?> <?=$creator[0]['vorname']?> <?=$creator[0]['nachname']?>
         </div>
         <div class="col text-end ctext text-size-large">
             Letzte Änderung:<?php if (isMobile()) print("<br>");?> <?=date('d.m.Y H:i', strtotime($event[0]['updated_at']))?>
