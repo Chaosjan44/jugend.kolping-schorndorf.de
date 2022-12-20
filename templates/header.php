@@ -19,7 +19,7 @@ session_start();
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
     <!-- remember to remove "defer" incase I want stuff opening the second the page loads -->
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <script defer data-domain="jugend.kolping-schorndorf.de" src="https://plausible.schniebs.com/js/plausible.js"></script>
+    <script defer data-domain="jugend.kolping-schorndorf.de" src="https://plausible.schniebs.dev/js/script.js"></script>
     <link rel="stylesheet" href="/css/styles.css">          <!-- Link Stylesheet -->
     <link rel="stylesheet" href="/css/dark.css" disabled>   <!-- Link Dark Stylesheet and disable it -->
     <link rel="stylesheet" href="/css/light.css" disabled>  <!-- Link Light Stylesheet and disable it -->
