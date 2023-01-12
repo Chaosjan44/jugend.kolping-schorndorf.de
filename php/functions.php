@@ -14,6 +14,9 @@ function check_user() {
 		}
 		$securitytoken_row = $stmt->fetch();
 		if(sha1($securitytoken) !== $securitytoken_row['securitytoken']) {
+			setcookie("identifier","del",time()-(3600*12),'/'); // valid for -12 hours
+			setcookie("securitytoken","del",time()-(3600*12),'/'); // valid for -12 hours
+			header("Refresh:0");
 			exit;
 		} else { //Token war korrekt
 			//Setze neuen Token
