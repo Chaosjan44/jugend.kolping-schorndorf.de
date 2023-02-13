@@ -81,7 +81,7 @@ if (isset($_POST['action'])) {
         require_once("templates/header.php"); 
         ?>
         <script>
-            let blocker = true;
+            blocker = true;
         </script>
         <div class="container-xxl py-3" style="min-height: 80vh;">
             <script src="/js/markdown_mark.js"></script>
@@ -162,7 +162,7 @@ if (isset($_POST['action'])) {
                         </div>
                     </div>
                     <div class="col p-2 rounded">
-                        <textarea class="form-control cbg ctext" name="textinput" id="textinput" rows="10"><?=$event[0]["text"]?></textarea>
+                        <textarea class="form-control cbg ctext" name="textinput" id="textinput" rows="10" placeholder="Text"><?=$event[0]["text"]?></textarea>
                     </div>
                 </form>
             </div>

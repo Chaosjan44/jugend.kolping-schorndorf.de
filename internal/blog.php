@@ -207,7 +207,7 @@ if (isset($_POST['action'])) {
         require_once("templates/header.php"); 
         ?>
         <script>
-            let blocker = true;
+            blocker = true;
         </script>
         <div class="container-xxl py-3" style="min-height: 80vh;">
             <script src='/js/md5.js'></script>
@@ -281,10 +281,10 @@ if (isset($_POST['action'])) {
                         </div>
                     <?php endif; ?>
                     <div class="col p-2 rounded">
-                        <textarea class="form-control cbg ctext" name="previnput" id="precinput" rows="3"><?=$entry[0]["prev_text"]?></textarea>
+                        <textarea class="form-control cbg ctext" name="previnput" id="precinput" rows="3" placeholder="Vorschau Text"><?=$entry[0]["prev_text"];?></textarea>
                     </div>
                     <div class="col p-2 rounded">
-                        <textarea class="form-control cbg ctext" name="textinput" id="textinput" rows="10"><?=$entry[0]["text"]?></textarea>
+                        <textarea class="form-control cbg ctext" name="textinput" id="textinput" rows="10" placeholder="Text"><?=$entry[0]["text"]?></textarea>
                     </div>
                     <div class="col p-2 rounded d-flex">
                         <div class="input-group cbg ctext">
