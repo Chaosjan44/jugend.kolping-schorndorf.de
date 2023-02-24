@@ -204,7 +204,14 @@ if (isset($_POST['action'])) {
         $stmt->bindValue(1, $entry[0]['blog_entrys_id'], PDO::PARAM_INT);
         $stmt->execute();
         $images = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        ob_start();
         require_once("templates/header.php"); 
+        $buffer=ob_get_contents();
+        ob_end_clean();
+
+        $title = "ADMIN - Kolpingjugend Schorndorf";
+        $buffer = preg_replace('/(<title>)(.*?)(<\/title>)/i', '$1' . $title . '$3', $buffer);
+        echo $buffer;
         ?>
         <script>
             blocker = true;
@@ -390,7 +397,14 @@ if (isset($_POST['action'])) {
         exit;
     }
     if ($_POST['action'] == 'add') {
+        ob_start();
         require_once("templates/header.php"); 
+        $buffer=ob_get_contents();
+        ob_end_clean();
+
+        $title = "ADMIN - Kolpingjugend Schorndorf";
+        $buffer = preg_replace('/(<title>)(.*?)(<\/title>)/i', '$1' . $title . '$3', $buffer);
+        echo $buffer;
         if ($user['perm_blog'] != 1) {
             error('Unzureichende Berechtigungen!');
         }
@@ -546,7 +560,14 @@ if (isset($_POST['action'])) {
     }
 
     if ($_POST['action'] == 'del') {
+        ob_start();
         require_once("templates/header.php"); 
+        $buffer=ob_get_contents();
+        ob_end_clean();
+
+        $title = "ADMIN - Kolpingjugend Schorndorf";
+        $buffer = preg_replace('/(<title>)(.*?)(<\/title>)/i', '$1' . $title . '$3', $buffer);
+        echo $buffer;
         if ($user['perm_blog'] != 1) {
             error('Unzureichende Berechtigungen!');
         }
@@ -568,7 +589,14 @@ if (isset($_POST['action'])) {
     }
 }
 
+ob_start();
 require_once("templates/header.php"); 
+$buffer=ob_get_contents();
+ob_end_clean();
+
+$title = "ADMIN - Kolpingjugend Schorndorf";
+$buffer = preg_replace('/(<title>)(.*?)(<\/title>)/i', '$1' . $title . '$3', $buffer);
+echo $buffer; 
 ?>
 <div class="container py-3">
     <div style="min-height: 80vh;">

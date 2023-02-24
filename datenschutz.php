@@ -1,4 +1,13 @@
-<?php require_once("templates/header.php"); ?>
+<?php 
+ob_start();
+require_once("templates/header.php"); 
+$buffer=ob_get_contents();
+ob_end_clean();
+
+$title = "Kolpingjugend Schorndorf - Datenschutz auf unserer Webseite";
+$buffer = preg_replace('/(<title>)(.*?)(<\/title>)/i', '$1' . $title . '$3', $buffer);
+echo $buffer;
+?>
 <div class="container py-3">
     <div>
         <h1 class="display-3 text-center text-kolping-orange">Datenschutzerklärung</h1>

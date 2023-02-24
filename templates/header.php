@@ -12,7 +12,7 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Webseite der Kolpingjugend Schorndorf">
+    <meta name="description" content="Homepage der Kolpingjugend Schorndorf. Hier veröffentlichen wir unsere Termine und immer wieder aktuelle Nachrichten der Kolpingjugend Schorndorf">
     <meta name="author" content="Developed by Jan">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <script defer src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
@@ -26,6 +26,7 @@ session_start();
     <script src="/js/custom.js"></script>
     <script src="/js/markdown_unmark.js"></script>
     <link rel="icon" type="image/png" href="/favicon.png" sizes="1024x1024" />
+    <link rel="apple-touch-icon" href="/favicon.png"/>
     <title>Kolpingjugend Schorndorf</title>
 </head>
 

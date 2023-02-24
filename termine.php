@@ -1,4 +1,12 @@
-<?php require_once("templates/header.php"); 
+<?php 
+ob_start();
+require_once("templates/header.php"); 
+$buffer=ob_get_contents();
+ob_end_clean();
+
+$title = "Kolpingjugend Schorndorf - Termine der Kolpingjugend";
+$buffer = preg_replace('/(<title>)(.*?)(<\/title>)/i', '$1' . $title . '$3', $buffer);
+echo $buffer;
 
 $stmt = $pdo->prepare('SELECT * FROM events WHERE visible = 1 AND date > DATE_SUB(NOW(), INTERVAL 1 DAY) ORDER BY date asc');
 $stmt->execute();

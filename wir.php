@@ -1,6 +1,14 @@
 <?php 
 chdir ($_SERVER['DOCUMENT_ROOT']);
-require_once("templates/header.php"); ?>
+ob_start();
+require_once("templates/header.php"); 
+$buffer=ob_get_contents();
+ob_end_clean();
+
+$title = "Kolpingjugend Schorndorf - Wir sind die Kolpingjugend Schorndorf";
+$buffer = preg_replace('/(<title>)(.*?)(<\/title>)/i', '$1' . $title . '$3', $buffer);
+echo $buffer;
+?>
 <div class="container py-3">
     <div style="min-height: 80vh;">
         <h1 class="display-3 text-center mb-3 text-kolping-orange">Wir</h1>

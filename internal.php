@@ -5,7 +5,15 @@ if ($user == false) {
     print("<script>location.href='login.php'</script>");
 }
 // error_log(print_r($user,true));
-require_once("templates/header.php"); ?>
+ob_start();
+require_once("templates/header.php"); 
+$buffer=ob_get_contents();
+ob_end_clean();
+
+$title = "ADMIN - Kolpingjugend Schorndorf";
+$buffer = preg_replace('/(<title>)(.*?)(<\/title>)/i', '$1' . $title . '$3', $buffer);
+echo $buffer;
+?>
 
 <div class="container py-3">
     <div style="min-height: 80vh;">

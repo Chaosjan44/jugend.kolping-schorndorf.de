@@ -41,7 +41,14 @@ if(isset($_POST['action'])) {
         exit;
     }
 }
+ob_start();
 require_once("templates/header.php"); 
+$buffer=ob_get_contents();
+ob_end_clean();
+
+$title = "ADMIN - Kolpingjugend Schorndorf";
+$buffer = preg_replace('/(<title>)(.*?)(<\/title>)/i', '$1' . $title . '$3', $buffer);
+echo $buffer;
 ?>
 <div class="px-3 py-3" style="min-height: 80vh;">
     <h1>Einstellungen</h1>

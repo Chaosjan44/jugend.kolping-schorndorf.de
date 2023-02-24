@@ -1,4 +1,14 @@
-<?php require_once("templates/header.php"); 
+<?php 
+ob_start();
+require_once("templates/header.php"); 
+$buffer=ob_get_contents();
+ob_end_clean();
+
+$title = "Kolpingjugend Schorndorf - Termine und Nachrichten";
+$buffer = preg_replace('/(<title>)(.*?)(<\/title>)/i', '$1' . $title . '$3', $buffer);
+echo $buffer;
+
+
 $stmt = $pdo->prepare('SELECT * ,(SELECT source From blog_images WHERE blog_images.blog_entrys_id=blog_entrys.blog_entrys_id AND prev_img=1) AS source,(SELECT alt From blog_images WHERE blog_images.blog_entrys_id=blog_entrys.blog_entrys_id AND prev_img=1) AS alt FROM blog_entrys where visible = 1 ORDER BY created_at desc LIMIT 6;');
 $stmt->execute();
 $blogentrys = $stmt->fetchAll(PDO::FETCH_ASSOC);

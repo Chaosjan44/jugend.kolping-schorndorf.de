@@ -22,7 +22,14 @@ $stmt->bindValue(1, $event[0]['created_by'], PDO::PARAM_INT);
 $stmt->execute();
 $creator = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-require("templates/header.php");
+ob_start();
+require_once("templates/header.php"); 
+$buffer=ob_get_contents();
+ob_end_clean();
+
+$title = "Kolpingjugend Schorndorf - ".$event[0]["title"];
+$buffer = preg_replace('/(<title>)(.*?)(<\/title>)/i', '$1' . $title . '$3', $buffer);
+echo $buffer;
 ?>
 <div class="container-xxl py-3" style="min-height: 80vh;">
     <div class="row">

@@ -100,7 +100,14 @@ if(isset($_POST['action'])) {
             echo("<script>location.href='user.php'</script>");
             exit;
         } else {
-        require_once("templates/header.php");
+            ob_start();
+            require_once("templates/header.php"); 
+            $buffer=ob_get_contents();
+            ob_end_clean();
+    
+            $title = "ADMIN - Kolpingjugend Schorndorf";
+            $buffer = preg_replace('/(<title>)(.*?)(<\/title>)/i', '$1' . $title . '$3', $buffer);
+            echo $buffer;
         ?>
         <!-- Formular zur Bearbeitung des Users anzeigen -->
         <div class="px-3 py-3" style="min-height: 80vh;">
@@ -177,7 +184,14 @@ if(isset($_POST['action'])) {
         exit;
     }
 }
+ob_start();
 require_once("templates/header.php"); 
+$buffer=ob_get_contents();
+ob_end_clean();
+
+$title = "ADMIN - Kolpingjugend Schorndorf";
+$buffer = preg_replace('/(<title>)(.*?)(<\/title>)/i', '$1' . $title . '$3', $buffer);
+echo $buffer;
 ?>
 <div class="container users content-wrapper py-3 px-3" style="min-height: 80vh;">
     <div class="row">
