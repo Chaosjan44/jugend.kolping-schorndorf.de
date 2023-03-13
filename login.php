@@ -10,46 +10,46 @@ if (isset($_POST['action'])) {
 
             $stmt = $pdo->prepare("SELECT * FROM users WHERE UPPER(login) = UPPER(?)");
             $stmt->bindValue(1, $username);
-            $result = $stmt->execute();
-            if (!$result) {
-                error_log("Error #1 while user login");
-                exit;
-            }
-            $user = $stmt->fetch();
-            if ($user['perm_login'] == "1") {
-                //Überprüfung des Passworts
-                if ($user !== false && password_verify($passwort, $user['password'])) {
-                    $_SESSION['userid'] = $user['user_id'];
-                    //Möchte der Nutzer angemeldet beleiben?
-                    if (check_cookie()) {
-                        if(isset($_POST['angemeldet_bleiben'])) {
-                            $identifier = md5(uniqid());
-                            $securitytoken = md5(uniqid());
-                            
-                            $stmt = $pdo->prepare("INSERT INTO securitytokens (user_id, identifier, securitytoken) VALUES (?, ?, ?)");
-                            $stmt->bindValue(1, $user['user_id'], PDO::PARAM_INT);
-                            $stmt->bindValue(2, $identifier);
-                            $stmt->bindValue(3, sha1($securitytoken));
-                            $result = $stmt->execute();
-                            if (!$result) {
-                                error_log("Error #2 while user login");
-                                exit;
+            $stmt->execute();
+            if ($stmt->rowCount() == 1) {
+                $user = $stmt->fetch();
+                if ($user['perm_login'] == "1") {
+                    //Überprüfung des Passworts
+                    if ($user !== false && password_verify($passwort, $user['password'])) {
+                        $_SESSION['userid'] = $user['user_id'];
+                        //Möchte der Nutzer angemeldet beleiben?
+                        if (check_cookie()) {
+                            if(isset($_POST['angemeldet_bleiben'])) {
+                                $identifier = md5(uniqid());
+                                $securitytoken = md5(uniqid());
+                                
+                                $stmt = $pdo->prepare("INSERT INTO securitytokens (user_id, identifier, securitytoken) VALUES (?, ?, ?)");
+                                $stmt->bindValue(1, $user['user_id'], PDO::PARAM_INT);
+                                $stmt->bindValue(2, $identifier);
+                                $stmt->bindValue(3, sha1($securitytoken));
+                                $result = $stmt->execute();
+                                if (!$result) {
+                                    error_log("Error #2 while user login");
+                                    exit;
+                                }
+                                setcookie("identifier",$identifier,time()+(3600*24*365)); //Valid for 1 year
+                                setcookie("securitytoken",$securitytoken,time()+(3600*24*365)); //Valid for 1 year
                             }
-                            setcookie("identifier",$identifier,time()+(3600*24*365)); //Valid for 1 year
-                            setcookie("securitytoken",$securitytoken,time()+(3600*24*365)); //Valid for 1 year
+                            $error_msg = "<span class='text-success'>Anmeldung Erfolgreich!<br><br></span>";
+                            echo("<script>location.href='internal.php'</script>");
+                            exit;
+                        } else {
+                            $error_msg = "<span class='text-danger'>für die Anmeldung müssen Cookies aktiv sein!<br><br></span>";
+                            exit;
                         }
-                        $error_msg = "<span class='text-success'>Anmeldung Erfolgreich!<br><br></span>";
-                        echo("<script>location.href='internal.php'</script>");
-                        exit;
                     } else {
-                        $error_msg = "<span class='text-danger'>für die Anmeldung müssen Cookies aktiv sein!<br><br></span>";
-                        exit;
+                        $error_msg = "<span class='text-danger'>Nutzername oder Passwort war ungültig!<br><br></span>";
                     }
                 } else {
-                    $error_msg = "<span class='text-danger'>Nutzername oder Passwort war ungültig!<br><br></span>";
+                    $error_msg = "<span class='text-danger'>Diese*r Nutzer*in darf sich nicht anmelden!<br><br></span>";
                 }
             } else {
-                $error_msg = "<span class='text-danger'>Diese*r Nutzer*in darf sich nicht anmelden!<br><br></span>";
+                $error_msg = "<span class='text-danger'>Diese*r Nutzer*in Existiert nicht!<br><br></span>";
             }
         }
     }
