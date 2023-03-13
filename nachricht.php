@@ -68,7 +68,7 @@ echo $buffer;
                                         </div>
                                     </div>
                                     <div class="modal-footer cbg justify-content-center">
-                                        <span class="ctext"><?=$image['alt']?><?php if (!isMobile()) print(" | "); else print("<br>");?>Quelle: <?=$image['owner']?></span>
+                                        <span class="ctext"><?=$image['alt']?><?php if ($image['owner'] != ""): ?><?php if (!isMobile()) print(" | "); else print("<br>");?>Quelle: <?=$image['owner']?><?php endif; ?></span>
                                     </div>
                                 </div>
                             </div>
