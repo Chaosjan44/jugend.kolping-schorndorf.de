@@ -21,21 +21,21 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <div class="mb-3">
         <div id="carouselExampleFade" class="carousel <?php if (check_style() == "dark") { print("carousel-dark "); }?>slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner">
-                <!-- <div class="carousel-item active">
+                <div class="carousel-item active">
                     <picture data-bs-interval="5000">
                         <source type="image/webp" srcset="/media/indexpic1<?php #if (isMobile()) {print("_mobile");}?>.webp" class="d-block w-100 index-img">
                         <source type="image/jpeg" srcset="/media/indexpic1<?php #if (isMobile()) {print("_mobile");}?>.jpg" class="d-block w-100 index-img">
                         <img src="/media/indexpic1<?php #if (isMobile()) {print("_mobile");}?>.jpg" class="d-block w-100 index-img" alt="Vorschaubild">
                     </picture>
                 </div>
-                <div class="carousel-item">
+                <!-- <div class="carousel-item">
                     <picture data-bs-interval="5000">
                         <source type="image/webp" srcset="/media/indexpic2<?php #if (isMobile()) {print("_mobile");}?>.webp" class="d-block w-100 index-img">
                         <source type="image/jpeg" srcset="/media/indexpic2<?php #if (isMobile()) {print("_mobile");}?>.jpg" class="d-block w-100 index-img">
                         <img src="/media/indexpic2<?php #if (isMobile()) {print("_mobile");}?>.jpg" class="d-block w-100 index-img" alt="Vorschaubild">
                     </picture>
                 </div> -->
-                <div class="carousel-item active">
+                <div class="carousel-item">
                     <picture data-bs-interval="5000">
                         <source type="image/webp" srcset="/media/indexpic3<?php if (isMobile()) {print("_mobile");}?>.webp" class="d-block w-100 index-img">
                         <source type="image/jpeg" srcset="/media/indexpic3<?php if (isMobile()) {print("_mobile");}?>.jpg" class="d-block w-100 index-img">
