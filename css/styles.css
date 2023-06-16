@@ -306,3 +306,7 @@ ul {
     border-color: #ef8400 !important;
     box-shadow: 0 0 0 .25rem rgba(255, 140, 0, .75) !important;
 }
+
+.form-control:focus {
+    box-shadow: 0 0 0 0.25rem rgba(255, 140, 0, .75) !important;
+}
