@@ -15,6 +15,12 @@ button {
     color: #ffffff !important;
 }
 
+.img-thumbnail {
+    border: 0 !important;
+    padding: 0 !important;
+    box-shadow: 5px 5px 15px 1px rgba(0, 0, 0, 0.495);
+}
+
 .navbar-icon_light {
     display: inline-block;
     height: 70px;

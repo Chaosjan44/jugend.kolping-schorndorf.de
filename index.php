@@ -90,7 +90,7 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                     <div class="card cbg2 py-3 px-3 shadow1">
                                         <div class="row g-0">
                                             <div class="col-md-2 d-flex justify-content-start align-items-center">
-                                                <div class="card cbg text-size-larger py-3 px-3 align-items-center text-center">
+                                                <div class="card ctext cbg text-size-larger py-3 px-3 align-items-center text-center">
                                                     <?=$datedd->format(strtotime($event['date']))?>
                                                     <br>
                                                     <?=$dateMMM->format(strtotime($event['date']))?>
@@ -168,7 +168,7 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 <div class="col mb-3 card cbg2 py-3 px-3 shadow1"> 
                                     <div class="row g-0 row-cols-2">
                                         <div class="col-3 d-flex justify-content-start align-items-center">
-                                            <div class="card cbg text-size-larger py-3 px-3 align-items-center text-center">
+                                            <div class="card cbg ctext text-size-larger py-3 px-3 align-items-center text-center">
                                                 <?=$datedd->format(strtotime($event['date']))?>
                                                 <br>
                                                 <?=$dateMMM->format(strtotime($event['date']))?>

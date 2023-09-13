@@ -40,7 +40,7 @@ echo $buffer;
             <div class="card cbg2 py-3 px-3">
                 <div class="row g-0">
                     <div class="col">
-                        <div class="card cbg text-size-larger py-3 px-3 align-items-center text-center">
+                        <div class="card cbg ctext text-size-larger py-3 px-3 align-items-center text-center">
                             <?=$datedd->format(strtotime($event[0]['date']))?>
                             <br>
                             <?=$dateMMM->format(strtotime($event[0]['date']))?>

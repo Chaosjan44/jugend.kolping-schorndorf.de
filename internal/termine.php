@@ -429,7 +429,7 @@ echo $buffer;
                         <div class="card-body ctext">
                             <h3 class="card-title text-center"><?=$event['title']?></h3>
                             <div class="col-md-2 mx-auto">
-                                <div class="card cbg text-size-larger py-3 px-3 align-items-center text-center">
+                                <div class="card cbg ctext text-size-larger py-3 px-3 align-items-center text-center">
                                     <div>
                                         <span>
                                             <?=$datedd->format(strtotime($event['date']))?>
