@@ -1,1 +1,6 @@
 hidden/config.ini
+blog_imgs/*
+fest_food_imgs/*
+
+!fest_food_imgs/.gitkeep 
+!blog_imgs/.gitkeep
