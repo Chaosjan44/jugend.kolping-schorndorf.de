@@ -31,6 +31,9 @@ echo $buffer;
                         <?php if ($user['perm_event'] == "1"): ?>
                             <button class="btn btn-kolping mx-1 my-2" type="button" onclick="window.location.href = '/internal/termine.php';">Termine</button>
                         <?php endif; ?>
+                        <?php if ($user['perm_fest'] == "1"): ?>
+                            <button class="btn btn-kolping mx-1 my-2" type="button" onclick="window.location.href = '/internal/fest.php';">Fest-Verwaltung</button>
+                        <?php endif; ?>
                         <button class="btn btn-kolping mx-1 my-2" type="button" onclick="window.open('https://daten.kolping-schorndorf.de','_blank')">Nextcloud</button>
                         <button class="btn btn-kolping mx-1 my-2" type="button" onclick="window.location.href = '/internal/settings.php';">Einstellungen</button>
                         <button class="btn btn-kolping mx-1 my-2" type="button" onclick="window.location.href = '/internal/logout.php';">Abmelden</button>
@@ -47,6 +50,9 @@ echo $buffer;
                     <?php if ($user['perm_event'] == "1"): ?>
                         <button class="btn btn-kolping mx-1 my-2" type="button" onclick="window.location.href = '/internal/termine.php';">Termine</button>
                     <?php endif; ?>
+                    <?php if ($user['perm_fest'] == "1"): ?>
+                            <button class="btn btn-kolping mx-1 my-2" type="button" onclick="window.location.href = '/internal/fest.php';">Fest-Verwaltung</button>
+                        <?php endif; ?>
                         <button class="btn btn-kolping mx-1 my-2" type="button" onclick="window.open('https://daten.kolping-schorndorf.de','_blank')">Nextcloud</button>
                     <div class="card-text">
                         <button class="btn btn-kolping mx-1 my-2" type="button" onclick="window.location.href = '/internal/settings.php';">Einstellungen</button>

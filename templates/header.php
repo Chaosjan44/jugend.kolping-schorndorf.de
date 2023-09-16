@@ -2,6 +2,16 @@
 require_once("php/functions.php");
 setlocale (LC_ALL, 'de_DE.UTF-8', 'de_DE@euro', 'de_DE', 'de', 'ge', 'de_DE.ISO_8859-1', 'German_Germany');
 session_start();
+
+
+$stmt = $pdo->prepare("SELECT * from fest where active = 1");
+$stmt->execute();
+$result1 = $stmt->execute();
+if (!$result1) {
+    error('Datenbank Fehler!', pdo_debugStrParams($stmt));
+}
+$header_fests = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
 ?>
 
 <!DOCTYPE html>
@@ -14,11 +24,11 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Homepage der Kolpingjugend Schorndorf. Hier veröffentlichen wir unsere Termine und immer wieder aktuelle Nachrichten der Kolpingjugend Schorndorf">
     <meta name="author" content="Developed by Jan">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <script defer src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <!-- remember to remove "defer" incase I want stuff opening the second the page loads -->
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <script defer data-domain="jugend.kolping-schorndorf.de" src="https://plausible.schniebs.dev/js/script.js"></script>
     <link rel="stylesheet" href="/css/styles.css">          <!-- Link Stylesheet -->
     <link rel="stylesheet" href="/css/dark.css" disabled>   <!-- Link Dark Stylesheet and disable it -->
@@ -52,6 +62,11 @@ session_start();
                     <li class="nav-item text-size-x-large">
                         <a class="nav-link clink clink" href="/wir.php">Wir</a>
                     </li>
+                    <?php foreach ($header_fests as $header_fest): ?>
+                        <li class="nav-item text-size-x-large">
+                            <a class="nav-link clink clink" href="/fest.php?e=<?=$header_fest['url']?>"><?=$header_fest['name']?></a>
+                        </li>
+                    <?php endforeach;?>
                     <li class="nav-item text-size-x-large <?php if (!isMobile()) print("ps-2 pe-2 pb-2"); else print("pb-2");?>">
                         <a href="https://kolping-schorndorf.de" target="_blank">
                             <img src="/images/KolpingK.jpg" class="navbar-icon_light_k" alt="Navbar Logo">
