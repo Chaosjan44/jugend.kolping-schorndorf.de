@@ -92,7 +92,7 @@ if (isset($_POST['action'])) {
         </script>
         <div class="container-xxl py-3" style="min-height: 80vh;">
             <script src="/js/markdown_mark.js"></script>
-            <div class="row row-cols-1 m-4 p-2 cbg2 rounded">
+            <div class="row row-cols-1 m-4 p-2 cbg3 rounded">
                 <form action="termine.php" method="post" enctype="multipart/form-data">
                     <div class="col p-2 rounded">
                         <textarea class="form-control cbg ctext" name="titleinput" id="titleinput" style="max-height: 20px;"><?=$event[0]["title"]?></textarea>
@@ -248,7 +248,7 @@ if (isset($_POST['action'])) {
         </script>
         <div class="container-xxl py-3" style="min-height: 80vh;">
             <script src="/js/markdown_mark.js"></script>
-            <div class="row row-cols-1 m-4 p-2 cbg2 rounded">
+            <div class="row row-cols-1 m-4 p-2 cbg3 rounded">
                 <form action="termine.php" method="post" enctype="multipart/form-data">
                     <div class="col p-2 rounded">
                         <textarea class="form-control cbg ctext" name="titleinput" id="titleinput" placeholder="Titel" style="max-height: 20px;"></textarea>
@@ -425,7 +425,7 @@ echo $buffer;
         <div class="row row-cols-<?php if (!isMobile()) print("3"); else print("1");?> gx-3">
             <?php foreach ($events as $event): ?>
                 <div class="col p-2">
-                    <div class="card cbg2 shadow1" style="height: 100% !important;">
+                    <div class="card cbg3 shadow1" style="height: 100% !important;">
                         <div class="card-body ctext">
                             <h3 class="card-title text-center"><?=$event['title']?></h3>
                             <div class="col-md-2 mx-auto">

@@ -56,31 +56,31 @@ echo $buffer;
 <div class="container py-3" style="min-height: 80vh;">
 	<div class="row justify-content-center">
 		<div class="col">
-			<div class="card cbg2">
+			<div class="card cbg3">
                 <div class="card-body">
                     <h3 class="card-title display-3 text-center mb-4 text-kolping-orange">Registrieren</h3>
                     <div class="card-text">
                         <?=$error_msg?>
                         <form action="register.php" method="post">
                             <div class="form-floating mb-3">
-                                <input id="inputUser" type="text" name="user" placeholder="User" autofocus class="form-control border-0 ps-4 text-dark fw-bold" required>
-                                <label for="inputUser" class="text-dark fw-bold">Nutzername</label>
+                                <input id="inputUser" type="text" name="user" placeholder="User" autofocus class="form-control border-0 ps-4 fw-bold" required>
+                                <label for="inputUser" class="fw-bold">Nutzername</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input id="inputPassword" type="password" name="passwort" placeholder="Passwort" class="form-control border-0 ps-4 text-dark fw-bold" required>
-                                <label for="inputPassword" class="text-dark fw-bold">Passwort</label>
+                                <input id="inputPassword" type="password" name="passwort" placeholder="Passwort" class="form-control border-0 ps-4 fw-bold" required>
+                                <label for="inputPassword" class="fw-bold">Passwort</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input id="inputPassword2" type="password" name="passwort2" placeholder="Passwort wiederholen" class="form-control border-0 ps-4 text-dark fw-bold" required>
-                                <label for="inputPassword2" class="text-dark fw-bold">Passwort wiederholen</label>
+                                <input id="inputPassword2" type="password" name="passwort2" placeholder="Passwort wiederholen" class="form-control border-0 ps-4 fw-bold" required>
+                                <label for="inputPassword2" class="fw-bold">Passwort wiederholen</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input id="inputVorname" type="text" name="vorname" placeholder="Vorname" class="form-control border-0 ps-4 text-dark fw-bold" required>
-                                <label for="inputVorname" class="text-dark fw-bold">Vorname</label>
+                                <input id="inputVorname" type="text" name="vorname" placeholder="Vorname" class="form-control border-0 ps-4 fw-bold" required>
+                                <label for="inputVorname" class="fw-bold">Vorname</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input id="inputNachname" type="text" name="nachname" placeholder="Nachname" class="form-control border-0 ps-4 text-dark fw-bold" required>
-                                <label for="inputNachname" class="text-dark fw-bold">Nachname</label>
+                                <input id="inputNachname" type="text" name="nachname" placeholder="Nachname" class="form-control border-0 ps-4 fw-bold" required>
+                                <label for="inputNachname" class="fw-bold">Nachname</label>
                             </div>
                             <div class="col mb-3">
                                 <div class="input-group justify-content-center">

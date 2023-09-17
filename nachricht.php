@@ -42,7 +42,7 @@ echo $buffer;
     </div>
     <div class="clearfix p-2">
         <div class="col-md-6 float-md-end mb-3 ms-md-3">
-            <div class="card py-3 px-3 cbg2 d-flex justify-content-center">
+            <div class="card py-3 px-3 cbg3 d-flex justify-content-center">
                 <div>
                     <?php $i = 0; foreach ($images as $image):?>
                         <div class="py-3">

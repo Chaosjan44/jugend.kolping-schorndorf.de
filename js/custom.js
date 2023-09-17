@@ -16,12 +16,14 @@ function setStyle() {
     }
     document.querySelectorAll("link[href='/css/dark.css']")[0].disabled = false;
     document.querySelectorAll("link[href='/css/light.css']")[0].disabled = true;
+    document.getElementById("html").setAttribute("data-bs-theme", "dark");
   } else {
     if (getCookie("acceptCookies") == "true") {
       setCookie("style", "light", 365);
     }
     document.querySelectorAll("link[href='/css/dark.css']")[0].disabled = true;
     document.querySelectorAll("link[href='/css/light.css']")[0].disabled = false;
+    document.getElementById("html").setAttribute("data-bs-theme", "light");
   }
 }
 

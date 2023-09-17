@@ -219,7 +219,7 @@ if (isset($_POST['action'])) {
         <div class="container-xxl py-3" style="min-height: 80vh;">
             <script src='/js/md5.js'></script>
             <script src="/js/markdown_mark.js"></script>
-            <div class="row row-cols-1 m-4 p-2 cbg2 rounded">
+            <div class="row row-cols-1 m-4 p-2 cbg3 rounded">
                 <form action="blog.php" method="post" enctype="multipart/form-data">
                     <div class="col p-2 rounded">
                         <textarea class="form-control cbg ctext" name="titleinput" id="titleinput" style="max-height: 20px;"><?=$entry[0]["name"]?></textarea>
@@ -415,7 +415,7 @@ if (isset($_POST['action'])) {
         <div class="container-xxl py-3" style="min-height: 80vh;">
             <script src='/js/md5.js'></script>
             <script src="/js/markdown_mark.js"></script>
-            <div class="row row-cols-1 m-4 p-2 cbg2 rounded">
+            <div class="row row-cols-1 m-4 p-2 cbg3 rounded">
                 <form action="blog.php" method="post" enctype="multipart/form-data">
                     <div class="col p-2 rounded">
                         <textarea class="form-control cbg ctext" name="titleinput" id="titleinput" placeholder="Titel" style="max-height: 20px;"></textarea>
@@ -608,7 +608,7 @@ echo $buffer;
         <div class="row row-cols-<?php if (!isMobile()) print("3"); else print("1");?> gx-3">
             <?php foreach ($blogentrys as $blogentry): ?>
                 <div class="col p-2">
-                    <div class="card cbg2 shadow1" style="height: 100% !important;">
+                    <div class="card cbg3 shadow1" style="height: 100% !important;">
                         <?php if(isset($blogentry['source'])): ?>
                             <picture>
                                 <source type="image/webp" srcset="<?=$blogentry['source']?>.webp" class="card-img-top img-fluid rounded">

@@ -37,7 +37,7 @@ echo $buffer;
     </div>
     <div class="<?php if (!isMobile()) print("row");?>">
         <div class="col<?php if (!isMobile()) print("-6");?> mb-3">
-            <div class="card cbg2 py-3 px-3">
+            <div class="card cbg3 py-3 px-3">
                 <div class="row g-0">
                     <div class="col">
                         <div class="card cbg ctext text-size-larger py-3 px-3 align-items-center text-center">

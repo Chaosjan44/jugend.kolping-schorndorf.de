@@ -41,15 +41,15 @@ button {
     height: 30px;
 }
 
-.footer {
-    background-color: #212529;
-}
-
 .cbg {
     background-color: #2d3238 !important;
 }
 
 .cbg2 {
+    background-color: #3f474f !important;
+}
+
+.cbg3 {
     background-color: #212529 !important;
 }
 
