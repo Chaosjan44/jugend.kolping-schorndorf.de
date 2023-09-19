@@ -58,8 +58,8 @@ echo $buffer;
                     <h3 class="text-center ctext mb-1"><?=$fest_food_cat['cat_name']?>:</h3>
                     <?php foreach ($items as $item): ?>
                         <div class="row px-0 m-0">
-                            <a class="col-8 px-0 text-kolping-orange" data-bs-toggle="modal" data-bs-target="#itemModal<?=$item['fest_food_id']?>"><?=$item['name']?></a>
-                            <a class="col-4 text-end px-0 text-kolping-orange" data-bs-toggle="modal" data-bs-target="#itemModal<?=$item['fest_food_id']?>"><?php if ($item['liters'] != null) print($item['liters']." | ");?><?=$item['price']?> &euro;</a>
+                            <a class="col-7 px-0 text-kolping-orange" data-bs-toggle="modal" data-bs-target="#itemModal<?=$item['fest_food_id']?>"><?=$item['name']?></a>
+                            <a class="col-5 text-end px-0 text-kolping-orange" data-bs-toggle="modal" data-bs-target="#itemModal<?=$item['fest_food_id']?>"><?php if ($item['liters'] != null) print($item['liters']." | ");?><?=$item['price']?> &euro;</a>
                         </div>
                     <?php endforeach; ?>
                 </div>
