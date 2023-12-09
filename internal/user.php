@@ -128,7 +128,7 @@ if(isset($_POST['action'])) {
                                 <div class="input-group justify-content-center">
                                     <label for="perm_login" class="input-group-text">Anmelde Berechtigungen?</label>
                                     <div class="input-group-text">
-                                        <input value="remember-me" id="perm_login" type="checkbox" name="perm_login" value="1" class="form-check-input checkbox-kolping" <?php if ($user1[0]['perm_login'] == 1) print("checked");?>>
+                                        <input value="remember-me" id="perm_login" type="checkbox" name="perm_login" value="1" class="form-check-input checkbox-kolping m-0" <?php if ($user1[0]['perm_login'] == 1) print("checked");?>>
                                     </div>
                                 </div>
                             </div>
@@ -136,7 +136,7 @@ if(isset($_POST['action'])) {
                                 <div class="input-group justify-content-center">
                                     <label for="perm_admin" class="input-group-text">Admin Berechtigungen?</label>
                                     <div class="input-group-text">
-                                        <input value="remember-me" id="perm_admin" type="checkbox" name="perm_admin" value="1" class="form-check-input checkbox-kolping" <?php if ($user1[0]['perm_admin'] == 1) print("checked");?>>
+                                        <input value="remember-me" id="perm_admin" type="checkbox" name="perm_admin" value="1" class="form-check-input checkbox-kolping m-0" <?php if ($user1[0]['perm_admin'] == 1) print("checked");?>>
                                     </div>
                                 </div>
                             </div>
@@ -144,7 +144,7 @@ if(isset($_POST['action'])) {
                                 <div class="input-group justify-content-center">
                                     <label for="perm_event" class="input-group-text">Termine Berechtigungen?</label>
                                     <div class="input-group-text">
-                                        <input value="remember-me" id="perm_event" type="checkbox" name="perm_event" value="1" class="form-check-input checkbox-kolping" <?php if ($user1[0]['perm_event'] == 1) print("checked");?>>
+                                        <input value="remember-me" id="perm_event" type="checkbox" name="perm_event" value="1" class="form-check-input checkbox-kolping m-0" <?php if ($user1[0]['perm_event'] == 1) print("checked");?>>
                                     </div>
                                 </div>
                             </div>
@@ -152,7 +152,7 @@ if(isset($_POST['action'])) {
                                 <div class="input-group justify-content-center">
                                     <label for="perm_blog" class="input-group-text">Nachrichten Berechtigungen?</label>
                                     <div class="input-group-text">
-                                        <input value="remember-me" id="perm_blog" type="checkbox" name="perm_blog" value="1" class="form-check-input checkbox-kolping" <?php if ($user1[0]['perm_blog'] == 1) print("checked");?>>
+                                        <input value="remember-me" id="perm_blog" type="checkbox" name="perm_blog" value="1" class="form-check-input checkbox-kolping m-0" <?php if ($user1[0]['perm_blog'] == 1) print("checked");?>>
                                     </div>
                                 </div>
                             </div>
