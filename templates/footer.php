@@ -3,7 +3,7 @@ $crdate = "2023";
 ?>
 </body>
 <?php if (!isMobile()): ?>
-    <footer class="container-fluid cbg3  py-3">
+    <footer class="container-fluid cbg3 py-3">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-2 text-start">

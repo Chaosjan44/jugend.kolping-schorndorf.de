@@ -62,7 +62,7 @@ echo $buffer;
 <div class="container py-3" style="min-height: 80vh;">
 	<div class="row justify-content-center">
 		<div class="col">
-			<div class="card cbg3">
+			<div class="card cbg3 shadow1">
                 <div class="card-body">
                     <h3 class="card-title display-3 text-center mb-4 text-kolping-orange">Registrieren</h3>
                     <div class="card-text">
