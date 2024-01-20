@@ -213,7 +213,7 @@ echo $buffer;
                         <tr>
                             <div class="cbg ctext rounded">
                                 <th scope="col" class="border-0 text-center">
-                                    <div class="p-2 px-3 text-uppercase ctext">Nutzer*in ID</div>
+                                    <div class="p-2 px-3 text-uppercase ctext">Anmeldename</div>
                                 </th>
                                 <th scope="col" class="border-0 text-center">
                                     <div class="p-2 px-3 text-uppercase ctext">Vorname</div>
@@ -232,7 +232,7 @@ echo $buffer;
                         <?php foreach ($users as $user1): ?>
                             <tr>
                                 <td class="border-0 text-center">
-                                    <strong><?=$user1['user_id']?></strong>
+                                    <strong><?=$user1['login']?></strong>
                                 </td>
                                 <td class="border-0 text-center">
                                     <strong><?=$user1['vorname']?></strong>
