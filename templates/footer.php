@@ -1,5 +1,5 @@
 <?php 
-$crdate = "2023";
+$crdate = "2022 - 2024";
 ?>
 </body>
 <?php if (!isMobile()): ?>
@@ -50,7 +50,7 @@ $crdate = "2023";
         </div>
         <div class="row align-items-center">
             <div class="col-4 text-start"><a href="https://github.com/chaosjan44/jugend.kolping-schorndorf.de" target="#" class="me-2"><i class="bi ctext text-size-x-large bi-github"></i></a><a href="https://www.instagram.com/kolpingjugend.schorndorf/" target="#" class="ms-2"><i class="bi ctext text-size-x-large bi-instagram"></i></a></div>
-            <div class="col-4 text-center ctext light"><a href="/internal.php" class="text-center ctext light">&copy; <?=$crdate?> Kolpingsfamilie Schorndorf e.V.</a></div>
+            <div class="col-4 text-center ctext light"><a href="/internal.php" class="text-center ctext light">&copy; <?=$crdate?> Kolpingjugend Schorndorf</a></div>
             <div class="col-4 d-flex justify-content-end">
                 <input onchange="toggleStyle()" class="styleswitcher" type="checkbox" name="switch" id="style_switch" <?php if (check_style() == "dark"): print("checked"); endif; ?> >
                 <label class="styleswitcherlabel" for="style_switch"></label>
@@ -103,7 +103,7 @@ $crdate = "2023";
                 </div>
                 <div class="row justify-content-between align-items-center">
                     <div class="col-3 text-start px-0"><a href="https://github.com/chaosjan44/jugend.kolping-schorndorf.de" target="#" class="me-2"><i class="bi ctext text-size-x-large bi-github"></i></a><a href="https://www.instagram.com/kolpingjugend.schorndorf/" target="#" class="ms-2"><i class="bi ctext text-size-x-large bi-instagram"></i></a></div>
-                    <div class="col-6 ctext text-start light ps-0"><a href="/internal.php" class="ctext light">&copy; <?=$crdate?> Kolpingsfamilie Schorndorf e.V.</a></div>
+                    <div class="col-6 ctext text-start light ps-0"><a href="/internal.php" class="ctext light">&copy; <?=$crdate?> Kolpingjugend Schorndorf</a></div>
                     <div class="col-3 d-flex justify-content-end">
                         <input onchange="toggleStyle()" class="styleswitcher" type="checkbox" name="switch" id="style_switch" <?php if (check_style() == "dark"): print("checked"); endif; ?> >
                         <label class="styleswitcherlabel" for="style_switch"></label>
