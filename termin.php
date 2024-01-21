@@ -16,6 +16,12 @@ if ($stmt->rowCount() != 1) {
     exit;
 }
 $event = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$stmt = $pdo->prepare("UPDATE events SET views = views + 1 WHERE events_id = ?");
+$stmt->bindValue(1, $_GET["id"], PDO::PARAM_INT);
+$result = $stmt->execute();
+if (!$result) {
+    error('Datenbank Fehler!', pdo_debugStrParams($stmt));
+}
 
 $stmt = $pdo->prepare('SELECT vorname, nachname FROM users where user_id = ?');
 $stmt->bindValue(1, $event[0]['created_by'], PDO::PARAM_INT);

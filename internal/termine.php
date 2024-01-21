@@ -7,7 +7,7 @@ if (!isset($user)) {
     exit;
 }
 
-$stmt = $pdo->prepare('SELECT * FROM events ORDER BY date asc');
+$stmt = $pdo->prepare('SELECT * FROM events ORDER BY date desc');
 $stmt->execute();
 $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -439,6 +439,9 @@ echo $buffer;
                                     </div> 
                                 </div>
                             </div>
+                        </div>
+                        <div class="px-2">
+                            <span>Aufrufe: <?=$event['views']?></span>
                         </div>
                         <form action="termine.php" method="post" enctype="multipart/form-data" class="p-2 d-flex justify-content-between">
                             <input type="number" value="<?=$event['events_id']?>" name="events_id" style="display: none;" required>

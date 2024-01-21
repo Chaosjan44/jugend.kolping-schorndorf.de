@@ -621,6 +621,9 @@ echo $buffer;
                             <span id="text-<?=$blogentry['blog_entrys_id']?>"><?=$blogentry['prev_text']?></span>
                             <script>unMarkToSpan("text-<?=$blogentry['blog_entrys_id']?>")</script>
                         </div>
+                        <div class="px-2">
+                            <span>Aufrufe: <?=$blogentry['views']?></span>
+                        </div>
                         <form action="blog.php" method="post" enctype="multipart/form-data" class="p-2 d-flex justify-content-between">
                             <input type="number" value="<?=$blogentry['blog_entrys_id']?>" name="blog_entrys_id" style="display: none;" required>
                             <button type="submit" name="action" class="btn btn-kolping" value="mod">Editieren</button>

@@ -16,6 +16,12 @@ if ($stmt->rowCount() != 1) {
     exit;
 }
 $entry = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$stmt = $pdo->prepare("UPDATE blog_entrys SET views = views + 1 WHERE blog_entrys_id = ?");
+$stmt->bindValue(1, $_GET["id"], PDO::PARAM_INT);
+$result = $stmt->execute();
+if (!$result) {
+    error('Datenbank Fehler!', pdo_debugStrParams($stmt));
+}
 
 $stmt = $pdo->prepare('SELECT * FROM blog_images where blog_entrys_id = ?');
 $stmt->bindValue(1, $entry[0]['blog_entrys_id'], PDO::PARAM_INT);
