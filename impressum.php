@@ -31,7 +31,7 @@ echo $buffer;
         <h5 class="mb-1">Umsatzsteuer-ID:</h5>
         <p class="mb-3">
             Umsatzsteuer-Identifikationsnummer gemäß §27 a Umsatzsteuergesetz:<br>
-            82005/08707 FA Schorndorf
+            DE156784932
         </p>
         <h5 class="mb-1">Inhaltlich verantwortlich i.S.v. §55 Abs. 2 RStV:</h5>
         <p class="mb-3">
